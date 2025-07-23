@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            position: relative;
+            width: 200px;
+            height: 300px;
+            transition: 2s;
+            transform-style: preserve-3d; 
+            /* 카드 뒤집으려면 필요 */
+                         
+        }
+        .boxf, .boxb{
+            width: 100%;
+            height: 100%;
+            background-color: aqua;
+            align-content: center;
+            text-align: center;
+            font-size: 50px;
+            cursor: pointer;  
+            backface-visibility: hidden;
+            /* 뒷면 숨기기 */
+            position: absolute;
+        }
+        .boxb{
+            background-color: antiquewhite;
+            transform: rotateY(180deg);
+            /* 돌려놓기 */
+        }
+        .container:hover{
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="boxf">
+            앞면
+        </div>
+        <div class="boxb">
+            뒷면
+        </div>
+    </div>
+</body>
+</html>
