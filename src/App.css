@@ -1,0 +1,18 @@
+/* App.css - UI Test Project */
+
+#root {
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+/* 앱 전체 레이아웃 */
+.app-container {
+  padding: 20px;
+}
+
+/* 반응형 조정 */
+@media (max-width: 600px) {
+  #root {
+    padding: 10px;
+  }
+}
