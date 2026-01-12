@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - SBS Web</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="subpage">
+    <!-- 네비게이션 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>SBS<span>Web</span></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="html.html">HTML</a></li>
+                <li><a href="css.html">CSS</a></li>
+                <li><a href="javascript.html" class="active">JAVASCRIPT</a></li>
+                <li><a href="web-design.html">WEB DESIGN</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+        <div class="hero-content">
+            <div class="tech-icon-large">⚡</div>
+            <h1>JavaScript</h1>
+            <p>웹에 생명을 불어넣는 프로그래밍 언어</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="page-content">
+        <div class="content-container">
+            <!-- Introduction -->
+            <div class="content-block">
+                <h2>JavaScript란?</h2>
+                <p>JavaScript는 웹 페이지에 동적인 기능을 추가하는 프로그래밍 언어입니다. 사용자 인터랙션, 데이터 처리, 애니메이션 등 다양한 기능을 구현할 수 있습니다.</p>
+            </div>
+
+            <!-- Features -->
+            <div class="content-block">
+                <h2>주요 특징</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🔄</div>
+                        <h3>동적 콘텐츠</h3>
+                        <p>실시간으로 콘텐츠를 업데이트하고 변경합니다</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🖱️</div>
+                        <h3>이벤트 처리</h3>
+                        <p>클릭, 스크롤 등 사용자 상호작용을 처리합니다</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌐</div>
+                        <h3>API 통신</h3>
+                        <p>서버와 데이터를 주고받아 동적 웹을 구현합니다</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>비동기 처리</h3>
+                        <p>Promise와 async/await로 비동기 작업을 처리합니다</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="content-block">
+                <h2>기본 문법</h2>
+                <div class="code-block">
+                    <pre><code>// 변수 선언
+const name = 'SBS Web';
+let count = 0;
+
+// 함수 정의
+function greet(name) {
+    return `안녕하세요, ${name}님!`;
+}
+
+// 화살표 함수
+const add = (a, b) => a + b;
+
+// DOM 조작
+document.querySelector('.btn').addEventListener('click', function() {
+    console.log('버튼이 클릭되었습니다!');
+});
+
+// 배열 메서드
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+
+// 비동기 처리
+async function fetchData() {
+    try {
+        const response = await fetch('api/data');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- ES6+ Features -->
+            <div class="content-block">
+                <h2>ES6+ 주요 기능</h2>
+                <div class="es6-features">
+                    <div class="feature-card">
+                        <h3>화살표 함수</h3>
+                        <p>간결한 함수 표현식</p>
+                        <code>const fn = () => { }</code>
+                    </div>
+                    <div class="feature-card">
+                        <h3>구조 분해</h3>
+                        <p>배열과 객체를 쉽게 추출</p>
+                        <code>const { name } = obj;</code>
+                    </div>
+                    <div class="feature-card">
+                        <h3>템플릿 리터럴</h3>
+                        <p>문자열 삽입과 여러 줄 지원</p>
+                        <code>`Hello ${name}`</code>
+                    </div>
+                    <div class="feature-card">
+                        <h3>스프레드 연산자</h3>
+                        <p>배열과 객체 확장</p>
+                        <code>[...arr]</code>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Promise</h3>
+                        <p>비동기 작업 처리</p>
+                        <code>promise.then()</code>
+                    </div>
+                    <div class="feature-card">
+                        <h3>클래스</h3>
+                        <p>객체 지향 프로그래밍</p>
+                        <code>class MyClass { }</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Demo -->
+            <div class="content-block">
+                <h2>인터랙티브 데모</h2>
+                <div class="interactive-demo">
+                    <div class="demo-controls">
+                        <button class="demo-btn" id="changeColorBtn">색상 변경</button>
+                        <button class="demo-btn" id="addItemBtn">아이템 추가</button>
+                        <button class="demo-btn" id="animateBtn">애니메이션</button>
+                    </div>
+                    <div class="demo-output" id="demoOutput">
+                        <div class="demo-box" id="demoBox">클릭해보세요!</div>
+                        <ul class="demo-list" id="demoList"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="content-block">
+                <h2>모범 사례</h2>
+                <ul class="best-practices">
+                    <li>const와 let을 사용하고 var는 피합니다</li>
+                    <li>화살표 함수와 ES6+ 문법을 활용합니다</li>
+                    <li>async/await로 비동기 코드를 읽기 쉽게 작성합니다</li>
+                    <li>에러 처리를 항상 고려합니다 (try-catch)</li>
+                    <li>함수는 한 가지 일만 하도록 작성합니다</li>
+                    <li>의미있는 변수명과 함수명을 사용합니다</li>
+                </ul>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="page-navigation">
+                <a href="css.html" class="nav-link">← CSS</a>
+                <a href="portfolio.html" class="nav-link">PORTFOLIO →</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design - SBS Web</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="subpage">
+    <!-- 네비게이션 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>SBS<span>Web</span></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="html.html">HTML</a></li>
+                <li><a href="css.html">CSS</a></li>
+                <li><a href="javascript.html">JAVASCRIPT</a></li>
+                <li><a href="web-design.html" class="active">WEB DESIGN</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+        <div class="hero-content">
+            <div class="tech-icon-large">🎨</div>
+            <h1>Web Design</h1>
+            <p>아름답고 사용하기 쉬운 웹을 만드는 디자인 원칙</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="page-content">
+        <div class="content-container">
+            <!-- Introduction -->
+            <div class="content-block">
+                <h2>웹 디자인이란?</h2>
+                <p>웹 디자인은 웹사이트의 시각적 외관과 사용자 경험을 계획하고 구현하는 과정입니다. 미학, 기능성, 사용성을 조화롭게 결합하여 효과적인 웹 경험을 만듭니다.</p>
+            </div>
+
+            <!-- Design Principles -->
+            <div class="content-block">
+                <h2>디자인 원칙</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">⚖️</div>
+                        <h3>균형 (Balance)</h3>
+                        <p>요소들의 시각적 무게를 균등하게 배치합니다</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <h3>대비 (Contrast)</h3>
+                        <p>색상과 크기의 차이로 중요한 요소를 강조합니다</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔄</div>
+                        <h3>반복 (Repetition)</h3>
+                        <p>일관된 패턴으로 통일성을 부여합니다</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📐</div>
+                        <h3>정렬 (Alignment)</h3>
+                        <p>요소들을 체계적으로 배열하여 질서를 만듭니다</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌌</div>
+                        <h3>여백 (Whitespace)</h3>
+                        <p>적절한 공간으로 가독성을 높입니다</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎪</div>
+                        <h3>계층 (Hierarchy)</h3>
+                        <p>시각적 우선순위로 사용자의 시선을 유도합니다</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Color Theory -->
+            <div class="content-block">
+                <h2>색상 이론</h2>
+                <div class="color-theory-section">
+                    <p>색상은 웹 디자인에서 가장 중요한 요소 중 하나입니다. 브랜드 정체성을 전달하고 사용자의 감정과 행동에 영향을 미칩니다.</p>
+
+                    <div class="color-schemes">
+                        <div class="color-scheme-item">
+                            <h3>Primary Colors (원색)</h3>
+                            <div class="color-palette">
+                                <div class="color-box" style="background: #FF0000;" data-color="#FF0000">
+                                    <span>Red</span>
+                                </div>
+                                <div class="color-box" style="background: #FFFF00;" data-color="#FFFF00">
+                                    <span>Yellow</span>
+                                </div>
+                                <div class="color-box" style="background: #0000FF;" data-color="#0000FF">
+                                    <span style="color: white;">Blue</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="color-scheme-item">
+                            <h3>Complementary (보색)</h3>
+                            <div class="color-palette">
+                                <div class="color-box" style="background: #667eea;" data-color="#667eea">
+                                    <span style="color: white;">Purple</span>
+                                </div>
+                                <div class="color-box" style="background: #f6d365;" data-color="#f6d365">
+                                    <span>Yellow</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="color-scheme-item">
+                            <h3>Analogous (유사색)</h3>
+                            <div class="color-palette">
+                                <div class="color-box" style="background: #667eea;" data-color="#667eea">
+                                    <span style="color: white;">Blue</span>
+                                </div>
+                                <div class="color-box" style="background: #764ba2;" data-color="#764ba2">
+                                    <span style="color: white;">Purple</span>
+                                </div>
+                                <div class="color-box" style="background: #f093fb;" data-color="#f093fb">
+                                    <span style="color: white;">Pink</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="color-scheme-item">
+                            <h3>Triadic (삼색)</h3>
+                            <div class="color-palette">
+                                <div class="color-box" style="background: #FF6B6B;" data-color="#FF6B6B">
+                                    <span style="color: white;">Red</span>
+                                </div>
+                                <div class="color-box" style="background: #4ECDC4;" data-color="#4ECDC4">
+                                    <span style="color: white;">Cyan</span>
+                                </div>
+                                <div class="color-box" style="background: #FFE66D;" data-color="#FFE66D">
+                                    <span>Yellow</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Color Picker -->
+            <div class="content-block">
+                <h2>색상 팔레트 생성기</h2>
+                <div class="color-picker-demo">
+                    <div class="picker-controls">
+                        <label>
+                            기본 색상 선택:
+                            <input type="color" id="baseColor" value="#667eea">
+                        </label>
+                        <button class="demo-btn" id="generatePalette">팔레트 생성</button>
+                    </div>
+                    <div class="generated-palette" id="generatedPalette">
+                        <!-- 동적으로 생성됨 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typography -->
+            <div class="content-block">
+                <h2>타이포그래피</h2>
+                <p>타이포그래피는 가독성과 시각적 계층을 만드는 핵심 요소입니다.</p>
+
+                <div class="typography-examples">
+                    <div class="typo-example">
+                        <h3>폰트 조합</h3>
+                        <div class="font-pairing">
+                            <div class="font-demo" style="font-family: 'Segoe UI', sans-serif; font-size: 32px; font-weight: 700;">
+                                Heading Font
+                            </div>
+                            <div class="font-demo" style="font-family: 'Segoe UI', sans-serif; font-size: 16px; font-weight: 400; color: #718096;">
+                                Body text should be easy to read and comfortable for long content. Choose fonts that complement each other.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="typo-example">
+                        <h3>텍스트 계층</h3>
+                        <div class="text-hierarchy">
+                            <h1 style="font-size: 48px; margin: 10px 0;">H1 - Main Title</h1>
+                            <h2 style="font-size: 36px; margin: 10px 0;">H2 - Section Title</h2>
+                            <h3 style="font-size: 24px; margin: 10px 0;">H3 - Subsection</h3>
+                            <p style="font-size: 16px; margin: 10px 0; color: #718096;">Body - Regular paragraph text</p>
+                            <small style="font-size: 14px; color: #a0aec0;">Small - Caption or metadata</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UI/UX Principles -->
+            <div class="content-block">
+                <h2>UI/UX 원칙</h2>
+                <div class="uiux-grid">
+                    <div class="uiux-card">
+                        <div class="uiux-icon">👤</div>
+                        <h3>사용자 중심</h3>
+                        <p>항상 사용자의 필요와 목표를 우선으로 생각합니다</p>
+                    </div>
+                    <div class="uiux-card">
+                        <div class="uiux-icon">🎯</div>
+                        <h3>명확성</h3>
+                        <p>직관적이고 이해하기 쉬운 인터페이스를 만듭니다</p>
+                    </div>
+                    <div class="uiux-card">
+                        <div class="uiux-icon">⚡</div>
+                        <h3>효율성</h3>
+                        <p>최소한의 클릭으로 목표를 달성할 수 있게 합니다</p>
+                    </div>
+                    <div class="uiux-card">
+                        <div class="uiux-icon">🔄</div>
+                        <h3>일관성</h3>
+                        <p>전체 사이트에서 일관된 패턴을 유지합니다</p>
+                    </div>
+                    <div class="uiux-card">
+                        <div class="uiux-icon">♿</div>
+                        <h3>접근성</h3>
+                        <p>모든 사용자가 이용할 수 있도록 설계합니다</p>
+                    </div>
+                    <div class="uiux-card">
+                        <div class="uiux-icon">💬</div>
+                        <h3>피드백</h3>
+                        <p>사용자 행동에 즉각적인 응답을 제공합니다</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layout Patterns -->
+            <div class="content-block">
+                <h2>레이아웃 패턴</h2>
+                <div class="layout-patterns">
+                    <div class="pattern-item">
+                        <h3>F-Pattern</h3>
+                        <div class="pattern-visual f-pattern">
+                            <div class="pattern-line horizontal top"></div>
+                            <div class="pattern-line horizontal middle"></div>
+                            <div class="pattern-line vertical left"></div>
+                        </div>
+                        <p>사용자는 F자 형태로 콘텐츠를 읽습니다</p>
+                    </div>
+
+                    <div class="pattern-item">
+                        <h3>Z-Pattern</h3>
+                        <div class="pattern-visual z-pattern">
+                            <div class="pattern-line diagonal top"></div>
+                            <div class="pattern-line horizontal middle"></div>
+                            <div class="pattern-line diagonal bottom"></div>
+                        </div>
+                        <p>간단한 레이아웃에서 Z자로 시선이 이동합니다</p>
+                    </div>
+
+                    <div class="pattern-item">
+                        <h3>Grid System</h3>
+                        <div class="pattern-visual grid-pattern">
+                            <div class="grid-cell"></div>
+                            <div class="grid-cell"></div>
+                            <div class="grid-cell"></div>
+                            <div class="grid-cell"></div>
+                            <div class="grid-cell"></div>
+                            <div class="grid-cell"></div>
+                        </div>
+                        <p>체계적인 그리드로 일관성을 만듭니다</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="content-block">
+                <h2>디자인 모범 사례</h2>
+                <ul class="best-practices">
+                    <li>모바일 우선(Mobile-First) 접근 방식을 사용합니다</li>
+                    <li>3-5개의 주요 색상으로 제한된 색상 팔레트를 사용합니다</li>
+                    <li>충분한 대비를 유지하여 접근성을 보장합니다 (WCAG 기준)</li>
+                    <li>일관된 간격 시스템을 사용합니다 (8pt 또는 4pt 그리드)</li>
+                    <li>최대 2-3개의 폰트 패밀리만 사용합니다</li>
+                    <li>사용자 피드백을 통해 지속적으로 개선합니다</li>
+                    <li>로딩 시간을 최소화하여 성능을 최적화합니다</li>
+                </ul>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="page-navigation">
+                <a href="javascript.html" class="nav-link">← JAVASCRIPT</a>
+                <a href="portfolio.html" class="nav-link">PORTFOLIO →</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
