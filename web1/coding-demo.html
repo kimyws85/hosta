@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코딩 데모 - 코딩마스터</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 헤더 & 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><h1>코딩마스터</h1></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="courses.html">강의</a></li>
+                    <li><a href="categories.html">카테고리</a></li>
+                    <li><a href="coding-demo.html" class="active">코딩 데모</a></li>
+                    <li><a href="about.html">소개</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+                <div class="nav-btn">
+                    <button class="btn-primary" id="loginBtn">로그인</button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>실시간 코딩 데모</h1>
+            <p>코드가 작성되는 과정을 실시간으로 확인해보세요</p>
+        </div>
+    </section>
+
+    <!-- 코딩 데모 섹션 -->
+    <section class="demo-section">
+        <div class="container-fluid">
+            <!-- 컨트롤 바 -->
+            <div class="demo-controls">
+                <div class="step-selector">
+                    <button class="step-btn active" data-step="1">
+                        <span class="step-icon">📄</span>
+                        <span class="step-label">Step 1: HTML</span>
+                    </button>
+                    <button class="step-btn" data-step="2">
+                        <span class="step-icon">🎨</span>
+                        <span class="step-label">Step 2: CSS</span>
+                    </button>
+                    <button class="step-btn" data-step="3">
+                        <span class="step-icon">⚡</span>
+                        <span class="step-label">Step 3: JavaScript</span>
+                    </button>
+                    <button class="step-btn" data-step="4">
+                        <span class="step-icon">🎯</span>
+                        <span class="step-label">Step 4: 완성</span>
+                    </button>
+                </div>
+                <div class="playback-controls">
+                    <button class="control-btn" id="playBtn">
+                        <span class="play-icon">▶️</span> 재생
+                    </button>
+                    <button class="control-btn" id="pauseBtn" style="display:none;">
+                        <span class="pause-icon">⏸️</span> 일시정지
+                    </button>
+                    <button class="control-btn" id="resetBtn">
+                        <span class="reset-icon">🔄</span> 다시시작
+                    </button>
+                    <div class="speed-control">
+                        <label>속도:</label>
+                        <select id="speedSelect">
+                            <option value="0.5">느림</option>
+                            <option value="1" selected>보통</option>
+                            <option value="2">빠름</option>
+                            <option value="3">매우 빠름</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 스플릿 뷰 -->
+            <div class="split-view">
+                <!-- 왼쪽: 코드 에디터 -->
+                <div class="code-panel">
+                    <div class="panel-header">
+                        <div class="editor-tabs">
+                            <div class="editor-tab active" data-lang="html">
+                                <span class="tab-icon">📄</span> index.html
+                            </div>
+                            <div class="editor-tab" data-lang="css">
+                                <span class="tab-icon">🎨</span> style.css
+                            </div>
+                            <div class="editor-tab" data-lang="js">
+                                <span class="tab-icon">⚡</span> script.js
+                            </div>
+                        </div>
+                        <div class="editor-actions">
+                            <span class="line-count">줄: <span id="lineCount">1</span></span>
+                        </div>
+                    </div>
+                    <div class="code-editor">
+                        <pre class="code-content" id="codeContent"><code id="codeDisplay"></code></pre>
+                        <div class="typing-cursor"></div>
+                    </div>
+                </div>
+
+                <!-- 오른쪽: 라이브 프리뷰 -->
+                <div class="preview-panel">
+                    <div class="panel-header">
+                        <div class="preview-title">
+                            <span class="preview-icon">👁️</span> 라이브 프리뷰
+                        </div>
+                        <div class="browser-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                    </div>
+                    <div class="preview-content">
+                        <iframe id="previewFrame" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 단계 설명 -->
+            <div class="step-description">
+                <div class="description-content">
+                    <h3 id="stepTitle">Step 1: HTML 구조 작성</h3>
+                    <p id="stepDesc">웹 페이지의 기본 구조를 HTML로 작성합니다. HTML은 콘텐츠의 구조와 의미를 정의합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 학습 포인트 -->
+    <section class="learning-points">
+        <div class="container">
+            <h2 class="section-title">이렇게 배웁니다</h2>
+            <div class="points-grid">
+                <div class="point-card">
+                    <div class="point-icon">👨‍💻</div>
+                    <h3>실시간 코딩</h3>
+                    <p>코드가 한 줄씩 작성되는 과정을 실시간으로 확인하며 학습합니다</p>
+                </div>
+                <div class="point-card">
+                    <div class="point-icon">🔍</div>
+                    <h3>즉시 확인</h3>
+                    <p>작성한 코드의 결과를 오른쪽 화면에서 즉시 확인할 수 있습니다</p>
+                </div>
+                <div class="point-card">
+                    <div class="point-icon">📚</div>
+                    <h3>단계별 학습</h3>
+                    <p>HTML, CSS, JavaScript를 순서대로 배우며 완성해갑니다</p>
+                </div>
+                <div class="point-card">
+                    <div class="point-icon">⚡</div>
+                    <h3>속도 조절</h3>
+                    <p>학습 속도를 자유롭게 조절하여 자신의 페이스에 맞춰 학습합니다</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 섹션 -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>더 많은 코딩 강의를 만나보세요</h2>
+            <p>180개 이상의 실전 프로젝트로 코딩을 마스터하세요</p>
+            <div class="cta-buttons">
+                <a href="courses.html" class="btn-large">강의 둘러보기</a>
+                <button class="btn-large btn-outline" id="startBtnCTA">무료 체험</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>코딩마스터</h3>
+                    <p>최고의 프로그래밍 강의 플랫폼</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="courses.html">강의 목록</a></li>
+                        <li><a href="categories.html">카테고리</a></li>
+                        <li><a href="about.html">회사 소개</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="about.html">공지사항</a></li>
+                        <li><a href="about.html">문의하기</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>소셜 미디어</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 코딩마스터. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 로그인 모달 -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>로그인</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" placeholder="이메일을 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" placeholder="비밀번호를 입력하세요" required>
+                </div>
+                <button type="submit" class="btn-primary btn-block">로그인</button>
+                <p class="form-footer">계정이 없으신가요? <a href="#">회원가입</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scroll to Top 버튼 -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <!-- jQuery & Custom JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <script src="coding-demo.js"></script>
+</body>
+</html>

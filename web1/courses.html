@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 목록 - 코딩마스터</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 헤더 & 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><h1>코딩마스터</h1></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="courses.html" class="active">강의</a></li>
+                    <li><a href="categories.html">카테고리</a></li>
+                    <li><a href="coding-demo.html">코딩 데모</a></li>
+                    <li><a href="about.html">소개</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+                <div class="nav-btn">
+                    <button class="btn-primary" id="loginBtn">로그인</button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>전체 강의</h1>
+            <p>180개의 강의로 당신의 미래를 만들어보세요</p>
+        </div>
+    </section>
+
+    <!-- 필터 섹션 -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label>난이도:</label>
+                    <button class="filter-btn active" data-filter="all">전체</button>
+                    <button class="filter-btn" data-filter="beginner">초급</button>
+                    <button class="filter-btn" data-filter="intermediate">중급</button>
+                    <button class="filter-btn" data-filter="advanced">고급</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="강의 검색...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 강의 목록 -->
+    <section class="courses-list">
+        <div class="container">
+            <div class="courses-grid">
+                <!-- 강의 카드 1 -->
+                <div class="course-card" data-level="beginner">
+                    <div class="course-image">
+                        <div class="course-badge">베스트셀러</div>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-level beginner">초급</span>
+                        <h3>JavaScript 완벽 가이드</h3>
+                        <p>초보자부터 고급까지 완벽하게 마스터하는 JavaScript</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★★ 4.9</span>
+                            <span class="students">1,234명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩45,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 강의 카드 2 -->
+                <div class="course-card" data-level="intermediate">
+                    <div class="course-image">
+                        <div class="course-badge">신규</div>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-level intermediate">중급</span>
+                        <h3>React 마스터클래스</h3>
+                        <p>모던 웹 개발의 필수, React를 처음부터 끝까지</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★★ 4.8</span>
+                            <span class="students">892명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩55,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 강의 카드 3 -->
+                <div class="course-card" data-level="beginner">
+                    <div class="course-image">
+                        <div class="course-badge">인기</div>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-level beginner">초급</span>
+                        <h3>Python 데이터 분석</h3>
+                        <p>데이터 과학자로 가는 첫걸음, Python 완전 정복</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★☆ 4.7</span>
+                            <span class="students">2,156명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩50,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 강의 카드 4 -->
+                <div class="course-card" data-level="advanced">
+                    <div class="course-image">
+                        <div class="course-badge">추천</div>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-level advanced">고급</span>
+                        <h3>Node.js 백엔드 개발</h3>
+                        <p>실무 중심의 백엔드 개발, API부터 배포까지</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★★ 4.9</span>
+                            <span class="students">1,543명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩60,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 강의 카드 5 -->
+                <div class="course-card" data-level="intermediate">
+                    <div class="course-image">
+                        <div class="course-badge">인기</div>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-level intermediate">중급</span>
+                        <h3>Vue.js 실전 프로젝트</h3>
+                        <p>실무 프로젝트로 배우는 Vue.js 완벽 가이드</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★★ 4.8</span>
+                            <span class="students">756명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩52,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 강의 카드 6 -->
+                <div class="course-card" data-level="beginner">
+                    <div class="course-image">
+                        <div class="course-badge">신규</div>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-level beginner">초급</span>
+                        <h3>HTML & CSS 기초</h3>
+                        <p>웹 개발의 시작, HTML과 CSS 완벽 마스터</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★★ 4.9</span>
+                            <span class="students">3,421명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩35,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 강의 카드 7 -->
+                <div class="course-card" data-level="advanced">
+                    <div class="course-image">
+                        <div class="course-badge">베스트셀러</div>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-level advanced">고급</span>
+                        <h3>AWS 클라우드 아키텍처</h3>
+                        <p>클라우드 전문가로 가는 길, AWS 완벽 정복</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★★ 4.9</span>
+                            <span class="students">1,876명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩75,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 강의 카드 8 -->
+                <div class="course-card" data-level="intermediate">
+                    <div class="course-image">
+                        <div class="course-badge">추천</div>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-level intermediate">중급</span>
+                        <h3>Docker & Kubernetes</h3>
+                        <p>컨테이너 기술의 핵심, Docker와 Kubernetes</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★☆ 4.7</span>
+                            <span class="students">1,234명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩65,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 강의 카드 9 -->
+                <div class="course-card" data-level="beginner">
+                    <div class="course-image">
+                        <div class="course-badge">인기</div>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-level beginner">초급</span>
+                        <h3>Git & GitHub 기초</h3>
+                        <p>모든 개발자가 알아야 할 버전 관리의 기초</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★★ 4.8</span>
+                            <span class="students">2,987명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩30,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 강의 카드 10 -->
+                <div class="course-card" data-level="advanced">
+                    <div class="course-image">
+                        <div class="course-badge">신규</div>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-level advanced">고급</span>
+                        <h3>머신러닝 심화</h3>
+                        <p>AI 전문가로 성장하기 위한 머신러닝 심화 과정</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★★ 4.9</span>
+                            <span class="students">1,098명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩80,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 강의 카드 11 -->
+                <div class="course-card" data-level="intermediate">
+                    <div class="course-image">
+                        <div class="course-badge">베스트셀러</div>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-level intermediate">중급</span>
+                        <h3>TypeScript 완벽 가이드</h3>
+                        <p>타입 안정성을 위한 TypeScript 마스터</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★★ 4.8</span>
+                            <span class="students">1,654명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩48,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 강의 카드 12 -->
+                <div class="course-card" data-level="beginner">
+                    <div class="course-image">
+                        <div class="course-badge">추천</div>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-level beginner">초급</span>
+                        <h3>SQL 데이터베이스 기초</h3>
+                        <p>데이터베이스의 기초부터 실전까지</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★☆ 4.7</span>
+                            <span class="students">2,345명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩40,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>코딩마스터</h3>
+                    <p>최고의 프로그래밍 강의 플랫폼</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="courses.html">강의 목록</a></li>
+                        <li><a href="categories.html">카테고리</a></li>
+                        <li><a href="about.html">회사 소개</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="about.html">공지사항</a></li>
+                        <li><a href="about.html">문의하기</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>소셜 미디어</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 코딩마스터. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 로그인 모달 -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>로그인</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" placeholder="이메일을 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" placeholder="비밀번호를 입력하세요" required>
+                </div>
+                <button type="submit" class="btn-primary btn-block">로그인</button>
+                <p class="form-footer">계정이 없으신가요? <a href="#">회원가입</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scroll to Top 버튼 -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <!-- jQuery & Custom JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

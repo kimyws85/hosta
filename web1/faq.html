@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - 코딩마스터</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 헤더 & 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><h1>코딩마스터</h1></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="courses.html">강의</a></li>
+                    <li><a href="categories.html">카테고리</a></li>
+                    <li><a href="coding-demo.html">코딩 데모</a></li>
+                    <li><a href="about.html">소개</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                </ul>
+                <div class="nav-btn">
+                    <button class="btn-primary" id="loginBtn">로그인</button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>자주 묻는 질문</h1>
+            <p>궁금한 점을 빠르게 찾아보세요</p>
+        </div>
+    </section>
+
+    <!-- FAQ 카테고리 탭 -->
+    <section class="faq-tabs-section">
+        <div class="container">
+            <div class="faq-tabs">
+                <button class="faq-tab active" data-tab="all">전체</button>
+                <button class="faq-tab" data-tab="course">강의</button>
+                <button class="faq-tab" data-tab="payment">결제</button>
+                <button class="faq-tab" data-tab="account">계정</button>
+                <button class="faq-tab" data-tab="technical">기술지원</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ 섹션 -->
+    <section class="faq">
+        <div class="container">
+            <div class="faq-list">
+                <!-- 강의 관련 -->
+                <div class="faq-item" data-category="course">
+                    <div class="faq-question">
+                        <h3>강의는 얼마나 오래 수강할 수 있나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>모든 강의는 평생 무제한으로 수강하실 수 있습니다. 한 번 구매하시면 언제든지 원하실 때 학습할 수 있으며, 업데이트된 콘텐츠도 추가 비용 없이 제공됩니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="course">
+                    <div class="faq-question">
+                        <h3>수료증이 제공되나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 강의를 100% 완료하시면 수료증이 자동으로 발급됩니다. PDF 형태로 다운로드 가능하며, LinkedIn 프로필에도 연동할 수 있습니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="course">
+                    <div class="faq-question">
+                        <h3>초보자도 수강할 수 있나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>물론입니다! 각 강의마다 난이도가 표시되어 있으며, 초보자를 위한 기초 강의도 다수 준비되어 있습니다. 강의 설명에서 선수 지식 요구사항을 확인하실 수 있습니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="course">
+                    <div class="faq-question">
+                        <h3>강의 자료는 다운로드 가능한가요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 대부분의 강의에서 실습 코드, PDF 자료, 참고 링크 등을 다운로드하실 수 있습니다. 각 섹션마다 관련 자료가 첨부되어 있습니다.</p>
+                    </div>
+                </div>
+
+                <!-- 결제 관련 -->
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question">
+                        <h3>환불 정책은 어떻게 되나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>구매 후 7일 이내에 강의 진도가 30% 미만인 경우 전액 환불이 가능합니다. 환불은 구매한 결제수단으로 자동 처리되며, 3-5영업일이 소요됩니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question">
+                        <h3>어떤 결제 방법을 지원하나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>신용카드, 체크카드, 계좌이체, 카카오페이, 네이버페이 등 다양한 결제 수단을 지원합니다. 법인카드 및 세금계산서 발행도 가능합니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question">
+                        <h3>할인 쿠폰은 어떻게 사용하나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>결제 페이지에서 쿠폰 코드를 입력하시면 자동으로 할인이 적용됩니다. 쿠폰은 중복 사용이 불가하며, 유효기간이 있으니 확인해주세요.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question">
+                        <h3>기업 교육은 어떻게 신청하나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>기업 교육은 별도 문의를 통해 진행됩니다. 10명 이상 단체 구매 시 할인 혜택이 있으며, 맞춤형 커리큘럼도 제공 가능합니다. support@codingmaster.com으로 문의해주세요.</p>
+                    </div>
+                </div>
+
+                <!-- 계정 관련 -->
+                <div class="faq-item" data-category="account">
+                    <div class="faq-question">
+                        <h3>계정을 만들어야 하나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 강의를 수강하려면 계정 생성이 필요합니다. 이메일 또는 소셜 로그인(Google, Facebook, Kakao)으로 간편하게 가입하실 수 있습니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="account">
+                    <div class="faq-question">
+                        <h3>비밀번호를 잊어버렸어요</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>로그인 페이지에서 "비밀번호 찾기"를 클릭하시면 가입하신 이메일로 재설정 링크가 발송됩니다. 이메일이 오지 않는다면 스팸함을 확인해주세요.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="account">
+                    <div class="faq-question">
+                        <h3>여러 기기에서 동시에 사용할 수 있나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>한 계정으로 최대 3개 기기에서 동시 접속이 가능합니다. PC, 태블릿, 모바일 등 다양한 기기에서 학습 진도가 자동으로 동기화됩니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="account">
+                    <div class="faq-question">
+                        <h3>계정을 삭제하고 싶어요</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>마이페이지의 "계정 설정"에서 계정 삭제를 요청하실 수 있습니다. 삭제 시 모든 수강 기록과 데이터가 영구 삭제되며 복구가 불가능합니다.</p>
+                    </div>
+                </div>
+
+                <!-- 기술지원 관련 -->
+                <div class="faq-item" data-category="technical">
+                    <div class="faq-question">
+                        <h3>모바일에서도 수강 가능한가요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 모바일 앱과 반응형 웹사이트를 통해 언제 어디서나 학습하실 수 있습니다. iOS와 Android 앱을 무료로 다운로드하실 수 있습니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="technical">
+                    <div class="faq-question">
+                        <h3>동영상이 재생되지 않아요</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>브라우저 캐시를 삭제하거나 다른 브라우저로 시도해보세요. Chrome 최신 버전 사용을 권장합니다. 문제가 지속되면 고객센터로 문의해주세요.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="technical">
+                    <div class="faq-question">
+                        <h3>자막 기능이 있나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>대부분의 강의에서 한국어 자막을 제공하며, 일부 인기 강의는 영어 자막도 지원합니다. 재생 속도 조절(0.5x~2x) 기능도 제공됩니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="technical">
+                    <div class="faq-question">
+                        <h3>오프라인에서도 볼 수 있나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>모바일 앱에서 강의를 다운로드하여 오프라인으로 시청하실 수 있습니다. 다운로드한 강의는 30일간 유효하며, 재다운로드 횟수에는 제한이 없습니다.</p>
+                    </div>
+                </div>
+
+                <!-- 기타 -->
+                <div class="faq-item" data-category="all">
+                    <div class="faq-question">
+                        <h3>강의에 대한 질문은 어떻게 하나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>각 강의에는 Q&A 게시판이 있어 자유롭게 질문하실 수 있습니다. 강사님 또는 다른 수강생들이 답변을 달아드립니다. 평균 24시간 이내에 답변을 받으실 수 있습니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="all">
+                    <div class="faq-question">
+                        <h3>수강평은 언제 작성할 수 있나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>강의를 5% 이상 수강하시면 수강평 작성이 가능합니다. 작성하신 수강평은 다른 수강생들에게 큰 도움이 됩니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="all">
+                    <div class="faq-question">
+                        <h3">프로모션 코드는 어디서 받나요?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>이메일 뉴스레터, SNS, 파트너사 이벤트 등을 통해 프로모션 코드를 받으실 수 있습니다. 정기적으로 다양한 할인 이벤트를 진행하니 SNS를 팔로우해주세요.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 문의하기 섹션 -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">추가 문의사항이 있으신가요?</h2>
+            <p>FAQ에서 답을 찾지 못하셨다면 언제든지 문의해주세요</p>
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>이메일 문의</h3>
+                    <p>support@codingmaster.com</p>
+                    <p class="contact-time">평균 응답 시간: 24시간</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>실시간 채팅</h3>
+                    <p>평일 09:00 - 18:00</p>
+                    <button class="btn-contact">채팅 시작</button>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>전화 상담</h3>
+                    <p>1588-1234</p>
+                    <p class="contact-time">평일 09:00 - 18:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>코딩마스터</h3>
+                    <p>최고의 프로그래밍 강의 플랫폼</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="courses.html">강의 목록</a></li>
+                        <li><a href="categories.html">카테고리</a></li>
+                        <li><a href="about.html">회사 소개</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="about.html">공지사항</a></li>
+                        <li><a href="about.html">문의하기</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>소셜 미디어</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 코딩마스터. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 로그인 모달 -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>로그인</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" placeholder="이메일을 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" placeholder="비밀번호를 입력하세요" required>
+                </div>
+                <button type="submit" class="btn-primary btn-block">로그인</button>
+                <p class="form-footer">계정이 없으신가요? <a href="#">회원가입</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scroll to Top 버튼 -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <!-- jQuery & Custom JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

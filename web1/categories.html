@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카테고리 - 코딩마스터</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 헤더 & 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><h1>코딩마스터</h1></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="courses.html">강의</a></li>
+                    <li><a href="categories.html" class="active">카테고리</a></li>
+                    <li><a href="coding-demo.html">코딩 데모</a></li>
+                    <li><a href="about.html">소개</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+                <div class="nav-btn">
+                    <button class="btn-primary" id="loginBtn">로그인</button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>강의 카테고리</h1>
+            <p>원하는 분야의 강의를 선택하세요</p>
+        </div>
+    </section>
+
+    <!-- 카테고리 섹션 -->
+    <section class="categories-page">
+        <div class="container">
+            <div class="category-grid-large">
+                <!-- 웹 개발 -->
+                <div class="category-card-large">
+                    <div class="category-icon-large">💻</div>
+                    <div class="category-content">
+                        <h2>웹 개발</h2>
+                        <p class="category-desc">HTML, CSS, JavaScript, React, Vue 등 모던 웹 개발 기술</p>
+                        <div class="category-stats">
+                            <span>📚 42개 강의</span>
+                            <span>👥 12,345명 수강</span>
+                        </div>
+                        <a href="courses.html" class="btn-category">강의 보기</a>
+                    </div>
+                </div>
+
+                <!-- 모바일 앱 -->
+                <div class="category-card-large">
+                    <div class="category-icon-large">📱</div>
+                    <div class="category-content">
+                        <h2>모바일 앱</h2>
+                        <p class="category-desc">iOS, Android, React Native, Flutter 앱 개발</p>
+                        <div class="category-stats">
+                            <span>📚 28개 강의</span>
+                            <span>👥 8,234명 수강</span>
+                        </div>
+                        <a href="courses.html" class="btn-category">강의 보기</a>
+                    </div>
+                </div>
+
+                <!-- AI & 머신러닝 -->
+                <div class="category-card-large">
+                    <div class="category-icon-large">🤖</div>
+                    <div class="category-content">
+                        <h2>AI & 머신러닝</h2>
+                        <p class="category-desc">인공지능, 딥러닝, TensorFlow, PyTorch 등</p>
+                        <div class="category-stats">
+                            <span>📚 35개 강의</span>
+                            <span>👥 9,876명 수강</span>
+                        </div>
+                        <a href="courses.html" class="btn-category">강의 보기</a>
+                    </div>
+                </div>
+
+                <!-- 데이터 과학 -->
+                <div class="category-card-large">
+                    <div class="category-icon-large">📊</div>
+                    <div class="category-content">
+                        <h2>데이터 과학</h2>
+                        <p class="category-desc">데이터 분석, 시각화, Pandas, NumPy, SQL</p>
+                        <div class="category-stats">
+                            <span>📚 31개 강의</span>
+                            <span>👥 10,234명 수강</span>
+                        </div>
+                        <a href="courses.html" class="btn-category">강의 보기</a>
+                    </div>
+                </div>
+
+                <!-- 백엔드 개발 -->
+                <div class="category-card-large">
+                    <div class="category-icon-large">⚙️</div>
+                    <div class="category-content">
+                        <h2>백엔드 개발</h2>
+                        <p class="category-desc">Node.js, Python, Java, Spring, Django 등</p>
+                        <div class="category-stats">
+                            <span>📚 38개 강의</span>
+                            <span>👥 11,567명 수강</span>
+                        </div>
+                        <a href="courses.html" class="btn-category">강의 보기</a>
+                    </div>
+                </div>
+
+                <!-- 클라우드 -->
+                <div class="category-card-large">
+                    <div class="category-icon-large">☁️</div>
+                    <div class="category-content">
+                        <h2>클라우드</h2>
+                        <p class="category-desc">AWS, Azure, GCP, Docker, Kubernetes</p>
+                        <div class="category-stats">
+                            <span>📚 25개 강의</span>
+                            <span>👥 7,456명 수강</span>
+                        </div>
+                        <a href="courses.html" class="btn-category">강의 보기</a>
+                    </div>
+                </div>
+
+                <!-- UI/UX 디자인 -->
+                <div class="category-card-large">
+                    <div class="category-icon-large">🎨</div>
+                    <div class="category-content">
+                        <h2>UI/UX 디자인</h2>
+                        <p class="category-desc">Figma, Sketch, Adobe XD, 사용자 경험 설계</p>
+                        <div class="category-stats">
+                            <span>📚 19개 강의</span>
+                            <span>👥 5,678명 수강</span>
+                        </div>
+                        <a href="courses.html" class="btn-category">강의 보기</a>
+                    </div>
+                </div>
+
+                <!-- 보안 -->
+                <div class="category-card-large">
+                    <div class="category-icon-large">🔒</div>
+                    <div class="category-content">
+                        <h2>보안</h2>
+                        <p class="category-desc">웹 보안, 네트워크 보안, 해킹, 침투 테스트</p>
+                        <div class="category-stats">
+                            <span>📚 22개 강의</span>
+                            <span>👥 6,543명 수강</span>
+                        </div>
+                        <a href="courses.html" class="btn-category">강의 보기</a>
+                    </div>
+                </div>
+
+                <!-- 게임 개발 -->
+                <div class="category-card-large">
+                    <div class="category-icon-large">🎮</div>
+                    <div class="category-content">
+                        <h2>게임 개발</h2>
+                        <p class="category-desc">Unity, Unreal Engine, C#, C++ 게임 개발</p>
+                        <div class="category-stats">
+                            <span>📚 18개 강의</span>
+                            <span>👥 4,987명 수강</span>
+                        </div>
+                        <a href="courses.html" class="btn-category">강의 보기</a>
+                    </div>
+                </div>
+
+                <!-- 블록체인 -->
+                <div class="category-card-large">
+                    <div class="category-icon-large">⛓️</div>
+                    <div class="category-content">
+                        <h2>블록체인</h2>
+                        <p class="category-desc">Ethereum, Solidity, 스마트 컨트랙트, NFT</p>
+                        <div class="category-stats">
+                            <span>📚 15개 강의</span>
+                            <span>👥 3,876명 수강</span>
+                        </div>
+                        <a href="courses.html" class="btn-category">강의 보기</a>
+                    </div>
+                </div>
+
+                <!-- DevOps -->
+                <div class="category-card-large">
+                    <div class="category-icon-large">🔧</div>
+                    <div class="category-content">
+                        <h2>DevOps</h2>
+                        <p class="category-desc">CI/CD, Jenkins, GitLab, 자동화, 모니터링</p>
+                        <div class="category-stats">
+                            <span>📚 20개 강의</span>
+                            <span>👥 5,432명 수강</span>
+                        </div>
+                        <a href="courses.html" class="btn-category">강의 보기</a>
+                    </div>
+                </div>
+
+                <!-- 알고리즘 -->
+                <div class="category-card-large">
+                    <div class="category-icon-large">🧮</div>
+                    <div class="category-content">
+                        <h2>알고리즘</h2>
+                        <p class="category-desc">자료구조, 코딩테스트, 문제해결, 알고리즘 설계</p>
+                        <div class="category-stats">
+                            <span>📚 27개 강의</span>
+                            <span>👥 8,765명 수강</span>
+                        </div>
+                        <a href="courses.html" class="btn-category">강의 보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 추천 학습 경로 -->
+    <section class="learning-path">
+        <div class="container">
+            <h2 class="section-title">추천 학습 경로</h2>
+            <div class="path-grid">
+                <div class="path-card">
+                    <h3>🚀 프론트엔드 개발자</h3>
+                    <div class="path-steps">
+                        <div class="path-step">1. HTML & CSS 기초</div>
+                        <div class="path-step">2. JavaScript 완벽 가이드</div>
+                        <div class="path-step">3. React 마스터클래스</div>
+                        <div class="path-step">4. TypeScript 완벽 가이드</div>
+                    </div>
+                    <button class="btn-path">학습 시작</button>
+                </div>
+
+                <div class="path-card">
+                    <h3>💼 백엔드 개발자</h3>
+                    <div class="path-steps">
+                        <div class="path-step">1. Python 기초</div>
+                        <div class="path-step">2. SQL 데이터베이스</div>
+                        <div class="path-step">3. Node.js 백엔드 개발</div>
+                        <div class="path-step">4. AWS 클라우드</div>
+                    </div>
+                    <button class="btn-path">학습 시작</button>
+                </div>
+
+                <div class="path-card">
+                    <h3>🤖 AI 엔지니어</h3>
+                    <div class="path-steps">
+                        <div class="path-step">1. Python 데이터 분석</div>
+                        <div class="path-step">2. 머신러닝 기초</div>
+                        <div class="path-step">3. 딥러닝 심화</div>
+                        <div class="path-step">4. AI 프로젝트 실전</div>
+                    </div>
+                    <button class="btn-path">학습 시작</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>코딩마스터</h3>
+                    <p>최고의 프로그래밍 강의 플랫폼</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="courses.html">강의 목록</a></li>
+                        <li><a href="categories.html">카테고리</a></li>
+                        <li><a href="about.html">회사 소개</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="about.html">공지사항</a></li>
+                        <li><a href="about.html">문의하기</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>소셜 미디어</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 코딩마스터. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 로그인 모달 -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>로그인</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" placeholder="이메일을 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" placeholder="비밀번호를 입력하세요" required>
+                </div>
+                <button type="submit" class="btn-primary btn-block">로그인</button>
+                <p class="form-footer">계정이 없으신가요? <a href="#">회원가입</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scroll to Top 버튼 -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <!-- jQuery & Custom JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

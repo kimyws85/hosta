@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코딩마스터 - 온라인 강의 플랫폼</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 헤더 & 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><h1>코딩마스터</h1></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="courses.html">강의</a></li>
+                    <li><a href="categories.html">카테고리</a></li>
+                    <li><a href="coding-demo.html">코딩 데모</a></li>
+                    <li><a href="about.html">소개</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+                <div class="nav-btn">
+                    <button class="btn-primary" id="loginBtn">로그인</button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="fade-in">당신의 꿈을 현실로</h2>
+                <p class="fade-in delay-1">최고의 강사진과 함께하는 프로그래밍 강의</p>
+                <button class="btn-large fade-in delay-2" id="startBtn">시작하기</button>
+            </div>
+            <div class="hero-image fade-in delay-3">
+                <div class="code-animation">
+                    <div class="code-line"></div>
+                    <div class="code-line"></div>
+                    <div class="code-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 특징 섹션 -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">왜 코딩마스터를 선택해야 하나요?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>전문 강사진</h3>
+                    <p>업계 최고의 전문가들이 직접 만든 고품질 강의</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>평생 수강</h3>
+                    <p>한 번 구매하면 평생 무제한으로 수강 가능</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>언제 어디서나</h3>
+                    <p>PC, 태블릿, 모바일 모든 기기에서 학습</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>실시간 Q&A</h3>
+                    <p>강사와 수강생들과 함께하는 커뮤니티</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 인기 강의 미리보기 -->
+    <section class="courses-preview">
+        <div class="container">
+            <h2 class="section-title">인기 강의</h2>
+            <div class="preview-grid">
+                <div class="course-card">
+                    <div class="course-image">
+                        <div class="course-badge">베스트셀러</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>JavaScript 완벽 가이드</h3>
+                        <p>초보자부터 고급까지 완벽하게 마스터하는 JavaScript</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★★ 4.9</span>
+                            <span class="students">1,234명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩45,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <div class="course-badge">신규</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>React 마스터클래스</h3>
+                        <p>모던 웹 개발의 필수, React를 처음부터 끝까지</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★★ 4.8</span>
+                            <span class="students">892명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩55,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <div class="course-badge">인기</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Python 데이터 분석</h3>
+                        <p>데이터 과학자로 가는 첫걸음, Python 완전 정복</p>
+                        <div class="course-info">
+                            <span class="rating">★★★★☆ 4.7</span>
+                            <span class="students">2,156명</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price">₩50,000</span>
+                            <button class="btn-enroll">수강신청</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="courses.html" class="btn-large">모든 강의 보기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>코딩마스터</h3>
+                    <p>최고의 프로그래밍 강의 플랫폼</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="courses.html">강의 목록</a></li>
+                        <li><a href="categories.html">카테고리</a></li>
+                        <li><a href="about.html">회사 소개</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="about.html">공지사항</a></li>
+                        <li><a href="about.html">문의하기</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>소셜 미디어</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 코딩마스터. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 로그인 모달 -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>로그인</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" placeholder="이메일을 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" placeholder="비밀번호를 입력하세요" required>
+                </div>
+                <button type="submit" class="btn-primary btn-block">로그인</button>
+                <p class="form-footer">계정이 없으신가요? <a href="#">회원가입</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scroll to Top 버튼 -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <!-- jQuery & Custom JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
