@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - SBS콜마</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="header">
+        <div class="header-inner">
+            <h1 class="logo"><a href="index.html">SBS콜마</a></h1>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="products.html" class="active">Product</a></li>
+                    <li><a href="brand.html">Brand</a></li>
+                    <li><a href="review.html">Review</a></li>
+                    <li><a href="cs.html">Customer Service</a></li>
+                </ul>
+            </nav>
+            <div class="header-utils">
+                <button class="search-btn">Search</button>
+                <a href="#" class="mypage">My</a>
+                <a href="#" class="cart">Cart</a>
+            </div>
+        </div>
+        <div class="search-area">
+            <input type="text" placeholder="제품을 검색하세요">
+            <button class="close-search">닫기</button>
+        </div>
+    </header>
+
+    <section class="sub-visual" style="background-image: url('https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=1600&h=400&fit=crop');">
+        <div class="sub-visual-overlay"></div>
+        <div class="sub-visual-text">
+            <h2>Products</h2>
+            <p>SBS콜마의 프리미엄 제품을 만나보세요</p>
+        </div>
+    </section>
+
+    <section class="product-filter">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-category="all">전체</button>
+                <button class="tab-btn" data-category="skincare">스킨케어</button>
+                <button class="tab-btn" data-category="makeup">메이크업</button>
+                <button class="tab-btn" data-category="fragrance">프래그런스</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-list">
+        <div class="container">
+            <div class="product-grid">
+                <div class="product-item" data-category="skincare">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500&h=500&fit=crop" alt="세럼">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Radiance Serum</h3>
+                    <p class="description">빛나는 피부를 위한 고농축 세럼</p>
+                    <p class="price">98,000원</p>
+                </div>
+
+                <div class="product-item" data-category="skincare">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=500&h=500&fit=crop" alt="크림">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Hydra Cream</h3>
+                    <p class="description">24시간 깊은 수분 크림</p>
+                    <p class="price">125,000원</p>
+                </div>
+
+                <div class="product-item" data-category="skincare">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=500&h=500&fit=crop" alt="토너">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Essential Toner</h3>
+                    <p class="description">피부결 정돈 토너</p>
+                    <p class="price">68,000원</p>
+                </div>
+
+                <div class="product-item" data-category="skincare">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&h=500&fit=crop" alt="아이크림">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Eye Restore</h3>
+                    <p class="description">탄력있는 눈가를 위한 아이크림</p>
+                    <p class="price">89,000원</p>
+                </div>
+
+                <div class="product-item" data-category="skincare">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1629198735700-f310f45369c3?w=500&h=500&fit=crop" alt="선크림">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Sun Protection SPF50+</h3>
+                    <p class="description">강력한 자외선 차단</p>
+                    <p class="price">55,000원</p>
+                </div>
+
+                <div class="product-item" data-category="makeup">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?w=500&h=500&fit=crop" alt="쿠션">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Glow Cushion</h3>
+                    <p class="description">촉촉한 광채 쿠션</p>
+                    <p class="price">62,000원</p>
+                </div>
+
+                <div class="product-item" data-category="makeup">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=500&h=500&fit=crop" alt="립스틱">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Velvet Lipstick</h3>
+                    <p class="description">부드러운 벨벳 립스틱</p>
+                    <p class="price">38,000원</p>
+                </div>
+
+                <div class="product-item" data-category="makeup">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500&h=500&fit=crop" alt="아이섀도우">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Shimmer Palette</h3>
+                    <p class="description">12색 아이섀도우 팔레트</p>
+                    <p class="price">72,000원</p>
+                </div>
+
+                <div class="product-item" data-category="fragrance">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=500&h=500&fit=crop" alt="향수">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Eternal Rose</h3>
+                    <p class="description">로즈 플로럴 향수</p>
+                    <p class="price">145,000원</p>
+                </div>
+
+                <div class="product-item" data-category="skincare">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&h=500&fit=crop" alt="앰플">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Vitamin C Ampoule</h3>
+                    <p class="description">비타민C 브라이트닝 앰플</p>
+                    <p class="price">85,000원</p>
+                </div>
+
+                <div class="product-item" data-category="skincare">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&h=500&fit=crop" alt="에센스">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Hyaluronic Essence</h3>
+                    <p class="description">히알루론산 수분 에센스</p>
+                    <p class="price">72,000원</p>
+                </div>
+
+                <div class="product-item" data-category="skincare">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500&h=500&fit=crop" alt="나이트크림">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Peptide Night Cream</h3>
+                    <p class="description">펩타이드 나이트 크림</p>
+                    <p class="price">135,000원</p>
+                </div>
+
+                <div class="product-item" data-category="skincare">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1556229010-aa3e402fc36f?w=500&h=500&fit=crop" alt="미스트">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Soothing Mist</h3>
+                    <p class="description">진정 수분 미스트</p>
+                    <p class="price">42,000원</p>
+                </div>
+
+                <div class="product-item" data-category="skincare">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1570554886111-e80fcca6a029?w=500&h=500&fit=crop" alt="클렌저">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Deep Cleansing Foam</h3>
+                    <p class="description">딥 클렌징 폼</p>
+                    <p class="price">38,000원</p>
+                </div>
+
+                <div class="product-item" data-category="makeup">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=500&h=500&fit=crop" alt="파운데이션">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Flawless Foundation</h3>
+                    <p class="description">롱래스팅 파운데이션</p>
+                    <p class="price">58,000원</p>
+                </div>
+
+                <div class="product-item" data-category="makeup">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=500&h=500&fit=crop" alt="아이라이너">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Perfect Liner</h3>
+                    <p class="description">워터프루프 아이라이너</p>
+                    <p class="price">28,000원</p>
+                </div>
+
+                <div class="product-item" data-category="makeup">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1583241800698-4f683d46e9a0?w=500&h=500&fit=crop" alt="블러셔">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Natural Blush</h3>
+                    <p class="description">내츄럴 블러셔</p>
+                    <p class="price">35,000원</p>
+                </div>
+
+                <div class="product-item" data-category="makeup">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=500&h=500&fit=crop" alt="마스카라">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Volume Mascara</h3>
+                    <p class="description">볼륨 마스카라</p>
+                    <p class="price">32,000원</p>
+                </div>
+
+                <div class="product-item" data-category="fragrance">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=500&h=500&fit=crop" alt="향수2">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Ocean Breeze</h3>
+                    <p class="description">시트러스 우디 향수</p>
+                    <p class="price">155,000원</p>
+                </div>
+
+                <div class="product-item" data-category="fragrance">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&h=500&fit=crop" alt="바디로션">
+                        <div class="product-overlay">
+                            <button class="btn-detail">자세히 보기</button>
+                        </div>
+                    </div>
+                    <h3>Perfume Body Lotion</h3>
+                    <p class="description">향기나는 바디 로션</p>
+                    <p class="price">48,000원</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-detail-banner">
+        <div class="banner-text">
+            <h2>피부 고민 맞춤 솔루션</h2>
+            <p>전문가가 추천하는 당신만의 스킨케어 루틴을 찾아보세요</p>
+            <a href="#" class="btn-consultation">무료 피부 상담받기</a>
+        </div>
+    </section>
+
+    <section class="product-ingredients">
+        <div class="container">
+            <h2 class="section-title">SBS콜마의 특별한 성분</h2>
+            <p class="section-subtitle">자연에서 온 순수한 원료</p>
+            <div class="ingredient-grid">
+                <div class="ingredient-item">
+                    <div class="ingredient-icon">
+                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=200&h=200&fit=crop" alt="비타민C">
+                    </div>
+                    <h3>Vitamin C</h3>
+                    <p>강력한 항산화 작용으로 피부 톤을 밝혀주고 잡티를 완화시킵니다.</p>
+                </div>
+                <div class="ingredient-item">
+                    <div class="ingredient-icon">
+                        <img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=200&h=200&fit=crop" alt="히알루론산">
+                    </div>
+                    <h3>Hyaluronic Acid</h3>
+                    <p>자체 무게의 1000배 수분을 끌어당겨 깊은 보습을 제공합니다.</p>
+                </div>
+                <div class="ingredient-item">
+                    <div class="ingredient-icon">
+                        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=200&h=200&fit=crop" alt="펩타이드">
+                    </div>
+                    <h3>Peptide Complex</h3>
+                    <p>피부 탄력을 개선하고 주름을 완화하는 안티에이징 성분입니다.</p>
+                </div>
+                <div class="ingredient-item">
+                    <div class="ingredient-icon">
+                        <img src="https://images.unsplash.com/photo-1515688594390-b649af70d282?w=200&h=200&fit=crop" alt="센텔라">
+                    </div>
+                    <h3>Centella Asiatica</h3>
+                    <p>민감한 피부를 진정시키고 피부 재생을 돕는 천연 성분입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-usage">
+        <div class="container">
+            <h2 class="section-title">제품 사용 가이드</h2>
+            <div class="usage-steps">
+                <div class="usage-step">
+                    <div class="step-number">01</div>
+                    <h3>클렌징</h3>
+                    <p>미온수로 얼굴을 적신 후, 클렌징 폼을 거품 내어 부드럽게 마사지하며 씻어냅니다.</p>
+                </div>
+                <div class="usage-step">
+                    <div class="step-number">02</div>
+                    <h3>토너</h3>
+                    <p>화장솜 또는 손바닥에 토너를 덜어 피부결을 따라 부드럽게 펴 발라줍니다.</p>
+                </div>
+                <div class="usage-step">
+                    <div class="step-number">03</div>
+                    <h3>에센스 / 세럼</h3>
+                    <p>적당량을 덜어 얼굴 전체에 고르게 펴 바르고 가볍게 두드려 흡수시킵니다.</p>
+                </div>
+                <div class="usage-step">
+                    <div class="step-number">04</div>
+                    <h3>아이크림</h3>
+                    <p>눈가에 소량을 찍어 바르고 안쪽에서 바깥쪽으로 부드럽게 두드려 흡수시킵니다.</p>
+                </div>
+                <div class="usage-step">
+                    <div class="step-number">05</div>
+                    <h3>크림 / 로션</h3>
+                    <p>적당량을 얼굴 전체에 펴 바르고 피부 온도로 녹여 흡수시킵니다.</p>
+                </div>
+                <div class="usage-step">
+                    <div class="step-number">06</div>
+                    <h3>선크림 (아침)</h3>
+                    <p>외출 20-30분 전, 충분한 양을 얼굴과 목에 고르게 펴 발라줍니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-info">
+                <h3>SBS콜마</h3>
+                <p>주식회사 SBS콜마 | 대표이사: 김미라</p>
+                <p>서울특별시 강남구 테헤란로 123 SBS콜마빌딩</p>
+                <p>사업자등록번호: 123-45-67890 | 통신판매업신고: 2024-서울강남-0001</p>
+                <p>고객센터: 1588-0000 (평일 09:00-18:00)</p>
+            </div>
+            <div class="footer-menu">
+                <a href="#">이용약관</a>
+                <a href="#"><strong>개인정보처리방침</strong></a>
+                <a href="#">입점/제휴문의</a>
+            </div>
+            <div class="footer-sns">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2024 SBS콜마. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

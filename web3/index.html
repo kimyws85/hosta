@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBS콜마 - Luxury Cosmetics</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="header">
+        <div class="header-inner">
+            <h1 class="logo"><a href="index.html">SBS콜마</a></h1>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="products.html">Product</a></li>
+                    <li><a href="brand.html">Brand</a></li>
+                    <li><a href="review.html">Review</a></li>
+                    <li><a href="cs.html">Customer Service</a></li>
+                </ul>
+            </nav>
+            <div class="header-utils">
+                <button class="search-btn">Search</button>
+                <a href="#" class="mypage">My</a>
+                <a href="#" class="cart">Cart</a>
+            </div>
+        </div>
+        <div class="search-area">
+            <input type="text" placeholder="제품을 검색하세요">
+            <button class="close-search">닫기</button>
+        </div>
+    </header>
+
+    <section class="main-visual">
+        <div class="swiper mainSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1600&h=800&fit=crop" alt="메인배너1">
+                    <div class="slide-text">
+                        <h2>Radiance Beyond Beauty</h2>
+                        <p>프리미엄 스킨케어로 당신의 피부에 빛을 더하세요</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=1600&h=800&fit=crop" alt="메인배너2">
+                    <div class="slide-text">
+                        <h2>Nature Meets Science</h2>
+                        <p>자연과 과학의 완벽한 조화</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1590439471364-192aa70c0b53?w=1600&h=800&fit=crop" alt="메인배너3">
+                    <div class="slide-text">
+                        <h2>Timeless Elegance</h2>
+                        <p>시간을 초월한 아름다움</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="product-category">
+        <div class="container">
+            <h2 class="section-title">Discover Our Collection</h2>
+            <div class="category-grid">
+                <div class="category-item">
+                    <a href="products.html">
+                        <div class="category-img">
+                            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=600&fit=crop" alt="스킨케어">
+                        </div>
+                        <h3>Skincare</h3>
+                        <p>피부 본연의 아름다움을 깨우다</p>
+                    </a>
+                </div>
+                <div class="category-item">
+                    <a href="products.html">
+                        <div class="category-img">
+                            <img src="https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=600&h=600&fit=crop" alt="메이크업">
+                        </div>
+                        <h3>Makeup</h3>
+                        <p>당신만의 컬러를 찾아보세요</p>
+                    </a>
+                </div>
+                <div class="category-item">
+                    <a href="products.html">
+                        <div class="category-img">
+                            <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&h=600&fit=crop" alt="향수">
+                        </div>
+                        <h3>Fragrance</h3>
+                        <p>감각적인 향기의 여정</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="best-products">
+        <div class="container">
+            <h2 class="section-title">Best Sellers</h2>
+            <div class="swiper productSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500&h=500&fit=crop" alt="세럼">
+                            </div>
+                            <h4>Radiance Serum</h4>
+                            <p class="price">98,000원</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=500&h=500&fit=crop" alt="크림">
+                            </div>
+                            <h4>Hydra Cream</h4>
+                            <p class="price">125,000원</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=500&h=500&fit=crop" alt="토너">
+                            </div>
+                            <h4>Essential Toner</h4>
+                            <p class="price">68,000원</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&h=500&fit=crop" alt="아이크림">
+                            </div>
+                            <h4>Eye Restore</h4>
+                            <p class="price">89,000원</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1629198735700-f310f45369c3?w=500&h=500&fit=crop" alt="선크림">
+                            </div>
+                            <h4>Sun Protection SPF50+</h4>
+                            <p class="price">55,000원</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brand-story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>Your skin deserves more than just coverage</h2>
+                    <p>SBS콜마는 단순한 화장품을 넘어, 당신의 피부가 가진 본연의 빛을 발견하는 여정입니다.</p>
+                    <p>자연에서 온 순수한 성분과 최첨단 과학 기술의 만남으로 피부 깊숙이 영양을 전달하고,
+                    시간이 지날수록 더욱 건강하고 아름다운 피부로 가꾸어 드립니다.</p>
+                    <a href="brand.html" class="btn-more">브랜드 스토리</a>
+                </div>
+                <div class="story-img">
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&h=600&fit=crop" alt="브랜드스토리">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="new-arrivals">
+        <div class="container">
+            <h2 class="section-title">New Arrivals</h2>
+            <p class="section-subtitle">가장 먼저 만나는 신상품</p>
+            <div class="new-product-grid">
+                <div class="new-product-item">
+                    <div class="new-badge">NEW</div>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&h=500&fit=crop" alt="신상품1">
+                    </div>
+                    <h4>Vitamin C Brightening Ampoule</h4>
+                    <p class="description">비타민C 10% 고농축 브라이트닝 앰플</p>
+                    <p class="price">85,000원</p>
+                </div>
+                <div class="new-product-item">
+                    <div class="new-badge">NEW</div>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&h=500&fit=crop" alt="신상품2">
+                    </div>
+                    <h4>Peptide Firming Night Cream</h4>
+                    <p class="description">펩타이드 탄력 나이트 크림</p>
+                    <p class="price">145,000원</p>
+                </div>
+                <div class="new-product-item">
+                    <div class="new-badge">NEW</div>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&h=500&fit=crop" alt="신상품3">
+                    </div>
+                    <h4>Hyaluronic Acid Essence</h4>
+                    <p class="description">히알루론산 수분 에센스</p>
+                    <p class="price">72,000원</p>
+                </div>
+                <div class="new-product-item">
+                    <div class="new-badge">NEW</div>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500&h=500&fit=crop" alt="신상품4">
+                    </div>
+                    <h4>Retinol Youth Renewal Serum</h4>
+                    <p class="description">레티놀 안티에이징 세럼</p>
+                    <p class="price">115,000원</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="promotion-banner">
+        <div class="banner-content">
+            <h2>Special Event</h2>
+            <p>11월 한정 프로모션</p>
+            <h3>전 제품 최대 30% 할인</h3>
+            <p class="event-period">2024.11.01 - 11.30</p>
+            <a href="products.html" class="btn-event">지금 쇼핑하기</a>
+        </div>
+    </section>
+
+    <section class="skin-type-recommend">
+        <div class="container">
+            <h2 class="section-title">피부 타입별 추천 제품</h2>
+            <p class="section-subtitle">당신의 피부에 맞는 솔루션을 찾아보세요</p>
+            <div class="skin-type-tabs">
+                <button class="skin-tab active" data-skin="dry">건성 피부</button>
+                <button class="skin-tab" data-skin="oily">지성 피부</button>
+                <button class="skin-tab" data-skin="combination">복합성 피부</button>
+                <button class="skin-tab" data-skin="sensitive">민감성 피부</button>
+            </div>
+            <div class="skin-product-list">
+                <div class="skin-products active" data-skin="dry">
+                    <div class="skin-recommend-grid">
+                        <div class="recommend-item">
+                            <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=300&h=300&fit=crop" alt="건성제품1">
+                            <h4>Intensive Hydration Cream</h4>
+                            <p>125,000원</p>
+                        </div>
+                        <div class="recommend-item">
+                            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&h=300&fit=crop" alt="건성제품2">
+                            <h4>Rich Nourishing Oil</h4>
+                            <p>98,000원</p>
+                        </div>
+                        <div class="recommend-item">
+                            <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=300&h=300&fit=crop" alt="건성제품3">
+                            <h4>Moisture Barrier Serum</h4>
+                            <p>89,000원</p>
+                        </div>
+                    </div>
+                    <p class="skin-description">건성 피부는 충분한 수분 공급과 영양이 필요합니다. 오일이 함유된 제품으로 피부 장벽을 강화하세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="customer-review">
+        <div class="container">
+            <h2 class="section-title">Customer Review</h2>
+            <div class="swiper reviewSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <div class="review-img">
+                                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=400&fit=crop" alt="리뷰이미지">
+                            </div>
+                            <div class="review-text">
+                                <div class="star">★★★★★</div>
+                                <p>"3주 사용 후 피부결이 눈에 띄게 좋아졌어요. 화장도 훨씬 잘 먹어요!"</p>
+                                <span class="reviewer">김** 고객님</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <div class="review-img">
+                                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop" alt="리뷰이미지">
+                            </div>
+                            <div class="review-text">
+                                <div class="star">★★★★★</div>
+                                <p>"민감성 피부인데 자극 없이 사용할 수 있어서 너무 좋습니다."</p>
+                                <span class="reviewer">박** 고객님</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <div class="review-img">
+                                <img src="https://images.unsplash.com/photo-1515688594390-b649af70d282?w=400&h=400&fit=crop" alt="리뷰이미지">
+                            </div>
+                            <div class="review-text">
+                                <div class="star">★★★★★</div>
+                                <p>"향도 좋고 발림성도 좋아요. 재구매 의사 100%입니다!"</p>
+                                <span class="reviewer">이** 고객님</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <div class="review-img">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" alt="리뷰이미지">
+                            </div>
+                            <div class="review-text">
+                                <div class="star">★★★★★</div>
+                                <p>"세럼 사용 후 피부 톤이 밝아지고 촉촉해졌어요!"</p>
+                                <span class="reviewer">최** 고객님</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <div class="review-img">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop" alt="리뷰이미지">
+                            </div>
+                            <div class="review-text">
+                                <div class="star">★★★★★</div>
+                                <p>"포장도 고급스럽고 제품도 훌륭해요. 선물용으로도 좋습니다!"</p>
+                                <span class="reviewer">정** 고객님</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="beauty-guide">
+        <div class="container">
+            <h2 class="section-title">Beauty Guide</h2>
+            <p class="section-subtitle">SBS콜마가 알려주는 뷰티 팁</p>
+            <div class="guide-grid">
+                <div class="guide-item">
+                    <div class="guide-img">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=400&fit=crop" alt="가이드1">
+                    </div>
+                    <div class="guide-text">
+                        <span class="guide-category">Skincare Routine</span>
+                        <h3>올바른 스킨케어 루틴</h3>
+                        <p>아침과 저녁, 피부 타입에 맞는 스킨케어 순서를 알아보세요. 클렌징부터 마무리까지 단계별로 안내합니다.</p>
+                        <a href="#" class="guide-link">자세히 보기 →</a>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <div class="guide-img">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=400&fit=crop" alt="가이드2">
+                    </div>
+                    <div class="guide-text">
+                        <span class="guide-category">Ingredient</span>
+                        <h3>성분별 효능 알아보기</h3>
+                        <p>비타민C, 레티놀, 나이아신아마이드 등 대표 성분의 효능과 올바른 사용법을 소개합니다.</p>
+                        <a href="#" class="guide-link">자세히 보기 →</a>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <div class="guide-img">
+                        <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=600&h=400&fit=crop" alt="가이드3">
+                    </div>
+                    <div class="guide-text">
+                        <span class="guide-category">Season Care</span>
+                        <h3>계절별 피부 관리법</h3>
+                        <p>봄, 여름, 가을, 겨울 각 계절에 맞는 피부 관리 방법과 추천 제품을 확인하세요.</p>
+                        <a href="#" class="guide-link">자세히 보기 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="instagram-feed">
+        <div class="container">
+            <h2 class="section-title">Instagram</h2>
+            <p class="section-subtitle">@sbscolmar_official</p>
+            <div class="insta-grid">
+                <div class="insta-item">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop" alt="인스타1">
+                    <div class="insta-overlay">
+                        <span>♥ 2,456</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?w=400&h=400&fit=crop" alt="인스타2">
+                    <div class="insta-overlay">
+                        <span>♥ 3,128</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=400&h=400&fit=crop" alt="인스타3">
+                    <div class="insta-overlay">
+                        <span>♥ 1,892</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop" alt="인스타4">
+                    <div class="insta-overlay">
+                        <span>♥ 2,741</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop" alt="인스타5">
+                    <div class="insta-overlay">
+                        <span>♥ 3,567</span>
+                    </div>
+                </div>
+                <div class="insta-item">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop" alt="인스타6">
+                    <div class="insta-overlay">
+                        <span>♥ 4,123</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn-insta">Instagram 팔로우하기</a>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>뉴스레터 구독</h2>
+                <p>신상품 출시 소식과 특별 할인 혜택을 가장 먼저 받아보세요</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="이메일 주소를 입력하세요" required>
+                    <button type="submit">구독하기</button>
+                </form>
+                <p class="newsletter-notice">* 언제든지 구독을 취소할 수 있습니다</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-info">
+                <h3>SBS콜마</h3>
+                <p>주식회사 SBS콜마 | 대표이사: 김미라</p>
+                <p>서울특별시 강남구 테헤란로 123 SBS콜마빌딩</p>
+                <p>사업자등록번호: 123-45-67890 | 통신판매업신고: 2024-서울강남-0001</p>
+                <p>고객센터: 1588-0000 (평일 09:00-18:00)</p>
+            </div>
+            <div class="footer-menu">
+                <a href="#">이용약관</a>
+                <a href="#"><strong>개인정보처리방침</strong></a>
+                <a href="#">입점/제휴문의</a>
+            </div>
+            <div class="footer-sns">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2024 SBS콜마. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

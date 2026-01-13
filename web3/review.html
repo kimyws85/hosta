@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review - SBS콜마</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="header">
+        <div class="header-inner">
+            <h1 class="logo"><a href="index.html">SBS콜마</a></h1>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="products.html">Product</a></li>
+                    <li><a href="brand.html">Brand</a></li>
+                    <li><a href="review.html" class="active">Review</a></li>
+                    <li><a href="cs.html">Customer Service</a></li>
+                </ul>
+            </nav>
+            <div class="header-utils">
+                <button class="search-btn">Search</button>
+                <a href="#" class="mypage">My</a>
+                <a href="#" class="cart">Cart</a>
+            </div>
+        </div>
+        <div class="search-area">
+            <input type="text" placeholder="제품을 검색하세요">
+            <button class="close-search">닫기</button>
+        </div>
+    </header>
+
+    <section class="sub-visual" style="background-image: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1600&h=400&fit=crop');">
+        <div class="sub-visual-overlay"></div>
+        <div class="sub-visual-text">
+            <h2>Customer Review</h2>
+            <p>고객님들의 생생한 사용 후기</p>
+        </div>
+    </section>
+
+    <section class="review-stats">
+        <div class="container">
+            <div class="stats-box">
+                <div class="stat-item">
+                    <h3>4.8</h3>
+                    <p>평균 평점</p>
+                    <div class="star">★★★★★</div>
+                </div>
+                <div class="stat-item">
+                    <h3>12,547</h3>
+                    <p>전체 리뷰 수</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>재구매율</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="review-list">
+        <div class="container">
+            <div class="review-filter">
+                <select id="reviewSort">
+                    <option value="recent">최신순</option>
+                    <option value="rating">평점순</option>
+                    <option value="helpful">도움순</option>
+                </select>
+            </div>
+
+            <div class="review-items">
+                <div class="review-box">
+                    <div class="review-header">
+                        <div class="user-info">
+                            <span class="username">김**</span>
+                            <span class="date">2024.11.15</span>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                    <div class="review-product">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=100&h=100&fit=crop" alt="제품">
+                        <span>Radiance Serum</span>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-images">
+                            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=400&fit=crop" alt="리뷰이미지">
+                            <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop" alt="리뷰이미지">
+                        </div>
+                        <p>3주 정도 사용했는데 확실히 피부 톤이 밝아진 느낌이에요. 발림성도 좋고 끈적임 없이 촉촉해서
+                        아침저녁으로 잘 사용하고 있습니다. 화장도 훨씬 잘 먹어요. 재구매 의사 100%입니다!</p>
+                    </div>
+                    <div class="review-footer">
+                        <button class="btn-helpful">도움돼요 <span>124</span></button>
+                    </div>
+                </div>
+
+                <div class="review-box">
+                    <div class="review-header">
+                        <div class="user-info">
+                            <span class="username">박**</span>
+                            <span class="date">2024.11.10</span>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                    <div class="review-product">
+                        <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=100&h=100&fit=crop" alt="제품">
+                        <span>Hydra Cream</span>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-images">
+                            <img src="https://images.unsplash.com/photo-1515688594390-b649af70d282?w=400&h=400&fit=crop" alt="리뷰이미지">
+                        </div>
+                        <p>민감성 피부라 화장품 고르기가 정말 힘든데, 이 제품은 자극 없이 사용할 수 있어서 너무 좋아요.
+                        수분감도 오래 지속되고 피부가 한결 편안해진 느낌입니다. 강추합니다!</p>
+                    </div>
+                    <div class="review-footer">
+                        <button class="btn-helpful">도움돼요 <span>87</span></button>
+                    </div>
+                </div>
+
+                <div class="review-box">
+                    <div class="review-header">
+                        <div class="user-info">
+                            <span class="username">이**</span>
+                            <span class="date">2024.11.08</span>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                    <div class="review-product">
+                        <img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=100&h=100&fit=crop" alt="제품">
+                        <span>Essential Toner</span>
+                    </div>
+                    <div class="review-content">
+                        <p>토너인데 세럼처럼 촉촉해요. 향도 은은하고 좋고, 피부결이 정리되는 느낌이 확실합니다.
+                        흡수도 빠르고 다음 스킨케어 제품도 잘 먹는 것 같아요. 재구매했어요!</p>
+                    </div>
+                    <div class="review-footer">
+                        <button class="btn-helpful">도움돼요 <span>65</span></button>
+                    </div>
+                </div>
+
+                <div class="review-box">
+                    <div class="review-header">
+                        <div class="user-info">
+                            <span class="username">최**</span>
+                            <span class="date">2024.11.05</span>
+                        </div>
+                        <div class="rating">★★★★☆</div>
+                    </div>
+                    <div class="review-product">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=100&h=100&fit=crop" alt="제품">
+                        <span>Eye Restore</span>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-images">
+                            <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=400&fit=crop" alt="리뷰이미지">
+                        </div>
+                        <p>아이크림 특유의 묵직한 텍스처가 아니라 가볍게 흡수되는 게 좋았어요.
+                        다크서클이 조금 개선된 것 같고, 눈가가 건조하지 않아요. 꾸준히 사용해볼 예정입니다.</p>
+                    </div>
+                    <div class="review-footer">
+                        <button class="btn-helpful">도움돼요 <span>52</span></button>
+                    </div>
+                </div>
+
+                <div class="review-box">
+                    <div class="review-header">
+                        <div class="user-info">
+                            <span class="username">정**</span>
+                            <span class="date">2024.11.02</span>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                    <div class="review-product">
+                        <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?w=100&h=100&fit=crop" alt="제품">
+                        <span>Glow Cushion</span>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-images">
+                            <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=400&h=400&fit=crop" alt="리뷰이미지">
+                        </div>
+                        <p>커버력도 적당하고 광이 자연스럽게 나서 좋아요.
+                        지속력도 괜찮은 편이고 무엇보다 화장이 들뜨지 않고 밀착력이 좋습니다. 색상도 다양해서 선택하기 좋았어요!</p>
+                    </div>
+                    <div class="review-footer">
+                        <button class="btn-helpful">도움돼요 <span>98</span></button>
+                    </div>
+                </div>
+
+                <div class="review-box">
+                    <div class="review-header">
+                        <div class="user-info">
+                            <span class="username">한**</span>
+                            <span class="date">2024.10.28</span>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                    <div class="review-product">
+                        <img src="https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=100&h=100&fit=crop" alt="제품">
+                        <span>Velvet Lipstick</span>
+                    </div>
+                    <div class="review-content">
+                        <p>발색 진짜 예쁘고 촉촉해서 입술이 안 건조해요.
+                        벨벳 매트인데 텍스처가 부드러워서 바르기도 편하고 입술에 잘 밀착돼요. 색상 추가로 더 구매할 예정입니다!</p>
+                    </div>
+                    <div class="review-footer">
+                        <button class="btn-helpful">도움돼요 <span>73</span></button>
+                    </div>
+                </div>
+            </div>
+
+                <div class="review-box">
+                    <div class="review-header">
+                        <div class="user-info">
+                            <span class="username">윤**</span>
+                            <span class="date">2024.10.25</span>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                    <div class="review-product">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=100&h=100&fit=crop" alt="제품">
+                        <span>Vitamin C Ampoule</span>
+                    </div>
+                    <div class="review-content">
+                        <p>비타민C 앰플인데 자극 전혀 없어요. 저녁에 바르고 자면 아침에 피부가 화사해져요.
+                        다크서클도 좀 옅어진 것 같고 전반적으로 피부톤이 밝아졌습니다!</p>
+                    </div>
+                    <div class="review-footer">
+                        <button class="btn-helpful">도움돼요 <span>45</span></button>
+                    </div>
+                </div>
+
+                <div class="review-box">
+                    <div class="review-header">
+                        <div class="user-info">
+                            <span class="username">강**</span>
+                            <span class="date">2024.10.22</span>
+                        </div>
+                        <div class="rating">★★★★☆</div>
+                    </div>
+                    <div class="review-product">
+                        <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=100&h=100&fit=crop" alt="제품">
+                        <span>Hyaluronic Essence</span>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-images">
+                            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=400&fit=crop" alt="리뷰이미지">
+                        </div>
+                        <p>수분 에센스 찾다가 구매했는데 보습력 정말 좋아요. 텍스처도 가볍고 흡수도 빨라서
+                        다음 단계 제품 바르기 편합니다. 가격대비 용량도 넉넉해요!</p>
+                    </div>
+                    <div class="review-footer">
+                        <button class="btn-helpful">도움돼요 <span>58</span></button>
+                    </div>
+                </div>
+
+                <div class="review-box">
+                    <div class="review-header">
+                        <div class="user-info">
+                            <span class="username">조**</span>
+                            <span class="date">2024.10.18</span>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                    <div class="review-product">
+                        <img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?w=100&h=100&fit=crop" alt="제품">
+                        <span>Glow Cushion</span>
+                    </div>
+                    <div class="review-content">
+                        <p>쿠션 여러 개 써봤는데 이게 제일 좋았어요. 광은 과하지 않게 은은하고
+                        커버력은 충분해서 베이스 따로 안 발라도 될 정도예요!</p>
+                    </div>
+                    <div class="review-footer">
+                        <button class="btn-helpful">도움돼요 <span>91</span></button>
+                    </div>
+                </div>
+
+                <div class="review-box">
+                    <div class="review-header">
+                        <div class="user-info">
+                            <span class="username">임**</span>
+                            <span class="date">2024.10.15</span>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                    <div class="review-product">
+                        <img src="https://images.unsplash.com/photo-1629198735700-f310f45369c3?w=100&h=100&fit=crop" alt="제품">
+                        <span>Sun Protection SPF50+</span>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-images">
+                            <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=400&h=400&fit=crop" alt="리뷰이미지">
+                            <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=400&h=400&fit=crop" alt="리뷰이미지">
+                        </div>
+                        <p>선크림 특유의 백탁 현상 전혀 없고 촉촉해서 좋아요.
+                        메이크업 전 베이스로 써도 밀림 없고 톤업 효과도 있어서 애용하고 있습니다!</p>
+                    </div>
+                    <div class="review-footer">
+                        <button class="btn-helpful">도움돼요 <span>102</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">다음</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="photo-review">
+        <div class="container">
+            <h2 class="section-title">포토 리뷰</h2>
+            <p class="section-subtitle">고객님들이 직접 남긴 생생한 사진</p>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=400&fit=crop" alt="포토리뷰">
+                    <div class="photo-overlay">
+                        <p class="photo-product">Radiance Serum</p>
+                        <p class="photo-rating">★★★★★</p>
+                    </div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop" alt="포토리뷰">
+                    <div class="photo-overlay">
+                        <p class="photo-product">Hydra Cream</p>
+                        <p class="photo-rating">★★★★★</p>
+                    </div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=400&fit=crop" alt="포토리뷰">
+                    <div class="photo-overlay">
+                        <p class="photo-product">Essential Toner</p>
+                        <p class="photo-rating">★★★★★</p>
+                    </div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=400&h=400&fit=crop" alt="포토리뷰">
+                    <div class="photo-overlay">
+                        <p class="photo-product">Glow Cushion</p>
+                        <p class="photo-rating">★★★★★</p>
+                    </div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=400&h=400&fit=crop" alt="포토리뷰">
+                    <div class="photo-overlay">
+                        <p class="photo-product">Sun Protection</p>
+                        <p class="photo-rating">★★★★☆</p>
+                    </div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1515688594390-b649af70d282?w=400&h=400&fit=crop" alt="포토리뷰">
+                    <div class="photo-overlay">
+                        <p class="photo-product">Velvet Lipstick</p>
+                        <p class="photo-rating">★★★★★</p>
+                    </div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=400&fit=crop" alt="포토리뷰">
+                    <div class="photo-overlay">
+                        <p class="photo-product">Eye Restore</p>
+                        <p class="photo-rating">★★★★★</p>
+                    </div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" alt="포토리뷰">
+                    <div class="photo-overlay">
+                        <p class="photo-product">Vitamin C Ampoule</p>
+                        <p class="photo-rating">★★★★★</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="best-reviewers">
+        <div class="container">
+            <h2 class="section-title">이달의 베스트 리뷰어</h2>
+            <p class="section-subtitle">소중한 리뷰를 남겨주신 고객님들께 감사드립니다</p>
+            <div class="best-reviewer-grid">
+                <div class="best-reviewer-item">
+                    <div class="reviewer-rank">1st</div>
+                    <div class="reviewer-profile">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop" alt="리뷰어">
+                    </div>
+                    <h4>김**</h4>
+                    <p>리뷰 32개 | 도움돼요 1,245회</p>
+                </div>
+                <div class="best-reviewer-item">
+                    <div class="reviewer-rank">2nd</div>
+                    <div class="reviewer-profile">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop" alt="리뷰어">
+                    </div>
+                    <h4>박**</h4>
+                    <p>리뷰 28개 | 도움돼요 1,089회</p>
+                </div>
+                <div class="best-reviewer-item">
+                    <div class="reviewer-rank">3rd</div>
+                    <div class="reviewer-profile">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop" alt="리뷰어">
+                    </div>
+                    <h4>이**</h4>
+                    <p>리뷰 25개 | 도움돼요 967회</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="review-reward">
+        <div class="container">
+            <div class="reward-content">
+                <h2>리뷰 작성하고 포인트 받기</h2>
+                <p>포토 리뷰 3,000P | 일반 리뷰 1,000P | 베스트 리뷰 선정 시 추가 10,000P</p>
+                <a href="#" class="btn-write-review">리뷰 작성하기</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-info">
+                <h3>SBS콜마</h3>
+                <p>주식회사 SBS콜마 | 대표이사: 김미라</p>
+                <p>서울특별시 강남구 테헤란로 123 SBS콜마빌딩</p>
+                <p>사업자등록번호: 123-45-67890 | 통신판매업신고: 2024-서울강남-0001</p>
+                <p>고객센터: 1588-0000 (평일 09:00-18:00)</p>
+            </div>
+            <div class="footer-menu">
+                <a href="#">이용약관</a>
+                <a href="#"><strong>개인정보처리방침</strong></a>
+                <a href="#">입점/제휴문의</a>
+            </div>
+            <div class="footer-sns">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2024 SBS콜마. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
