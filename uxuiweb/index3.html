@@ -1,0 +1,1443 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UX/UI 커리큘럼</title>
+  <style>
+    :root{
+      --bg:#0e0f13;
+      --panel:#151722;
+      --panel2:#12131a;
+      --text:#eaeaf0;
+      --muted:#a2a8bd;
+      --muted2:#7f869d;
+      --line:rgba(255,255,255,.08);
+      --accent:#8b8dff;
+      --accent2:#55d6c2;
+      --shadow: 0 16px 40px rgba(0,0,0,.35);
+      --radius:18px;
+      --pad:28px;
+      --max:1100px;
+      --ok:#55d6c2;
+      --warn:#ffcc66;
+      --bad:#ff6b7a;
+      --good:#7be3a2;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1100px 600px at 15% -10%, rgba(139,141,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 90% 0%, rgba(85,214,194,.12), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, sans-serif;
+      line-height:1.7;
+      letter-spacing:-0.01em;
+      min-height:100vh;
+    }
+
+    /* Navigation */
+    .nav-container{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(14,15,19,.95);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      width:min(var(--max), 94vw);
+      margin:0 auto;
+      padding:16px 0;
+    }
+    .nav-title{
+      font-size:20px;
+      font-weight:700;
+      margin-bottom:16px;
+      letter-spacing:-0.02em;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .nav-title::before{
+      content:"";
+      width:10px;height:10px;
+      border-radius:99px;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+    }
+    .nav-sessions{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .session-btn{
+      padding:10px 18px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:14px;
+      cursor:pointer;
+      transition:all .15s ease;
+      font-weight:500;
+    }
+    .session-btn:hover{
+      border-color:rgba(139,141,255,.3);
+      background:rgba(139,141,255,.08);
+    }
+    .session-btn.active{
+      border-color:rgba(139,141,255,.5);
+      background:rgba(139,141,255,.15);
+      color:var(--text);
+    }
+    .steps-nav{
+      display:flex;
+      gap:6px;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+    .step-btn{
+      padding:8px 14px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:rgba(255,255,255,.02);
+      color:var(--muted);
+      font-size:13px;
+      cursor:pointer;
+      transition:all .15s ease;
+    }
+    .step-btn:hover{
+      border-color:rgba(85,214,194,.3);
+      background:rgba(85,214,194,.08);
+    }
+    .step-btn.active{
+      border-color:rgba(85,214,194,.5);
+      background:rgba(85,214,194,.12);
+      color:var(--text);
+    }
+    .step-btn:disabled{
+      opacity:0.3;
+      cursor:not-allowed;
+    }
+
+    /* Content sections */
+    .content-section{
+      display:none;
+    }
+    .content-section.active{
+      display:block;
+    }
+
+    /* Common content styles */
+    .wrap{padding:40px 0 96px}
+    .container{width:min(var(--max), 92vw); margin:0 auto}
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      width:max-content; padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+    }
+    .badge::before{
+      content:""; width:8px; height:8px; border-radius:99px;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 4px rgba(139,141,255,.12);
+    }
+    h1{font-size:36px; line-height:1.15; margin:14px 0 10px; letter-spacing:-0.03em}
+    .lead{margin:0; color:var(--muted); max-width:900px; font-size:15px}
+    .topbar{display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 28px}
+    .chip{
+      padding:10px 12px; border-radius:999px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .grid{display:grid; grid-template-columns:1fr; gap:18px}
+    @media (min-width: 980px){ .grid{grid-template-columns:1.06fr .94fr} }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: var(--pad);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+    .card.flat{background:var(--panel2); box-shadow:none}
+    .card h2{font-size:18px; margin:0 0 14px; letter-spacing:-0.02em}
+    .card p{margin:0; color:rgba(234,234,240,.92)}
+    .divider{height:1px; background:var(--line); margin:22px 0}
+    .kv{display:grid; grid-template-columns: 170px 1fr; gap:14px; padding:14px 0; border-top:1px solid var(--line)}
+    .kv:first-child{border-top:0; padding-top:0}
+    .k{color:var(--muted2); font-size:13px}
+    .v{color:rgba(234,234,240,.92); font-size:14px}
+    .tagset{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .tag{
+      font-size:12.5px;
+      color:rgba(234,234,240,.9);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      padding:7px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .mono{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      font-size:12.8px;
+      color:rgba(234,234,240,.92);
+      background:rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.06);
+      padding:14px 14px;
+      border-radius:14px;
+      overflow:auto;
+      margin-top:10px;
+      white-space:pre;
+    }
+    .list{margin:0; padding-left:18px}
+    .list li{margin:8px 0}
+    ul{margin:0; padding-left:18px}
+    li{margin:8px 0}
+    .callout{
+      border-color: rgba(139,141,255,.22);
+      background:
+        radial-gradient(600px 260px at 20% 0%, rgba(139,141,255,.18), transparent 60%),
+        var(--panel2);
+    }
+    .callout2{
+      border-color: rgba(85,214,194,.22);
+      background:
+        radial-gradient(620px 280px at 20% 0%, rgba(85,214,194,.14), transparent 60%),
+        var(--panel2);
+    }
+    .step{
+      padding:14px 14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      border-radius:14px;
+      margin:10px 0;
+    }
+    .step-head{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:6px}
+    .title{font-weight:700; letter-spacing:-0.01em}
+    .body{color:rgba(234,234,240,.9); font-size:14px}
+    .pill{
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      white-space:nowrap;
+    }
+    .pill.ok{border-color:rgba(85,214,194,.25); color:rgba(85,214,194,.95)}
+    .pill.warn{border-color:rgba(255,204,102,.25); color:rgba(255,204,102,.95)}
+    .pill.bad{border-color:rgba(255,107,122,.25); color:rgba(255,107,122,.95)}
+    .pill.key{border-color:rgba(139,141,255,.28); color:rgba(139,141,255,.95)}
+    .pill.out{border-color:rgba(85,214,194,.22); color:rgba(85,214,194,.95)}
+    .req{
+      padding:14px 14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      border-radius:14px;
+      margin:10px 0;
+    }
+    .req-head{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:6px}
+    .req-title{font-weight:650; letter-spacing:-0.01em}
+    .req-body{color:rgba(234,234,240,.9); font-size:14px}
+    .mini{font-size:12.8px; color:var(--muted)}
+    .foot{
+      margin-top:24px;
+      padding-top:18px;
+      color:var(--muted2);
+      font-size:12.5px;
+      border-top:1px solid var(--line);
+    }
+    .role-grid{
+      display:grid; grid-template-columns:1fr; gap:12px;
+    }
+    @media (min-width: 720px){ .role-grid{grid-template-columns:1fr 1fr} }
+    .role{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      border-radius:14px;
+      padding:14px;
+    }
+    .role h3{margin:0 0 6px; font-size:15px; letter-spacing:-0.02em}
+    .role p{margin:0; color:rgba(234,234,240,.9); font-size:13.8px}
+    .role .mini{margin-top:10px; color:var(--muted); font-size:12.5px}
+    .table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(255,255,255,.02);
+    }
+    .table th, .table td{
+      padding:12px 14px;
+      border-bottom:1px solid var(--line);
+      font-size:13.5px;
+      vertical-align:top;
+    }
+    .table th{
+      text-align:left;
+      color:var(--muted);
+      background:rgba(255,255,255,.03);
+      letter-spacing:.02em;
+      font-weight:650;
+    }
+    .table tr:last-child td{border-bottom:0}
+    .dot{width:7px; height:7px; border-radius:999px; background:var(--muted2); display:inline-block}
+    .dot.good{background:var(--good)}
+    .dot.warn{background:var(--warn)}
+    .dot.bad{background:var(--bad)}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 0}
+    .tri{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .tri .bucket{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 12px;
+      background:rgba(255,255,255,.02);
+    }
+    .bucket .btitle{font-weight:800; margin-bottom:6px}
+    .bucket.ok{background:rgba(90, 227, 164, .18)}
+    .bucket.warn{background:rgba(255, 194, 74, .16)}
+    .bucket.bad{background:rgba(255, 105, 105, .16)}
+    .bucket ul{margin:8px 0 0 18px; padding:0; color:rgba(234,234,240,.92); font-size:14px}
+    .warnbox{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      border-radius:14px;
+      padding:14px;
+      margin-top:14px;
+    }
+    .two{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (min-width:960px){
+      .two{grid-template-columns:1fr 1fr}
+    }
+    .panel{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      background:rgba(255,255,255,.02);
+    }
+    .panel.ok{background:rgba(90, 227, 164, .18)}
+    .panel.warn{background:rgba(255, 194, 74, .16)}
+    .panel.bad{background:rgba(255, 105, 105, .16)}
+    .panel.blue{background:rgba(120, 170, 255, .14)}
+    .panel .ptitle{font-weight:900; margin-bottom:6px}
+    .panel ul{margin:8px 0 0 18px; padding:0; font-size:14px; color:rgba(234,234,240,.92)}
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      appearance:none;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:rgba(234,234,240,.92);
+      padding:10px 12px;
+      border-radius:12px;
+      cursor:pointer;
+      font-size:13px;
+      transition:transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .btn:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.14); background:rgba(255,255,255,.05)}
+    .btn.primary{border-color:rgba(139,141,255,.28); background:rgba(139,141,255,.10)}
+    .btn.primary:hover{border-color:rgba(139,141,255,.40); background:rgba(139,141,255,.14)}
+
+    /* UX Doc specific */
+    .ux-doc{padding: 40px 0 96px}
+    .ux-container{width:min(var(--max), 92vw); margin:0 auto}
+    .ux-header{display:flex; flex-direction:column; gap:12px; margin-bottom:34px}
+    .ux-badge{
+      display:inline-flex; align-items:center; gap:10px;
+      width:max-content; padding:8px 12px;
+      border:1px solid var(--line); border-radius:999px;
+      background:rgba(255,255,255,.03); color:var(--muted);
+      font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+    }
+    .ux-badge::before{
+      content:""; width:8px;height:8px; border-radius:99px;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 4px rgba(139,141,255,.12);
+    }
+    .ux-title{font-size:40px; line-height:1.15; margin:0; letter-spacing:-0.03em}
+    .ux-desc{margin:0; color:var(--muted); max-width: 760px; font-size:15px}
+    .ux-topbar{display:flex; flex-wrap:wrap; gap:10px; margin: 22px 0 34px}
+    .ux-chip{
+      padding:10px 12px; border-radius:999px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      color:var(--muted); font-size:13px;
+    }
+    .ux-grid{display:grid; grid-template-columns: 1.15fr .85fr; gap:18px; margin-top:18px}
+    @media (max-width: 900px){.ux-grid{grid-template-columns:1fr}}
+    .ux-card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: var(--pad);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+    .ux-card--flat{background: var(--panel2); box-shadow:none}
+    .ux-card h2{font-size:18px; margin:0 0 14px; letter-spacing:-0.02em}
+    .ux-card p{margin:0; color: rgba(234,234,240,.92)}
+    .ux-list{margin:0; padding-left: 18px; color: rgba(234,234,240,.92)}
+    .ux-list li{margin:8px 0}
+    .ux-kv{display:grid; grid-template-columns: 160px 1fr; gap:14px; padding: 16px 0; border-top:1px solid var(--line)}
+    .ux-kv:first-child{border-top:0; padding-top:0}
+    .ux-k{color:var(--muted2); font-size:13px; letter-spacing:.02em}
+    .ux-v{color:rgba(234,234,240,.92); font-size:14px}
+    .ux-rule{
+      border-color: rgba(139,141,255,.22);
+      background:
+        radial-gradient(600px 260px at 20% 0%, rgba(139,141,255,.18), transparent 60%),
+        var(--panel2);
+    }
+    .ux-divider{height:1px; background:var(--line); margin: 28px 0}
+    .ux-footer{
+      margin-top: 24px; padding-top: 18px;
+      color: var(--muted2); font-size: 12.5px;
+      border-top:1px solid var(--line);
+    }
+
+    @media print{
+      body{background:#fff; color:#111}
+      .nav-container{display:none}
+      .card,.ux-card{box-shadow:none; background:#fff; border-color:#ddd}
+      .mono{background:#f6f6f6; border-color:#e6e6e6; color:#111}
+      .badge,.chip,.pill,.ux-badge,.ux-chip{border-color:#ddd; color:#444}
+      .divider,.ux-divider{background:#e6e6e6}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav-container">
+  <div class="nav-inner">
+    <div class="nav-title">UX/UI 커리큘럼</div>
+    <div class="nav-sessions">
+      <button class="session-btn active" data-session="1">1회차: UX 설계 기초</button>
+      <button class="session-btn" data-session="2">2회차: Figma 구조화</button>
+      <button class="session-btn" data-session="3">3회차: AI 협업 검증</button>
+    </div>
+    <div class="steps-nav" id="stepsNav">
+      <!-- Steps will be populated by JS -->
+    </div>
+  </div>
+</nav>
+
+<!-- Content Sections -->
+<main id="contentArea">
+
+<!-- 1-1: UX 설계 요약 문서 -->
+<div class="content-section active" data-session="1" data-step="1">
+  <section class="ux-doc">
+    <div class="ux-container">
+      <header class="ux-header">
+        <span class="ux-badge">Deliverable</span>
+        <h1 class="ux-title">UX 설계 요약 문서</h1>
+        <p class="ux-desc">
+          감각이나 취향이 아니라, 목표·사용자·행동·검증 기준을 문장으로 고정해 이후 Figma/개발 단계에서 흔들리지 않게 만드는 기준 문서입니다.
+        </p>
+        <div class="ux-topbar">
+          <span class="ux-chip">프로젝트: 포트폴리오 웹(예시)</span>
+          <span class="ux-chip">산출물: 기준 문서 1종</span>
+          <span class="ux-chip">용도: Figma 설계 / AI 검증 입력 / 개발 Handoff</span>
+        </div>
+      </header>
+
+      <article class="ux-card">
+        <h2>1) 사이트 목표 (Site Goal)</h2>
+        <p>
+          이 사이트는 첫 방문 사용자가 작업자의 역할과 문제 해결 역량을 빠르게 이해하고,
+          프로젝트 상세를 확인한 뒤 협업 또는 연락 여부를 판단할 수 있도록 돕습니다.
+        </p>
+        <div class="ux-divider"></div>
+        <div class="ux-kv">
+          <div class="ux-k">성공 조건</div>
+          <div class="ux-v">사용자가 "무엇을 하는 사람인지"를 5초 내 추정하고, 프로젝트 상세 확인 후 연락 행동(또는 연락 페이지 진입)을 수행</div>
+        </div>
+        <div class="ux-kv">
+          <div class="ux-k">실패 조건</div>
+          <div class="ux-v">첫 화면을 서비스 소개/블로그로 오해하거나, 프로젝트 상세 도달 전에 이탈 / CTA 도달 후에도 확신 부족으로 미행동</div>
+        </div>
+      </article>
+
+      <div class="ux-grid">
+        <article class="ux-card ux-card--flat">
+          <h2>2) 대표 사용자 (Primary User)</h2>
+          <div class="ux-kv">
+            <div class="ux-k">유형</div>
+            <div class="ux-v">외주·협업 파트너 / 채용 담당자</div>
+          </div>
+          <div class="ux-kv">
+            <div class="ux-k">맥락</div>
+            <div class="ux-v">여러 후보를 빠르게 비교해야 하는 상황, 긴 글보다 구조·근거 중심으로 판단</div>
+          </div>
+          <div class="ux-kv">
+            <div class="ux-k">정보 상태</div>
+            <div class="ux-v">작업 방식/역할/결과 수준을 아직 모름. "이 사람이 내 문제를 해결할 수 있나"를 가장 먼저 확인</div>
+          </div>
+          <div class="ux-kv">
+            <div class="ux-k">핵심 욕구</div>
+            <div class="ux-v">시간을 덜 쓰고, 리스크 없이, 신뢰 판단을 끝내고 싶음</div>
+          </div>
+        </article>
+
+        <article class="ux-card">
+          <h2>3) 핵심 행동 (Core Action)</h2>
+          <ul class="ux-list">
+            <li>프로젝트 목록에서 관심 항목 선택</li>
+            <li>프로젝트 상세에서 역할/성과/과정 확인</li>
+            <li>CTA(연락/협업 제안/이력서 요청) 중 하나 수행</li>
+          </ul>
+          <div class="ux-divider"></div>
+          <div class="ux-kv">
+            <div class="ux-k">행동 단일화 원칙</div>
+            <div class="ux-v">한 화면의 1순위 CTA는 1개만 고정하고, 나머지는 보조(링크/서브 CTA)로 격하</div>
+          </div>
+        </article>
+      </div>
+
+      <article class="ux-card">
+        <h2>4) 사용자 시나리오 (User Scenario)</h2>
+        <p>
+          사용자는 검색 또는 공유 링크로 사이트에 진입합니다.
+          첫 화면에서 이 사이트의 목적과 작업자의 정체성을 빠르게 파악한 뒤,
+          스크롤 또는 네비게이션으로 프로젝트 목록을 훑어봅니다.
+          관심 항목을 클릭해 상세로 이동하고,
+          문제 해결 방식·역할·성과가 충분히 확인되면
+          연락 또는 협업 제안 행동을 수행하거나, 판단이 부족하면 보류하고 이탈합니다.
+        </p>
+      </article>
+
+      <article class="ux-card">
+        <h2>5) UX 요구사항 (UX Requirements)</h2>
+        <ul class="ux-list">
+          <li>첫 화면에서 사이트 목적이 5초 내 인지되어야 합니다.</li>
+          <li>핵심 행동은 화면 내에서 가장 먼저 탐지되는 요소여야 합니다.</li>
+          <li>정보는 비교 → 판단 → 행동 순서로 노출되어야 합니다.</li>
+          <li>신뢰 요소(성과/역할/결과/근거)는 행동 이전에 제공되어야 합니다.</li>
+          <li>중복 설명/불필요한 선택지는 제거를 우선 검토해야 합니다.</li>
+        </ul>
+      </article>
+
+      <article class="ux-card">
+        <h2>6) 화면 역할 (Screen Roles)</h2>
+        <div class="ux-kv">
+          <div class="ux-k">Main</div>
+          <div class="ux-v">목적 인지 + 탐색 기준 제공("무엇을 하는 곳인지 / 어디부터 보면 되는지")</div>
+        </div>
+        <div class="ux-kv">
+          <div class="ux-k">Projects</div>
+          <div class="ux-v">비교 가능성 확보(동일한 카드 구조로 빠르게 판단)</div>
+        </div>
+        <div class="ux-kv">
+          <div class="ux-k">Detail</div>
+          <div class="ux-v">의사결정 지원(역할·과정·성과를 구조로 제시)</div>
+        </div>
+        <div class="ux-kv">
+          <div class="ux-k">Contact</div>
+          <div class="ux-v">행동 완료(불안 제거, 최소 입력, 결과 예측 가능)</div>
+        </div>
+      </article>
+
+      <article class="ux-card ux-rule">
+        <h2>7) 변경 금지 규칙 (Design Constraints)</h2>
+        <ul class="ux-list">
+          <li>첫 화면은 "목적 인지"가 실패하면 아래 구조가 좋아도 무의미합니다.</li>
+          <li>CTA를 앞당길 경우, 선행 정보(근거/사례/역할)가 부족해지는지 먼저 검증합니다.</li>
+          <li>개선은 추가보다 제거가 우선입니다. 중복·장식·선택지부터 줄입니다.</li>
+          <li>이 문서 없이 구조를 변경할 경우, AI 검증 프레임으로 재검증 후 반영합니다.</li>
+        </ul>
+      </article>
+
+      <div class="ux-footer">
+        문서 성격: 설계 기준 고정용 / 전달용(개발·AI 협업) / 업데이트 시 변경 근거를 함께 기록
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 1-2: UX 요구사항 도출 -->
+<div class="content-section" data-session="1" data-step="2">
+  <section class="wrap">
+    <div class="container">
+      <header>
+        <span class="badge">Session 01 · Step 2</span>
+        <h1>UX 요구사항 도출</h1>
+        <p class="lead">
+          이 단계는 "무엇을 만들까"가 아니라, <b>잘못 만들어질 수 있는 가능성을 조건으로 차단</b>하는 작업입니다.
+          목표·시나리오(1회차 Step 1)가 고정된 상태에서, 그 목표가 실제로 달성되려면 화면이 반드시 만족해야 하는
+          <b>행동 기반 조건(Requirement)</b>을 문장으로 정리합니다.
+        </p>
+        <div class="topbar">
+          <span class="chip">입력: 사이트 목표 / 대표 사용자 / 사용자 시나리오 / 핵심 행동</span>
+          <span class="chip">출력: UX 요구사항 목록(분류 + 우선순위 + 검증 질문)</span>
+        </div>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h2>1) UX 요구사항의 의미를 고정하기</h2>
+          <p>
+            UX 요구사항은 기능 요구사항이나 디자인 가이드가 아닙니다.
+            사용자 행동이 원하는 방향으로 흘러가기 위해, 화면이 반드시 보장해야 하는 <b>인지/흐름/행동 조건</b>입니다.
+          </p>
+          <div class="divider"></div>
+          <div class="kv">
+            <div class="k">기능 요구사항과 차이</div>
+            <div class="v">"무엇을 할 수 있어야 하는가"가 아니라, "사용자가 헷갈리지 않고 행동을 완료하려면 무엇이 보장되어야 하는가"</div>
+          </div>
+          <div class="kv">
+            <div class="k">작성 방식</div>
+            <div class="v">관찰 가능, 이진 판단 가능(성공/실패), 화면 단위로 연결 가능</div>
+          </div>
+          <div class="divider"></div>
+          <h2>2) 분류 체계(4축)</h2>
+          <div class="tagset">
+            <span class="tag">정보 인지(Information Clarity)</span>
+            <span class="tag">흐름 제어(Flow Control)</span>
+            <span class="tag">행동 유도(Action Guidance)</span>
+            <span class="tag">안정·신뢰(Stability & Trust)</span>
+          </div>
+        </article>
+
+        <aside class="card callout">
+          <h2>3) 요구사항 예시</h2>
+          <div class="req">
+            <div class="req-head">
+              <span class="pill ok">P0</span>
+              <div class="req-title">첫 화면에서 사이트 목적이 5초 내 인지</div>
+            </div>
+            <div class="req-body">검증 질문: 처음 보는 사용자가 1문장으로 사이트 목적을 말할 수 있는가?</div>
+          </div>
+          <div class="req">
+            <div class="req-head">
+              <span class="pill ok">P0</span>
+              <div class="req-title">정보는 "인지 → 근거 → 선택" 순서로 노출</div>
+            </div>
+            <div class="req-body">검증 질문: CTA에 도달했을 때 사용자가 '행동해도 될 만큼' 확신을 얻었는가?</div>
+          </div>
+          <div class="req">
+            <div class="req-head">
+              <span class="pill ok">P0</span>
+              <div class="req-title">핵심 CTA는 화면에서 가장 먼저 탐지되는 행동 요소</div>
+            </div>
+            <div class="req-body">검증 질문: 사용자가 스크롤을 하지 않아도 다음 행동 후보를 떠올릴 수 있는가?</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 1-3: 정보 구조 설계(IA) -->
+<div class="content-section" data-session="1" data-step="3">
+  <section class="wrap">
+    <div class="container">
+      <header>
+        <span class="badge">Session 01 · Step 3</span>
+        <h1>정보 구조 설계(IA)</h1>
+        <p class="lead">
+          이 단계는 레이아웃이 아니라 <b>의미 구조</b>를 설계하는 작업입니다.
+          "무엇을 위에 두고, 무엇을 묶고, 무엇을 반복하며, 사용자가 어떤 순서로 정보를 만나는가"를 결정합니다.
+        </p>
+        <div class="topbar">
+          <span class="chip">입력: 목표·시나리오 + UX 요구사항</span>
+          <span class="chip">핵심 산출: 페이지 구조 + 정보 묶음 + 네비게이션 + 위계 기준</span>
+        </div>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h2>1) IA 설계의 핵심 흐름</h2>
+          <div class="step">
+            <div class="step-head"><span class="pill ok">A</span><div class="title">필수 정보 추출</div></div>
+            <div class="body">"이 정보를 못 보면 어떤 오해가 발생하는가"를 기준으로 필수 정보를 뽑습니다.</div>
+          </div>
+          <div class="step">
+            <div class="step-head"><span class="pill ok">B</span><div class="title">콘텐츠 블록 분해</div></div>
+            <div class="body">소개/프로젝트/성과/프로세스/연락처럼 큰 덩어리로 시작합니다.</div>
+          </div>
+          <div class="step">
+            <div class="step-head"><span class="pill warn">C</span><div class="title">묶음 기준 설정</div></div>
+            <div class="body">같은 행동을 유도하는 정보는 함께, 같은 인지 단계에서 필요한 정보는 함께 묶습니다.</div>
+          </div>
+          <div class="step">
+            <div class="step-head"><span class="pill ok">D</span><div class="title">페이지 단위 배치</div></div>
+            <div class="body">각 페이지가 맡는 1차 역할에 맞게 정보 묶음을 배치합니다.</div>
+          </div>
+        </article>
+
+        <aside class="card callout2">
+          <h2>2) 페이지 구조 예시</h2>
+          <div class="mono">Home
+- Hero(정체성 1문장 + 핵심 가치)
+- Featured Projects(대표 3개)
+- Proof(성과/수치/링크)
+- CTA(연락 방식 + 결과 예고)
+
+Projects
+- Filter/Sort(보조)
+- Project List(카드 구조 동일)
+
+Project Detail
+- Summary(문제/목표/역할/기간)
+- Process(핵심 단계 3~5)
+- Output(결과물/화면/링크)
+- CTA(연락)</div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 1-4: 화면 역할 정의 -->
+<div class="content-section" data-session="1" data-step="4">
+  <section class="wrap">
+    <div class="container">
+      <header>
+        <span class="badge">Session 01 · Step 4</span>
+        <h1>화면 역할 정의와 UI 요소 기능 분류</h1>
+        <p class="lead">
+          Step 4는 "각 화면이 사용자 여정에서 맡는 <b>기능적 위치</b>"를 고정하는 단계입니다.
+          역할이 고정되지 않으면, UI 요소는 서로 경쟁하면서 목적을 침범합니다.
+        </p>
+        <div class="topbar">
+          <span class="chip">핵심 작업: 페이지별 1차 역할 1개 고정</span>
+          <span class="chip">핵심 산출: 역할 정의 문장 + UI 요소 기능 분류</span>
+        </div>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h2>화면 역할(Screen Role) 유형</h2>
+          <div class="role-grid">
+            <div class="role">
+              <h3>인식 화면(Orientation)</h3>
+              <p>첫 진입에서 "여기가 어떤 곳인지"를 빠르게 규정</p>
+              <div class="mini">대표 위치: Home 상단</div>
+            </div>
+            <div class="role">
+              <h3>탐색 화면(Exploration)</h3>
+              <p>사용자가 비교·탐색을 통해 선택지를 좁히는 화면</p>
+              <div class="mini">대표 위치: Projects 목록</div>
+            </div>
+            <div class="role">
+              <h3>판단 지원(Decision Support)</h3>
+              <p>행동 직전에 "해도 되는가"를 결정하도록 근거 제공</p>
+              <div class="mini">대표 위치: 프로젝트 상세</div>
+            </div>
+            <div class="role">
+              <h3>행동 화면(Action)</h3>
+              <p>사용자가 실제로 완료해야 하는 화면</p>
+              <div class="mini">대표 위치: Contact/신청 폼</div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="card callout">
+          <h2>페이지별 1차 역할 문장</h2>
+          <div class="mono">Home: Orientation
+— 첫 5초 안에 정체성과 가치가 규정되고, 탐색을 시작하게 한다.
+
+Projects: Exploration
+— 비교 가능한 구조로 역량을 빠르게 검증하게 한다.
+
+Detail: Decision Support
+— "해도 된다"는 근거를 제공해 행동 결정을 돕는다.
+
+Contact: Action
+— 최소 마찰로 연락/요청을 완료하게 한다.</div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 1-5: 설계 산출물 문서화 -->
+<div class="content-section" data-session="1" data-step="5">
+  <section class="wrap">
+    <div class="container">
+      <header>
+        <span class="badge">Session 01 · Step 5</span>
+        <h1>설계 산출물 문서화</h1>
+        <p class="lead">
+          Step 5는 "정리"가 아니라 <b>설계를 흔들리지 않게 고정</b>하는 단계입니다.
+          이후 Figma/개발/AI 협업에서 설계가 '의견'으로 약화되지 않도록 기준점을 만듭니다.
+        </p>
+        <div class="topbar">
+          <span class="chip">출력: "설계 기준 문서" 1종(사람·AI 공용)</span>
+          <span class="chip">원칙: 짧고 명확 · 관찰 가능 · 화면 단위 연결</span>
+        </div>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h2>문서 구성 5요소(필수)</h2>
+          <div class="step">
+            <div class="step-head"><span class="pill ok">필수 1</span><div class="title">사이트 목표 1문장</div></div>
+            <div class="body">사용자 변화 중심 문장으로 고정. "보여준다"가 아니라 "사용자가 무엇을 판단/선택/완료한다"</div>
+          </div>
+          <div class="step">
+            <div class="step-head"><span class="pill ok">필수 2</span><div class="title">대표 사용자 정의(3줄)</div></div>
+            <div class="body">"누구나"를 금지하고, 대표 사용자 1명을 고정</div>
+          </div>
+          <div class="step">
+            <div class="step-head"><span class="pill ok">필수 3</span><div class="title">사용자 시나리오</div></div>
+            <div class="body">즉시 인식(3~5초) → 탐색(스크롤/비교) → 판단(행동/이탈) 흐름으로 서술</div>
+          </div>
+          <div class="step">
+            <div class="step-head"><span class="pill ok">필수 4</span><div class="title">UX 요구사항 요약</div></div>
+            <div class="body">정보 인지/흐름 제어/행동 유도/신뢰 조건을 "~여야 한다"로 압축</div>
+          </div>
+          <div class="step">
+            <div class="step-head"><span class="pill ok">필수 5</span><div class="title">페이지 역할 정의</div></div>
+            <div class="body">Orientation/Exploration/Decision/Action 중 하나로 고정</div>
+          </div>
+        </article>
+
+        <aside class="card callout">
+          <h2>다음 단계에서 어떻게 쓰는가</h2>
+          <div class="kv">
+            <div class="k">Figma(2회차)</div>
+            <div class="v">Frame/Section 설계가 "감각"으로 흐르려 할 때, 목표·요구사항·역할 문장으로 되돌아가 판정</div>
+          </div>
+          <div class="kv">
+            <div class="k">AI 협업(3회차)</div>
+            <div class="v">AI에게 개선을 맡기지 않고, 검증 질문을 이 문서에서 직접 뽑아 사용</div>
+          </div>
+          <div class="kv">
+            <div class="k">개발 전달(4회차)</div>
+            <div class="v">컴포넌트/상태/라우팅 요구사항의 '근거'로 활용</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 2-1: Figma 기본 세팅 -->
+<div class="content-section" data-session="2" data-step="1">
+  <section class="wrap">
+    <div class="container">
+      <header>
+        <span class="badge">Session 02 · Step 1</span>
+        <h1>Figma 기본 세팅과 작업 단위 정의</h1>
+        <p class="lead">
+          2회차 Step 1의 목적은 "Figma 사용법"이 아니라, 1회차에서 고정한 설계 기준을
+          <b>시각 작업 환경에 그대로 이식</b>하는 것입니다.
+        </p>
+        <div class="topbar">
+          <span class="chip">핵심단어: 작업 단위 / Page·Frame·Section / 기준점 고정 / 네이밍</span>
+          <span class="chip">출력: Figma 파일 "뼈대" 세팅 완료</span>
+        </div>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h2>1) 작업 단위를 먼저 고정해야 하는 이유</h2>
+          <p>Figma에서 작업 단위를 고정하지 않으면, 이후 모든 산출물이 섞입니다. 와이어프레임과 컴포넌트가 한 페이지에 섞이고, 화면 상태와 최종안이 같은 프레임에 공존합니다.</p>
+          <div class="step">
+            <div class="step-head"><span class="pill key">핵심</span><div class="title">Page / Frame / Section을 서로 다른 책임 단위로 분리</div></div>
+            <div class="body">Page는 설계 묶음 단위, Frame은 화면 단위, Section은 의미 단위입니다.</div>
+          </div>
+          <div class="divider"></div>
+          <h2>2) Page 구조 세팅</h2>
+          <div class="mono">01_Design_Basis
+  - 1회차 설계 기준 텍스트 고정
+
+02_Wireframe
+  - Home / Projects / Detail / Contact 와이어프레임
+
+03_Components
+  - Button / Card / SectionHeader 등
+
+04_Flow_Notes (선택)
+  - 사용자 흐름 메모, 검증 결과 기록</div>
+        </article>
+
+        <aside class="card">
+          <h2>3) 네이밍 규칙</h2>
+          <div class="kv">
+            <div class="k">Frame 네이밍</div>
+            <div class="v">Home__Orientation / Projects__Exploration / Detail__Decision / Contact__Action</div>
+          </div>
+          <div class="kv">
+            <div class="k">Section 네이밍</div>
+            <div class="v">Purpose_Message / Comparison_List / Proof_Block / Primary_CTA</div>
+          </div>
+          <div class="kv">
+            <div class="k">금지</div>
+            <div class="v">Hero, Section1, Content2 같은 의미 없는 이름</div>
+          </div>
+          <div class="divider"></div>
+          <h2>4) Step 1 산출물</h2>
+          <div class="kv">
+            <div class="k">Figma Page 구조</div>
+            <div class="v"><span class="pill out">완료</span> 01_Basis / 02_Wireframe / 03_Components 분리</div>
+          </div>
+          <div class="kv">
+            <div class="k">Frame 기준점</div>
+            <div class="v"><span class="pill out">완료</span> Desktop Frame 1개 고정</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 2-2: Auto Layout -->
+<div class="content-section" data-session="2" data-step="2">
+  <section class="wrap">
+    <div class="container">
+      <header>
+        <span class="badge">Session 02 · Step 2</span>
+        <h1>Auto Layout으로 정렬·간격 시스템 설계</h1>
+        <p class="lead">
+          이 단계의 핵심은 Auto Layout "기능을 배우는 것"이 아니라,
+          정렬과 간격을 감각에서 규칙으로 전환해 <b>틀릴 수 없게 만드는 것</b>입니다.
+        </p>
+        <div class="topbar">
+          <span class="chip">핵심단어: Alignment / Spacing / 기준선 / 중첩 Auto Layout</span>
+          <span class="chip">출력: 간격·정렬 규칙이 고정된 Section 템플릿</span>
+        </div>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h2>1) 간격(Spacing)은 위계 표현</h2>
+          <table class="table">
+            <thead><tr><th>관계 유형</th><th>의미</th><th>간격 규칙</th></tr></thead>
+            <tbody>
+              <tr><td>동일 묶음 내부</td><td>한 메시지 안의 요소</td><td>8 / 12</td></tr>
+              <tr><td>서브 묶음 분리</td><td>같은 섹션 안에서 의미가 갈리는 블록</td><td>16</td></tr>
+              <tr><td>섹션 간 분리</td><td>역할이 바뀌는 구간</td><td>40 / 56</td></tr>
+            </tbody>
+          </table>
+          <div class="divider"></div>
+          <h2>2) Auto Layout 적용 순서</h2>
+          <div class="mono">1) Section Wrapper(세로 흐름, padding 고정)
+2) Section Header(제목/설명 블록)
+3) Content Group(카드 그리드/리스트)
+4) Item 내부(카드 내부 텍스트)
+5) Action Group(버튼/링크)</div>
+        </article>
+
+        <aside class="card">
+          <h2>3) Step 2 산출물</h2>
+          <div class="kv">
+            <div class="k">Section 템플릿 2종</div>
+            <div class="v"><span class="pill out">완료</span> Informational / Exploration 템플릿</div>
+          </div>
+          <div class="kv">
+            <div class="k">간격 규칙표</div>
+            <div class="v"><span class="pill out">완료</span> 내부(8/12), 서브(16), 섹션(40/56)</div>
+          </div>
+          <div class="kv">
+            <div class="k">중첩 구조</div>
+            <div class="v"><span class="pill out">완료</span> Section → Header → ContentGroup → Item</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 2-3: 와이어프레임 -->
+<div class="content-section" data-session="2" data-step="3">
+  <section class="wrap">
+    <div class="container">
+      <header>
+        <span class="badge">Session 02 · Step 3</span>
+        <h1>와이어프레임을 통한 정보 위계 시각화</h1>
+        <p class="lead">
+          이 단계의 목적은 "레이아웃을 그리는 것"이 아니라,
+          <b>정보가 어떤 순서로 인식되어야 하는지</b>를 시각적으로 고정하는 것입니다.
+        </p>
+        <div class="topbar">
+          <span class="chip">핵심단어: 정보 위계 / 시선 흐름 / 우선순위 고정</span>
+          <span class="chip">출력: 페이지별 와이어프레임(검증용)</span>
+        </div>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h2>1) 정보 위계란 무엇인가</h2>
+          <p class="body">
+            정보 위계는 "무엇이 먼저 보이고, 무엇이 나중에 해석되는가"에 대한 설계입니다.
+            사용자는 화면을 위에서 아래로 읽지 않습니다.
+            <b>크기, 위치, 묶음, 간격</b>을 통해 우선순위를 추론합니다.
+          </p>
+          <div class="step">
+            <div class="title">위계 판단 4요소</div>
+            <div class="body">① 위치(상단/중앙) · ② 크기(덩어리 크기) · ③ 묶음(같은 박스) · ④ 간격(분리 정도)</div>
+          </div>
+          <div class="divider"></div>
+          <h2>2) 와이어프레임 제작 순서</h2>
+          <div class="mono">1) Home(Orientation) — 정체성·가치 인식
+2) List/Projects(Exploration) — 비교·탐색
+3) Detail(Decision) — 판단 근거
+4) Contact(Action) — 완료</div>
+        </article>
+
+        <aside class="card">
+          <h2>3) 검증 질문</h2>
+          <div class="step">
+            <div class="title">첫 화면(Above the Fold)</div>
+            <div class="body">이 화면을 3초만 봤을 때 "이 사이트는 무엇을 제공하는가"를 말할 수 있는가</div>
+          </div>
+          <div class="step">
+            <div class="title">중간 흐름</div>
+            <div class="body">다음 섹션을 보게 만드는 이유가 존재하는가</div>
+          </div>
+          <div class="step">
+            <div class="title">행동 직전</div>
+            <div class="body">행동 전에 필요한 정보가 모두 제공되었는가</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 2-4: 컴포넌트 기초 -->
+<div class="content-section" data-session="2" data-step="4">
+  <section class="wrap">
+    <div class="container">
+      <header>
+        <span class="badge">Session 02 · Step 4</span>
+        <h1>컴포넌트 기초: 반복 요소를 시스템화</h1>
+        <p class="lead">
+          와이어프레임이 "구조가 맞는가"를 검증하는 단계였다면,
+          Step 4는 "이 구조를 앞으로도 유지·확장할 수 있는가"를 고정하는 단계입니다.
+        </p>
+        <div class="topbar">
+          <span class="chip">핵심단어: 컴포넌트 / 책임 범위 / 재사용 규칙 / Variant</span>
+          <span class="chip">출력: 컴포넌트 목록 + 규칙 문서</span>
+        </div>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h2>1) 컴포넌트는 "역할"로 정의합니다</h2>
+          <div class="step">
+            <div class="title">컴포넌트 후보 판별 질문</div>
+            <div class="body">
+              ① 다른 페이지에서도 같은 역할인가<br>
+              ② 내용만 바뀌고 구조는 동일한가<br>
+              ③ UX 검증 기준이 동일하게 적용되는가
+            </div>
+          </div>
+          <div class="divider"></div>
+          <h2>2) 예시 컴포넌트 목록</h2>
+          <div class="mono">- SectionHeader: 섹션 제목/설명/보조 문구
+- ProjectCard: 프로젝트 요약 비교 구조
+- PrimaryActionButton: 핵심 행동 유도
+- TagPill: 분류/맥락 제공
+- KeyValueRow: 이력/성과/기간 정보
+- EmptyStateBlock: 결과 없음/다음 행동 유도</div>
+        </article>
+
+        <aside class="card">
+          <h2>3) Step 4 산출물</h2>
+          <div class="kv">
+            <div class="k">컴포넌트 목록</div>
+            <div class="v">반복 UI 단위 + 역할 기반 네이밍</div>
+          </div>
+          <div class="kv">
+            <div class="k">책임 범위 문서</div>
+            <div class="v">각 컴포넌트의 입력/출력/상태 여부</div>
+          </div>
+          <div class="kv">
+            <div class="k">Variant 규칙</div>
+            <div class="v">Variant가 필요한 맥락만 최소 정의</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 2-5: 반응형 사고 -->
+<div class="content-section" data-session="2" data-step="5">
+  <section class="wrap">
+    <div class="container">
+      <header>
+        <span class="badge">Session 02 · Step 5</span>
+        <h1>반응형 사고를 구조에 반영</h1>
+        <p class="lead">
+          반응형은 "데스크톱을 줄이는 작업"이 아니라, 화면이 바뀌어도 <b>UX 목표가 유지되도록 정보 우선순위를 다시 고정</b>하는 작업입니다.
+        </p>
+        <div class="topbar">
+          <span class="chip">핵심단어: 우선순위 / 브레이크포인트 / 표현 방식 전환 / 터치 UX</span>
+          <span class="chip">출력: 반응형 규칙 문서 + 섹션별 전환 기준</span>
+        </div>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h2>1) 반응형 핵심 질문</h2>
+          <div class="step">
+            <div class="title">3가지 질문</div>
+            <div class="body">
+              ① 화면이 작아져도 반드시 남아야 하는 정보는 무엇인가<br>
+              ② 화면이 작아지면 가장 먼저 뒤로 밀려도 되는 정보는 무엇인가<br>
+              ③ 같은 정보라도 표현 방식이 바뀌어야 하는가
+            </div>
+          </div>
+          <div class="divider"></div>
+          <h2>2) 반응형 설계 순서</h2>
+          <div class="mono">1) 정보 우선순위 재확인
+2) 남길 정보/미룰 정보/삭제할 정보 결정
+3) 표현 방식 전환(그리드→리스트)
+4) 터치 UX 조건 반영</div>
+        </article>
+
+        <aside class="card">
+          <h2>3) Step 5 산출물</h2>
+          <div class="kv">
+            <div class="k">우선순위 규칙</div>
+            <div class="v">남김 / 미룸 / 삭제 기준 + 이유</div>
+          </div>
+          <div class="kv">
+            <div class="k">섹션별 전환표</div>
+            <div class="v">Desktop 표현 ↔ Mobile 표현 전환 규칙</div>
+          </div>
+          <div class="kv">
+            <div class="k">터치 UX 조건</div>
+            <div class="v">클릭 영역/간격/행동 위치 규칙</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 3-2: AI 입력 설계 -->
+<div class="content-section" data-session="3" data-step="2">
+  <section class="wrap">
+    <div class="container">
+      <header>
+        <span class="badge">Session 03 · Step 2</span>
+        <h1>AI 입력 설계: 컨텍스트를 정확히 주는 법</h1>
+        <p class="lead">
+          Step 2의 목적은 "프롬프트 잘 쓰기"가 아닙니다. AI가 마음대로 개선안을 만들지 못하도록,
+          <b>설계 목표·사용자·핵심 행동·검증 관점</b>을 먼저 고정하는 단계입니다.
+        </p>
+        <div class="topbar">
+          <span class="chip">핵심단어: 컨텍스트 / 제약 / 검증 질문 / 범위 고정 / 출력 포맷</span>
+          <span class="chip">출력: AI 검증 결과(지적/근거/리스크/우선순위)</span>
+        </div>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h2>1) 컨텍스트 입력 순서</h2>
+          <div class="mono">1) 페이지 목적(역할 1문장)
+2) 대표 사용자(왜 들어오는지 / 뭘 빨리 찾는지)
+3) 핵심 행동(반드시 완료해야 하는 1개)
+4) 성공 조건 / 실패 조건
+5) 화면 구성 요약(섹션 목록 + 역할)
+6) 검증 프레임(목적 인지/정보 위계/행동 흐름/인지 부하)</div>
+          <div class="divider"></div>
+          <h2>2) 출력 포맷 고정</h2>
+          <div class="mono">- Problem: (문제 지점 1문장)
+- Evidence: (왜 문제인지, 화면/정보 구조 근거)
+- Behavior Impact: (사용자가 어떤 행동을 하게 되는지)
+- Severity: (High / Medium / Low)
+- Fix Direction (optional): (최소 변경 관점에서 1~2개 방향만)</div>
+        </article>
+
+        <aside class="card">
+          <h2>3) 범위 고정 문장(예시)</h2>
+          <div class="mono">- 당신의 역할은 '검증자'이며, 새로운 UI/기능 제안은 금지한다.
+- 구조 재작성 제안은 금지하고, 문제 지점 '지적'과 '근거'만 제공한다.
+- 개선이 필요해 보이더라도, 해결책은 1~2개 선택지로만 제시한다.
+- 결과는 반드시: Problem / Evidence / Behavior Impact / Severity 로 출력한다.</div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 3-3: 사용자 행동 시뮬레이션 -->
+<div class="content-section" data-session="3" data-step="3">
+  <section class="wrap">
+    <div class="container">
+      <header>
+        <span class="badge">Session 03 · Step 3</span>
+        <h1>사용자 행동 시뮬레이션 기반 리뷰</h1>
+        <p class="lead">
+          이 단계에서는 화면을 "평가"하지 않습니다.
+          사용자를 가정해 <b>실제 행동을 끝까지 실행</b>시키고,
+          설계자가 의도하지 않은 선택과 이탈이 발생하는 지점을 드러냅니다.
+        </p>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h2>1) 행동 시뮬레이션의 최소 단위</h2>
+          <div class="mono">1) 해석: 이 화면을 무엇이라고 이해하는가
+2) 선택: 다음에 무엇을 하겠다고 판단하는가
+3) 행동: 실제로 어떤 UI를 클릭/탐색하는가</div>
+          <div class="divider"></div>
+          <h2>2) CTA 도달 시뮬레이션</h2>
+          <div class="mono">마찰 유형 분류
+- 인지 마찰: 이해는 했지만 확신이 없음
+- 구조 마찰: 어디서 행동해야 할지 모름
+- 심리 마찰: 행동 결과가 불안함</div>
+        </article>
+
+        <aside class="card">
+          <h2>3) Step 3 산출물</h2>
+          <div class="kv">
+            <div class="k">행동 시나리오</div>
+            <div class="v">초기 진입 / 탐색 / CTA 도달 경로</div>
+          </div>
+          <div class="kv">
+            <div class="k">문제 지점</div>
+            <div class="v">행동 실패가 발생한 정확한 위치</div>
+          </div>
+          <div class="kv">
+            <div class="k">마찰 분류</div>
+            <div class="v">인지 / 구조 / 심리</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 3-4: AI 피드백 선별 -->
+<div class="content-section" data-session="3" data-step="4">
+  <section class="wrap">
+    <div class="container">
+      <header>
+        <span class="badge">Session 03 · Step 4</span>
+        <h1>AI 피드백 선별 및 개선안 설계</h1>
+        <p class="lead">
+          이 단계에서 AI 피드백은 '정답'이 아닙니다.
+          피드백을 <b>선별</b>하고 <b>최소 변경 원칙</b>으로 개선안을 설계합니다.
+        </p>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h2>1) 수용/보류/폐기 분류</h2>
+          <div class="tri">
+            <div class="bucket ok">
+              <div class="btitle">수용(Accept)</div>
+              <ul>
+                <li>목적 오해로 초기 이탈 가능성</li>
+                <li>CTA 도달 전에 핵심 정보가 늦게 등장</li>
+                <li>행동 결과가 불안해 완료율이 떨어지는 지점</li>
+              </ul>
+            </div>
+            <div class="bucket warn">
+              <div class="btitle">보류(Hold)</div>
+              <ul>
+                <li>시각적 완성도 관련 제안</li>
+                <li>현재 단계에서 검증이 어려운 신규 요소</li>
+              </ul>
+            </div>
+            <div class="bucket bad">
+              <div class="btitle">폐기(Discard)</div>
+              <ul>
+                <li>핵심 행동을 분산시키는 CTA 추가</li>
+                <li>정보량을 늘려 인지 부하를 키우는 제안</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <aside class="card">
+          <h2>2) 최소 변경 원칙</h2>
+          <div class="mono">최소 수정 단위 점검 질문
+- 구조를 바꾸지 않고 해결 가능한가?
+- 순서/강조/삭제로 해결 가능한가?
+- 추가가 아니라 제거로 해결 가능한가?</div>
+          <div class="divider"></div>
+          <h2>3) Step 4 산출물</h2>
+          <div class="kv">
+            <div class="k">피드백 분류표</div>
+            <div class="v">수용 / 보류 / 폐기</div>
+          </div>
+          <div class="kv">
+            <div class="k">개선안 2안</div>
+            <div class="v">보수적(안전) / 공격적(직선화)</div>
+          </div>
+          <div class="kv">
+            <div class="k">채택안 1개</div>
+            <div class="v">선택 근거(목표/프레임 기준)</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 3-5: 개선 전·후 비교 문서화 -->
+<div class="content-section" data-session="3" data-step="5">
+  <section class="wrap">
+    <div class="container">
+      <header>
+        <span class="badge">Session 03 · Step 5</span>
+        <h1>개선 전·후 비교 문서화</h1>
+        <p class="lead">
+          이 단계는 "개선 결과를 예쁘게 정리"하는 단계가 아니라,
+          <b>설계 판단 근거를 고정</b>하는 단계입니다.
+        </p>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <h2>1) 비교 문서의 기본 구조(4파트)</h2>
+          <div class="mono">1) 변경 요약 (What)
+2) 문제 지점 정리 (Why)
+3) 개선 근거: UX 프레임 연결 (Reason)
+4) 유지해야 할 규칙 (Rules)</div>
+          <div class="divider"></div>
+          <h2>2) 프레임 연결 규칙</h2>
+          <div class="pillrow">
+            <span class="pill"><b>목적 인지</b> 첫 화면 오해 가능성 감소</span>
+            <span class="pill"><b>정보 위계</b> 핵심 근거의 조기 노출</span>
+            <span class="pill"><b>행동 흐름</b> CTA 도달 경로 단축</span>
+            <span class="pill"><b>인지 부하</b> 중복 정보 제거</span>
+          </div>
+        </article>
+
+        <aside class="card">
+          <h2>3) Step 5 산출물</h2>
+          <div class="kv">
+            <div class="k">비교 문서 1종</div>
+            <div class="v">전/후 비교 구조(4파트)</div>
+          </div>
+          <div class="kv">
+            <div class="k">UX 근거 연결</div>
+            <div class="v">목적/위계/흐름/인지부하 매핑</div>
+          </div>
+          <div class="kv">
+            <div class="k">유지 규칙 목록</div>
+            <div class="v">다음 수정에서 절대 깨지면 안 되는 규칙</div>
+          </div>
+          <div class="warnbox">
+            <div class="title">핵심</div>
+            <p class="body" style="margin:0">
+              문서화는 '정리'가 아니라 '통제'입니다.
+              다음 사이클에서도 AI에게 같은 컨텍스트를 줄 수 있을 정도로, 판단 근거가 닫혀 있어야 합니다.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<script>
+const stepsData = {
+  1: [
+    { step: 1, title: 'Step 1: UX 설계 요약 문서' },
+    { step: 2, title: 'Step 2: UX 요구사항 도출' },
+    { step: 3, title: 'Step 3: 정보 구조 설계(IA)' },
+    { step: 4, title: 'Step 4: 화면 역할 정의' },
+    { step: 5, title: 'Step 5: 설계 산출물 문서화' }
+  ],
+  2: [
+    { step: 1, title: 'Step 1: Figma 기본 세팅' },
+    { step: 2, title: 'Step 2: Auto Layout 설계' },
+    { step: 3, title: 'Step 3: 와이어프레임' },
+    { step: 4, title: 'Step 4: 컴포넌트 기초' },
+    { step: 5, title: 'Step 5: 반응형 사고' }
+  ],
+  3: [
+    { step: 2, title: 'Step 2: AI 입력 설계' },
+    { step: 3, title: 'Step 3: 행동 시뮬레이션' },
+    { step: 4, title: 'Step 4: 피드백 선별' },
+    { step: 5, title: 'Step 5: 비교 문서화' }
+  ]
+};
+
+let currentSession = 1;
+let currentStep = 1;
+
+function updateStepsNav(session) {
+  const stepsNav = document.getElementById('stepsNav');
+  const steps = stepsData[session];
+  stepsNav.innerHTML = steps.map(s =>
+    `<button class="step-btn" data-step="${s.step}">${s.title}</button>`
+  ).join('');
+
+  // Attach event listeners
+  stepsNav.querySelectorAll('.step-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const step = parseInt(btn.dataset.step);
+      showContent(currentSession, step);
+    });
+  });
+}
+
+function showContent(session, step) {
+  currentSession = session;
+  currentStep = step;
+
+  // Update session buttons
+  document.querySelectorAll('.session-btn').forEach(btn => {
+    btn.classList.toggle('active', parseInt(btn.dataset.session) === session);
+  });
+
+  // Update step buttons
+  document.querySelectorAll('.step-btn').forEach(btn => {
+    btn.classList.toggle('active', parseInt(btn.dataset.step) === step);
+  });
+
+  // Show/hide content sections
+  document.querySelectorAll('.content-section').forEach(section => {
+    const sectionSession = parseInt(section.dataset.session);
+    const sectionStep = parseInt(section.dataset.step);
+    section.classList.toggle('active', sectionSession === session && sectionStep === step);
+  });
+
+  // Scroll to top of content
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Initialize
+document.querySelectorAll('.session-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const session = parseInt(btn.dataset.session);
+    updateStepsNav(session);
+    const firstStep = stepsData[session][0].step;
+    showContent(session, firstStep);
+  });
+});
+
+// Initial setup
+updateStepsNav(3);
+showContent(3, 1);
+</script>
+
+</body>
+</html>
