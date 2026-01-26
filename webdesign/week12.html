@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 11 - 레이아웃은 정보 전략이다</title>
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="week.css">
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header class="header">
+        <div class="header-content">
+            <span class="week-badge">WEEK 11</span>
+            <h1 class="main-title">레이아웃은 정보 전략이다</h1>
+            <p class="subtitle">미감이 아니라 전달 설계 — 시선 흐름·그리드·공간을 통해 해석 순서를 통제</p>
+        </div>
+    </header>
+
+    <!-- 네비게이션 -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="#section-intro" class="nav-item active" data-section="section-intro">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>도입</span>
+            </a>
+            <a href="#section-redefine" class="nav-item" data-section="section-redefine">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>전략 전환</span>
+            </a>
+            <a href="#section-user" class="nav-item" data-section="section-user">
+                <i class="fa-solid fa-border-all"></i>
+                <span>그리드</span>
+            </a>
+            <a href="#section-elements" class="nav-item" data-section="section-elements">
+                <i class="fa-solid fa-eye"></i>
+                <span>시선·공간</span>
+            </a>
+            <a href="#section-evaluation" class="nav-item" data-section="section-evaluation">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>적합성</span>
+            </a>
+            <a href="#section-assignment" class="nav-item" data-section="section-assignment">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>과제</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+
+        <!-- 섹션 1: 도입 -->
+        <section id="section-intro" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h2>레이아웃을 미감으로 보는 순간, 설계는 표면으로 후퇴한다</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>정렬·균형·깔끔함은 결과를 묘사하는 말일 뿐, 왜 그런 배치가 필요했는지를 설명하지 못한다. 레이아웃은 장식이 아니라 정보의 해석 순서를 설계하는 도구다.</strong></p>
+                    </div>
+                </div>
+
+                <p>이 주차가 다루는 핵심은 레이아웃을 보기 좋게 만드는 기술이 아니라, 정보를 어떻게 전달할 것인가에 대한 전략으로 재인식하는 데 있다. 많은 경우 레이아웃은 구조 다음 단계의 구현처럼 취급되지만, 실제로는 레이아웃 단계에서 또 다른 판단이 대량으로 개입된다.</p>
+                <p>같은 구조라도 레이아웃에 따라 사용자가 받아들이는 의미는 크게 달라진다. 즉 레이아웃은 구조를 전달하는 수단이 아니라, 구조를 해석하는 전략이다.</p>
+
+                <div class="question-list">
+                    <h4><i class="fa-solid fa-circle-question"></i> 이 주차가 강제로 묻는 질문</h4>
+                    <div class="question-item">
+                        <span class="question-number">01</span>
+                        <span class="question-text">이 레이아웃은 사용자의 어떤 상태와 목표를 전제하는가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">02</span>
+                        <span class="question-text">정보를 어떤 순서로 읽고 이해하도록 통제하려는가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">03</span>
+                        <span class="question-text">여백·정렬·반복은 어떤 의미 관계를 선언하는가</span>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <i class="fa-solid fa-key"></i>
+                    <p>레이아웃의 핵심은 “보기 좋은가”가 아니라 “목적에 맞게 인지 비용을 배분하는가”다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 전략 전환 -->
+        <section id="section-redefine" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <h2>레이아웃은 구조의 구현이 아니라, 구조를 해석하는 전략이다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="insight-box">
+                    <div class="insight-header">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>핵심 통찰</span>
+                    </div>
+                    <p>정보 구조가 정해졌고 흐름이 정의되었으니 이제 보기 좋게 배치하면 된다는 사고는, 레이아웃 단계에서 발생하는 판단을 지운다.</p>
+                    <p class="insight-conclusion">구조가 요구하는 것은 관계와 우선순위이고, 레이아웃은 그 관계를 어떤 공간 규칙으로 드러낼지 선택하는 전략이다.</p>
+                </div>
+
+                <div class="compare-container">
+                    <div class="compare-card wrong">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>표면 사고</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“구조를 보기 좋게 배치한다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">레이아웃을 결과 미감으로 평가한다</div>
+                                <div class="compare-item">배치의 목적(사용자 상태)을 설명하지 못한다</div>
+                                <div class="compare-item">수정이 취향 논쟁으로 흐른다</div>
+                            </div>
+                            <p class="compare-result">설명이 끊긴다</p>
+                        </div>
+                    </div>
+
+                    <div class="compare-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <div class="compare-card right">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-check"></i>
+                            <span>전략 사고</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“구조를 목적에 맞게 해석한다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">사용자 상태에 맞게 인식 순서를 설계한다</div>
+                                <div class="compare-item">그리드·시선·공간을 규칙 체계로 사용한다</div>
+                                <div class="compare-item">수정이 기준(상황 적합성) 논의로 이동한다</div>
+                            </div>
+                            <p class="compare-result">설명이 이어진다</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-sitemap"></i> 레이아웃의 역할</h4>
+                    <p>레이아웃은 “어떻게 놓았는가”가 아니라 “어떤 해석 순서로 읽히게 할 것인가”에 대한 선언이다. 배치의 형태는 항상 선택의 결과이며, 선택은 특정 상황을 전제로 한다.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 3: 그리드 -->
+        <section id="section-user" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-border-all"></i>
+                </div>
+                <h2>그리드는 정렬 도구가 아니라 의미 질서를 유지하는 규칙 체계다</h2>
+            </div>
+            <div class="section-body">
+
+                <p>그리드는 정렬을 맞추기 위한 도구가 아니다. 그리드는 정보의 관계를 일관되게 표현하기 위한 규칙 체계다. 어떤 정보가 같은 축 위에 놓이는지, 어떤 정보가 다른 영역으로 분리되는지는 그리드를 통해 반복적으로 드러난다.</p>
+                <p>이 반복은 사용자의 인지에 안정성을 제공하고, 정보 간 관계를 학습 가능하게 만든다. 그리드는 시각적 질서를 만드는 장치이기 이전에, 의미의 질서를 유지하는 장치다.</p>
+
+                <div class="action-meaning">
+                    <h4><i class="fa-solid fa-hand-pointer"></i> 그리드가 강제하는 설계적 효과</h4>
+                    <div class="action-grid">
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-repeat"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">반복</span>
+                                <span class="action-desc">정보 관계가 계속 같은 방식으로 표현되어 학습 가능해진다</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">비교 가능성</span>
+                                <span class="action-desc">같은 축에 놓인 정보는 자연스럽게 비교 대상으로 해석된다</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">인지 안정성</span>
+                                <span class="action-desc">사용자는 레이아웃 해석이 아니라 내용 이해에 집중할 수 있다</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>그리드가 상황마다 임의로 변하면 사용자는 매번 공간 규칙을 다시 해석해야 하고, 그만큼 인지 비용이 증가한다.</strong></p>
+                    </div>
+                </div>
+
+                <div class="key-point emphasis">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <div>
+                        <p><strong>그리드는 “정렬의 편의”가 아니라,</strong></p>
+                        <p class="large"><strong>반복 가능한 의미 규칙을 제공하는 설계 장치다.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 4: 시선·공간 -->
+        <section id="section-elements" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <h2>시선 흐름과 공간은 해석 순서를 통제하는 전략 요소다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-compass"></i> 시선은 순서대로 읽지 않고, 단서를 따라 이동한다</h4>
+                    <p>사용자는 화면을 좌상단부터 순서대로 읽지 않는다. 시선은 대비, 위치, 반복, 여백을 따라 이동하며, 그 이동 경로는 어느 정도 예측 가능하다.</p>
+                    <p>레이아웃 설계란 이 시선의 이동을 통제하는 작업이다. 어떤 정보에서 시작해 어떤 정보로 이동하게 할 것인지, 어디에서 멈추게 하고 어디에서 행동을 고려하게 할 것인지를 공간적으로 설계하는 일이다.</p>
+                </div>
+
+                <div class="element-cards">
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-route"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>목적 기반 시선 흐름</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>자연스러워 보이는 흐름을 목표로 한다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>비교/이해/설득/결정 등 목적에 맞는 흐름을 설계한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-left-right"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>비교 중심 배치</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>정보를 나열하고 사용자가 비교하길 기대한다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>좌우 왕복이 가능하도록 동일 축·동일 단위를 정렬한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-arrows-down-to-line"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>이해·설득 중심 배치</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>중요하니 위에만 올린다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>상→하로 정보가 점진적으로 축적되도록 단계를 설계한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-expand"></i> 공간(여백)은 비워두는 게 아니라 의미를 조절한다</h4>
+                    <p>여백은 장식이 아니다. 어떤 요소 사이에 공간을 두었다는 것은 그 둘이 다른 의미 단위라는 선언이다. 반대로 공간을 최소화했다는 것은 함께 묶어 인식하길 바란다는 의도다.</p>
+                    <p>공간은 정보를 숨기는 것이 아니라 정보를 읽는 방식을 조절한다. 이 관점이 없으면 여백은 단순히 보기 좋게 만들기 위한 장치로 전락한다.</p>
+                </div>
+
+                <div class="role-shift">
+                    <div class="role-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="role-content">
+                        <p class="role-from">레이아웃을 정돈된 인상으로 평가한다</p>
+                        <p class="role-arrow"><i class="fa-solid fa-arrow-down"></i></p>
+                        <p class="role-to">사용자의 인지 자원을 어떻게 배분할지로 레이아웃을 판단한다</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 5: 적합성 -->
+        <section id="section-evaluation" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h2>레이아웃의 정답은 없고, 상황 적합성만 존재한다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>레이아웃은 중립적이지 않다. 모든 레이아웃은 특정 사용 상황을 전제한다. 적합성은 미적 완성도가 아니라 상황 적합성으로 판단되어야 한다.</strong></p>
+                    </div>
+                </div>
+
+                <p>빠른 탐색을 전제로 한 레이아웃과 깊은 이해를 전제로 한 레이아웃은 동일한 정보 구조를 전혀 다르게 배치한다. 따라서 레이아웃의 적합성은 “어떤 사용자는 지금 무엇을 해야 하는가”에 대한 공간적 답변으로 판단된다.</p>
+
+                <div class="new-criteria">
+                    <h4><i class="fa-solid fa-arrows-to-circle"></i> 적합성을 판단하는 질문</h4>
+                    <div class="criteria-list">
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">사용자는 지금 빠르게 찾으려는가, 비교하려는가, 이해하려는가, 결정을 내리려는가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">그 목적을 위해 시선은 어디에서 시작해 어디로 이동해야 하는가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">그리드·반복·공간 규칙이 상황에 맞게 일관되게 유지되는가?</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 6: 과제 -->
+        <section id="section-assignment" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <h2>과제 안내</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="assignment-intro">
+                    <p>과제는 동일한 정보 구조로 두 가지 레이아웃을 설계하도록 요구한다. 정보 구조가 동일하다는 조건은 레이아웃 차이가 정보의 차이가 아니라 전략의 차이에서 발생했음을 분명히 하기 위한 장치다.</p>
+                    <p>이 과제의 목적은 더 나은 레이아웃을 찾는 것이 아니라, 같은 정보를 다른 목적에 맞게 배치할 수 있는지를 검증하는 데 있다.</p>
+                </div>
+
+                <div class="assignment-steps">
+                    <h4><i class="fa-solid fa-shoe-prints"></i> 작성 순서</h4>
+
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h5>동일 정보 구조 고정</h5>
+                            <p>정보 묶음과 관계, 우선순위를 동일하게 유지한다. 레이아웃은 구조가 아니라 해석 전략의 차이로만 변해야 한다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 정보의 추가/삭제 금지, 동일한 요소 세트를 유지</p>
+                            </div>
+                            <div class="step-questions">
+                                <span>변수는 “배치 전략” 하나만 남겨야 한다</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h5>레이아웃 A: 빠른 탐색/결정 전제</h5>
+                            <p>사용자가 빠르게 찾고 결정해야 하는 상황을 전제로 배치한다. 시선 시작점, 비교 축, 행동 고려 지점을 공간으로 명확히 만든다.</p>
+                            <div class="step-detail warning">
+                                <p><i class="fa-solid fa-exclamation-triangle"></i> “깔끔”이 아니라 “탐색 비용을 낮추는 규칙”을 설명해야 한다</p>
+                            </div>
+                            <div class="analysis-points">
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <span>탐색</span>
+                                </div>
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-bolt"></i>
+                                    <span>즉시성</span>
+                                </div>
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-hand-pointer"></i>
+                                    <span>행동 유도</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h5>레이아웃 B: 탐색/비교/이해 전제</h5>
+                            <p>사용자가 충분히 읽고 비교하고 이해해야 하는 상황을 전제로 배치한다. 정보를 점진적으로 쌓거나 비교 가능하도록 축을 설계한다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> “정돈”이 아니라 “이해를 위한 해석 순서”를 언어로 고정</p>
+                            </div>
+                            <div class="explanation-requirements">
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>점진적 축적</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>비교 축</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>판단 근거</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h5>A/B 비교 설명(상태 기반)</h5>
+                            <p>레이아웃 특징 묘사가 아니라, 각 레이아웃이 전제하는 사용자 상태를 설명한다. 어떤 목표에서 어떤 행동이 빨라지고 어떤 판단이 쉬워지는지를 연결한다.</p>
+                            <div class="step-detail warning">
+                                <p><i class="fa-solid fa-exclamation-triangle"></i> “균형/깔끔” 같은 인상 표현 금지 — 목적 관점에서만 설명</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pass-criteria">
+                    <h4><i class="fa-solid fa-flag-checkered"></i> 통과 기준</h4>
+                    <div class="criteria-cards">
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-comment-slash"></i></div>
+                            <div class="criteria-content">
+                                <p>인상 표현 없이 목적 설명 가능</p>
+                                <span class="criteria-meaning">= 배치가 어떤 행동을 유도하고 어떤 판단을 빠르게 만드는지 언어로 연결</span>
+                            </div>
+                        </div>
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-code-branch"></i></div>
+                            <div class="criteria-content">
+                                <p>동일 구조에서 전략 차이를 증명</p>
+                                <span class="criteria-meaning">= 정보 차이가 아니라 상황 적합성 차이로 레이아웃을 구분</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 결론 섹션 -->
+        <section class="conclusion-section">
+            <div class="conclusion-content">
+                <div class="conclusion-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3>이 주차의 의미</h3>
+                <p>이 주차는 레이아웃을 잘 짜는 법을 배우는 시간이 아니다. 레이아웃을 왜 그렇게 짰는지를 설명하는 법을 배우는 시간이다.</p>
+                <p class="emphasis-text">레이아웃을 정보 전략으로 인식할 수 있을 때, 화면은 미감의 경쟁장이 아니라 사용자의 인지 자원을 배분하는 설계 결과가 된다.</p>
+
+                <div class="conclusion-contrast">
+                    <div class="contrast-item negative">
+                        <i class="fa-solid fa-xmark"></i>
+                        <p>미감으로 보면</p>
+                        <span>레이아웃은 취향 논쟁으로 수렴한다</span>
+                    </div>
+                    <div class="contrast-item positive">
+                        <i class="fa-solid fa-check"></i>
+                        <p>전략으로 보면</p>
+                        <span>레이아웃은 판단으로 남고 수정·재사용 가능한 자산이 된다</span>
+                    </div>
+                </div>
+
+                <div class="final-question">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>이 레이아웃은 어떤 사용자 상태를 전제하며, 그 상태에서 필요한 판단과 행동을 어떻게 빠르게 만들었는가?</p>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <p class="final-statement">레이아웃은 장식이 아니라, 정보를 읽는 순서를 설계하는 전략이다.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <p>Week 11 - 레이아웃은 정보 전략이다</p>
+    </footer>
+
+    <!-- 진행률 표시 -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="week.js"></script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 11 - 설계에서 화면으로: 해석과 판단의 복원</title>
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="week.css">
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header class="header">
+        <div class="header-content">
+            <span class="week-badge">WEEK 11</span>
+            <h1 class="main-title">설계에서 화면으로: 해석과 판단의 복원</h1>
+            <p class="subtitle">설계는 자동 변환되지 않는다 — 화면은 해석본이며, 해석마다 판단이 다시 발생한다</p>
+        </div>
+    </header>
+
+    <!-- 네비게이션 -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="#section-intro" class="nav-item active" data-section="section-intro">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>도입</span>
+            </a>
+            <a href="#section-redefine" class="nav-item" data-section="section-redefine">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>착각 해체</span>
+            </a>
+            <a href="#section-user" class="nav-item" data-section="section-user">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>구조→레이아웃</span>
+            </a>
+            <a href="#section-elements" class="nav-item" data-section="section-elements">
+                <i class="fa-solid fa-pencil-ruler"></i>
+                <span>와이어프레임</span>
+            </a>
+            <a href="#section-evaluation" class="nav-item" data-section="section-evaluation">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>통과 기준</span>
+            </a>
+            <a href="#section-assignment" class="nav-item" data-section="section-assignment">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>과제</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+
+        <!-- 섹션 1: 도입 -->
+        <section id="section-intro" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h2>설계가 화면으로 넘어가는 순간, 판단이 사라지는 착각</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>설계는 결코 화면으로 자동 변환되지 않는다. 화면은 언제나 설계에 대한 해석 결과이며, 해석이 개입되는 순간마다 판단은 다시 발생한다.</strong></p>
+                    </div>
+                </div>
+
+                <p>문서에서 치열하게 정의했던 문제, 기준, 흐름은 화면으로 옮겨지는 과정에서 마치 자동 변환이 가능한 것처럼 취급되기 쉽다. 이 주차가 다루는 핵심은 바로 그 착각을 해체하는 데 있다. 설계 문서는 방향을 제시할 뿐 화면의 형태를 지정하지 않는다. 형태를 결정하는 것은 언제나 추가적인 판단이다.</p>
+
+                <div class="question-list">
+                    <h4><i class="fa-solid fa-circle-question"></i> 이 주차가 강제로 묻는 질문</h4>
+                    <div class="question-item">
+                        <span class="question-number">01</span>
+                        <span class="question-text">이 배치는 설계 문서의 어떤 판단을 해석한 결과인가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">02</span>
+                        <span class="question-text">같은 구조에서 가능한 다른 배치는 무엇이며 왜 배제했는가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">03</span>
+                        <span class="question-text">화면 내부에서 UX 흐름(시선·행동)이 어떻게 구현되었는가</span>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <i class="fa-solid fa-key"></i>
+                    <p>레이아웃으로 옮기는 순간 설계가 끝나는 것이 아니라 다시 시작된다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 착각 해체 -->
+        <section id="section-redefine" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <h2>설계 문서는 방향이고, 화면은 물리적 제약 속 해석이다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="insight-box">
+                    <div class="insight-header">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>핵심 통찰</span>
+                    </div>
+                    <p>설계 문서는 추상적이고 화면은 구체적이다. 문제 정의·구조·흐름·기준은 개념 언어로 정리되지만, 화면은 픽셀·영역·간격·비율·위치라는 물리적 제약 안에서 구현되어야 한다.</p>
+                    <p class="insight-conclusion">“문서가 화면을 결정해준다”는 믿음은 판단을 생략하게 만든다. 실제로는 문서가 요구하는 것은 관계와 우선순위이고, 형태는 항상 선택의 결과다.</p>
+                </div>
+
+                <div class="compare-container">
+                    <div class="compare-card wrong">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>자동 변환 착각</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“구조가 이러니까 화면은 이렇게 나올 수밖에 없다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">판단을 구조에 전가한다</div>
+                                <div class="compare-item">배치의 선택지를 인식하지 못한다</div>
+                                <div class="compare-item">결과가 설명 불가능해진다</div>
+                            </div>
+                            <p class="compare-result">책임이 사라진다</p>
+                        </div>
+                    </div>
+
+                    <div class="compare-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <div class="compare-card right">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-check"></i>
+                            <span>해석과 판단 복원</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“구조는 관계를 요구하고, 레이아웃은 그 관계의 해석이다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">같은 구조에서도 다양한 화면이 가능함을 전제한다</div>
+                                <div class="compare-item">각 배치를 선택한 이유를 언어로 고정한다</div>
+                                <div class="compare-item">화면을 수정 가능·검토 가능 상태로 만든다</div>
+                            </div>
+                            <p class="compare-result">책임이 복원된다</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-sitemap"></i> 구조와 레이아웃 사이에 존재하는 것</h4>
+                    <p>구조는 정보의 관계를 정의하지만, 그 관계를 어떤 공간적 질서로 표현할지는 또 다른 문제다. 같은 구조라도 전혀 다른 화면이 나올 수 있는 이유는, 구조와 레이아웃 사이에 수많은 선택지가 존재하기 때문이다.</p>
+                    <p>무엇을 택했는지, 왜 택했는지를 인식하지 못하면 화면은 설계의 결과가 아니라 임의적 배치의 집합이 된다.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 3: 구조→레이아웃 -->
+        <section id="section-user" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <h2>구조에서 레이아웃으로 갈 때 발생하는 ‘숨은 결정’들</h2>
+            </div>
+            <div class="section-body">
+
+                <p>구조에서 레이아웃으로 갈 때 발생하는 선택은 생각보다 많다. 어떤 정보 묶음을 하나의 영역으로 볼 것인지, 그 영역을 화면의 어디에 둘 것인지, 어떤 순서로 배치할 것인지, 얼마나 많은 공간을 할당할 것인지, 스크롤 안에 둘 것인지 분리할 것인지 등은 모두 설계 문서에 직접적으로 명시되지 않는 판단들이다.</p>
+                <p>이 판단들은 사소해 보이지만, 사용자의 인식과 행동에 직접적인 영향을 미친다. 화면은 설계의 복사본이 아니라 해석본이라는 점이 여기서 결정적으로 중요해진다.</p>
+
+                <div class="action-meaning">
+                    <h4><i class="fa-solid fa-hand-pointer"></i> 레이아웃 단계의 대표 판단 축</h4>
+                    <div class="action-grid">
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-border-all"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">영역 분할</span>
+                                <span class="action-desc">정보 묶음을 어떤 단위의 박스/섹션으로 번역하는가</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">위치·우선순위</span>
+                                <span class="action-desc">어떤 정보를 상단/좌측/중앙에 두어 먼저 보게 만드는가</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-maximize"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">공간 배분</span>
+                                <span class="action-desc">면적·여백·밀도·스캔 속도를 어떻게 조절하는가</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>설명할 수 없는 해석은 설계가 아니라 취향으로 오해된다. 해석의 차이 자체가 문제가 아니라, 기준을 설명하지 못하는 것이 문제다.</strong></p>
+                    </div>
+                </div>
+
+                <div class="key-point emphasis">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <div>
+                        <p><strong>레이아웃은 배치가 아니라,</strong></p>
+                        <p class="large"><strong>구조·흐름을 공간으로 번역하는 판단이다.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 4: 와이어프레임 -->
+        <section id="section-elements" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-pencil-ruler"></i>
+                </div>
+                <h2>저충실도 와이어프레임: 판단을 가시화하는 장치</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-compass"></i> 저충실도에서 남는 것은 “관계와 흐름”뿐이다</h4>
+                    <p>저충실도 와이어프레임을 요구하는 이유는 시각적 완성도가 아니라 판단의 가시화다. 색·이미지·스타일을 제거하면 남는 것은 배치와 관계뿐이다.</p>
+                    <p>저충실도 상태에서는 “예뻐 보이니까”라는 변명이 작동하지 않는다. 오직 구조와 흐름이 어떻게 공간으로 번역되었는지만이 드러난다. 이 상태에서 설명할 수 없는 배치는 고충실도로 가면 더 설명 불가능해진다.</p>
+                </div>
+
+                <div class="element-cards">
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-diagram-predecessor"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>해석본임을 인정한다</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>“문서가 이렇게 시켰다”</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>“내가 이 기준으로 해석했다”</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-code-branch"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>대안을 의식한다</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>현재 배치만 존재하는 것처럼 쓴다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>가능한 다른 배치와 배제 이유를 함께 둔다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>설명 가능한 상태를 만든다</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>기능 설명으로 배치를 대체한다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>설계 문서의 판단과 배치를 언어로 연결한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="role-shift">
+                    <div class="role-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="role-content">
+                        <p class="role-from">화면은 설계의 자동 결과물이다</p>
+                        <p class="role-arrow"><i class="fa-solid fa-arrow-down"></i></p>
+                        <p class="role-to">화면은 설계를 공간으로 번역한 해석본이며, 판단을 복원해야 한다</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 5: 통과 기준 -->
+        <section id="section-evaluation" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h2>통과 기준: 임의 배치가 없는가, 모든 배치가 설계와 연결되는가</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>임의 배치란 설명할 수 없는 배치다. “그냥 편해서”, “보통 이렇게 하니까”는 설계 근거가 아니다.</strong></p>
+                    </div>
+                </div>
+
+                <p>작은 요소라도 설계 문서의 기준과 연결 지어 설명할 수 있다면 그 배치는 임의가 아니다. 설계는 크기의 문제가 아니라 일관성의 문제다.</p>
+                <p>모든 배치에 설계 근거가 존재해야 한다는 기준은 화면을 다시 판단의 언어로 끌어올린다. 화면이 설명 가능한 상태라는 것은, 그 화면이 다시 수정 가능하고 검토 가능한 상태라는 의미다.</p>
+
+                <div class="new-criteria">
+                    <h4><i class="fa-solid fa-arrows-to-circle"></i> 통과를 가르는 질문</h4>
+                    <div class="criteria-list">
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">각 영역(섹션/카드/블록)은 설계 문서의 어떤 판단을 번역한 결과인가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">가능한 대안 배치와 배제 이유를 설명할 수 있는가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">UX 흐름이 화면 간 이동이 아니라 화면 내부 시선·행동 유도로 구현되어 있는가?</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 6: 과제 -->
+        <section id="section-assignment" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <h2>과제 안내</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="assignment-intro">
+                    <p>과제의 핵심은 화면을 만드는 것이 아니라, 설계 문서의 각 항목이 화면에서 어떻게 해석되었는지를 언어로 연결하는 데 있다.</p>
+                    <p>문제 정의는 화면의 어디에서 반영되었는지, 구조는 어떤 영역 구분으로 나타났는지, UX 흐름은 화면 간 이동이 아니라 화면 내부의 시선과 행동 유도로 어떻게 구현되었는지를 설명해야 한다. 이 설명은 결과 보고가 아니라 판단 추적이어야 한다.</p>
+                </div>
+
+                <div class="assignment-steps">
+                    <h4><i class="fa-solid fa-shoe-prints"></i> 작성 순서</h4>
+
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h5>저충실도 와이어프레임 1안 제작</h5>
+                            <p>색·이미지·스타일 없이 영역과 배치만으로 구성한다. 목표는 “예쁨”이 아니라 구조·흐름의 공간 번역을 드러내는 것이다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 섹션/블록/카드 단위로 구획하고, 각 구획의 역할을 한 문장으로 정의</p>
+                            </div>
+                            <div class="step-questions">
+                                <span>이 화면을 처음 본 사용자가 어떤 순서로 인식하고 어떤 행동을 고려해야 하는가</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h5>설계 문서 ↔ 화면 해석 연결 문서 작성</h5>
+                            <p>문제 정의/구조/흐름/기준이 화면의 어떤 결정으로 번역되었는지 항목별로 연결해 설명한다.</p>
+                            <div class="step-detail warning">
+                                <p><i class="fa-solid fa-exclamation-triangle"></i> “여기에 메뉴” 같은 기능 설명으로 끝내지 말고, 어떤 구조 판단이 어떤 배치로 번역되었는지까지 연결</p>
+                            </div>
+                            <div class="analysis-points">
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                    <span>문제 정의→배치</span>
+                                </div>
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    <span>구조→영역</span>
+                                </div>
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-route"></i>
+                                    <span>흐름→시선/행동</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h5>대안 1개 제시 + 배제 이유 기록</h5>
+                            <p>같은 구조에서 가능한 다른 배치를 1개 제시하고, 왜 배제했는지를 기준으로 설명한다. 이 항목이 있어야 “선택”이 설계로 인정된다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 대안은 완성도가 아니라 “가능한 선택지”로서 정직하게 제시</p>
+                            </div>
+                            <div class="explanation-requirements">
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>대안</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>배제 기준</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>리스크</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pass-criteria">
+                    <h4><i class="fa-solid fa-flag-checkered"></i> 통과 기준</h4>
+                    <div class="criteria-cards">
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-ban"></i></div>
+                            <div class="criteria-content">
+                                <p>임의 배치 없음</p>
+                                <span class="criteria-meaning">= 모든 배치가 설계 문서의 기준과 논리적으로 연결됨</span>
+                            </div>
+                        </div>
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-comments"></i></div>
+                            <div class="criteria-content">
+                                <p>설명 가능성 유지</p>
+                                <span class="criteria-meaning">= 화면이 수정 가능·검토 가능 상태로 남아 있음</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 결론 섹션 -->
+        <section class="conclusion-section">
+            <div class="conclusion-content">
+                <div class="conclusion-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3>이 주차의 의미</h3>
+                <p>이 주차를 통과하면 화면은 더 이상 직관의 산물이 아니다. 화면은 설계 문서를 공간으로 번역한 결과이며, 그 번역 과정에서 어떤 판단이 개입되었는지를 스스로 인식할 수 있게 된다.</p>
+                <p class="emphasis-text">화면 설계는 더 느려질 수 있다. 하지만 그 느림은 망설임이 아니라, 판단을 생략하지 않겠다는 선택이다. 그 선택이 누적될 때 화면은 비로소 설계의 연장선으로 기능한다.</p>
+
+                <div class="conclusion-contrast">
+                    <div class="contrast-item negative">
+                        <i class="fa-solid fa-xmark"></i>
+                        <p>자동 변환처럼 다루면</p>
+                        <span>화면은 설명 불가능한 결과물이 된다</span>
+                    </div>
+                    <div class="contrast-item positive">
+                        <i class="fa-solid fa-check"></i>
+                        <p>해석으로 다루면</p>
+                        <span>화면은 설계를 연장하는 판단물로 남는다</span>
+                    </div>
+                </div>
+
+                <div class="final-question">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>이 배치는 설계 문서의 어떤 기준을 해석한 결과이며, 다른 배치를 배제한 이유는 무엇인가?</p>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <p class="final-statement">설계는 화면으로 변환되는 것이 아니라, 화면에서 다시 판단으로 복원되어야 한다.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <p>Week 11 - 설계에서 화면으로: 해석과 판단의 복원</p>
+    </footer>
+
+    <!-- 진행률 표시 -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="week.js"></script>
+</body>
+</html>

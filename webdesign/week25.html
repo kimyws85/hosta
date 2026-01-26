@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 25 - 최종 평가</title>
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="week.css">
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header class="header">
+        <div class="header-content">
+            <span class="week-badge">WEEK 25</span>
+            <h1 class="main-title">최종 평가</h1>
+            <p class="subtitle">문제 정의를 “해결 가능한 구조”로 번역하고, 흐름을 설계 언어로 고정</p>
+        </div>
+    </header>
+
+    <!-- 네비게이션 -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="#section-intro" class="nav-item active" data-section="section-intro">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>도입</span>
+            </a>
+            <a href="#section-essence" class="nav-item" data-section="section-essence">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>본질</span>
+            </a>
+            <a href="#section-structure" class="nav-item" data-section="section-structure">
+                <i class="fa-solid fa-sitemap"></i>
+                <span>IA</span>
+            </a>
+            <a href="#section-scenario" class="nav-item" data-section="section-scenario">
+                <i class="fa-solid fa-route"></i>
+                <span>시나리오</span>
+            </a>
+            <a href="#section-flow" class="nav-item" data-section="section-flow">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span>UX 흐름</span>
+            </a>
+
+            <a href="#section-screen-structure" class="nav-item" data-section="section-screen-structure">
+                <i class="fa-solid fa-border-all"></i>
+                <span>화면 구조</span>
+            </a>
+
+            <a href="#section-states" class="nav-item" data-section="section-states">
+                <i class="fa-solid fa-arrows-spin"></i>
+                <span>상태·피드백</span>
+            </a>
+
+            <a href="#section-constraints" class="nav-item" data-section="section-constraints">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>현실 제약</span>
+            </a>
+
+            <a href="#section-finalize" class="nav-item" data-section="section-finalize">
+                <i class="fa-solid fa-box-archive"></i>
+                <span>최종 정리</span>
+            </a>
+
+            <!-- ✅ 이번 요청: 최종 평가 -->
+            <a href="#section-evaluation" class="nav-item" data-section="section-evaluation">
+                <i class="fa-solid fa-square-check"></i>
+                <span>최종 평가</span>
+            </a>
+
+            <a href="#section-assignment" class="nav-item" data-section="section-assignment">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>과제</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+
+        <!-- 섹션 1: 도입 -->
+        <section id="section-intro" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h2>화면이 아니라, 설계 언어가 프로젝트의 뼈대가 된다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>프로젝트가 설계 단계에 들어가는 순간은 화면을 그릴 때가 아니라, 정보 구조와 UX 흐름이 언어로 고정될 때다.</strong></p>
+                    </div>
+                </div>
+
+                <p>문제 정의가 프로젝트의 출발점이라면, 정보 구조(IA)와 UX 흐름은 그 문제를 실제로 해결 가능한 형태로 바꾸는 첫 번째 구조적 해석이다.</p>
+                <p>이 단계가 흐릿하면 이후의 화면은 모두 임시방편이 된다. 반대로 이 단계가 고정되면 이후의 화면/구현은 방향 탐색이 아니라 구체화 작업으로 전환된다.</p>
+
+                <div class="question-list">
+                    <h4><i class="fa-solid fa-circle-question"></i> 이 주차가 강제로 묻는 질문</h4>
+                    <div class="question-item">
+                        <span class="question-number">01</span>
+                        <span class="question-text">이 프로젝트는 어떤 정보 단위를 통해 문제를 풀어야 하는가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">02</span>
+                        <span class="question-text">사용자는 어떤 상태 변화/판단 흐름으로 문제를 통과하는가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">03</span>
+                        <span class="question-text">구조와 흐름에서 “왜 필요한지 설명 불가한 단계”는 어디인가</span>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <i class="fa-solid fa-key"></i>
+                    <p>25주차는 덧붙이는 주차가 아니라, 덜어내고 고정하는 주차다.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 2: 본질 -->
+        <section id="section-essence" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <h2>정보 구조는 정리가 아니라 ‘문제의 분해’다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="insight-box">
+                    <div class="insight-header">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>핵심 통찰</span>
+                    </div>
+                    <p>정보 구조(IA)는 “이 서비스에 무엇이 있는가”를 설명하는 문서가 아니다.</p>
+                    <p class="insight-conclusion">IA는 “이 문제를 해결하기 위해 어떤 정보가 필요하며, 그것들이 어떤 관계를 맺는가”를 고정하는 설계 문서다.</p>
+                </div>
+
+                <div class="compare-container">
+                    <div class="compare-card wrong">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>오해</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“페이지/메뉴를 정리하면 IA가 된다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">구현 단위를 구조 단위로 착각</div>
+                                <div class="compare-item">사용자 판단 단위가 사라짐</div>
+                                <div class="compare-item">흐름은 화면 전환으로 축소됨</div>
+                            </div>
+                            <p class="compare-result">구조가 흐려진다</p>
+                        </div>
+                    </div>
+
+                    <div class="compare-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <div class="compare-card right">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-check"></i>
+                            <span>정의</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“의미 단위와 관계를 고정한다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">사용자가 던지는 질문/필요한 답으로 정보 단위를 정의</div>
+                                <div class="compare-item">관계(포함/병렬/선행/상하)를 언어로 명시</div>
+                                <div class="compare-item">흐름은 상태 변화/판단의 논리로 서술</div>
+                            </div>
+                            <p class="compare-result">구조가 선명해진다</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-sitemap"></i> 구조 단위 전환</h4>
+                    <p>페이지는 구현 단위일 뿐, 구조 단위가 아니다. 구조는 의미 단위의 묶음이며 사용자 판단을 기준으로 정의된다.</p>
+                    <p>같은 화면 안에 여러 구조가 공존할 수도 있고, 하나의 구조가 여러 화면에 걸쳐 펼쳐질 수도 있다.</p>
+                </div>
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>“있으면 좋아 보인다”, “보통 다 있으니까”로 포함된 정보 묶음은 이후 흐름을 복잡하게 만들고 판단 기준을 흐린다.</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 3: IA -->
+        <section id="section-structure" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-sitemap"></i>
+                </div>
+                <h2>IA 작성 규칙: 의미 단위 + 관계 + 문제 정의 연결</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-layer-group"></i> IA는 “메뉴 트리”가 아니라 “정보 체계”다</h4>
+                    <p>IA 문서는 정보 단위(의미 단위)를 정의하고, 그 단위들 사이의 관계를 명시해야 한다.</p>
+                    <p>각 단위는 문제 정의의 어떤 부분을 설명하거나 해결하는지 연결되어야 하며, 연결되지 않는 단위는 의심 대상이다.</p>
+                </div>
+
+                <div class="new-criteria">
+                    <h4><i class="fa-solid fa-arrows-to-circle"></i> IA에서 반드시 언어로 고정할 것</h4>
+                    <div class="criteria-list">
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">정보 단위는 어떤 사용자 질문/판단을 위해 존재하는가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">이 단위는 다른 단위와 어떤 관계인가(포함/병렬/선행/상하)?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">문제 정의의 어떤 막힘을 이 단위가 직접 다루는가?</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-point emphasis">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <div>
+                        <p><strong>구조 단계의 절제는 이후 설계 전체의 밀도를 결정한다.</strong></p>
+                        <p class="large"><strong>“좋은 정보”가 아니라 “필요한 정보”만 남긴다.</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 4: 시나리오 -->
+        <section id="section-scenario" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-route"></i>
+                </div>
+                <h2>대표 시나리오 1개: 구조를 시간 축으로 검증</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-compass"></i> 시나리오는 기능 순서가 아니라 상태 변화다</h4>
+                    <p>대표 시나리오는 “사용자 상태 → 불확실성 → 판단 → 상태 해소”의 흐름으로 서술되어야 한다.</p>
+                    <p>모든 가능성을 다루지 않는다. 이 프로젝트가 반드시 해결해야 하는 핵심 문제 상황 하나를 선택하고 끝까지 따라간다.</p>
+                </div>
+
+                <div class="role-shift">
+                    <div class="role-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="role-content">
+                        <p class="role-from">“회원가입 → 검색 → 상세 → 결제” 같은 기능 나열</p>
+                        <p class="role-arrow"><i class="fa-solid fa-arrow-down"></i></p>
+                        <p class="role-to">진입 불확실성 → 판단 단계 → 해소되는 정보 → 목표 상태 도달</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>예외 시나리오/경계 케이스는 이후 단계다. 이 주차는 중심축을 고정하는 단계다.</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 5: UX 흐름 -->
+        <section id="section-flow" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-diagram-project"></i>
+                </div>
+                <h2>UX 플로우: 화면 전환이 아니라 판단 연쇄의 고정</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-brain"></i> 단계가 아니라 “왜 존재하는지”가 핵심이다</h4>
+                    <p>UX 플로우는 사용자의 상태 변화와 판단 지점을 연결한 논리적 흐름이다.</p>
+                    <p>단계가 많다는 것이 문제는 아니다. 문제는 “왜 필요한지 설명할 수 없는 단계”가 존재할 때다.</p>
+                </div>
+
+                <div class="context-requirements">
+                    <h4><i class="fa-solid fa-layer-group"></i> 제거 대상의 신호</h4>
+                    <div class="context-grid">
+                        <div class="context-item">
+                            <i class="fa-solid fa-question"></i>
+                            <span>단계 존재 이유가 말로 안 됨</span>
+                        </div>
+                        <div class="context-item">
+                            <i class="fa-solid fa-rotate"></i>
+                            <span>관행/구현 편의로 삽입됨</span>
+                        </div>
+                        <div class="context-item">
+                            <i class="fa-solid fa-shuffle"></i>
+                            <span>문제 정의와 직접 연결되지 않음</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <i class="fa-solid fa-key"></i>
+                    <p>25주차의 UX 플로우는 “더하기”가 아니라 “삭제와 정합”을 위한 검증 도구다.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 화면 구조 -->
+        <section id="section-screen-structure" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-border-all"></i>
+                </div>
+                <h2>화면 구조 설계: 설계 언어를 물리적 구조로 정확히 변환</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>화면은 결과물이 아니라 검증 장치다. 이미 내려진 판단을 공간과 관계로 정확히 번역한다.</strong></p>
+                    </div>
+                </div>
+                <p>이 섹션은 이전 단계에서 고정한 문제/구조/흐름/우선순위를 화면 구조로 변환해, 설계 사고가 흔들리지 않았는지를 검증한다.</p>
+            </div>
+        </section>
+
+        <!-- 상태·피드백 -->
+        <section id="section-states" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-arrows-spin"></i>
+                </div>
+                <h2>상태·피드백·흐름 검증: 사용자는 멈추지 않는다</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>정적인 화면이 아무리 완성도가 높아 보여도, 사용 흐름이 깨지는 순간 설계는 실패한다.</strong></p>
+                    </div>
+                </div>
+                <p>이 섹션은 화면의 겉모습이 아니라 상태 변화와 사용자 인식의 연속성을 기준으로, 흐름 오류(인식 단절)를 드러내고 제거한다.</p>
+            </div>
+        </section>
+
+        <!-- 현실 제약 -->
+        <section id="section-constraints" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <h2>현실 제약 반영: 완성도를 지키는 것이 아니라 의도를 지킨다</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>제약은 설계를 약화시키는 이유가 아니라, 핵심 의도를 선명하게 만드는 압박 조건이다.</strong></p>
+                    </div>
+                </div>
+                <p>이 섹션은 제약을 “조건”으로 정의하고, 핵심 의도를 고정한 뒤, 우선순위 재배치와 대안 설계를 통해 설계를 현실에서 작동 가능한 형태로 재구성한다.</p>
+            </div>
+        </section>
+
+        <!-- 최종 정리 -->
+        <section id="section-finalize" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-box-archive"></i>
+                </div>
+                <h2>최종 결과물 정리: 마무리가 아니라 전환</h2>
+            </div>
+            <div class="section-body">
+                <p>이 섹션은 설계 결과와 설명을 하나의 일관된 패키지로 묶어 외부 전달 가능한 상태로 전환한다. 결과물과 설명이 서로를 증명하도록 재배열하고, 발표 흐름과 질문 대비를 통해 설계 언어가 외부 언어로 안정화되었는지 점검한다.</p>
+            </div>
+        </section>
+
+        <!-- ✅ 이번 요청: 최종 평가(본문 전체 교체/삽입) -->
+        <section id="section-evaluation" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-square-check"></i>
+                </div>
+                <h2>최종 평가: 결과 채점이 아니라 판단 체계 검증</h2>
+            </div>
+
+            <div class="section-body">
+
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>최종 평가는 결과를 채점하는 단계가 아니다. 설계 사고가 하나의 일관된 판단 체계로 작동하는지를 종합적으로 검증한다.</strong></p>
+                    </div>
+                </div>
+
+                <p>이 주차의 목적은 프로젝트 전 과정을 통해 형성된 설계 사고가 실제로 하나의 일관된 판단 체계로 작동하고 있는지를 종합적으로 검증하는 데 있다. 여기서 평가는 점수나 등급을 매기기 위한 절차가 아니라, 설계자가 더 이상 훈련 단계에 머물러 있지 않다는 것을 확인하는 마지막 관문이다. 이 단계에 이르면 화면의 완성도보다 사고의 안정성이 평가의 중심이 된다.</p>
+
+                <div class="insight-box">
+                    <div class="insight-header">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>평가의 3축</span>
+                    </div>
+                    <p>이 주차의 평가는 결과물, 설계 논리, 설명·방어 능력이라는 세 축으로 구성된다.</p>
+                    <p class="insight-conclusion">각 축은 표현이나 미적 완성도가 아니라, 설계 기준의 일관성과 추적 가능성을 검증한다.</p>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-cube"></i> 1) 결과물 평가</h4>
+                    <p>결과물 평가는 시각적 완성도를 판단하기 위한 항목이 아니다. 결과물 평가는 설계 문서에서 정의한 문제, 구조, 흐름, 상태가 실제 결과물에서 왜곡 없이 구현되었는지를 확인하는 과정이다. 화면이 깔끔한지, 보기 좋은지는 부차적인 요소다. 중요한 것은 결과물이 설계 언어를 정확히 반영하고 있는지, 임의적 선택이 개입되지 않았는지, 사용자 경험의 핵심 흐름이 화면 구조와 인터랙션을 통해 명확히 드러나는지다. 결과물은 설계 사고의 증거물로 평가된다.</p>
+                    <p>이 평가에서 특히 주의 깊게 보는 지점은 결과물의 일관성이다. 화면마다 다른 기준이 적용되었는지, 특정 구간에서 설계 원칙이 흐트러졌는지, 제약 조정 과정에서 핵심 의도가 훼손되었는지가 검토 대상이다. 결과물이 부분적으로 훌륭해 보이더라도 전체 흐름에서 설계 판단이 흔들린 흔적이 있다면, 이는 완성도가 아니라 불안정성으로 해석된다.</p>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-sitemap"></i> 2) 설계 논리 평가</h4>
+                    <p>설계 논리 평가는 이 과정의 핵심이다. 이 평가는 “무엇을 만들었는가”가 아니라 “왜 그렇게 판단했는가”를 묻는다. 문제 정의에서 출발한 설계 논리가 정보 구조, UX 흐름, 화면 구조, 상태 설계, 제약 조정까지 일관되게 유지되었는지가 평가 기준이다. 중간 단계에서 판단 기준이 바뀌었다면, 그 변화가 인식되고 문서화되어 있는지도 함께 검토된다.</p>
+                    <p>설계 논리 평가는 정답 여부를 묻지 않는다. 다른 선택이 가능했는지는 중요하지 않다. 중요한 것은 현재의 선택이 스스로 설정한 기준 안에서 논리적으로 설명 가능한가다. 이 평가를 통과하기 위해 설계자는 자신의 선택을 미화할 필요가 없다. 오히려 선택의 한계와 리스크를 인지하고 있었다는 점이 명확히 드러날수록, 설계 논리는 더 견고하게 평가된다.</p>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-comments"></i> 3) 설명·방어 능력 평가</h4>
+                    <p>설명·방어 능력 평가는 커뮤니케이션 능력을 테스트하는 단계가 아니다. 이 평가는 설계 사고가 외부 질문을 견딜 수 있을 만큼 언어로 고정되어 있는지를 확인하는 절차다. 질문에 즉흥적으로 대응하는 능력이 아니라, 이미 정리된 설계 판단을 근거로 차분하게 설명할 수 있는지가 핵심이다. 방어란 공격을 막는 것이 아니라, 기준을 다시 제시하는 행위다.</p>
+                    <p>이 단계에서 나오는 질문은 대부분 설계의 핵심을 찌른다. 왜 이 문제를 선택했는지, 왜 이 구조가 필요한지, 왜 이 기능을 배제했는지, 왜 이 흐름이 유지되어야 하는지와 같은 질문들이다. 이 질문에 대해 설계자는 개인적 취향이나 경험을 근거로 답하지 않는다. 문제 정의, 사용자 상태, 우선순위, 제약 조건이라는 설계 언어로 응답해야 한다. 이 언어가 자연스럽게 나오지 않는다면, 설계는 아직 개인의 머릿속에만 존재하는 상태다.</p>
+                </div>
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>일관성은 고정이 아니라 추적 가능성이다. 기준이 바뀌었다면, 바뀐 사실과 이유가 문서로 남아 있어야 한다.</strong></p>
+                    </div>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-flag-checkered"></i> 통과 기준</h4>
+                    <p>통과 기준의 첫 번째 조건인 ‘설계 판단이 일관됨’은 전체 평가를 관통하는 핵심 기준이다. 이는 한 가지 기준만 고집했는지를 묻는 것이 아니다. 설계 전반에서 기준이 명확히 설정되어 있고, 그 기준이 중간에 무의식적으로 변형되지 않았는지를 확인하는 것이다. 만약 기준이 변화했다면, 그 변화가 의도적이며 논리적으로 설명 가능한지도 함께 평가된다. 일관성은 고정이 아니라 추적 가능성이다.</p>
+                    <p>두 번째 조건인 ‘전문가로서 설명 가능’은 지식의 양을 의미하지 않는다. 이 기준은 설계자가 자신의 판단을 외부 맥락에서도 유지할 수 있는지를 묻는다. 전문가로서 설명 가능하다는 것은, 상대가 동의하지 않더라도 설계의 기준과 선택 경로를 이해할 수 있도록 전달할 수 있다는 뜻이다. 방어적인 태도나 과도한 설명 없이도, 핵심 판단이 명확히 전달되는 상태가 요구된다.</p>
+                </div>
+
+                <p>24주차를 통과했다는 것은 완벽한 결과물을 만들었다는 뜻이 아니다. 이는 설계자가 더 이상 훈련용 사고 프레임에 의존하지 않고, 스스로 문제를 정의하고 판단 기준을 세우며, 그 판단을 끝까지 유지할 수 있는 상태에 도달했다는 의미다. 이 상태에서는 피드백이 위협이 되지 않고, 수정이 실패로 인식되지 않는다. 설계는 계속 움직일 수 있는 구조를 갖추게 된다.</p>
+
+                <p>최종 평가는 과정의 종료가 아니라 역할의 전환이다. 이 지점 이후 설계자는 배우는 입장에서 벗어나, 스스로 판단을 책임지는 입장으로 이동한다. 더 이상 “이렇게 해도 될까요”라는 질문을 던지지 않는다. 대신 “이 기준에서 이렇게 판단했습니다”라고 말할 수 있는 상태가 된다. 바로 이 차이가 학습자와 설계자를 가르는 경계다.</p>
+
+                <p>이 주차를 통과한 프로젝트는 결과물 이상의 의미를 가진다. 그것은 하나의 설계 사례이며, 판단의 기록이며, 이후 더 복잡한 문제를 다루기 위한 사고 자산이다. 최종 평가는 그 자산이 실제로 작동 가능한 상태인지 확인하는 마지막 검증이며, 이 검증을 통과했을 때 비로소 설계는 훈련이 아니라 실전의 영역으로 넘어간다.</p>
+
+            </div>
+        </section>
+
+        <!-- 과제(기존) -->
+        <section id="section-assignment" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <h2>과제 안내</h2>
+            </div>
+            <div class="section-body">
+                <div class="assignment-intro">
+                    <p>과제의 목적은 IA/시나리오/UX 플로우를 “설명 자료”가 아니라 “검증 문서”로 제출하는 것이다.</p>
+                    <p>화면을 상상하지 않고도, 구조와 흐름이 문제 정의를 직접 해결하고 있음을 언어로 증명해야 한다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 결론 섹션 -->
+        <section class="conclusion-section">
+            <div class="conclusion-content">
+                <div class="conclusion-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3>이 주차의 의미</h3>
+                <p>25주차는 화면을 만드는 주차가 아니라, 화면이 따라올 수밖에 없는 구조와 흐름을 고정하는 주차다.</p>
+                <p class="emphasis-text">구조가 문제를 설명하고, 흐름이 문제를 해결할 때, 프로젝트는 아이디어가 아니라 설계 대상으로 전환된다.</p>
+
+                <div class="final-question">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>이 정보 단위는 어떤 사용자 판단을 위해 존재하며, 이 단계는 왜 필요한가?</p>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <p class="final-statement">설명 불가한 묶음과 단계가 사라질 때, 설계는 비로소 고정된다.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <p>Week 25 - 최종 평가</p>
+    </footer>
+
+    <!-- 진행률 표시 -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="week.js"></script>
+</body>
+</html>

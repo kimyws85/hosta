@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 - 웹을 판단의 집합으로 인식하기</title>
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="week.css">
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header class="header">
+        <div class="header-content">
+            <span class="week-badge">WEEK 1</span>
+            <h1 class="main-title">웹을 판단의 집합으로 인식하기</h1>
+            <p class="subtitle">결과물이 아닌, 의사결정의 기록으로서의 디자인</p>
+        </div>
+    </header>
+
+    <!-- 네비게이션 -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="#section-intro" class="nav-item active" data-section="section-intro">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>도입</span>
+            </a>
+            <a href="#section-redefine" class="nav-item" data-section="section-redefine">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>재정의</span>
+            </a>
+            <a href="#section-user" class="nav-item" data-section="section-user">
+                <i class="fa-solid fa-user"></i>
+                <span>사용자</span>
+            </a>
+            <a href="#section-elements" class="nav-item" data-section="section-elements">
+                <i class="fa-solid fa-puzzle-piece"></i>
+                <span>요소</span>
+            </a>
+            <a href="#section-evaluation" class="nav-item" data-section="section-evaluation">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>평가</span>
+            </a>
+            <a href="#section-assignment" class="nav-item" data-section="section-assignment">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>과제</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+
+        <!-- 섹션 1: 도입 -->
+        <section id="section-intro" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h2>웹을 결과물로 인식하는 순간</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>웹을 결과물로 인식하는 순간, 사고는 이미 종료된 상태에 들어간다.</strong></p>
+                    </div>
+                </div>
+                <p>결과물이라는 인식은 <em>'완성'</em>을 전제로 하고, 완성이라는 개념은 더 이상 질문할 필요가 없는 상태를 의미한다.</p>
+                <p>이 인식이 문제인 이유는 웹이라는 대상이 본질적으로 고정된 산출물이 아니라, <strong>끊임없이 선택되고 해석되며 사용되는 판단 구조</strong>이기 때문이다.</p>
+
+                <div class="question-list">
+                    <h4><i class="fa-solid fa-circle-question"></i> 화면을 결과로 받아들이면 묻지 않게 되는 것들</h4>
+                    <div class="question-item">
+                        <span class="question-number">01</span>
+                        <span class="question-text">왜 이런 형태가 되었는지</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">02</span>
+                        <span class="question-text">어떤 선택이 다른 선택을 밀어냈는지</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">03</span>
+                        <span class="question-text">이 구조가 어떤 문제를 해결하려 했는지</span>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <i class="fa-solid fa-key"></i>
+                    <p>이 주차의 목적은 바로 그 질문을 다시 가능하게 만드는 데 있다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 디자인의 재정의 -->
+        <section id="section-redefine" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <h2>디자인의 재정의</h2>
+            </div>
+            <div class="section-body">
+
+                <!-- 비교 카드 -->
+                <div class="compare-container">
+                    <div class="compare-card wrong">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>표면적 관점</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">"예쁘게 만드는 일"</p>
+                            <div class="compare-list">
+                                <div class="compare-item">디자인 = 시각적 조합의 문제</div>
+                                <div class="compare-item">판단 기준 = 감각적 만족, 개인적 취향</div>
+                                <div class="compare-item">주요 논점 = 세련됨, 트렌디함</div>
+                            </div>
+                            <p class="compare-result">문제를 가린다</p>
+                        </div>
+                    </div>
+                    <div class="compare-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <div class="compare-card right">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-check"></i>
+                            <span>구조적 관점</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">"문제 해결을 위한 선택의 연쇄"</p>
+                            <div class="compare-list">
+                                <div class="compare-item">모든 색상 = 특정 문제 해결 수단</div>
+                                <div class="compare-item">모든 위치 = 특정 문제 해결 수단</div>
+                                <div class="compare-item">모든 간격 = 특정 문제 해결 수단</div>
+                            </div>
+                            <p class="compare-result">구조적 사고의 영역</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-footprints"></i> 디자인 = 의사결정의 기록</h4>
+                    <p>화면 위에 존재하는 모든 요소를 <strong>'결과'가 아니라 '흔적'</strong>으로 바라본다는 의미다.</p>
+                    <p>이 흔적은 단순히 디자이너의 취향을 반영한 것이 아니라, 다음의 판단 과정을 거쳐 남겨진 것이다:</p>
+                </div>
+
+                <div class="process-flow">
+                    <div class="process-item">
+                        <div class="process-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <span>문제 정의</span>
+                    </div>
+                    <div class="process-connector"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="process-item">
+                        <div class="process-icon"><i class="fa-solid fa-users"></i></div>
+                        <span>사용자 가설</span>
+                    </div>
+                    <div class="process-connector"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="process-item">
+                        <div class="process-icon"><i class="fa-solid fa-list-ol"></i></div>
+                        <span>우선순위 설정</span>
+                    </div>
+                    <div class="process-connector"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="process-item">
+                        <div class="process-icon"><i class="fa-solid fa-filter"></i></div>
+                        <span>제약 조건 검토</span>
+                    </div>
+                </div>
+
+                <div class="insight-box">
+                    <div class="insight-header">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>핵심 통찰</span>
+                    </div>
+                    <p>어떤 정보는 첫 화면에 배치되고, 어떤 정보는 숨겨진다. 어떤 행동은 강조되고, 어떤 행동은 어렵게 만든다. <strong>이 모든 선택은 동시에 다른 선택의 배제다.</strong></p>
+                    <p class="insight-conclusion">화면을 읽는다는 것은, 보이는 것을 감상하는 일이 아니라 <strong>보이지 않는 판단을 복원하는 작업</strong>이다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 3: 사용자 관점 -->
+        <section id="section-user" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <h2>사용자는 행동하는 존재다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="definition-shift">
+                    <div class="definition-from">
+                        <span class="label">기존 관점</span>
+                        <p>사용자 = <strong>보는 존재</strong></p>
+                    </div>
+                    <div class="definition-arrow">
+                        <i class="fa-solid fa-right-long"></i>
+                    </div>
+                    <div class="definition-to">
+                        <span class="label">전환된 관점</span>
+                        <p>사용자 = <strong>행동하는 존재</strong></p>
+                    </div>
+                </div>
+
+                <p>사용자가 화면을 바라본다는 표현은 실제 상황을 왜곡한다. 사용자는 화면을 통해 <strong>판단</strong>하고, 그 판단의 결과로 <strong>행동</strong>한다.</p>
+
+                <div class="action-meaning">
+                    <h4><i class="fa-solid fa-hand-pointer"></i> 사용자 행동의 의미</h4>
+                    <div class="action-grid">
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-mouse-pointer"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">클릭</span>
+                                <span class="action-desc">단순한 반응이 아니라 <strong>결정</strong></span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-arrows-up-down"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">스크롤</span>
+                                <span class="action-desc"><strong>탐색의 의지</strong></span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-door-open"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">이탈</span>
+                                <span class="action-desc"><strong>설계 실패</strong>의 신호</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-point emphasis">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <div>
+                        <p><strong>사용자가 무엇을 보느냐</strong>보다 중요한 것은</p>
+                        <p class="large"><strong>무엇을 하게 되느냐</strong>다.</p>
+                    </div>
+                </div>
+
+                <div class="distinction-box">
+                    <div class="distinction-item">
+                        <span class="distinction-label">이 차이를 인식하지 못하면</span>
+                        <span class="distinction-result negative">디자인 = 시각적 구성에 머묾</span>
+                    </div>
+                    <div class="distinction-item">
+                        <span class="distinction-label">이 차이를 인식하는 순간</span>
+                        <span class="distinction-result positive">디자인 = 행동 설계로 재정의</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 4: 디자인 요소의 재해석 -->
+        <section id="section-elements" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                </div>
+                <h2>디자인 요소의 재해석</h2>
+            </div>
+            <div class="section-body">
+                <p>행동을 중심에 두고 웹을 바라보면, 기존에 미적 요소로 분류되던 것들이 전혀 다른 의미를 갖기 시작한다.</p>
+
+                <div class="element-cards">
+                    <!-- 버튼 색상 -->
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>버튼의 색상</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>아름다움을 위한 선택</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>주 행동을 다른 행동보다 우선시키기 위한 <strong>대비 장치</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 여백 -->
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-expand"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>여백</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>심미적 호흡을 위한 장식</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>정보 처리 부담을 줄이고 판단 속도를 조절하기 위한 <strong>구조적 장치</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 정보의 순서 -->
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-list-ol"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>정보의 순서</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>보기 좋게 정리된 결과</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>사용자의 사고 흐름을 특정 방향으로 유도하기 위한 <strong>설계</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="role-shift">
+                    <div class="role-icon"><i class="fa-solid fa-user-pen"></i></div>
+                    <div class="role-content">
+                        <p class="role-from">디자이너 = 화면을 꾸미는 사람</p>
+                        <p class="role-arrow"><i class="fa-solid fa-arrow-down"></i></p>
+                        <p class="role-to">디자이너 = <strong>사용자의 판단 경로를 설계하는 사람</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 5: 평가 기준의 전환 -->
+        <section id="section-evaluation" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h2>평가 기준의 전환</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>'좋은 디자인'과 '나쁜 디자인'이라는 이분법적 평가는 더 이상 의미를 유지할 수 없다.</strong></p>
+                    </div>
+                </div>
+
+                <p>이분법적 평가는 디자인을 맥락에서 분리시키며, 맥락이 제거된 디자인 평가는 <strong>취향 비교</strong>로 전락한다.</p>
+
+                <div class="context-requirements">
+                    <h4><i class="fa-solid fa-circle-nodes"></i> 판단에 필요한 맥락</h4>
+                    <div class="context-grid">
+                        <div class="context-item">
+                            <i class="fa-solid fa-crosshairs"></i>
+                            <span>어떤 문제를 전제로 했는지</span>
+                        </div>
+                        <div class="context-item">
+                            <i class="fa-solid fa-user-check"></i>
+                            <span>어떤 사용자를 가정했는지</span>
+                        </div>
+                        <div class="context-item">
+                            <i class="fa-solid fa-sliders"></i>
+                            <span>어떤 환경과 제약 속에서 사용되는지</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="new-criteria">
+                    <h4><i class="fa-solid fa-arrows-to-circle"></i> 평가에서 적합성 분석으로</h4>
+                    <div class="criteria-list">
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">이 선택은 이 문제 상황에서 <strong>합리적</strong>인가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">이 사용자 상태에 <strong>부합</strong>하는가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">이 목표를 달성하는 데 <strong>기여</strong>하는가?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 6: 과제 -->
+        <section id="section-assignment" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <h2>과제 안내</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="assignment-intro">
+                    <p>과제는 이러한 사고 구조를 실제로 작동시키기 위한 장치로 설계되어 있다.</p>
+                    <p><strong>잘 알려진 웹 페이지</strong>를 선택하는 이유는, 이미 수많은 사용자와 시간 속에서 검증된 판단의 집합을 대상으로 삼기 위함이다.</p>
+                </div>
+
+                <div class="assignment-steps">
+                    <h4><i class="fa-solid fa-shoe-prints"></i> 분석 단계</h4>
+
+                    <!-- 단계 1 -->
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h5>문제 정의</h5>
+                            <p>이 페이지가 해결하려는 문제는 무엇인가?</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> '무엇을 제공하는가'가 아니라 <strong>'왜 이 페이지가 필요했는가'</strong>를 묻는 질문</p>
+                            </div>
+                            <div class="step-questions">
+                                <span>사용자는 어떤 미해결 상태로 이 페이지에 도달했는가?</span>
+                                <div class="user-states">
+                                    <span class="state-tag">정보 부족</span>
+                                    <span class="state-tag">결정 불안</span>
+                                    <span class="state-tag">신뢰 결여</span>
+                                    <span class="state-tag">선택 과부하</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 단계 2 -->
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h5>행동 유도 구조 분석</h5>
+                            <p>사용자가 이 페이지에서 궁극적으로 하도록 기대되는 행동은 무엇인가?</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 단순히 버튼이 어디에 있는지가 아니라, <strong>사용자의 시선과 판단이 어떤 순서로 이동하도록 설계되었는지</strong>를 추적</p>
+                            </div>
+                            <div class="analysis-points">
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>정보의 배치</span>
+                                </div>
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-highlighter"></i>
+                                    <span>강조의 정도</span>
+                                </div>
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <span>상호작용의 타이밍</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 단계 3 -->
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h5>선택의 합리성 설명</h5>
+                            <p>그 선택이 왜 합리적인지를 설명</p>
+                            <div class="step-detail warning">
+                                <p><i class="fa-solid fa-exclamation-triangle"></i> 합리성은 '일반적으로 그렇다'는 설명으로 대체될 수 없다</p>
+                            </div>
+                            <div class="explanation-requirements">
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>왜 이 정보는 먼저 보여야 했는지</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>왜 이 행동은 어렵게 만들어졌는지</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>다른 선택을 했을 경우 어떤 문제가 발생했을지</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 통과 기준 -->
+                <div class="pass-criteria">
+                    <h4><i class="fa-solid fa-flag-checkered"></i> 통과 기준</h4>
+                    <div class="criteria-cards">
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-comment-slash"></i></div>
+                            <div class="criteria-content">
+                                <p><strong>"예쁘다", "깔끔하다"</strong>라는 표현을 사용하지 않고도 충분히 설명할 수 있어야 한다</p>
+                                <span class="criteria-meaning">= 감각적 인상에서 벗어나 구조적 판단을 언어로 재현 가능</span>
+                            </div>
+                        </div>
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-list-check"></i></div>
+                            <div class="criteria-content">
+                                <p><strong>최소 세 가지 이상</strong>의 설계 선택을 지적할 수 있어야 한다</p>
+                                <span class="criteria-meaning">= 화면을 복수의 판단 단위로 분해 가능</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 결론 섹션 -->
+        <section class="conclusion-section">
+            <div class="conclusion-content">
+                <div class="conclusion-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3>이 주차의 의미</h3>
+                <p>이 주차는 기술을 배우는 시간이 아니다. 도구를 익히는 시간도 아니다.</p>
+                <p class="emphasis-text">이는 <strong>이후 모든 디자인 판단의 기준점이 되는 사고 구조를 설정하는 단계</strong>다.</p>
+
+                <div class="conclusion-contrast">
+                    <div class="contrast-item negative">
+                        <i class="fa-solid fa-xmark"></i>
+                        <p>웹을 판단의 집합으로 인식하지 못하면</p>
+                        <span>레이아웃, 인터랙션, 정보 구조 설계 모두 표면적인 조합에 그침</span>
+                    </div>
+                    <div class="contrast-item positive">
+                        <i class="fa-solid fa-check"></i>
+                        <p>이 관점이 확립되면</p>
+                        <span>모든 화면은 하나의 질문으로 수렴</span>
+                    </div>
+                </div>
+
+                <div class="final-question">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>이 선택은 어떤 문제를 해결하기 위해 존재하는가?</p>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <p class="final-statement">이 질문에 답할 수 있을 때, 디자인은 비로소 <strong>감각의 영역을 넘어 사고의 영역</strong>으로 진입한다.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <p>Week 2 - 웹을 판단의 집합으로 인식하기</p>
+    </footer>
+
+    <!-- 진행률 표시 -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="week.js"></script>
+</body>
+</html>

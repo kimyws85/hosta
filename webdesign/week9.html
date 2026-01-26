@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9 - 설계는 살아 있어야 한다</title>
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="week.css">
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header class="header">
+        <div class="header-content">
+            <span class="week-badge">WEEK 9</span>
+            <h1 class="main-title">설계는 살아 있어야 한다</h1>
+            <p class="subtitle">비판은 공격이 아니라, 판단 구조를 유지하기 위한 점검과 재적용</p>
+        </div>
+    </header>
+
+    <!-- 네비게이션 -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="#section-intro" class="nav-item active" data-section="section-intro">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>도입</span>
+            </a>
+            <a href="#section-redefine" class="nav-item" data-section="section-redefine">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>본질</span>
+            </a>
+            <a href="#section-user" class="nav-item" data-section="section-user">
+                <i class="fa-solid fa-filter"></i>
+                <span>구분</span>
+            </a>
+            <a href="#section-elements" class="nav-item" data-section="section-elements">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>진단</span>
+            </a>
+            <a href="#section-evaluation" class="nav-item" data-section="section-evaluation">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>통과 기준</span>
+            </a>
+            <a href="#section-assignment" class="nav-item" data-section="section-assignment">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>과제</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+
+        <!-- 섹션 1: 도입 -->
+        <section id="section-intro" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h2>완성품으로 보는 순간, 설계는 멈춘다</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>“완성되었다”는 인식은 더 이상 손대지 않겠다는 선언이고, 이는 곧 판단을 중단하겠다는 의미다.</strong></p>
+                    </div>
+                </div>
+
+                <p>디자인 설계는 본질적으로 고정될 수 없다. 사용자의 상태는 변하고, 환경은 달라지며, 처음의 가정은 언제든 틀릴 수 있다. 이 주차가 다루는 핵심은 설계를 흔들기 위해 비판하는 것이 아니라, 설계를 살아 있는 판단물로 유지하기 위해 비판하고 수정하는 사고 태도를 만드는 데 있다.</p>
+
+                <div class="question-list">
+                    <h4><i class="fa-solid fa-circle-question"></i> 이 주차가 강제로 묻는 질문</h4>
+                    <div class="question-item">
+                        <span class="question-number">01</span>
+                        <span class="question-text">이 설계는 어떤 가정 위에서 성립하는가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">02</span>
+                        <span class="question-text">가정이 흔들릴 때 어디서 실패하는가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">03</span>
+                        <span class="question-text">수정은 기준 재적용인가, 기준 재정의인가</span>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <i class="fa-solid fa-key"></i>
+                    <p>비판은 설계를 부정하는 행위가 아니라, 설계를 진지하게 다루겠다는 선언이다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 본질 -->
+        <section id="section-redefine" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <h2>비판이 어려운 이유: 설계가 ‘작품’으로 소비되기 때문이다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="insight-box">
+                    <div class="insight-header">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>핵심 통찰</span>
+                    </div>
+                    <p>화면이 나오고 흐름이 완성되면 그것은 하나의 ‘작품’처럼 다뤄진다. 이 순간부터 비판은 구조 검토가 아니라 개인 평가로 오해되기 쉽다.</p>
+                    <p class="insight-conclusion">설계가 검토 대상이 아니라 보호 대상이 되면, 판단은 닫히고 수정은 감정 싸움으로 전락한다.</p>
+                </div>
+
+                <div class="compare-container">
+                    <div class="compare-card wrong">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>결과물 소비</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“별로다 / 내 취향 아니다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">비판이 개인 평가로 변형됨</div>
+                                <div class="compare-item">설계자는 방어 모드로 진입함</div>
+                                <div class="compare-item">설계는 보호 대상이 되어 닫힘</div>
+                            </div>
+                            <p class="compare-result">검토가 멈춘다</p>
+                        </div>
+                    </div>
+
+                    <div class="compare-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <div class="compare-card right">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-check"></i>
+                            <span>판단 구조 검토</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“목표–수단이 어긋난다 / 우선순위가 붕괴한다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">비판의 대상이 ‘사람’이 아니라 ‘구조’로 고정됨</div>
+                                <div class="compare-item">판단 기준이 노출되고 수정 가능해짐</div>
+                                <div class="compare-item">설계는 열려 있는 판단물로 유지됨</div>
+                            </div>
+                            <p class="compare-result">검토가 지속된다</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-sitemap"></i> 비판의 정의</h4>
+                    <p>설계 비판은 설계를 부정하는 행위가 아니다. 오히려 설계를 진지하게 다루겠다는 선언이다.</p>
+                    <p>비판이 가능한 대상이라는 것은 그 안에 판단 구조가 존재한다는 의미다. 판단 구조가 있다면 검토되고 수정될 수 있다. 반대로 비판이 불가능한 설계는 이미 취향이나 권위의 영역으로 이동한 설계다.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 3: 구분 -->
+        <section id="section-user" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-filter"></i>
+                </div>
+                <h2>취향과 구조를 분리하지 못하면 모든 비판은 감정으로 환원된다</h2>
+            </div>
+            <div class="section-body">
+
+                <p>개인 취향과 구조적 문제를 먼저 분리해야 한다. 개인 취향은 선호의 문제이며 옳고 그름의 문제가 아니다. 반면 구조적 문제는 목표와 수단의 불일치, 판단 기준의 붕괴, 우선순위 오류처럼 설계 내부에서 발생하는 문제다.</p>
+                <p>취향은 설계를 불편하게 느끼게 할 수는 있어도 설계를 실패하게 만들지는 않는다. 설계를 실패하게 만드는 것은 언제나 구조다. 이 구분이 이루어지지 않으면 모든 비판은 감정으로 환원된다.</p>
+
+                <div class="action-meaning">
+                    <h4><i class="fa-solid fa-hand-pointer"></i> 구조적 문제의 대표 형태</h4>
+                    <div class="action-grid">
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-bullseye"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">목표–수단 불일치</span>
+                                <span class="action-desc">목표를 달성하기 위한 수단이 실제로는 다른 행동을 요구한다</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-arrow-up-right-dots"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">우선순위 오류</span>
+                                <span class="action-desc">중요한 판단이 뒤로 밀리거나 사소한 정보가 앞을 점유한다</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-link-slash"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">흐름 단절</span>
+                                <span class="action-desc">어떤 단계에서 “왜 해야 하는가”가 사라져 행동이 멈춘다</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>“불편하다/어색하다”는 진단이 아니라 신호다. 진단은 반드시 목표·기준·우선순위 언어로 내려와야 한다.</strong></p>
+                    </div>
+                </div>
+
+                <div class="key-point emphasis">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <div>
+                        <p><strong>비판은 취향이 아니라,</strong></p>
+                        <p class="large"><strong>판단 기준의 점검이다.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 4: 진단 -->
+        <section id="section-elements" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h2>수정은 표면 개선이 아니라 ‘기준의 재적용’이어야 한다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-compass"></i> 진단의 출발점은 항상 “설계의 출발점”이다</h4>
+                    <p>구조적 문제를 식별하려면 설계의 출발점으로 되돌아가야 한다. 이 설계는 어떤 문제 정의에서 출발했는가, 어떤 사용자 상태를 전제로 했는가, 어떤 기준을 우선시했는가를 다시 확인해야 한다.</p>
+                    <p>문제 지점은 대부분 이 기준과 실제 설계 결과 사이의 어긋남에서 발생한다. 사용자 판단 흐름과 구조가 맞지 않거나, 우선순위가 설계 과정 중 뒤바뀌거나, 초기 기준이 후반부에서 무시되는 경우가 대표적이다.</p>
+                </div>
+
+                <div class="element-cards">
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>가장 위험한 수정</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>표면만 고치고 “왜”를 설명하지 못한다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>기준을 유지한 채 판단을 다시 적용한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-shuffle"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>수정이 혼란이 되는 경우</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>무의식적으로 새로운 기준을 도입한다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>기준 폐기(재정의)인지 기준 재적용(수정)인지 구분한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>핵심 구분</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>“설계는 고정되지 않는다” = 아무렇게나 바꿔도 된다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>설계는 변하지만, 판단 기준은 유지된다. 수정은 기준 재적용이다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="role-shift">
+                    <div class="role-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="role-content">
+                        <p class="role-from">수정을 “개선”이라고만 부른다</p>
+                        <p class="role-arrow"><i class="fa-solid fa-arrow-down"></i></p>
+                        <p class="role-to">수정을 “기준의 재적용” 혹은 “기준의 재정의”로 명확히 구분한다</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 5: 통과 기준 -->
+        <section id="section-evaluation" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h2>통과 기준: 감정 없이 지적하고, 기준으로 수정한다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>감정적 평가 없이 문제를 지적할 수 있어야 한다. 이는 설계를 결과물이 아니라 판단 구조로 보고 있다는 증거다.</strong></p>
+                    </div>
+                </div>
+
+                <p>또한 수정이 원 설계 의도와 어떻게 달라지는지를 설명할 수 있어야 한다. 수정이 임의적 개선이 아니라 기준의 이동 혹은 재적용임을 인식하고 있는지를 검증하는 기준이다.</p>
+
+                <div class="new-criteria">
+                    <h4><i class="fa-solid fa-arrows-to-circle"></i> 통과를 가르는 질문</h4>
+                    <div class="criteria-list">
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">문제 지점을 “인상”이 아니라 목표·우선순위·흐름 단절의 언어로 말하는가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">수정 제안이 “무엇을 바꾼다”가 아니라 “어떤 기준을 재적용한다”로 설명되는가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">그 수정이 기준 재적용인지, 기준 재정의인지 구분하고 위험을 설명하는가?</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 6: 과제 -->
+        <section id="section-assignment" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <h2>과제 안내</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="assignment-intro">
+                    <p>과제는 비판과 수정 사고를 실제로 적용하기 위한 훈련이다. 타인의 설계안을 분석하도록 한 이유는 자신의 설계보다 감정적 방어가 적기 때문이다.</p>
+                    <p>이 과제의 목적은 더 나은 설계를 제안하는 것이 아니라, 문제를 문제로 정확히 지적하는 능력을 검증하는 데 있다.</p>
+                </div>
+
+                <div class="assignment-steps">
+                    <h4><i class="fa-solid fa-shoe-prints"></i> 작성 순서</h4>
+
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h5>문제 지점 2개 지적</h5>
+                            <p>설계를 하나의 덩어리로 평가하지 말고, 복수의 판단 단위로 분해해 문제를 지적한다. “불편하다/어색하다” 같은 인상으로 끝내지 않는다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 어떤 단계에서 판단이 불필요하게 늘어나는지, 어떤 정보가 우선순위에서 어긋나는지, 어떤 선택이 목표와 충돌하는지를 구조 언어로 서술</p>
+                            </div>
+                            <div class="step-questions">
+                                <span>문제는 감정이 아니라 구조의 언어로 서술되어야 한다</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h5>수정 방향 2개 제안</h5>
+                            <p>결과 제안이 아니라 판단 제안을 한다. 무엇을 바꾸겠다는 말보다 어떤 기준을 다시 적용하겠다는 설명이 먼저다.</p>
+                            <div class="step-detail warning">
+                                <p><i class="fa-solid fa-exclamation-triangle"></i> “단계를 줄인다”라면, 판단 부담을 줄이는 것인지 결정 시점을 앞당기는 것인지 기준을 명시해야 한다</p>
+                            </div>
+                            <div class="analysis-points">
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                    <span>기준</span>
+                                </div>
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-route"></i>
+                                    <span>흐름</span>
+                                </div>
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                    <span>우선순위</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h5>원 설계 의도와의 관계 설명</h5>
+                            <p>제안한 수정이 원 설계의 기준을 재적용한 것인지, 기준을 이동시킨 것인지 명확히 말한다. 만약 기준 자체가 잘못되었다면 수정이 아니라 재정의임을 분리한다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 수정은 기준의 폐기가 아니라 기준의 재적용이다. 기준이 틀렸다면 재정의로 선언해야 한다</p>
+                            </div>
+                            <div class="explanation-requirements">
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>재적용</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>재정의</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>리스크</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pass-criteria">
+                    <h4><i class="fa-solid fa-flag-checkered"></i> 통과 기준</h4>
+                    <div class="criteria-cards">
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-comment-slash"></i></div>
+                            <div class="criteria-content">
+                                <p>감정적 평가 없이 문제를 지적한다</p>
+                                <span class="criteria-meaning">= 설계를 결과물이 아니라 판단 구조로 본다</span>
+                            </div>
+                        </div>
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-code-branch"></i></div>
+                            <div class="criteria-content">
+                                <p>수정을 기준의 재적용/이동으로 설명한다</p>
+                                <span class="criteria-meaning">= 임의적 개선이 아니라 기준의 관리로 수정한다</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 결론 섹션 -->
+        <section class="conclusion-section">
+            <div class="conclusion-content">
+                <div class="conclusion-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3>이 주차의 의미</h3>
+                <p>이 주차는 비판을 잘하는 법을 배우는 시간이 아니다. 설계를 열어두는 법을 배우는 시간이다.</p>
+                <p class="emphasis-text">수정은 실패의 증거가 아니라 사고가 계속 작동하고 있다는 증거다. 설계를 방어하는 대신, 어떤 조건에서 유효하고 어떤 조건에서 재검토되어야 하는지를 설명할 수 있어야 한다.</p>
+
+                <div class="conclusion-contrast">
+                    <div class="contrast-item negative">
+                        <i class="fa-solid fa-xmark"></i>
+                        <p>완성품으로 고정하면</p>
+                        <span>설계는 보호 대상이 되어 닫힌다</span>
+                    </div>
+                    <div class="contrast-item positive">
+                        <i class="fa-solid fa-check"></i>
+                        <p>판단물로 유지하면</p>
+                        <span>설계는 조건에 따라 갱신 가능한 시스템이 된다</span>
+                    </div>
+                </div>
+
+                <div class="final-question">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>이 설계의 기준은 무엇이며, 지금의 조건에서 그 기준은 여전히 유효한가?</p>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <p class="final-statement">설계를 살아 있게 만드는 것은 ‘완성’이 아니라 ‘검토 가능한 판단 구조’다.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <p>Week 9 - 설계는 살아 있어야 한다</p>
+    </footer>
+
+    <!-- 진행률 표시 -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="week.js"></script>
+</body>
+</html>

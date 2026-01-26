@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 15 - 설계와 구현의 균형은 우선순위 조정이다</title>
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="week.css">
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header class="header">
+        <div class="header-content">
+            <span class="week-badge">WEEK 15</span>
+            <h1 class="main-title">설계와 구현의 균형은 우선순위 조정이다</h1>
+            <p class="subtitle">타협이 아니라 기준 — 핵심·조정 가능·폐기의 경계를 언어로 고정</p>
+        </div>
+    </header>
+
+    <!-- 네비게이션 -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="#section-intro" class="nav-item active" data-section="section-intro">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>도입</span>
+            </a>
+            <a href="#section-redefine" class="nav-item" data-section="section-redefine">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>전환</span>
+            </a>
+            <a href="#section-user" class="nav-item" data-section="section-user">
+                <i class="fa-solid fa-bullseye"></i>
+                <span>핵심</span>
+            </a>
+            <a href="#section-elements" class="nav-item" data-section="section-elements">
+                <i class="fa-solid fa-sliders"></i>
+                <span>제약</span>
+            </a>
+            <a href="#section-evaluation" class="nav-item" data-section="section-evaluation">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>판단</span>
+            </a>
+            <a href="#section-assignment" class="nav-item" data-section="section-assignment">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>과제</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+
+        <!-- 섹션 1: 도입 -->
+        <section id="section-intro" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h2>타협이 아니라 기준의 문제다</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>설계와 구현 사이의 균형은 “현실 때문에 깎아낸다”는 타협이 아니다. 어떤 부분을 반드시 지키고, 무엇을 조정하며, 무엇을 버릴 수 있는지 판단하는 기준의 문제다.</strong></p>
+                    </div>
+                </div>
+
+                <p>이상적인 설계는 충분한 시간, 인력, 기술, 운영 안정성을 전제로 한다. 실제 프로젝트에서 이 전제들은 거의 성립하지 않는다. 이때 설계가 무너지는 이유는 제약이 있어서가 아니라, 제약을 만났을 때 무엇을 지켜야 하는지에 대한 기준이 사라지기 때문이다.</p>
+                <p>균형 감각이란 제약 속에서도 설계의 정체성을 유지하는 능력이다. 핵심 경험을 고정하고, 구현 방식은 유연하게 바꾸며, 주변 요소는 과감히 정리할 수 있어야 한다.</p>
+
+                <div class="question-list">
+                    <h4><i class="fa-solid fa-circle-question"></i> 이 주차가 강제로 묻는 질문</h4>
+                    <div class="question-item">
+                        <span class="question-number">01</span>
+                        <span class="question-text">이 설계에서 절대 훼손되면 안 되는 핵심은 무엇인가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">02</span>
+                        <span class="question-text">핵심을 유지한 채로 조정 가능한 구현 변수는 무엇인가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">03</span>
+                        <span class="question-text">이 제약 하에서 버려도 정체성이 무너지지 않는 요소는 무엇인가</span>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <i class="fa-solid fa-key"></i>
+                    <p>제약은 설계를 무력화시키는 적이 아니라, 설계의 우선순위를 드러내는 시험지다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 전환 -->
+        <section id="section-redefine" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <h2>제약을 설계의 적이 아니라 검증 장치로 본다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="insight-box">
+                    <div class="insight-header">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>핵심 통찰</span>
+                    </div>
+                    <p>시간이 부족할 때 무엇을 먼저 구현할 것인가, 기술적으로 어려울 때 어떤 경험을 포기하지 않을 것인가, 운영 리스크가 클 때 어떤 흐름을 단순화할 것인가는 모두 설계의 본질을 묻는 질문이다.</p>
+                    <p class="insight-conclusion">제약은 “포기”를 요구하는 것이 아니라 “핵심을 드러내라”고 요구한다.</p>
+                </div>
+
+                <div class="compare-container">
+                    <div class="compare-card wrong">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>약한 인식</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“현실 때문에 어쩔 수 없다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">핵심과 주변을 구분하지 못한다</div>
+                                <div class="compare-item">변경이 임의적 축소로 수렴한다</div>
+                                <div class="compare-item">결과만 남고 판단이 사라진다</div>
+                            </div>
+                            <p class="compare-result">정체성이 흐려진다</p>
+                        </div>
+                    </div>
+
+                    <div class="compare-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <div class="compare-card right">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-check"></i>
+                            <span>강한 인식</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“우선순위를 다시 정렬한다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">핵심 경험을 고정한다</div>
+                                <div class="compare-item">구현 방식은 대체 가능하게 본다</div>
+                                <div class="compare-item">버릴 요소를 기준으로 제거한다</div>
+                            </div>
+                            <p class="compare-result">정체성이 선명해진다</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-sitemap"></i> 균형의 정의</h4>
+                    <p>균형은 설계의 “질을 낮추는 타협”이 아니라, 설계의 “핵심을 지키기 위한 조정”이다. 핵심은 어떤 조건에서도 유지되어야 하는 판단이고, 주변은 조건에 따라 달라질 수 있는 구현 방식이다.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 3: 핵심 -->
+        <section id="section-user" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h2>핵심·조정 가능·폐기를 구분한다</h2>
+            </div>
+            <div class="section-body">
+
+                <p>제약을 만났을 때 기준이 사라지면 모든 제약이 설계 전체를 무너뜨린다. 따라서 가장 먼저 해야 할 일은 설계 요소를 세 층으로 분해하는 것이다. 무엇을 반드시 지켜야 하는지, 무엇은 목적을 유지한 채로 변형 가능한지, 무엇은 과감히 버려도 되는지의 경계를 언어로 고정해야 한다.</p>
+
+                <div class="action-meaning">
+                    <h4><i class="fa-solid fa-hand-pointer"></i> 우선순위 조정의 3층 구조</h4>
+                    <div class="action-grid">
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">핵심(절대 유지)</span>
+                                <span class="action-desc">서비스 정체성을 구성하는 경험·흐름·신뢰 장치</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-wrench"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">조정 가능(대체/단순화)</span>
+                                <span class="action-desc">목적은 유지하되 구현 방식은 변경 가능한 요소</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-trash"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">폐기 가능(제거)</span>
+                                <span class="action-desc">있으면 좋지만 없어도 핵심 의도는 유지되는 요소</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>핵심을 지킨다는 것은 모든 요소를 그대로 유지한다는 뜻이 아니다. 핵심 의도를 유지하기 위해 주변 요소를 과감히 버릴 수 있어야 한다.</strong></p>
+                    </div>
+                </div>
+
+                <div class="key-point emphasis">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <div>
+                        <p><strong>핵심을 지킨다는 것은 결과를 지키는 것이 아니라,</strong></p>
+                        <p class="large"><strong>의도를 지키는 일이다.</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 4: 제약 -->
+        <section id="section-elements" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+                <h2>기술·일정·운영 제약은 구현이 아니라 우선순위를 요구한다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-compass"></i> 제약의 유형과 오해</h4>
+                    <p>기술 제약은 “무엇을 못하나”의 문제가 아니라 “무엇을 위해 존재하나”를 다시 묻게 만든다. 일정 제약은 모든 것을 줄이라는 신호가 아니라 가장 중요한 것만 남기라는 신호다. 운영 제약은 나중의 문제가 아니라 설계의 일부이며, 운영 부담과 경험 사이의 균형 선택을 요구한다.</p>
+                </div>
+
+                <div class="element-cards">
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>기술 제약</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>기술이 안 되니 설계 의도를 바꾼다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>의도는 유지하고 구현 방식을 대체한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>일정 제약</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>무작위로 축소하고 나중에 보완한다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>핵심 경험을 남기고 주변을 제거한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>운영 제약</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>운영 때문에 핵심 흐름을 훼손한다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>운영 리스크를 인지하고 균형을 선택한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="role-shift">
+                    <div class="role-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="role-content">
+                        <p class="role-from">제약을 만나면 설계를 깎아낸다</p>
+                        <p class="role-arrow"><i class="fa-solid fa-arrow-down"></i></p>
+                        <p class="role-to">제약을 만나면 핵심을 고정하고 <strong>우선순위를 재배치</strong>한다</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 5: 판단 -->
+        <section id="section-evaluation" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h2>조정은 임의 축소가 아니라 기준의 재적용이다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>“어쩔 수 없었다”는 설명은 통과하지 못한다. 왜 이 제약 하에서 이 선택이 합리적이었는지, 무엇을 지키기 위해 무엇을 버렸는지를 설명해야 한다.</strong></p>
+                    </div>
+                </div>
+
+                <p>조정이 위험해지는 순간은, 기존 판단 기준을 유지하지 않은 채 표면만 고칠 때다. 기능을 줄이고 단계를 합치면서도 왜 그렇게 했는지를 설명하지 못하면, 조정은 개선이 아니라 기준의 붕괴가 된다.</p>
+                <p>핵심 의도가 유지되는지, 변경 이유가 명확한지, 대안 배제 논리가 있는지, 운영·기술·일정 제약이 어떻게 판단을 바꿨는지를 언어로 고정해야 한다.</p>
+
+                <div class="new-criteria">
+                    <h4><i class="fa-solid fa-arrows-to-circle"></i> 판단을 점검하는 질문</h4>
+                    <div class="criteria-list">
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">이번 조정에서 <strong>절대 유지</strong>한 경험은 무엇이며, 그 이유는 무엇인가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">조정된 부분은 의도를 유지한 채 <strong>구현 방식만</strong> 바뀐 것인가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">제거된 요소는 왜 <strong>정체성을 훼손하지 않는</strong> 범주였는가?</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 6: 과제 -->
+        <section id="section-assignment" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <h2>과제 안내</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="assignment-intro">
+                    <p>과제는 가상의 제약 조건을 부여하고, 기존 설계를 어떻게 조정할지 문서로 설명하는 사고 실험이다. 목표는 더 나은 해결책을 제안하는 것이 아니라, <strong>왜 그렇게 조정했는지</strong>를 기준 기반으로 설명하는 것이다.</p>
+                    <p>핵심·조정 가능·폐기 가능의 구분이 먼저 제시되어야 하며, 각 변경은 설계 의도와 연결되어야 한다.</p>
+                </div>
+
+                <div class="assignment-steps">
+                    <h4><i class="fa-solid fa-shoe-prints"></i> 작성 순서</h4>
+
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h5>기존 설계의 핵심 의도 1~2개 고정</h5>
+                            <p>이 설계가 무엇을 위해 존재하는지 한 문장으로 고정한다. 이후 모든 조정은 이 의도를 기준으로만 허용된다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 예: “사용자가 매 순간 가능/불가를 확신한다”, “결정 부담을 단계적으로 낮춘다”, “오류를 복구 가능한 행동으로 번역한다”</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h5>제약 조건 3개 적용</h5>
+                            <p>기술/일정/운영 제약을 각각 하나씩 설정하고, 각 제약이 어떤 판단을 요구하는지 명시한다.</p>
+                            <div class="step-detail warning">
+                                <p><i class="fa-solid fa-exclamation-triangle"></i> 제약을 “안 된다”로 끝내지 말고 “우선순위 재정렬”로 번역</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h5>핵심/조정/폐기 리스트 작성</h5>
+                            <p>핵심(유지), 조정 가능(대체/단순화), 폐기(제거)로 나눠 항목을 작성한다. 각 항목에 이유를 붙인다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 이유는 “어쩔 수 없음”이 아니라 “핵심 의도와의 연결”이어야 한다</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h5>대안 배제 논리 2개 이상</h5>
+                            <p>고려했지만 선택하지 않은 대안을 2개 이상 제시하고, 왜 배제했는지 설명한다.</p>
+                            <div class="step-detail warning">
+                                <p><i class="fa-solid fa-exclamation-triangle"></i> 배제 이유에는 리스크(사용자 혼란/운영 부담/기술 부채/일정 폭발) 중 최소 1개를 포함</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pass-criteria">
+                    <h4><i class="fa-solid fa-flag-checkered"></i> 통과 기준</h4>
+                    <div class="criteria-cards">
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-shield"></i></div>
+                            <div class="criteria-content">
+                                <p>핵심 설계 의도가 제약 속에서도 유지된다</p>
+                                <span class="criteria-meaning">= 정체성이 흐려지지 않는다</span>
+                            </div>
+                        </div>
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-link"></i></div>
+                            <div class="criteria-content">
+                                <p>변경 이유가 기준에 의해 설명된다</p>
+                                <span class="criteria-meaning">= 즉흥 대응이 아니라 우선순위 재적용이다</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 결론 섹션 -->
+        <section class="conclusion-section">
+            <div class="conclusion-content">
+                <div class="conclusion-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3>이 주차의 의미</h3>
+                <p>이 주차는 현실을 이해하라는 단계가 아니다. 현실은 늘 설계보다 앞서 있다. 이 주차는 현실 속에서도 설계를 잃지 않는 법을 배우는 단계다.</p>
+                <p class="emphasis-text">균형을 잡는다는 것은 설계를 깎아내는 것이 아니라, 지켜야 할 이유를 선명하게 만드는 일이다. 제약은 설계를 무너뜨리는 것이 아니라, 설계의 핵심을 드러낸다.</p>
+
+                <div class="conclusion-contrast">
+                    <div class="contrast-item negative">
+                        <i class="fa-solid fa-xmark"></i>
+                        <p>기준이 없으면</p>
+                        <span>모든 제약이 설계 전체를 무너뜨린다</span>
+                    </div>
+                    <div class="contrast-item positive">
+                        <i class="fa-solid fa-check"></i>
+                        <p>기준이 있으면</p>
+                        <span>제약은 우선순위를 선명하게 만든다</span>
+                    </div>
+                </div>
+
+                <div class="final-question">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>이 제약 하에서 무엇을 지키기 위해 무엇을 버리는가?</p>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <p class="final-statement">설계와 구현의 균형은 타협이 아니라 정체성을 유지하는 우선순위 조정이다.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <p>Week 15 - 설계와 구현의 균형은 우선순위 조정이다</p>
+    </footer>
+
+    <!-- 진행률 표시 -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="week.js"></script>
+</body>
+</html>

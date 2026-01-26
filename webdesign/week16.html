@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 16 - 구조 실습 종합 검증</title>
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="week.css">
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header class="header">
+        <div class="header-content">
+            <span class="week-badge">WEEK 16</span>
+            <h1 class="main-title">구조 실습 종합 검증</h1>
+            <p class="subtitle">Phase 3 전체를 하나의 설계–화면 흐름으로 완전히 묶어내는 최종 점검</p>
+        </div>
+    </header>
+
+    <!-- 네비게이션 -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="#section-intro" class="nav-item active" data-section="section-intro">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>도입</span>
+            </a>
+            <a href="#section-redefine" class="nav-item" data-section="section-redefine">
+                <i class="fa-solid fa-link"></i>
+                <span>통합</span>
+            </a>
+            <a href="#section-user" class="nav-item" data-section="section-user">
+                <i class="fa-solid fa-file-signature"></i>
+                <span>제출물</span>
+            </a>
+            <a href="#section-elements" class="nav-item" data-section="section-elements">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span>연결</span>
+            </a>
+            <a href="#section-evaluation" class="nav-item" data-section="section-evaluation">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>통과</span>
+            </a>
+            <a href="#section-assignment" class="nav-item" data-section="section-assignment">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>과제</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+
+        <!-- 섹션 1: 도입 -->
+        <section id="section-intro" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h2>Phase 3 전체를 하나의 흐름으로 검증한다</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>구조 실습 종합 검증은 새로운 사고 기술을 추가하는 주차가 아니다. Phase 3 전체를 설계–화면 흐름으로 완전히 묶어, 단절 없이 작동하는지를 확인하는 최종 점검 단계다.</strong></p>
+                    </div>
+                </div>
+
+                <p>여기서 중요한 것은 더 정교한 화면을 만드는 것이 아니라, 지금까지 구축해 온 사고 구조가 실제 설계와 화면에서 끊기지 않고 작동하는지를 검증하는 것이다. 이 단계는 학습의 끝이 아니라, 실전으로 넘어가기 위한 최소 조건을 확인하는 관문에 가깝다.</p>
+                <p>Phase 3의 모든 주차는 의도적으로 분리된 사고 훈련이었다. 문제 정의, 정보 구조, UX 흐름, 시각 위계, 컴포넌트 사고, 상태와 인터랙션, 설계와 구현의 균형까지 각각은 독립된 판단 능력을 강화하기 위한 장치였다. 그러나 실제 프로젝트에서는 이 요소들이 분리된 채 존재하지 않는다. 하나라도 끊기면 전체 설계는 즉시 흔들린다.</p>
+
+                <div class="question-list">
+                    <h4><i class="fa-solid fa-circle-question"></i> 이 주차가 강제로 묻는 질문</h4>
+                    <div class="question-item">
+                        <span class="question-number">01</span>
+                        <span class="question-text">어느 지점에서 “왜?”를 물어도 앞 단계로 거슬러 설명이 가능한가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">02</span>
+                        <span class="question-text">문서의 기준이 화면에서 다른 기준으로 바뀌는 순간은 어디인가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">03</span>
+                        <span class="question-text">설계와 화면이 서로를 증명하고 있는가, 서로를 배신하고 있는가</span>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <i class="fa-solid fa-key"></i>
+                    <p>통합은 문서를 잘 정리했다는 뜻이 아니라, 설계 판단이 화면으로 번역되어도 논리적 균열이 발생하지 않는 상태다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 통합 -->
+        <section id="section-redefine" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-link"></i>
+                </div>
+                <h2>통합은 연속된 판단 흐름이다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="insight-box">
+                    <div class="insight-header">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>핵심 통찰</span>
+                    </div>
+                    <p>통합이란 문제 정의에서 출발한 판단이 구조로 이어지고, 구조가 UX 흐름을 만들며, 흐름이 화면 구조와 시각 위계로 정확히 번역되고, 그 결과를 다시 언어로 설명했을 때 균열이 없는 상태다.</p>
+                    <p class="insight-conclusion">즉 어느 지점을 잡고 “왜?”라고 물어도, 앞 단계로 되돌아가 설명이 가능한 상태다.</p>
+                </div>
+
+                <div class="compare-container">
+                    <div class="compare-card wrong">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>통합 실패</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">문서·화면·설명이 따로 돈다</p>
+                            <div class="compare-list">
+                                <div class="compare-item">문서에만 있고 화면에서 사라진 기준이 존재</div>
+                                <div class="compare-item">화면의 배치가 미감/관성으로 결정됨</div>
+                                <div class="compare-item">설명이 “무엇을 했다”로 끝나고 “왜”가 없다</div>
+                            </div>
+                            <p class="compare-result">논리적 균열이 발생한다</p>
+                        </div>
+                    </div>
+
+                    <div class="compare-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <div class="compare-card right">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-check"></i>
+                            <span>통합 성공</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">하나의 흐름으로 읽힌다</p>
+                            <div class="compare-list">
+                                <div class="compare-item">문서의 판단이 화면에서 구체적으로 대응됨</div>
+                                <div class="compare-item">화면의 선택이 문서 기준으로 설명 가능</div>
+                                <div class="compare-item">설명이 “검증 보고”로 기능</div>
+                            </div>
+                            <p class="compare-result">단절 없이 연결된다</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-sitemap"></i> 요구되는 균형</h4>
+                    <p>설계가 추상에 머물러도 실패이고, 화면이 직관에 의존해도 실패다. 설계는 실제 화면으로 연결되어야 하며, 화면은 설계의 결과임을 증명해야 한다. 설계 문서는 화면을 과잉 규정하지 않되, 화면이 문서를 배신하지 않도록 기준을 유지해야 한다.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 3: 제출물 -->
+        <section id="section-user" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-file-signature"></i>
+                </div>
+                <h2>제출물은 3축으로 구성된다</h2>
+            </div>
+            <div class="section-body">
+
+                <p>과제는 종합 제출물 구성으로 설계되어 있다. 하나의 서비스 주제를 선정하는 이유는 복수의 사례를 얕게 다루지 않고, 단일 맥락을 끝까지 밀어붙이기 위함이다. 주제는 복잡할 필요도, 새로울 필요도 없다. 중요한 것은 이 주제로 설계 사고 전 과정을 완주할 수 있는가다.</p>
+
+                <div class="action-meaning">
+                    <h4><i class="fa-solid fa-hand-pointer"></i> 제출물 3축</h4>
+                    <div class="action-grid">
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-file-lines"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">설계 문서</span>
+                                <span class="action-desc">문제 정의 → 구조 → 흐름 → 우선순위/기준을 판단 기록으로 고정</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-table-cells-large"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">화면 구조</span>
+                                <span class="action-desc">고충실도 불필요. 구조/흐름의 해석 흔적이 드러나는 화면</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">설명 문서</span>
+                                <span class="action-desc">설계 문서 ↔ 화면 구조를 연결하는 검증 보고</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>“이렇게 했다”는 제출물이 아니다. “왜 이렇게 판단했는지”, “그 판단이 화면에서 어디에 존재하는지”를 증명해야 한다.</strong></p>
+                    </div>
+                </div>
+
+                <div class="key-point emphasis">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <div>
+                        <p><strong>이 주차에서 설계는 사고 실험이 아니다.</strong></p>
+                        <p class="large"><strong>설계는 화면으로 연결되어야 하고, 화면은 설계의 결과임을 증명해야 한다.</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 4: 연결 -->
+        <section id="section-elements" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-diagram-project"></i>
+                </div>
+                <h2>문서–화면–설명이 하나의 흐름으로 읽혀야 한다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-compass"></i> 연결이 끊기는 지점이 곧 미소화 영역이다</h4>
+                    <p>설계 문서를 읽고 화면을 보면 “아, 이 판단이 여기로 왔구나”라는 연결이 자연스럽게 이루어져야 하고, 화면을 보고 설명 문서를 읽으면 “이 선택은 이 기준에서 나왔구나”라는 이해가 가능해야 한다. 어느 하나라도 연결이 끊기면, 그 지점이 Phase 3에서 아직 소화되지 않은 사고 영역이다.</p>
+                </div>
+
+                <div class="element-cards">
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>설계 → 구조</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>문제 정의가 문서 서두에만 존재한다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>문제 정의가 구조의 묶음/우선순위를 직접 지배한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-route"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>구조 → 흐름</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>흐름이 페이지 이동 설명으로 축소된다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>판단 단계/상태 변화가 필연적으로 연결된다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>흐름 → 화면</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>레이아웃/위계가 감각으로 결정된다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>인식 순서·행동 유도가 흐름 의도를 반영한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="role-shift">
+                    <div class="role-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="role-content">
+                        <p class="role-from">문서와 화면을 별개 산출물로 만든다</p>
+                        <p class="role-arrow"><i class="fa-solid fa-arrow-down"></i></p>
+                        <p class="role-to">문서–화면–설명이 서로를 <strong>증명</strong>하는 구조로 만든다</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 5: 통과 -->
+        <section id="section-evaluation" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h2>통과 기준은 ‘완성도’가 아니라 ‘불일치 없음’이다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>통과 기준의 핵심은 설계와 화면 간 불일치가 없는지다. 이는 복사를 요구하는 것이 아니라, 설계에서 정의한 기준이 화면에서 다른 기준으로 바뀌지 않았는지를 묻는다.</strong></p>
+                    </div>
+                </div>
+
+                <p>구조는 문제 정의를 따르는데 화면은 미감 기준으로 배치되었다거나, UX 흐름은 단순화되었는데 화면은 불필요하게 복잡해졌다면 불일치다. 이 불일치는 작은 것처럼 보여도 전체 사고 체계를 무너뜨린다.</p>
+                <p>두 번째 기준인 “Phase 4 프로젝트로 이동 가능 수준”은 기술 숙련도가 아니라, 사고 체계가 훈련 단계를 넘어 실전 적용 단계로 이동해도 될 만큼 안정되었는지를 의미한다. 즉 새로운 개념을 배우지 않아도, 주어진 문제를 스스로 정의하고 구조화하며 화면으로 구현하고 설명할 수 있는 상태인지가 판단 기준이다.</p>
+
+                <div class="new-criteria">
+                    <h4><i class="fa-solid fa-arrows-to-circle"></i> 통과를 가르는 질문</h4>
+                    <div class="criteria-list">
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">설계 문서의 기준이 화면에서 다른 기준으로 치환된 지점이 없는가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">화면의 어떤 선택도 문서 기준으로 “왜”를 설명할 수 있는가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">설명 문서가 결과 보고가 아니라 판단 추적/검증으로 기능하는가?</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 6: 과제 -->
+        <section id="section-assignment" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <h2>과제 안내</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="assignment-intro">
+                    <p>과제는 Phase 3 전체를 단일 서비스 주제에서 완주하는 종합 제출물 구성이다. 제출물은 설계 문서, 화면 구조, 설명 문서의 3축으로 구성되며, 세 축이 하나의 흐름으로 읽히도록 연결되어야 한다.</p>
+                    <p>고충실도 화면은 요구되지 않는다. 오히려 저충실도/구조 중심 화면일수록 해석의 흔적이 명확해진다. 중요한 것은 화면이 설계 문서의 판단을 정확히 해석하고 있는지, 그리고 그 해석을 설명 문서가 논리적으로 연결하는지다.</p>
+                </div>
+
+                <div class="assignment-steps">
+                    <h4><i class="fa-solid fa-shoe-prints"></i> 제출 구성</h4>
+
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h5>설계 문서 작성</h5>
+                            <p>문제 정의 → 핵심 기준/우선순위 → 정보 구조(묶음 기준) → UX 흐름(상태 변화/판단 단계) → 시각 위계 원칙 → 컴포넌트/상태/제약 조정 원칙까지, 판단 기록으로 작성한다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> “좋다/예쁘다/편하다” 같은 표현 대신, 기준·우선순위·배제 논리를 명확히 서술</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h5>화면 구조(저충실도) 작성</h5>
+                            <p>구조에서 정의한 묶음이 화면에서 어떻게 영역으로 분해되는지, 흐름에서 정의한 판단 단계가 화면에서 어떻게 드러나는지, 상태/인터랙션이 사용자 가능성을 어떻게 설명하는지 드러나야 한다.</p>
+                            <div class="step-detail warning">
+                                <p><i class="fa-solid fa-exclamation-triangle"></i> 문서의 기준이 화면에서 다른 기준으로 바뀌지 않도록, 해석의 흔적을 의도적으로 남길 것</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h5>설명 문서(검증 보고) 작성</h5>
+                            <p>문서의 어떤 판단이 화면의 어느 부분에서 구현되었는지 1:1로 연결한다. 구조·흐름·위계·컴포넌트·상태·제약 조정이 화면에서 어떻게 실체화되었는지를 “왜” 중심으로 서술한다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> “여기에 메뉴를 넣었다”가 아니라 “이 배치는 어떤 기준의 번역이며 어떤 대안을 배제했는가”로 설명</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pass-criteria">
+                    <h4><i class="fa-solid fa-flag-checkered"></i> 통과 기준</h4>
+                    <div class="criteria-cards">
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-link"></i></div>
+                            <div class="criteria-content">
+                                <p>설계 문서 ↔ 화면 구조 ↔ 설명 문서 간 불일치가 없다</p>
+                                <span class="criteria-meaning">= 기준이 중간에 바뀌지 않는다</span>
+                            </div>
+                        </div>
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-road"></i></div>
+                            <div class="criteria-content">
+                                <p>Phase 4로 이동 가능한 사고 안정성이 확인된다</p>
+                                <span class="criteria-meaning">= 스스로 정의·구조화·구현·설명 가능</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 결론 섹션 -->
+        <section class="conclusion-section">
+            <div class="conclusion-content">
+                <div class="conclusion-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3>이 주차의 의미</h3>
+                <p>구조 실습 종합 검증은 학습의 종료 선언이 아니라, 사고 훈련이 실제 설계 능력으로 전환되었는지를 확인하는 마지막 필터다. 이 필터를 통과했을 때 설계는 개념의 조합이 아니라 일관된 판단 시스템으로 작동하기 시작한다.</p>
+                <p class="emphasis-text">이 상태에서 화면은 더 이상 결과물이 아니다. 화면은 사고가 작동한 흔적으로 남는다. 그리고 그때부터 Phase 4는 기술이 아니라 실제 제약과 실패 가능성 속에서 이 판단 체계를 흔들어보는 단계로 시작된다.</p>
+
+                <div class="conclusion-contrast">
+                    <div class="contrast-item negative">
+                        <i class="fa-solid fa-xmark"></i>
+                        <p>연결이 끊기면</p>
+                        <span>설계는 문서/화면/취향으로 분해된다</span>
+                    </div>
+                    <div class="contrast-item positive">
+                        <i class="fa-solid fa-check"></i>
+                        <p>연결이 유지되면</p>
+                        <span>설계는 검토·수정·재사용 가능한 시스템이 된다</span>
+                    </div>
+                </div>
+
+                <div class="final-question">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>지금 이 화면의 선택은 어떤 설계 기준의 번역이며, 그 기준은 어디에서 출발했는가?</p>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <p class="final-statement">통합은 정리가 아니라 단절 없는 설명 가능성이다.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <p>Week 16 - 구조 실습 종합 검증</p>
+    </footer>
+
+    <!-- 진행률 표시 -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="week.js"></script>
+</body>
+</html>

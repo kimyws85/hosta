@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 10 - 설계 언어 통합 점검</title>
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="week.css">
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header class="header">
+        <div class="header-content">
+            <span class="week-badge">WEEK 10</span>
+            <h1 class="main-title">설계 언어 통합 점검</h1>
+            <p class="subtitle">분해했던 사고 단위를 하나의 연속된 판단 흐름으로 결합해 “설계 체계”로 고정</p>
+        </div>
+    </header>
+
+    <!-- 네비게이션 -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="#section-intro" class="nav-item active" data-section="section-intro">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>도입</span>
+            </a>
+            <a href="#section-redefine" class="nav-item" data-section="section-redefine">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>통합 기준</span>
+            </a>
+            <a href="#section-user" class="nav-item" data-section="section-user">
+                <i class="fa-solid fa-link"></i>
+                <span>연결</span>
+            </a>
+            <a href="#section-elements" class="nav-item" data-section="section-elements">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span>점검 포인트</span>
+            </a>
+            <a href="#section-evaluation" class="nav-item" data-section="section-evaluation">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>통과 기준</span>
+            </a>
+            <a href="#section-assignment" class="nav-item" data-section="section-assignment">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>과제</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+
+        <!-- 섹션 1: 도입 -->
+        <section id="section-intro" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h2>통합은 새 개념 학습이 아니라, 사고 흐름을 하나로 묶는 단계다</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>설계 언어 통합 점검은 새로운 개념을 배우는 주차가 아니라, 지금까지의 사고 단위를 “연속된 판단 흐름”으로 묶어내는 단계다.</strong></p>
+                    </div>
+                </div>
+
+                <p>이 주차의 핵심은 각 주차에서 익힌 사고 기술이 개별 스킬로 흩어져 있지 않고, 하나의 설계 사고 체계로 작동하고 있는지를 점검하는 데 있다. 여기서 설계는 더 이상 부분적 판단의 집합이 아니라, 처음부터 끝까지 일관된 논리로 이어지는 하나의 사고 과정으로 다뤄진다.</p>
+
+                <div class="question-list">
+                    <h4><i class="fa-solid fa-circle-question"></i> 이 주차가 강제로 묻는 질문</h4>
+                    <div class="question-item">
+                        <span class="question-number">01</span>
+                        <span class="question-text">문제 정의 → 구조 → 흐름 → 시각 위계가 하나의 논리로 이어지는가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">02</span>
+                        <span class="question-text">각 단계의 언어가 동일한 기준을 공유하는가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">03</span>
+                        <span class="question-text">어느 지점에서도 “왜”를 받았을 때 앞 단계로 되돌아가 설명 가능한가</span>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <i class="fa-solid fa-key"></i>
+                    <p>이 주차는 완성도를 평가하지 않는다. 사고의 연속성을 점검한다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 통합 기준 -->
+        <section id="section-redefine" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <h2>통합의 기준: 문제에서 시작해 시각으로 끝나는 일관된 순서</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="insight-box">
+                    <div class="insight-header">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>핵심 통찰</span>
+                    </div>
+                    <p>지금까지의 학습은 의도적으로 분해되어 있었다. 그러나 분해된 채로 남아 있으면 설계는 오히려 단절된다.</p>
+                    <p class="insight-conclusion">통합이란 “많이 아는 것”이 아니라, 한 번의 설계에서 모든 판단이 같은 문제 인식을 공유하도록 결합하는 것이다.</p>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-sitemap"></i> 통합의 순서(뒤집히면 실패한다)</h4>
+                    <p>설계가 문제 정의에서 시작해 구조로 이어지고, 구조가 UX 흐름을 만들며, 흐름이 시각 위계로 구현되고, 그 모든 선택이 언어로 설명 가능한 상태인지 점검한다.</p>
+                    <p>이 순서가 뒤섞이거나 생략되면, 설계는 부분적으로는 그럴듯해 보여도 전체로는 설명되지 않는다. 이 주차에서 요구되는 것은 결과물의 완성도가 아니라 사고 흐름의 연속성이다.</p>
+                </div>
+
+                <div class="compare-container">
+                    <div class="compare-card wrong">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>통합 실패</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">단계가 분리된 채 따로 논다</p>
+                            <div class="compare-list">
+                                <div class="compare-item">문제 정의는 좋지만 구조가 엉뚱하다</div>
+                                <div class="compare-item">구조는 그럴듯하지만 UX 흐름과 맞지 않는다</div>
+                                <div class="compare-item">흐름은 자연스러운데 시각 위계가 흐름을 방해한다</div>
+                            </div>
+                            <p class="compare-result">전체가 설명되지 않는다</p>
+                        </div>
+                    </div>
+
+                    <div class="compare-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <div class="compare-card right">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-check"></i>
+                            <span>통합 성공</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">모든 단계가 같은 문제 인식을 공유한다</p>
+                            <div class="compare-list">
+                                <div class="compare-item">구조는 문제 정의의 공간적·개념적 펼침이다</div>
+                                <div class="compare-item">흐름은 구조의 시간적 해석이다</div>
+                                <div class="compare-item">시각 위계는 흐름을 인식 순서로 구현한다</div>
+                            </div>
+                            <p class="compare-result">“왜”가 끊기지 않는다</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 3: 연결 -->
+        <section id="section-user" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-link"></i>
+                </div>
+                <h2>문제 정의는 단독이 아니라, 구조·흐름·시각을 함께 끌고 가야 한다</h2>
+            </div>
+            <div class="section-body">
+
+                <p>문제 정의는 여전히 출발점이지만 이제 단독으로 존재하지 않는다. 이 문제 정의가 어떤 구조적 결정을 요구하는지, 그 구조가 어떤 흐름을 필연적으로 만들어내는지까지 연결되어야 한다.</p>
+                <p>구조는 더 이상 정보 정리 단계가 아니다. 구조는 문제 정의를 공간적으로, 개념적으로 펼친 결과다. 사용자의 목표 상태와 정보 묶음, 그리고 그 정보가 마주쳐야 하는 순서를 구조가 설명해야 한다.</p>
+
+                <div class="action-meaning">
+                    <h4><i class="fa-solid fa-hand-pointer"></i> 구조와 흐름이 분리되면 이미 단절이다</h4>
+                    <div class="action-grid">
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-layer-group"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">구조</span>
+                                <span class="action-desc">문제 정의를 정보 묶음과 경로로 “펼친 결과”</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-route"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">UX 흐름</span>
+                                <span class="action-desc">구조가 시간 속에서 작동하는 “상태 변화의 해석”</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-eye"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">시각 위계</span>
+                                <span class="action-desc">흐름이 화면에서 인식 순서로 구현되는 “결과 장치”</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>시각은 독립적으로 설계되지 않는다. 구조와 흐름이 모호할수록 시각은 과잉 보완 장치로 변한다.</strong></p>
+                    </div>
+                </div>
+
+                <div class="key-point emphasis">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <div>
+                        <p><strong>통합 점검은 “예쁘게”가 아니라,</strong></p>
+                        <p class="large"><strong>논리적으로 필연적인가를 확인하는 단계다.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 4: 점검 포인트 -->
+        <section id="section-elements" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-diagram-project"></i>
+                </div>
+                <h2>점검 포인트: 언어가 중간에 바뀌는 순간 통합은 깨진다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-compass"></i> 설계 언어의 일관성은 모든 단계를 관통한다</h4>
+                    <p>문제 정의에서 사용한 언어가 구조 설명에서 다른 의미로 변형되지 않았는지, UX 흐름 설명에서 기준이 슬그머니 바뀌지는 않았는지, 시각 선택의 이유가 앞선 판단과 충돌하지 않는지를 점검해야 한다.</p>
+                    <p>언어가 일관되지 않다는 것은 설계자가 판단 기준을 중간에 바꾸었거나, 바꾸었다는 사실을 인식하지 못했다는 뜻이다.</p>
+                </div>
+
+                <div class="element-cards">
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>문제 정의 점검</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>문제가 후반부에서 사라진다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>후반부 선택들도 계속 문제 정의를 참조한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>구조·흐름 점검</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>구조와 흐름을 별도로 설명한다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>구조는 흐름의 뼈대이고 흐름은 구조의 시간적 해석이다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>시각 위계 점검</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>“예쁜가”로 평가한다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>구조·흐름의 의도를 인식 순서로 정확히 구현하는가를 본다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="role-shift">
+                    <div class="role-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="role-content">
+                        <p class="role-from">각 스킬을 따로 잘한다</p>
+                        <p class="role-arrow"><i class="fa-solid fa-arrow-down"></i></p>
+                        <p class="role-to">한 설계에서 모든 판단이 같은 문제 인식을 공유하도록 묶는다</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 5: 통과 기준 -->
+        <section id="section-evaluation" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h2>통과 기준: 완성도가 아니라, “왜”의 연쇄가 끊기지 않는가</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>통과 기준은 결과물의 완성도가 아니라 사고의 연속성이다. 어느 단계에서도 “왜”를 받았을 때 앞 단계로 되돌아가 설명 가능해야 한다.</strong></p>
+                    </div>
+                </div>
+
+                <p>“왜 이런 구조인가”, “왜 이 흐름이 필요한가”, “왜 이렇게 보이게 했는가”라는 질문에 막힘 없이 응답할 수 있다면 설계는 하나의 사고 체계로 통합된 상태다.</p>
+
+                <div class="new-criteria">
+                    <h4><i class="fa-solid fa-arrows-to-circle"></i> 통과를 가르는 질문</h4>
+                    <div class="criteria-list">
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">문제 정의가 문서 후반부까지 계속 기준점으로 기능하는가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">구조 설명과 UX 흐름 설명이 서로의 원인/결과로 연결되는가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">시각 위계가 “안내”로서 흐름을 강화하며, 과잉 보완으로 흐름을 가리지 않는가?</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 6: 과제 -->
+        <section id="section-assignment" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <h2>과제 안내</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="assignment-intro">
+                    <p>과제는 통합 상태를 실제로 검증하기 위한 종합 설계 문서 작성이다. 하나의 서비스 주제를 선정하는 이유는 설계를 추상적으로 정리하는 것이 아니라, 구체적 맥락 속에서 사고 흐름을 끝까지 밀어붙이기 위함이다.</p>
+                    <p>이 문서는 발표 자료도 제안서도 아니다. 사고가 처음부터 끝까지 어떻게 연결되어 있는지를 보여주는 설계 기록이다.</p>
+                </div>
+
+                <div class="assignment-steps">
+                    <h4><i class="fa-solid fa-shoe-prints"></i> 작성 순서</h4>
+
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h5>문제 정의(기준점) 고정</h5>
+                            <p>문제 정의는 문서 전체에서 계속 참조되어야 한다. 후반부에서도 여전히 유효해야 한다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 문제 정의는 “배경”이 아니라 “기준점”이다</p>
+                            </div>
+                            <div class="step-questions">
+                                <span>이 문서의 모든 “왜”는 이 문장으로 되돌아가야 한다</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h5>정보 구조(분해와 묶음) 설명</h5>
+                            <p>이 문제를 어떻게 분해했고, 어떤 정보 묶음을 어떤 순서로 마주치게 하는지 구조로 설명한다.</p>
+                            <div class="step-detail warning">
+                                <p><i class="fa-solid fa-exclamation-triangle"></i> 구조는 정리가 아니라 문제 정의의 공간적·개념적 펼침이다</p>
+                            </div>
+                            <div class="analysis-points">
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    <span>묶음</span>
+                                </div>
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-code-branch"></i>
+                                    <span>경로</span>
+                                </div>
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                    <span>우선순위</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h5>UX 흐름(상태 변화) 서술</h5>
+                            <p>화면 전환이 아니라 사용자의 상태 변화와 판단 단계를 중심으로 흐름을 서술한다. 각 단계는 이전의 결과이자 다음의 원인이어야 한다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 자연스러워 보이는지보다 “논리적으로 필연적인지”를 점검</p>
+                            </div>
+                            <div class="explanation-requirements">
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>상태</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>판단</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>행동</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h5>시각 위계(인식 순서) 예측</h5>
+                            <p>“예쁜가”가 아니라 사용자가 이 흐름을 따라가도록 충분히 안내하는지를 기준으로 점검한다. 인식 순서가 구조·흐름의 의도를 반영해야 한다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 크기·간격·정렬·대비·반복은 장식이 아니라 인지 조절 장치다</p>
+                            </div>
+                            <div class="explanation-requirements">
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>우선 인식</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>다음 이해</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>행동 고려</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h5>설계 이유 요약(연결 고정)</h5>
+                            <p>결과를 미화하는 문장이 아니라, 모든 선택이 어떤 기준 위에서 연결되었는지를 다시 고정한다.</p>
+                            <div class="step-detail warning">
+                                <p><i class="fa-solid fa-exclamation-triangle"></i> 요약은 “멋있게”가 아니라 “같은 기준을 끝까지 유지했는가”를 확인하는 단계다</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pass-criteria">
+                    <h4><i class="fa-solid fa-flag-checkered"></i> 통과 기준</h4>
+                    <div class="criteria-cards">
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-link"></i></div>
+                            <div class="criteria-content">
+                                <p>사고의 연속성</p>
+                                <span class="criteria-meaning">= 전 과정이 끊김 없이 연결되어 “왜”의 연쇄가 유지됨</span>
+                            </div>
+                        </div>
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-comments"></i></div>
+                            <div class="criteria-content">
+                                <p>설명 가능성</p>
+                                <span class="criteria-meaning">= 어느 단계에서도 앞 단계로 되돌아가 기준으로 설명 가능</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 결론 섹션 -->
+        <section class="conclusion-section">
+            <div class="conclusion-content">
+                <div class="conclusion-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3>이 주차의 의미</h3>
+                <p>이 주차는 Phase 2로 넘어가기 위한 준비 단계다. Phase 2는 새로운 기술이 아니라, 실제 프로젝트·제약·이해관계 속에서 이 사고 체계를 적용하고 흔들어보는 단계다.</p>
+                <p class="emphasis-text">설계 언어가 통합되지 않은 상태에서는 어떤 실습을 하더라도 다시 감각과 결과 중심 사고로 되돌아간다. 통합은 그 복귀를 막는 최소 조건이다.</p>
+
+                <div class="conclusion-contrast">
+                    <div class="contrast-item negative">
+                        <i class="fa-solid fa-xmark"></i>
+                        <p>통합되지 않으면</p>
+                        <span>설계는 부분 스킬의 합으로 남아 단절된다</span>
+                    </div>
+                    <div class="contrast-item positive">
+                        <i class="fa-solid fa-check"></i>
+                        <p>통합되면</p>
+                        <span>설계는 재현 가능하고 검토 가능한 사고 과정이 된다</span>
+                    </div>
+                </div>
+
+                <div class="final-question">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>이 설계의 모든 선택은 같은 문제 인식을 공유하며, 끝까지 같은 언어로 설명 가능한가?</p>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <p class="final-statement">통합을 통과했다는 것은 더 잘 만드는 사람이 아니라, 무엇을 하고 있는지 설명할 수 있는 설계자가 되었다는 뜻이다.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <p>Week 10 - 설계 언어 통합 점검</p>
+    </footer>
+
+    <!-- 진행률 표시 -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="week.js"></script>
+</body>
+</html>

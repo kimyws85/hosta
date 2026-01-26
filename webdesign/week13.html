@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 13 - 화면은 시스템이다: 컴포넌트는 약속이다</title>
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="week.css">
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header class="header">
+        <div class="header-content">
+            <span class="week-badge">WEEK 13</span>
+            <h1 class="main-title">화면은 시스템이다: 컴포넌트는 약속이다</h1>
+            <p class="subtitle">요소를 조립하지 말고 규칙을 설계한다 — 반복·일관성은 인지 안정성의 장치</p>
+        </div>
+    </header>
+
+    <!-- 네비게이션 -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="#section-intro" class="nav-item active" data-section="section-intro">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>도입</span>
+            </a>
+            <a href="#section-redefine" class="nav-item" data-section="section-redefine">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>전제</span>
+            </a>
+            <a href="#section-user" class="nav-item" data-section="section-user">
+                <i class="fa-solid fa-repeat"></i>
+                <span>반복·일관성</span>
+            </a>
+            <a href="#section-elements" class="nav-item" data-section="section-elements">
+                <i class="fa-solid fa-code-branch"></i>
+                <span>경계 기준</span>
+            </a>
+            <a href="#section-evaluation" class="nav-item" data-section="section-evaluation">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>재사용·예외</span>
+            </a>
+            <a href="#section-assignment" class="nav-item" data-section="section-assignment">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>과제</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+
+        <!-- 섹션 1: 도입 -->
+        <section id="section-intro" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h2>요소를 모으면 화면이 되는가: 조립 사고의 한계</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>화면을 요소의 집합으로 인식하는 순간, 설계는 조립 작업으로 축소된다. 이 주차의 핵심은 화면을 구성 요소의 나열이 아니라 규칙을 가진 시스템의 조합으로 인식하는 사고 전환이다.</strong></p>
+                    </div>
+                </div>
+
+                <p>버튼, 카드, 리스트를 적절히 배치하면 화면이 완성된다는 관점은 왜 같은 요소가 반복되는지, 왜 어떤 요소는 예외가 허용되고 어떤 요소는 그렇지 않은지에 대한 설명을 지운다. 이 상태에서 화면은 결과물로는 존재하지만, 시스템으로는 존재하지 않는다.</p>
+                <p>컴포넌트 사고는 화면을 “구성품”으로 보는 것이 아니라 “규칙의 집합”으로 보는 방식이다. 화면을 확장하거나 수정할 때 매번 새로 고민하지 않도록, 판단의 기본 단위를 규칙으로 고정한다.</p>
+
+                <div class="question-list">
+                    <h4><i class="fa-solid fa-circle-question"></i> 이 주차가 강제로 묻는 질문</h4>
+                    <div class="question-item">
+                        <span class="question-number">01</span>
+                        <span class="question-text">이 컴포넌트는 사용자의 어떤 판단을 돕는가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">02</span>
+                        <span class="question-text">사용자는 이 패턴을 보고 어떤 기대를 가져도 되는가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">03</span>
+                        <span class="question-text">재사용이 허용되는 조건과 예외가 발생하는 조건은 무엇인가</span>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <i class="fa-solid fa-key"></i>
+                    <p>컴포넌트는 재사용 단위가 아니라, 사용자의 예측을 안정시키는 약속이다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 전제 -->
+        <section id="section-redefine" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <h2>컴포넌트는 편의가 아니라 인지 안정성을 만드는 약속이다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="insight-box">
+                    <div class="insight-header">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>핵심 통찰</span>
+                    </div>
+                    <p>컴포넌트는 코드 편의를 위한 묶음이 아니라, 사용자의 인지 경험을 안정시키기 위한 약속이다. 사용자는 매번 새롭게 해석하지 않고, 이전에 봤던 패턴을 기반으로 빠르게 의미를 추론한다.</p>
+                    <p class="insight-conclusion">같은 형태·같은 위치·같은 동작이 반복될수록 사용자는 “생각하지 않고도” 행동할 수 있다. 이 안정성이 컴포넌트의 핵심 역할이다.</p>
+                </div>
+
+                <div class="compare-container">
+                    <div class="compare-card wrong">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>편의 중심 정의</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“만들기 쉽고 관리하기 편하다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">재사용을 내부 사정으로 정당화한다</div>
+                                <div class="compare-item">사용자 기대(예측)를 설명하지 못한다</div>
+                                <div class="compare-item">예외가 쌓이면 시스템이 붕괴한다</div>
+                            </div>
+                            <p class="compare-result">반복이 혼란을 만든다</p>
+                        </div>
+                    </div>
+
+                    <div class="compare-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <div class="compare-card right">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-check"></i>
+                            <span>인지 중심 정의</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“사용자의 학습 비용을 줄인다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">반복은 학습 비용을 낮추는 장치다</div>
+                                <div class="compare-item">일관성은 예측 가능성을 만든다</div>
+                                <div class="compare-item">예외는 기준에 따라 통제된다</div>
+                            </div>
+                            <p class="compare-result">반복이 안정성을 만든다</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-sitemap"></i> 반복의 진짜 목적</h4>
+                    <p>반복은 “만들기 쉬워서”가 아니라 “한 번 이해한 인터페이스를 다시 이해할 필요가 없게 만드는 것”이다. 반복되지 않는 화면은 매번 새로 읽어야 하는 화면이고, 이는 인지 비용의 누적이다.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 3: 반복·일관성 -->
+        <section id="section-user" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-repeat"></i>
+                </div>
+                <h2>일관성은 통일감이 아니라 예측 가능성이다</h2>
+            </div>
+            <div class="section-body">
+
+                <p>일관성은 미적 통일감의 문제가 아니다. 일관성은 예측 가능성의 문제다. 사용자는 버튼의 색이 마음에 들어서 클릭하는 것이 아니라, 그 버튼이 이전과 같은 역할을 할 것이라고 믿기 때문에 클릭한다.</p>
+                <p>컴포넌트가 일관되게 사용될수록 사용자는 “이건 이런 역할을 한다”는 규칙을 내면화한다. 이 규칙이 깨지는 순간 사용자는 멈춘다. 혼란은 불친절함보다 훨씬 빠르게 행동을 중단시킨다.</p>
+
+                <div class="action-meaning">
+                    <h4><i class="fa-solid fa-hand-pointer"></i> 일관성이 제공하는 사용자 측 이익</h4>
+                    <div class="action-grid">
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-brain"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">학습 비용 감소</span>
+                                <span class="action-desc">같은 규칙을 다시 학습하지 않아도 된다</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-forward"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">행동 속도 증가</span>
+                                <span class="action-desc">의미 추론이 줄어 즉시 행동으로 연결된다</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">오작동 예방</span>
+                                <span class="action-desc">규칙이 안정적이면 잘못된 기대 적용이 줄어든다</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>일관성은 “모든 것을 똑같이”가 아니다. 같은 의미에는 같은 표현을, 다른 의미에는 다른 표현을 쓰는 것이다.</strong></p>
+                    </div>
+                </div>
+
+                <div class="key-point emphasis">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <div>
+                        <p><strong>일관성의 핵심은 형태가 아니라,</strong></p>
+                        <p class="large"><strong>사용자가 형성해도 되는 기대를 안정시키는 것이다.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 4: 경계 기준 -->
+        <section id="section-elements" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-code-branch"></i>
+                </div>
+                <h2>컴포넌트 경계는 모양이 아니라 역할로 나뉜다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-compass"></i> 어디까지 같은 것으로 보고, 어디서부터 다른 것으로 볼 것인가</h4>
+                    <p>모든 것을 하나의 컴포넌트로 묶으면 표현력이 사라지고, 모든 것을 개별 컴포넌트로 나누면 시스템은 붕괴한다. 이 균형점은 감각으로 찾을 수 없다. 반드시 기준이 필요하다.</p>
+                    <p>컴포넌트 분리의 기준은 모양이 아니라 역할이다. 사용자의 어떤 판단을 돕는지, 어떤 행동을 유도하는지, 어떤 정보를 전달하는지가 동일하다면 형태가 조금 달라도 같은 컴포넌트로 볼 수 있다.</p>
+                </div>
+
+                <div class="element-cards">
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-circle-nodes"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>역할이 같으면 묶는다</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>모양이 다르면 무조건 분리한다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>인지적 기능이 동일하면 하나의 규칙으로 통합한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>역할이 다르면 분리한다</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>같아 보이니 같은 컴포넌트로 쓴다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>행동 성격이 다르면 기대가 충돌하므로 분리한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-plug-circle-xmark"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>오작동은 “기대의 오용”이다</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>같은 UI면 같은 의미라고 가정한다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>사용자가 이전 경험을 잘못 적용하지 않도록 의미 차이를 분명히 한다</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>형태가 같아도 역할이 다르면 다른 컴포넌트다. 이 차이를 무시하면 사용자는 이전 경험을 잘못 적용하고, 이는 오작동으로 이어진다.</strong></p>
+                    </div>
+                </div>
+
+                <div class="role-shift">
+                    <div class="role-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="role-content">
+                        <p class="role-from">비슷해 보여서 묶는다 / 통일감이 있어서 유지한다</p>
+                        <p class="role-arrow"><i class="fa-solid fa-arrow-down"></i></p>
+                        <p class="role-to">인지적 기능(판단·행동·정보 역할)로 경계를 정한다</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 5: 재사용·예외 -->
+        <section id="section-evaluation" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h2>재사용 조건과 예외 조건을 언어로 고정해야 시스템이 된다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="insight-box">
+                    <div class="insight-header">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>핵심 통찰</span>
+                    </div>
+                    <p>재사용 기준은 “여러 곳에서 쓴다”가 아니다. 사용자에게 동일한 인지적 의미를 제공하는 상황에서만 재사용이 허용되어야 한다.</p>
+                    <p class="insight-conclusion">예외는 항상 존재한다. 중요한 것은 예외가 임의적 수정인지, 기준에 따른 변형인지 구분 가능해야 한다는 점이다.</p>
+                </div>
+
+                <div class="new-criteria">
+                    <h4><i class="fa-solid fa-arrows-to-circle"></i> 재사용·예외를 점검하는 질문</h4>
+                    <div class="criteria-list">
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">이 컴포넌트를 마주한 사용자가 가져도 되는 기대는 무엇인가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">동일한 기대가 성립하는 조건에서만 재사용되는가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">예외가 발생하는 조건이 기준으로 설명 가능한가?</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>설명할 수 없는 예외는 시스템을 무너뜨린다. 예외를 설명할 수 있다면, 그 컴포넌트는 여전히 시스템 안에 있다.</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 6: 과제 -->
+        <section id="section-assignment" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <h2>과제 안내</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="assignment-intro">
+                    <p>과제는 주요 UI 요소를 컴포넌트 단위로 정의하고, 왜 이 단위로 나누었는지를 설명하는 문서를 작성하는 것이다. 중요한 것은 컴포넌트 목록이 아니라 경계 기준과 재사용 규칙이다.</p>
+                    <p>각 컴포넌트에 대해 “역할”, “사용자 기대”, “재사용 조건”, “예외 조건”을 언어로 고정해야 한다. 이 네 가지가 고정되면 화면은 요소의 조립이 아니라 시스템의 확장으로 전환된다.</p>
+                </div>
+
+                <div class="assignment-steps">
+                    <h4><i class="fa-solid fa-shoe-prints"></i> 작성 순서</h4>
+
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h5>주요 UI 요소 선정(5~8개)</h5>
+                            <p>서비스 화면에서 반복적으로 등장하는 핵심 요소를 고른다. 단순히 많다는 이유가 아니라, 사용자의 판단과 행동을 자주 좌우하는 요소를 우선한다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 예: Primary Action Button, Secondary Action Button, Info Card, List Row, Empty State, Modal/Drawer 등</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h5>컴포넌트 정의(역할 중심)</h5>
+                            <p>형태가 아니라 역할로 정의한다. 이 컴포넌트가 사용자의 어떤 판단을 돕고 어떤 행동을 유도하는지, 어떤 정보를 전달하는지를 한 문장으로 고정한다.</p>
+                            <div class="step-detail warning">
+                                <p><i class="fa-solid fa-exclamation-triangle"></i> “비슷해 보여서” “통일감이 있어서” 같은 이유는 기준이 아니다 — 인지적 기능이 기준이어야 한다</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h5>재사용 조건 명시</h5>
+                            <p>어떤 상황에서 동일한 의미로 읽히는지 조건을 쓴다. 동일한 의미가 성립하지 않는다면, 같은 컴포넌트를 재사용하면 안 된다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> “여러 페이지에서 사용”이 아니라 “동일한 기대가 성립하는 상태에서만 사용”으로 기술</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h5>예외 조건 명시</h5>
+                            <p>어떤 조건에서 변형이 허용되는지, 그 변형이 어떤 기준을 유지하는지를 기록한다. 예외는 금지가 아니라 통제 대상이다.</p>
+                            <div class="step-detail warning">
+                                <p><i class="fa-solid fa-exclamation-triangle"></i> 예외가 “임의적 수정”으로 보이면 통과 실패 — 기준에 따른 변형이어야 한다</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pass-criteria">
+                    <h4><i class="fa-solid fa-flag-checkered"></i> 통과 기준</h4>
+                    <div class="criteria-cards">
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-comment-slash"></i></div>
+                            <div class="criteria-content">
+                                <p>경계 기준이 감각이 아니다</p>
+                                <span class="criteria-meaning">= 역할·사용자 기대·행동 성격이 기준으로 등장한다</span>
+                            </div>
+                        </div>
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-code-branch"></i></div>
+                            <div class="criteria-content">
+                                <p>재사용·예외가 설명 가능하다</p>
+                                <span class="criteria-meaning">= 시스템이 유지되며, 확장 시 판단이 복원된다</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 결론 섹션 -->
+        <section class="conclusion-section">
+            <div class="conclusion-content">
+                <div class="conclusion-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3>이 주차의 의미</h3>
+                <p>이 주차는 컴포넌트를 잘 나누는 법을 배우는 시간이 아니다. 반복과 일관성이 왜 필요한지를 사고 차원에서 이해하는 시간이다.</p>
+                <p class="emphasis-text">화면을 시스템으로 인식할 수 있을 때 디자인은 개별 결과물이 아니라 지속적으로 확장 가능한 구조가 된다. 그리고 그 구조를 설명할 수 있을 때, 디자이너는 요소를 만드는 사람이 아니라 경험의 규칙을 설계하는 사람이 된다.</p>
+
+                <div class="conclusion-contrast">
+                    <div class="contrast-item negative">
+                        <i class="fa-solid fa-xmark"></i>
+                        <p>요소 조립으로 남으면</p>
+                        <span>확장할수록 예외가 쌓여 시스템이 붕괴한다</span>
+                    </div>
+                    <div class="contrast-item positive">
+                        <i class="fa-solid fa-check"></i>
+                        <p>규칙으로 설계하면</p>
+                        <span>추가와 수정은 시스템 확장으로 전환된다</span>
+                    </div>
+                </div>
+
+                <div class="final-question">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>이 컴포넌트는 사용자의 어떤 기대를 안정시키며, 어떤 조건에서만 재사용이 허용되는가?</p>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <p class="final-statement">컴포넌트는 스타일이 아니라 규칙이다. 규칙이 고정될 때 화면은 시스템이 된다.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <p>Week 13 - 화면은 시스템이다: 컴포넌트는 약속이다</p>
+    </footer>
+
+    <!-- 진행률 표시 -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="week.js"></script>
+</body>
+</html>

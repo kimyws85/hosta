@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 - 정보 구조는 분류 기준이다</title>
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 스타일시트 -->
+    <link rel="stylesheet" href="week.css">
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header class="header">
+        <div class="header-content">
+            <span class="week-badge">WEEK 5</span>
+            <h1 class="main-title">정보 구조는 분류 기준이다</h1>
+            <p class="subtitle">배치가 아니라, 의미를 분해하고 다시 묶는 판단 체계를 언어로 고정</p>
+        </div>
+    </header>
+
+    <!-- 네비게이션 -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="#section-intro" class="nav-item active" data-section="section-intro">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>도입</span>
+            </a>
+            <a href="#section-redefine" class="nav-item" data-section="section-redefine">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>본질</span>
+            </a>
+            <a href="#section-user" class="nav-item" data-section="section-user">
+                <i class="fa-solid fa-user"></i>
+                <span>전제</span>
+            </a>
+            <a href="#section-elements" class="nav-item" data-section="section-elements">
+                <i class="fa-solid fa-puzzle-piece"></i>
+                <span>깊이·폭</span>
+            </a>
+            <a href="#section-evaluation" class="nav-item" data-section="section-evaluation">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>적합성</span>
+            </a>
+            <a href="#section-assignment" class="nav-item" data-section="section-assignment">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>과제</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+
+        <!-- 섹션 1: 도입 -->
+        <section id="section-intro" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h2>배치로 생각하는 순간, 구조는 사라진다</h2>
+            </div>
+            <div class="section-body">
+                <div class="highlight-box warning">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>정보 구조를 화면 배치의 문제로 인식하는 순간, 디자인 사고는 다시 표면으로 미끄러진다.</strong></p>
+                    </div>
+                </div>
+
+                <p>메뉴의 위치, 카드의 배열, 리스트의 정렬은 정보 구조의 결과일 뿐, 정보 구조 그 자체가 아니다.</p>
+                <p>이 주차가 다루는 핵심은 정보를 어떻게 놓았는가가 아니라, <strong>왜 그런 기준으로 나누었는가를 설명할 수 있는 사고</strong>를 만드는 데 있다.</p>
+                <p>정보 구조는 시각적 정리 기술이 아니라, <strong>의미를 분해하고 다시 묶는 판단의 체계</strong>다.</p>
+
+                <div class="question-list">
+                    <h4><i class="fa-solid fa-circle-question"></i> 이 주차가 강제로 묻는 질문</h4>
+                    <div class="question-item">
+                        <span class="question-number">01</span>
+                        <span class="question-text">이 정보는 왜 같은 묶음에 속하는가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">02</span>
+                        <span class="question-text">왜 다른 정보와 분리되었는가</span>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">03</span>
+                        <span class="question-text">이 구조는 어떤 사용자 목표 흐름을 전제하는가</span>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <i class="fa-solid fa-key"></i>
+                    <p>구조를 말할 수 없으면, 화면은 정리되어 보여도 사용자는 길을 잃는다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 본질 -->
+        <section id="section-redefine" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <h2>IA는 분류 기준의 문제다</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="insight-box">
+                    <div class="insight-header">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>핵심 통찰</span>
+                    </div>
+                    <p>많은 서비스에서 정보는 충분하다. 문제는 부족이 아니라 무질서다.</p>
+                    <p class="insight-conclusion">사용자는 원하는 정보를 찾지 못해서 떠나기보다, 무엇을 기준으로 찾아야 할지 판단하지 못해서 떠난다.</p>
+                </div>
+
+                <div class="compare-container">
+                    <div class="compare-card wrong">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>표면 설명</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“보기 불편하다 / 정리가 안 돼 있다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">결과를 묘사할 뿐 원인을 드러내지 않음</div>
+                                <div class="compare-item">구조의 기준이 무엇인지 말하지 못함</div>
+                                <div class="compare-item">수정이 배치/정렬로 수렴됨</div>
+                            </div>
+                            <p class="compare-result">원인이 숨는다</p>
+                        </div>
+                    </div>
+
+                    <div class="compare-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                    <div class="compare-card right">
+                        <div class="compare-header">
+                            <i class="fa-solid fa-check"></i>
+                            <span>구조 설명</span>
+                        </div>
+                        <div class="compare-body">
+                            <p class="compare-title">“분류 기준이 사용자 목표와 어긋난다”</p>
+                            <div class="compare-list">
+                                <div class="compare-item">사용자가 어떤 기준으로 찾아야 할지 판단하지 못함</div>
+                                <div class="compare-item">구조가 목표 흐름을 가정하는 방식이 드러남</div>
+                                <div class="compare-item">수정이 기준/묶음/경로 논의로 이동</div>
+                            </div>
+                            <p class="compare-result">원인이 열린다</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-sitemap"></i> 구조의 본질</h4>
+                    <p>무엇을 상단에 두었는지, 몇 열로 나누었는지는 구조가 결정된 이후의 구현 단계다.</p>
+                    <p>구조의 본질은 이 정보들이 <strong>왜 같은 묶음에 속하는지</strong>, 왜 다른 정보와는 <strong>분리되었는지</strong>에 있다.</p>
+                </div>
+
+                <div class="context-requirements">
+                    <h4><i class="fa-solid fa-layer-group"></i> 같은 정보도 기준에 따라 ‘다른 서비스’가 된다</h4>
+                    <div class="context-grid">
+                        <div class="context-item">
+                            <i class="fa-solid fa-gears"></i>
+                            <span>기능 기준 분류</span>
+                        </div>
+                        <div class="context-item">
+                            <i class="fa-solid fa-person-walking"></i>
+                            <span>사용자 상황 기준 분류</span>
+                        </div>
+                        <div class="context-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>시간 흐름 기준 분류</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 3: 전제 -->
+        <section id="section-user" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <h2>정보 구조는 중립적이지 않다</h2>
+            </div>
+            <div class="section-body">
+
+                <p>이 주차에서 중요한 전제는, 정보 구조가 중립적이지 않다는 사실이다. 구조는 언제나 특정한 사용 시나리오를 전제한다.</p>
+                <p>어떤 정보를 먼저 보여주고 어떤 정보를 나중으로 미루는지는 사용자가 어떤 목표를 가지고 진입할 것이라고 가정했는지를 드러낸다.</p>
+
+                <div class="action-meaning">
+                    <h4><i class="fa-solid fa-hand-pointer"></i> 구조가 암묵적으로 선언하는 것</h4>
+                    <div class="action-grid">
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-crosshairs"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">목표 가정</span>
+                                <span class="action-desc">사용자는 무엇을 하러 왔다고 보는가</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-route"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">경로 가정</span>
+                                <span class="action-desc">어떤 순서로 판단할 것이라고 보는가</span>
+                            </div>
+                        </div>
+                        <div class="action-item">
+                            <div class="action-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+                            <div class="action-content">
+                                <span class="action-name">비용 가정</span>
+                                <span class="action-desc">사용자가 감수할 탐색 노력은 어느 정도인가</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>조직 구조/내부 기능/개발 편의성으로 나뉜 메뉴는 제공자에게는 익숙하지만 사용자에게는 의미가 없다.</strong></p>
+                    </div>
+                </div>
+
+                <p>사용자는 기능을 찾으러 오는 것이 아니라 목적을 해결하러 온다. 구조는 “이 서비스에 어떤 기능이 있는가”가 아니라 “사용자가 이 시점에 무엇을 하려고 하는가”를 기준으로 설계되어야 한다.</p>
+
+                <div class="key-point emphasis">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <div>
+                        <p><strong>구조는 정보를 정리하는 행위가 아니라,</strong></p>
+                        <p class="large"><strong>사용자의 목표 흐름 위에 길을 놓는 설계 행위다.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 4: 깊이·폭 -->
+        <section id="section-elements" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                </div>
+                <h2>깊이·폭과 탐색 비용</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="text-block">
+                    <h4><i class="fa-solid fa-compass"></i> 깊이와 폭은 탐색 비용의 설계 변수다</h4>
+                    <p>깊이는 원하는 정보에 도달하기까지 거쳐야 하는 단계 수이고, 폭은 한 단계에서 제시되는 선택지의 수다.</p>
+                    <p>이 둘은 단순한 수치 비교가 아니라, 사용자가 정보를 찾기 위해 지불해야 하는 <strong>인지적 노력의 총합</strong>과 직결된다.</p>
+                </div>
+
+                <div class="element-cards">
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-stairs"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>깊이가 과도하면</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>경로를 따라가며 맥락을 잃는다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>내가 왜 여기 왔는지, 선택이 맞는지에 대한 <strong>확신이 약해진다</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-table-columns"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>폭이 과도하면</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>첫 단계에서 판단 부담에 압도된다</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>무엇을 골라야 할지 결정하지 못해 <strong>아무것도 선택하지 않는다</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="element-card">
+                        <div class="element-visual">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div class="element-content">
+                            <h4>탐색 비용이란</h4>
+                            <div class="element-compare">
+                                <div class="element-before">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    <span>클릭 수로만 측정</span>
+                                </div>
+                                <div class="element-after">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>선택 복잡도·판단 난이도·되돌아갈 가능성까지 포함한 <strong>인지 노력</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="role-shift">
+                    <div class="role-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="role-content">
+                        <p class="role-from">깊이/폭을 숫자로만 본다</p>
+                        <p class="role-arrow"><i class="fa-solid fa-arrow-down"></i></p>
+                        <p class="role-to">사용자 목표와 정보 성격에 맞는 <strong>탐색 비용의 균형</strong>을 설계한다</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 5: 적합성 -->
+        <section id="section-evaluation" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h2>정답이 아니라 적합성의 문제</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="highlight-box caution">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <p><strong>깊이가 얕고 폭이 넓은 구조가 항상 좋은 것도 아니고, 깊이가 깊고 폭이 좁은 구조가 항상 나쁜 것도 아니다.</strong></p>
+                    </div>
+                </div>
+
+                <p>사용자가 무엇을 찾는지 명확한 경우에는 깊이가 있는 구조가 효율적일 수 있고, 탐색이나 비교가 목적이라면 폭이 넓은 구조가 더 적합할 수 있다.</p>
+                <p>따라서 구조의 적합성은 언제나 <strong>사용자 목표와 정보 성격의 조합</strong> 속에서 판단되어야 한다.</p>
+
+                <div class="new-criteria">
+                    <h4><i class="fa-solid fa-arrows-to-circle"></i> 적합성을 판단하는 질문</h4>
+                    <div class="criteria-list">
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">사용자는 무엇을 찾고 있는지 이미 <strong>명확</strong>한가, 탐색이 필요한가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">정보는 단계적으로 내려갈수록 <strong>구체화</strong>되는 성격인가, <strong>비교</strong>가 필요한가?</span>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-icon"><i class="fa-regular fa-circle-question"></i></span>
+                            <span class="criteria-text">현재 구조는 어떤 탐색 비용을 요구하며, 그 비용은 목표와 <strong>정합</strong>한가?</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 섹션 6: 과제 -->
+        <section id="section-assignment" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <h2>과제 안내</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="assignment-intro">
+                    <p>과제는 구조적 사고를 언어로 고정하기 위한 훈련이다. 서비스 주제를 하나 선택하는 이유는 추상적 논의가 아니라 구체적 맥락 속에서 판단하도록 만들기 위함이다.</p>
+                    <p>이 과제에서 중요한 것은 실제 화면을 그리는 것이 아니라, <strong>구조를 설명하는 문서</strong>를 작성하는 것이다. 시각화 이전에 구조가 언어로 정리되어야 한다.</p>
+                </div>
+
+                <div class="assignment-steps">
+                    <h4><i class="fa-solid fa-shoe-prints"></i> 작성 순서</h4>
+
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h5>주요 정보 목록</h5>
+                            <p>무엇을 주요 정보로 간주할지 결정한다. 이는 단순한 나열이 아니라 구조 설계의 시작이다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 버튼/기능/문구가 아니라 사용자가 판단에 필요로 하는 <strong>의미 단위</strong>로 정의</p>
+                            </div>
+                            <div class="step-questions">
+                                <span>무엇이 주요이고 무엇이 부차적인지의 구분 자체가 구조를 만든다</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h5>분류 기준</h5>
+                            <p>왜 이 기준으로 나누었는지를 설명한다. 설명할 수 없다면 설계가 아니라 나열이다.</p>
+                            <div class="step-detail warning">
+                                <p><i class="fa-solid fa-exclamation-triangle"></i> 시간 순서 / 사용자 상황 / 기능 목적 / 문제 해결 단계 등 기준을 명시하고 사용자 목표와의 연결을 서술</p>
+                            </div>
+                            <div class="analysis-points">
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <span>시간 흐름</span>
+                                </div>
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-person-circle-check"></i>
+                                    <span>상황 기준</span>
+                                </div>
+                                <div class="analysis-item">
+                                    <i class="fa-solid fa-list-check"></i>
+                                    <span>해결 단계</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h5>탐색 경로 서술</h5>
+                            <p>메뉴 트리를 그리는 것이 아니라, 사용자가 어떤 상태로 진입해 어떤 판단을 거쳐 어디로 이동하는지를 문장으로 설명한다.</p>
+                            <div class="step-detail">
+                                <p><i class="fa-solid fa-info-circle"></i> 처음 보는 정보 → 다음 선택 → 연결되는 정보의 흐름을 서술</p>
+                            </div>
+                            <div class="explanation-requirements">
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>진입 상태</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>판단 단계</span>
+                                </div>
+                                <div class="req-item">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>도착 지점</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pass-criteria">
+                    <h4><i class="fa-solid fa-flag-checkered"></i> 통과 기준</h4>
+                    <div class="criteria-cards">
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-comment-slash"></i></div>
+                            <div class="criteria-content">
+                                <p>“보기 편하다” 같은 표현 없이 구조를 <strong>설명</strong>할 수 있어야 한다</p>
+                                <span class="criteria-meaning">= 분류 기준과 탐색 논리를 언어로 드러낼 수 있음</span>
+                            </div>
+                        </div>
+                        <div class="criteria-card">
+                            <div class="criteria-icon"><i class="fa-solid fa-code-branch"></i></div>
+                            <div class="criteria-content">
+                                <p>다른 분류 기준과의 비교 설명이 가능해야 한다</p>
+                                <span class="criteria-meaning">= 현재 구조가 여러 가능성 중 선택된 하나임을 인식</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 결론 섹션 -->
+        <section class="conclusion-section">
+            <div class="conclusion-content">
+                <div class="conclusion-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3>이 주차의 의미</h3>
+                <p>이 주차는 정보를 잘 정리하는 법을 배우는 시간이 아니다. 정보를 어떻게 이해하고 있는지를 드러내는 시간이다.</p>
+                <p class="emphasis-text">정보 구조를 언어로 설명할 수 있을 때, 화면은 그 설명을 구현하는 단계로 자연스럽게 내려온다.</p>
+
+                <div class="conclusion-contrast">
+                    <div class="contrast-item negative">
+                        <i class="fa-solid fa-xmark"></i>
+                        <p>구조 없이 화면부터 만들면</p>
+                        <span>디자인은 배치와 감각의 문제로 되돌아간다</span>
+                    </div>
+                    <div class="contrast-item positive">
+                        <i class="fa-solid fa-check"></i>
+                        <p>구조가 언어로 고정되면</p>
+                        <span>화면은 보이지 않는 질서를 드러내는 구현이 된다</span>
+                    </div>
+                </div>
+
+                <div class="final-question">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>이 구조의 분류 기준은 무엇이며, 사용자의 목표 흐름과 어떻게 연결되는가?</p>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <p class="final-statement">이 질서를 설명할 수 있을 때, 디자인은 비로소 설계의 영역에 들어선다.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <p>Week 5 - 정보 구조는 분류 기준이다</p>
+    </footer>
+
+    <!-- 진행률 표시 -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="week.js"></script>
+</body>
+</html>
