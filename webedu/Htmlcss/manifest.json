@@ -1,0 +1,176 @@
+{
+  "version": "2.0.0",
+  "title": "HTML/CSS 학습 가이드",
+  "description": "순수 HTML/CSS로 구현된 확장 가능한 학습 자료",
+  "author": "Your Name",
+  "lastUpdated": "2026-02-13",
+
+  "categories": [
+    {
+      "id": "html",
+      "name": "HTML",
+      "icon": "📝",
+      "description": "HTML 기초부터 시맨틱 마크업까지",
+      "items": [
+        {
+          "file": "html/basic.html",
+          "title": "기본 구조",
+          "description": "HTML 문서 구조, DOCTYPE, 메타 태그"
+        },
+        {
+          "file": "html/semantic.html",
+          "title": "시맨틱 태그",
+          "description": "header, nav, main, article, section, footer"
+        },
+        {
+          "file": "html/forms.html",
+          "title": "폼",
+          "description": "input, select, textarea, button, validation"
+        },
+        {
+          "file": "html/tables.html",
+          "title": "테이블",
+          "description": "table, thead, tbody, tr, td"
+        }
+      ]
+    },
+    {
+      "id": "css",
+      "name": "CSS",
+      "icon": "🎨",
+      "description": "CSS 기초와 스타일링",
+      "items": [
+        {
+          "file": "css/selectors.html",
+          "title": "선택자",
+          "description": "클래스, ID, 속성, 가상 클래스, 가상 요소"
+        },
+        {
+          "file": "css/box-model.html",
+          "title": "박스 모델",
+          "description": "margin, padding, border, box-sizing"
+        },
+        {
+          "file": "css/colors.html",
+          "title": "색상",
+          "description": "색상 표현, 투명도, 그라디언트"
+        },
+        {
+          "file": "css/typography.html",
+          "title": "타이포그래피",
+          "description": "font, text, line-height, letter-spacing"
+        }
+      ]
+    },
+    {
+      "id": "layout",
+      "name": "Layout",
+      "icon": "📐",
+      "description": "레이아웃 시스템",
+      "items": [
+        {
+          "file": "layout/flexbox.html",
+          "title": "Flexbox",
+          "description": "1차원 레이아웃, 정렬, 순서"
+        },
+        {
+          "file": "layout/grid.html",
+          "title": "Grid",
+          "description": "2차원 레이아웃, 그리드 영역"
+        },
+        {
+          "file": "layout/positioning.html",
+          "title": "Positioning",
+          "description": "static, relative, absolute, fixed, sticky"
+        }
+      ]
+    },
+    {
+      "id": "styling",
+      "name": "Styling",
+      "icon": "✨",
+      "description": "시각적 스타일링",
+      "items": [
+        {
+          "file": "styling/backgrounds.html",
+          "title": "배경",
+          "description": "색상, 이미지, 그라디언트, 다중 배경"
+        },
+        {
+          "file": "styling/borders.html",
+          "title": "테두리",
+          "description": "스타일, 굵기, 색상, 둥근 모서리"
+        },
+        {
+          "file": "styling/shadows.html",
+          "title": "그림자",
+          "description": "box-shadow, text-shadow"
+        }
+      ]
+    },
+    {
+      "id": "responsive",
+      "name": "Responsive",
+      "icon": "📱",
+      "description": "반응형 웹 디자인",
+      "items": [
+        {
+          "file": "responsive/media-queries.html",
+          "title": "미디어 쿼리",
+          "description": "중단점, 디바이스 타겟팅"
+        },
+        {
+          "file": "responsive/mobile-first.html",
+          "title": "모바일 퍼스트",
+          "description": "모바일 우선 설계 방법론"
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced",
+      "icon": "🚀",
+      "description": "고급 CSS 기술",
+      "items": [
+        {
+          "file": "advanced/animations.html",
+          "title": "애니메이션",
+          "description": "keyframes, animation 속성"
+        },
+        {
+          "file": "advanced/transforms.html",
+          "title": "변형",
+          "description": "transform, rotate, scale, translate"
+        },
+        {
+          "file": "advanced/variables.html",
+          "title": "CSS 변수",
+          "description": "커스텀 속성, 테마 관리"
+        }
+      ]
+    }
+  ],
+
+  "settings": {
+    "theme": {
+      "default": "light",
+      "options": ["light", "dark", "auto"]
+    },
+    "navigation": {
+      "type": "sidebar",
+      "collapsible": true,
+      "scrollBehavior": "smooth"
+    },
+    "content": {
+      "layout": "single-page",
+      "maxWidth": "800px",
+      "codeHighlight": true
+    }
+  },
+
+  "meta": {
+    "keywords": ["HTML", "CSS", "웹개발", "프론트엔드", "학습자료"],
+    "language": "ko",
+    "license": "MIT"
+  }
+}

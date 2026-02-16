@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HTML을 배우는 초보자를 위한 완벽한 가이드">
+  <title>HTML 기초 완벽 가이드</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+      line-height: 1.8;
+      color: #333;
+      background: #f8f9fa;
+      padding-top: 0;
+    }
+
+    /* 고정 햄버거 버튼 */
+    .hamburger-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hamburger-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    }
+
+    .hamburger-btn span {
+      width: 24px;
+      height: 3px;
+      background: white;
+      border-radius: 3px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hamburger-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .hamburger-btn.active span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+
+    .hamburger-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* 사이드 메뉴 */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -350px;
+      width: 320px;
+      height: 100vh;
+      background: white;
+      box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      overflow-y: auto;
+      transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 80px 20px 20px;
+    }
+
+    .side-menu.active {
+      right: 0;
+    }
+
+    .side-menu h3 {
+      color: #667eea;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #667eea;
+    }
+
+    .side-menu ul {
+      list-style: none;
+    }
+
+    .side-menu > ul > li {
+      margin-bottom: 8px;
+    }
+
+    .side-menu a {
+      display: block;
+      color: #555;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .side-menu a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background: #667eea;
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .side-menu a:hover {
+      background: #f0f3ff;
+      color: #667eea;
+      padding-left: 24px;
+    }
+
+    .side-menu a:hover::before {
+      transform: scaleY(1);
+    }
+
+    /* 서브 메뉴 */
+    .side-menu .sub-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding-left: 16px;
+    }
+
+    .side-menu li:hover .sub-menu {
+      max-height: 500px;
+    }
+
+    .side-menu .sub-menu a {
+      font-size: 0.875rem;
+      padding: 10px 12px;
+      color: #777;
+    }
+
+    .side-menu .sub-menu a::before {
+      content: '→';
+      position: static;
+      margin-right: 8px;
+      background: none;
+      transform: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .side-menu .sub-menu a:hover::before {
+      opacity: 1;
+    }
+
+    /* 오버레이 */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(2px);
+    }
+
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* 메인 컨텐츠 */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: white;
+      min-height: 100vh;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+    }
+
+    h1 {
+      color: #2d3748;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #667eea;
+    }
+
+    h2 {
+      color: #2d3748;
+      font-size: 2rem;
+      margin: 40px 0 20px;
+      padding-left: 16px;
+      border-left: 4px solid #667eea;
+    }
+
+    h3 {
+      color: #4a5568;
+      font-size: 1.5rem;
+      margin: 30px 0 15px;
+    }
+
+    h4 {
+      color: #4a5568;
+      font-size: 1.2rem;
+      margin: 25px 0 12px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #4a5568;
+    }
+
+    /* 정보 박스 */
+    .info-box, .warning-box, .tip-box {
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 12px;
+      border-left: 5px solid;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .info-box {
+      background: #ebf8ff;
+      border-color: #3182ce;
+    }
+
+    .warning-box {
+      background: #fffaf0;
+      border-color: #dd6b20;
+    }
+
+    .tip-box {
+      background: #f0fff4;
+      border-color: #38a169;
+    }
+
+    .info-box strong, .warning-box strong, .tip-box strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    /* 코드 블록 */
+    pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 20px;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    code {
+      background: #f1f5f9;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 0.9em;
+      color: #e91e63;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+
+    ul, ol {
+      margin-left: 30px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: #4a5568;
+    }
+
+    strong {
+      color: #2d3748;
+      font-weight: 600;
+    }
+
+    em {
+      color: #667eea;
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px 15px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .side-menu {
+        width: 280px;
+      }
+
+      .hamburger-btn {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    /* 스크롤바 스타일 */
+    .side-menu::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .side-menu::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    .side-menu::-webkit-scrollbar-thumb {
+      background: #667eea;
+      border-radius: 4px;
+    }
+
+    .side-menu::-webkit-scrollbar-thumb:hover {
+      background: #764ba2;
+    }
+  </style>
+</head>
+<body>
+  <!-- 햄버거 버튼 (화면 고정) -->
+  <button class="hamburger-btn" id="hamburgerBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- 오버레이 -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- 사이드 메뉴 -->
+  <nav class="side-menu" id="sideMenu">
+    <h3><i class="fas fa-list"></i> 목차</h3>
+    <ul>
+      <li>
+        <a href="#html-intro">HTML이란?</a>
+      </li>
+      <li>
+        <a href="#html-role">HTML의 역할과 중요성</a>
+        <ul class="sub-menu">
+          <li><a href="#web-elements">웹의 3대 요소</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#document-structure">HTML 문서 구조</a>
+        <ul class="sub-menu">
+          <li><a href="#doctype">DOCTYPE 선언</a></li>
+          <li><a href="#html-tag">html 태그</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#head-section">head 섹션</a>
+        <ul class="sub-menu">
+          <li><a href="#charset">문자 인코딩</a></li>
+          <li><a href="#viewport">뷰포트 설정</a></li>
+          <li><a href="#description">문서 설명</a></li>
+          <li><a href="#title">제목</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#body-section">body 섹션</a>
+        <ul class="sub-menu">
+          <li><a href="#headings">제목 태그</a></li>
+          <li><a href="#text-tags">텍스트 태그</a></li>
+          <li><a href="#links">링크</a></li>
+          <li><a href="#images">이미지</a></li>
+          <li><a href="#grouping">그룹화 태그</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#example">실전 예제</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- 메인 컨텐츠 -->
+  <div class="container">
+    <h1 id="html-intro"><i class="fas fa-code"></i> 기본 HTML</h1>
+
+    <div class="info-box">
+      <strong><i class="fas fa-info-circle"></i> HTML이란?</strong>
+      <p>HyperText Markup Language의 약자로, 웹 페이지의 구조와 내용을 정의하는 마크업 언어입니다. HTML은 웹 개발의 가장 기본이 되는 언어로, 모든 웹사이트는 HTML로 구성됩니다.</p>
+    </div>
+
+    <h2 id="html-role"><i class="fas fa-book"></i> HTML의 역할과 중요성</h2>
+
+    <h3 id="web-elements">웹의 3대 요소</h3>
+    <p>웹 개발은 세 가지 핵심 기술로 구성됩니다:</p>
+    <ul>
+      <li><strong>HTML (구조)</strong> - 웹 페이지의 뼈대와 내용을 정의합니다</li>
+      <li><strong>CSS (스타일)</strong> - 웹 페이지의 디자인과 레이아웃을 담당합니다</li>
+      <li><strong>JavaScript (동작)</strong> - 웹 페이지에 상호작용과 동적 기능을 추가합니다</li>
+    </ul>
+    <p>이 세 가지는 서로 협력하여 현대적인 웹사이트를 만듭니다. HTML이 없으면 다른 기술들도 의미가 없습니다!</p>
+
+    <h2 id="document-structure"><i class="fas fa-file-code"></i> HTML 문서 구조</h2>
+    <p>모든 HTML 문서는 다음과 같은 기본 구조를 가집니다:</p>
+
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;내 첫 웹페이지&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;환영합니다!&lt;/h1&gt;
+  &lt;p&gt;이것은 HTML 문서입니다.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h3><i class="fas fa-info-circle"></i> 각 부분 설명</h3>
+
+    <h4 id="doctype">DOCTYPE 선언</h4>
+    <pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+    <ul>
+      <li><strong>역할:</strong> 브라우저에게 "이 문서는 HTML5 문서입니다"라고 알려줍니다</li>
+      <li><strong>위치:</strong> 반드시 문서의 첫 줄에 위치해야 합니다</li>
+      <li><strong>중요성:</strong> 없으면 브라우저가 호환 모드로 작동하여 페이지가 이상하게 보일 수 있습니다</li>
+    </ul>
+
+    <h4 id="html-tag"><code>&lt;html&gt;</code> 태그</h4>
+    <pre><code>&lt;html lang="ko"&gt;</code></pre>
+    <ul>
+      <li><strong>역할:</strong> 전체 HTML 문서의 루트(최상위) 요소입니다</li>
+      <li><strong>lang 속성:</strong> 문서의 주 언어를 지정합니다 (ko=한국어, en=영어, ja=일본어)</li>
+      <li><strong>SEO 효과:</strong> 검색 엔진이 언어를 인식하여 해당 언어로 검색한 사용자에게 노출시킵니다</li>
+      <li><strong>접근성:</strong> 스크린 리더가 올바른 발음으로 읽어줍니다</li>
+    </ul>
+
+    <h2 id="head-section"><i class="fas fa-brain"></i> <code>&lt;head&gt;</code> 섹션</h2>
+    <p><code>&lt;head&gt;</code> 태그는 문서의 메타데이터(데이터에 대한 데이터)를 담습니다. 사용자에게는 보이지 않지만 매우 중요합니다!</p>
+
+    <h3><i class="fas fa-globe"></i> 필수 메타 태그</h3>
+
+    <h4 id="charset">1. 문자 인코딩 (charset)</h4>
+    <pre><code>&lt;meta charset="UTF-8"&gt;</code></pre>
+    <ul>
+      <li><strong>역할:</strong> 문서가 UTF-8 인코딩을 사용한다고 선언합니다</li>
+      <li><strong>왜 필요?</strong> 한글, 이모지(😀), 특수 문자 등이 깨지지 않고 올바르게 표시됩니다</li>
+      <li><strong>반드시 필요:</strong> 이것이 없으면 "안녕하세요" → "¾È³çÇϼ¼¿ä" 같은 글자 깨짐 현상 발생</li>
+    </ul>
+
+    <h4 id="viewport">2. 뷰포트 설정 (viewport)</h4>
+    <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+    <ul>
+      <li><strong>역할:</strong> 모바일 기기에서 페이지를 올바르게 표시하기 위한 설정입니다</li>
+      <li><strong>width=device-width:</strong> 화면 너비를 기기의 너비에 맞춥니다</li>
+      <li><strong>initial-scale=1.0:</strong> 처음 로드될 때 확대/축소 없이 100% 크기로 표시합니다</li>
+      <li><strong>반응형 필수:</strong> 모든 반응형 웹사이트에 필수적입니다</li>
+    </ul>
+
+    <h4 id="description">3. 문서 설명 (description)</h4>
+    <pre><code>&lt;meta name="description" content="HTML을 배우는 초보자를 위한 완벽한 가이드"&gt;</code></pre>
+    <ul>
+      <li><strong>역할:</strong> 검색 결과에 표시되는 설명문입니다</li>
+      <li><strong>길이:</strong> 150-160자 이내 권장</li>
+      <li><strong>SEO 중요:</strong> 구글 검색 결과에 이 내용이 표시됩니다</li>
+    </ul>
+
+    <h4 id="title">4. 제목 (title)</h4>
+    <pre><code>&lt;title&gt;HTML 기초 완벽 가이드&lt;/title&gt;</code></pre>
+    <ul>
+      <li><strong>역할:</strong> 브라우저 탭에 표시되는 제목입니다</li>
+      <li><strong>SEO 핵심:</strong> 검색 엔진이 가장 중요하게 보는 요소 중 하나</li>
+      <li><strong>권장 길이:</strong> 50-60자 이내</li>
+      <li><strong>팁:</strong> 핵심 키워드를 앞쪽에 배치하세요</li>
+    </ul>
+
+    <h2 id="body-section"><i class="fas fa-file-alt"></i> <code>&lt;body&gt;</code> 섹션</h2>
+    <p>실제로 사용자에게 보이는 모든 콘텐츠가 들어가는 영역입니다.</p>
+
+    <h3 id="headings"><i class="fas fa-heading"></i> 제목 태그 (Headings)</h3>
+    <p>HTML은 6단계의 제목 태그를 제공합니다:</p>
+
+    <pre><code>&lt;h1&gt;가장 중요한 제목&lt;/h1&gt;
+&lt;h2&gt;두 번째 수준 제목&lt;/h2&gt;
+&lt;h3&gt;세 번째 수준 제목&lt;/h3&gt;
+&lt;h4&gt;네 번째 수준 제목&lt;/h4&gt;
+&lt;h5&gt;다섯 번째 수준 제목&lt;/h5&gt;
+&lt;h6&gt;여섯 번째 수준 제목&lt;/h6&gt;</code></pre>
+
+    <div class="warning-box">
+      <strong><i class="fas fa-exclamation-triangle"></i> 중요한 규칙</strong>
+      <ul>
+        <li><code>&lt;h1&gt;</code>은 페이지당 <strong>단 하나</strong>만 사용하세요 (SEO 규칙)</li>
+        <li>순서를 건너뛰지 마세요 (h1 → h3 ❌, h1 → h2 → h3 ✅)</li>
+        <li>디자인 목적으로 제목 태그를 남용하지 마세요 (CSS로 해결하세요)</li>
+      </ul>
+    </div>
+
+    <h3 id="text-tags"><i class="fas fa-font"></i> 텍스트 태그</h3>
+
+    <h4>문단 (Paragraph)</h4>
+    <pre><code>&lt;p&gt;이것은 문단입니다. 문단은 하나의 완결된 생각이나 주제를 담습니다.&lt;/p&gt;</code></pre>
+
+    <h4>강조 태그</h4>
+    <pre><code>&lt;!-- 강한 강조 (굵게, 중요함을 의미) --&gt;
+&lt;strong&gt;중요한 내용&lt;/strong&gt;
+
+&lt;!-- 일반 굵게 (단순 스타일) --&gt;
+&lt;b&gt;굵은 텍스트&lt;/b&gt;
+
+&lt;!-- 강조 (기울임, 강조를 의미) --&gt;
+&lt;em&gt;강조된 내용&lt;/em&gt;
+
+&lt;!-- 일반 기울임 (단순 스타일) --&gt;
+&lt;i&gt;기울임 텍스트&lt;/i&gt;</code></pre>
+
+    <div class="tip-box">
+      <strong><i class="fas fa-lightbulb"></i> 의미론적 HTML</strong>
+      <ul>
+        <li><code>&lt;strong&gt;</code>과 <code>&lt;em&gt;</code>은 <strong>의미</strong>를 가진 태그입니다 (SEO에 유리)</li>
+        <li><code>&lt;b&gt;</code>와 <code>&lt;i&gt;</code>는 단순히 <strong>스타일</strong>만 적용합니다</li>
+        <li>가능하면 의미 있는 태그를 사용하세요!</li>
+      </ul>
+    </div>
+
+    <h3 id="links"><i class="fas fa-link"></i> 링크 (Links)</h3>
+    <pre><code>&lt;!-- 기본 링크 --&gt;
+&lt;a href="https://www.example.com"&gt;웹사이트 방문&lt;/a&gt;
+
+&lt;!-- 새 탭에서 열기 --&gt;
+&lt;a href="https://www.example.com" target="_blank"&gt;새 탭에서 열기&lt;/a&gt;
+
+&lt;!-- 같은 페이지 내 이동 --&gt;
+&lt;a href="#section1"&gt;섹션1로 이동&lt;/a&gt;
+
+&lt;!-- 이메일 링크 --&gt;
+&lt;a href="mailto:example@email.com"&gt;이메일 보내기&lt;/a&gt;
+
+&lt;!-- 전화 링크 --&gt;
+&lt;a href="tel:+821012345678"&gt;전화 걸기&lt;/a&gt;</code></pre>
+
+    <div class="warning-box">
+      <strong><i class="fas fa-shield-alt"></i> 보안 주의</strong>
+      <p>외부 사이트로 연결할 때는 반드시 <code>rel="noopener noreferrer"</code>를 추가하세요:</p>
+      <pre><code>&lt;a href="https://external-site.com" target="_blank" rel="noopener noreferrer"&gt;
+  안전한 외부 링크
+&lt;/a&gt;</code></pre>
+      <p>이것이 없으면 해커가 당신의 페이지를 조작할 수 있습니다!</p>
+    </div>
+
+    <h3 id="images"><i class="fas fa-image"></i> 이미지 (Images)</h3>
+    <pre><code>&lt;!-- 기본 이미지 --&gt;
+&lt;img src="photo.jpg" alt="강아지 사진"&gt;
+
+&lt;!-- 크기 지정 --&gt;
+&lt;img src="logo.png" alt="회사 로고" width="200" height="100"&gt;
+
+&lt;!-- 반응형 이미지 --&gt;
+&lt;img
+  src="small.jpg"
+  srcset="small.jpg 400w, medium.jpg 800w, large.jpg 1200w"
+  sizes="(max-width: 600px) 400px, (max-width: 1000px) 800px, 1200px"
+  alt="반응형 이미지"
+&gt;</code></pre>
+
+    <h4>alt 속성의 중요성</h4>
+    <pre><code>&lt;img src="cute-dog.jpg" alt="풀밭에서 뛰어노는 골든 리트리버"&gt;</code></pre>
+
+    <p><strong>왜 필요한가요?</strong></p>
+    <ol>
+      <li><strong>접근성:</strong> 시각 장애인이 스크린 리더로 이미지 내용을 들을 수 있습니다</li>
+      <li><strong>SEO:</strong> 구글 이미지 검색에 노출됩니다</li>
+      <li><strong>로딩 실패:</strong> 이미지가 안 뜰 때 대체 텍스트로 표시됩니다</li>
+    </ol>
+
+    <div class="tip-box">
+      <strong><i class="fas fa-check-circle"></i> 좋은 alt 텍스트 작성법</strong>
+      <ul>
+        <li>✅ "풀밭에서 뛰어노는 골든 리트리버"</li>
+        <li>❌ "강아지"</li>
+        <li>❌ "image123.jpg"</li>
+        <li>❌ ""</li>
+      </ul>
+    </div>
+
+    <h3 id="grouping"><i class="fas fa-layer-group"></i> 그룹화 태그</h3>
+    <pre><code>&lt;!-- 의미 없는 그룹 (블록) --&gt;
+&lt;div&gt;
+  &lt;h2&gt;제목&lt;/h2&gt;
+  &lt;p&gt;내용&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- 의미 없는 그룹 (인라인) --&gt;
+&lt;p&gt;이것은 &lt;span style="color: red;"&gt;빨간 글씨&lt;/span&gt;입니다.&lt;/p&gt;</code></pre>
+
+    <h2 id="example"><i class="fas fa-check-circle"></i> 실전 예제</h2>
+    <p>완전한 HTML 페이지 예시:</p>
+
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;meta name="description" content="나만의 첫 웹사이트 - HTML 실습"&gt;
+  &lt;title&gt;내 첫 웹사이트&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;환영합니다!&lt;/h1&gt;
+
+  &lt;p&gt;
+    안녕하세요! 저는 &lt;strong&gt;HTML을 배우는 학생&lt;/strong&gt;입니다.
+    이것은 제가 만든 &lt;em&gt;첫 번째 웹페이지&lt;/em&gt;입니다.
+  &lt;/p&gt;
+
+  &lt;h2&gt;제 소개&lt;/h2&gt;
+  &lt;p&gt;
+    저는 웹 개발에 관심이 많습니다.
+    &lt;a href="#contact"&gt;연락하기&lt;/a&gt;를 눌러 메시지를 보내주세요!
+  &lt;/p&gt;
+
+  &lt;img src="profile.jpg" alt="내 프로필 사진" width="300"&gt;
+
+  &lt;h2 id="contact"&gt;연락처&lt;/h2&gt;
+  &lt;p&gt;
+    이메일: &lt;a href="mailto:me@example.com"&gt;me@example.com&lt;/a&gt;&lt;br&gt;
+    전화: &lt;a href="tel:+821012345678"&gt;010-1234-5678&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <div class="tip-box">
+      <strong><i class="fas fa-graduation-cap"></i> 다음 단계</strong>
+      <p>이제 기본 HTML을 이해했다면, 다음 주제들을 학습해보세요:</p>
+      <ul>
+        <li>시맨틱 태그 - 의미있는 HTML 구조 만들기</li>
+        <li>폼 - 사용자 입력 받기</li>
+        <li>테이블 - 표 형식 데이터 표현하기</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('overlay');
+
+    // 햄버거 메뉴 토글
+    function toggleMenu() {
+      hamburgerBtn.classList.toggle('active');
+      sideMenu.classList.toggle('active');
+      overlay.classList.toggle('active');
+
+      // 메뉴가 열릴 때 body 스크롤 방지
+      if (sideMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+
+    hamburgerBtn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    // 메뉴 링크 클릭 시 부드럽게 이동하고 메뉴 닫기
+    document.querySelectorAll('.side-menu a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            toggleMenu();
+            setTimeout(() => {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 400);
+          }
+        }
+      });
+    });
+
+    // 스크롤 시 현재 섹션 하이라이트
+    const sections = document.querySelectorAll('[id]');
+    const menuLinks = document.querySelectorAll('.side-menu a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      menuLinks.forEach(link => {
+        link.style.background = '';
+        link.style.color = '';
+        if (link.getAttribute('href') === `#${current}`) {
+          link.style.background = '#f0f3ff';
+          link.style.color = '#667eea';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
