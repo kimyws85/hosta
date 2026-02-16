@@ -360,7 +360,7 @@ body.theme-ux .topic-card__icon {
 }
 
 .topic-card.open .topic-card__body {
-  max-height: 8000px;
+  max-height: 20000px;
   padding: 0 var(--sp-lg) var(--sp-lg);
 }
 
@@ -873,3 +873,4 @@ body.theme-ux .scroll-top {
 
   .part__desc { display: none; }
 }
+
