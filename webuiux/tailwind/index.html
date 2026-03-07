@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS 종합 레퍼런스 | 빠른 참조</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0ea5e9;
+      --primary-dark: #0284c7;
+      --accent: #14b8a6;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      padding: 2rem 0;
+      box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header__content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header__back {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      transition: transform 0.3s;
+    }
+
+    .header__back:hover {
+      transform: translateX(-5px);
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .header h1 i {
+      margin-right: 12px;
+    }
+
+    .header p {
+      opacity: 0.95;
+      font-size: 1rem;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Search */
+    .search-section {
+      position: sticky;
+      top: 120px;
+      z-index: 999;
+      background: var(--surface);
+      padding: 24px;
+      margin: 30px 0;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .search-wrapper {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      font-size: 18px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 16px 20px 16px 52px;
+      font-size: 16px;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      background: var(--bg);
+      transition: all 0.3s ease;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 30px;
+      padding-bottom: 16px;
+      border-bottom: 3px solid var(--primary);
+    }
+
+    .section-number {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .section-desc {
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+
+    /* Subsection */
+    .subsection {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .subsection-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .subsection-title i {
+      color: var(--primary);
+    }
+
+    .subsection-subtitle {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 24px 0 12px;
+      padding-left: 12px;
+      border-left: 4px solid var(--accent);
+    }
+
+    /* Table */
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .table thead {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+    }
+
+    .table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .table tbody tr:hover {
+      background: #f0f9ff;
+    }
+
+    .table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Code */
+    .code {
+      font-family: 'Courier New', Consolas, monospace;
+      background: #f1f5f9;
+      padding: 3px 8px;
+      border-radius: 4px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .css {
+      font-family: 'Courier New', Consolas, monospace;
+      color: var(--text-light);
+      font-size: 12px;
+    }
+
+    /* Pattern Card */
+    .pattern {
+      background: #fef3c7;
+      border: 2px solid #fbbf24;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+
+    .pattern-title {
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .pattern-code {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 16px;
+      border-radius: 6px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      line-height: 1.8;
+    }
+
+    /* Info Box */
+    .info {
+      background: #dbeafe;
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 6px;
+      margin: 16px 0;
+    }
+
+    .info strong {
+      color: var(--primary-dark);
+    }
+
+    /* Setup Guide */
+    .setup-guide {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      padding: 28px;
+      margin: 30px 0 40px;
+    }
+
+    .setup-guide h3 {
+      color: var(--primary-dark);
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .setup-guide h3 i {
+      font-size: 1.3rem;
+    }
+
+    .setup-guide > p {
+      color: var(--text-light);
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+
+    .step-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .step-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .step-number {
+      background: var(--primary);
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .step-content {
+      padding-left: 44px;
+    }
+
+    .step-content p {
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    .step-content ul {
+      margin: 12px 0;
+      padding-left: 20px;
+    }
+
+    .step-content li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .screenshot-container {
+      margin: 16px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+    }
+
+    .screenshot {
+      width: 100%;
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .screenshot-placeholder {
+      background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+      padding: 60px 20px;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 14px;
+      border: 2px dashed #94a3b8;
+    }
+
+    .screenshot-placeholder i {
+      font-size: 48px;
+      margin-bottom: 12px;
+      opacity: 0.5;
+    }
+
+    .code-block {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: 'Courier New', Consolas, monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      line-height: 1.8;
+      margin: 12px 0;
+    }
+
+    .code-block .comment {
+      color: #64748b;
+    }
+
+    .code-block .key {
+      color: #38bdf8;
+    }
+
+    .code-block .string {
+      color: #a5f3fc;
+    }
+
+    .code-block .boolean {
+      color: #fbbf24;
+    }
+
+    /* Color Swatch */
+    .swatch {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: 2px solid var(--border);
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    /* Scroll to Top */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      transition: all 0.3s;
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5);
+    }
+
+    .scroll-top.show {
+      display: flex;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .subsection {
+        padding: 20px;
+      }
+
+      .table {
+        font-size: 12px;
+      }
+
+      .table th,
+      .table td {
+        padding: 10px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__content">
+      <a href="../index.html" class="header__back">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+      <div>
+        <h1><i class="fa-solid fa-wind"></i> Tailwind CSS</h1>
+        <p>종합 레퍼런스 & 빠른 참조 가이드 (CSS 아는 사람용)</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Search -->
+    <div class="search-section">
+      <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input
+          type="text"
+          class="search-input"
+          id="searchInput"
+          placeholder="클래스명이나 CSS 속성으로 검색... (예: flex, padding, bg-blue-500)"
+        >
+      </div>
+    </div>
+
+    <!-- VS Code Setup Guide -->
+    <div class="setup-guide">
+      <h3><i class="fa-brands fa-microsoft"></i> Visual Studio Code 설정 가이드</h3>
+      <p>VS Code에서 Tailwind CSS 자동완성을 활성화하여 개발 효율성을 극대화하세요!</p>
+
+      <!-- Step 1: Extension Installation -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">1</div>
+          <h4 class="step-title">Tailwind CSS IntelliSense 확장 설치</h4>
+        </div>
+        <div class="step-content">
+          <p>VS Code 좌측 사이드바에서 <strong>확장(Extensions)</strong> 아이콘을 클릭하거나 <code class="code">Ctrl+Shift+X</code> (Mac: <code class="code">Cmd+Shift+X</code>)를 누릅니다.</p>
+          <p>검색창에 <code class="code">Tailwind CSS IntelliSense</code>를 입력하고 <strong>Tailwind Labs</strong>에서 제공하는 공식 확장을 설치합니다.</p>
+
+          <div class="screenshot-container">
+            <div class="screenshot-placeholder">
+              <i class="fa-solid fa-image"></i>
+              <div><strong>스크린샷 위치:</strong> VS Code 확장 마켓플레이스에서 "Tailwind CSS IntelliSense" 검색 화면</div>
+              <div style="margin-top: 8px; font-size: 12px; opacity: 0.8;">이미지 경로: images/vscode-extension-install.png</div>
+            </div>
+          </div>
+
+          <div class="info">
+            <strong>💡 확장 기능:</strong>
+            <ul style="margin-top: 8px; padding-left: 20px;">
+              <li>클래스명 자동완성 (Autocomplete)</li>
+              <li>클래스 호버 시 CSS 미리보기</li>
+              <li>구문 강조 표시 (Syntax Highlighting)</li>
+              <li>린팅 및 오류 검사</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Settings Configuration -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">2</div>
+          <h4 class="step-title">설정 파일 구성 (선택사항)</h4>
+        </div>
+        <div class="step-content">
+          <p><code class="code">Ctrl+,</code> (Mac: <code class="code">Cmd+,</code>)로 설정을 열고, 우측 상단의 <strong>파일 아이콘</strong>을 클릭하여 <code class="code">settings.json</code>을 엽니다.</p>
+          <p>아래 설정을 추가하면 더 나은 자동완성 경험을 얻을 수 있습니다:</p>
+
+          <div class="code-block">{
+  <span class="comment">// Tailwind CSS IntelliSense 설정</span>
+  <span class="key">"tailwindCSS.emmetCompletions"</span>: <span class="boolean">true</span>,
+  <span class="key">"tailwindCSS.includeLanguages"</span>: {
+    <span class="key">"html"</span>: <span class="string">"html"</span>,
+    <span class="key">"javascript"</span>: <span class="string">"javascript"</span>,
+    <span class="key">"javascriptreact"</span>: <span class="string">"javascriptreact"</span>,
+    <span class="key">"typescript"</span>: <span class="string">"typescript"</span>,
+    <span class="key">"typescriptreact"</span>: <span class="string">"typescriptreact"</span>
+  },
+  <span class="key">"editor.quickSuggestions"</span>: {
+    <span class="key">"strings"</span>: <span class="boolean">true</span>
+  },
+  <span class="comment">// CSS 속성 순서대로 정렬</span>
+  <span class="key">"tailwindCSS.classAttributes"</span>: [<span class="string">"class"</span>, <span class="string">"className"</span>, <span class="string">"classList"</span>, <span class="string">"ngClass"</span>]
+}</div>
+
+          <div class="screenshot-container">
+            <div class="screenshot-placeholder">
+              <i class="fa-solid fa-image"></i>
+              <div><strong>스크린샷 위치:</strong> VS Code settings.json 파일에 Tailwind 설정이 추가된 화면</div>
+              <div style="margin-top: 8px; font-size: 12px; opacity: 0.8;">이미지 경로: images/vscode-settings.png</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Autocomplete in Action -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">3</div>
+          <h4 class="step-title">자동완성 사용하기</h4>
+        </div>
+        <div class="step-content">
+          <p>HTML 파일에서 <code class="code">class=""</code> 속성 안에 커서를 두고 타이핑하면 자동완성이 작동합니다.</p>
+
+          <div class="screenshot-container">
+            <div class="screenshot-placeholder">
+              <i class="fa-solid fa-image"></i>
+              <div><strong>스크린샷 위치:</strong> HTML에서 "flex j" 입력 시 자동완성 목록이 나타나는 화면</div>
+              <div style="margin-top: 8px; font-size: 12px; opacity: 0.8;">이미지 경로: images/vscode-autocomplete-1.png</div>
+            </div>
+          </div>
+
+          <div class="info" style="margin-top: 16px;">
+            <strong>⌨️ 자동완성 활용 팁:</strong>
+            <ul style="margin-top: 8px; padding-left: 20px;">
+              <li><code class="code">flex j</code> 입력 → <code class="code">justify-</code> 관련 클래스 표시</li>
+              <li><code class="code">bg-</code> 입력 → 배경색 팔레트 전체 표시</li>
+              <li><code class="code">p-</code> 입력 → padding 스케일 (0~96) 표시</li>
+              <li>클래스명 위에 마우스 호버 → 실제 CSS 코드 미리보기</li>
+            </ul>
+          </div>
+
+          <div class="screenshot-container" style="margin-top: 16px;">
+            <div class="screenshot-placeholder">
+              <i class="fa-solid fa-image"></i>
+              <div><strong>스크린샷 위치:</strong> 클래스명 호버 시 CSS 미리보기 툴팁이 나타나는 화면</div>
+              <div style="margin-top: 8px; font-size: 12px; opacity: 0.8;">이미지 경로: images/vscode-hover-preview.png</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Color Preview -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">4</div>
+          <h4 class="step-title">색상 미리보기</h4>
+        </div>
+        <div class="step-content">
+          <p>색상 관련 클래스(<code class="code">bg-blue-500</code>, <code class="code">text-red-600</code> 등)를 입력하면 VS Code가 색상 칩(chip)을 표시합니다.</p>
+
+          <div class="screenshot-container">
+            <div class="screenshot-placeholder">
+              <i class="fa-solid fa-image"></i>
+              <div><strong>스크린샷 위치:</strong> 색상 클래스 옆에 컬러 칩이 표시되는 화면</div>
+              <div style="margin-top: 8px; font-size: 12px; opacity: 0.8;">이미지 경로: images/vscode-color-preview.png</div>
+            </div>
+          </div>
+
+          <p style="margin-top: 16px;">색상 칩을 클릭하면 색상 선택기(Color Picker)가 열려 다른 색상으로 쉽게 변경할 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Part 1: 반응형 & 상태 -->
+    <section class="section" id="part-1">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <div>
+          <h2 class="section-title">반응형 & 상태</h2>
+          <p class="section-desc">브레이크포인트와 Variants</p>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-mobile-screen"></i> 반응형 브레이크포인트</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>접두사</th>
+              <th>최소 너비</th>
+              <th>CSS 미디어 쿼리</th>
+              <th>사용 예시</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="code">기본</span></td>
+              <td>-</td>
+              <td><span class="css">모든 화면</span></td>
+              <td><span class="code">text-base</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">sm:</span></td>
+              <td>640px</td>
+              <td><span class="css">@media (min-width: 640px)</span></td>
+              <td><span class="code">sm:text-lg</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">md:</span></td>
+              <td>768px</td>
+              <td><span class="css">@media (min-width: 768px)</span></td>
+              <td><span class="code">md:flex md:grid-cols-2</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">lg:</span></td>
+              <td>1024px</td>
+              <td><span class="css">@media (min-width: 1024px)</span></td>
+              <td><span class="code">lg:grid-cols-4</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">xl:</span></td>
+              <td>1280px</td>
+              <td><span class="css">@media (min-width: 1280px)</span></td>
+              <td><span class="code">xl:container</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">2xl:</span></td>
+              <td>1536px</td>
+              <td><span class="css">@media (min-width: 1536px)</span></td>
+              <td><span class="code">2xl:max-w-7xl</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pattern">
+          <div class="pattern-title">💡 반응형 그리드 패턴 (가장 많이 씀)</div>
+          <div class="pattern-code">&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"&gt;
+  모바일: 1열 / 태블릿: 2열 / 데스크탑: 4열
+&lt;/div&gt;</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-hand-pointer"></i> 상태 변형 (Variants)</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>변형</th>
+              <th>설명</th>
+              <th>CSS 대응</th>
+              <th>예시</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="code">hover:</span></td>
+              <td>마우스 오버</td>
+              <td><span class="css">:hover</span></td>
+              <td><span class="code">hover:bg-blue-600</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">focus:</span></td>
+              <td>포커스</td>
+              <td><span class="css">:focus</span></td>
+              <td><span class="code">focus:ring-2 focus:outline-none</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">active:</span></td>
+              <td>클릭/활성화</td>
+              <td><span class="css">:active</span></td>
+              <td><span class="code">active:bg-blue-700</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">disabled:</span></td>
+              <td>비활성화</td>
+              <td><span class="css">:disabled</span></td>
+              <td><span class="code">disabled:opacity-50 disabled:cursor-not-allowed</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">dark:</span></td>
+              <td>다크 모드</td>
+              <td><span class="css">.dark</span></td>
+              <td><span class="code">dark:bg-gray-900 dark:text-white</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">group-hover:</span></td>
+              <td>부모 hover</td>
+              <td><span class="css">.group:hover</span></td>
+              <td><span class="code">group-hover:text-white</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">first:</span></td>
+              <td>첫 번째</td>
+              <td><span class="css">:first-child</span></td>
+              <td><span class="code">first:pt-0</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">last:</span></td>
+              <td>마지막</td>
+              <td><span class="css">:last-child</span></td>
+              <td><span class="code">last:border-0</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">odd:</span></td>
+              <td>홀수</td>
+              <td><span class="css">:nth-child(odd)</span></td>
+              <td><span class="code">odd:bg-gray-50</span></td>
+            </tr>
+            <tr>
+              <td><span class="code">even:</span></td>
+              <td>짝수</td>
+              <td><span class="css">:nth-child(even)</span></td>
+              <td><span class="code">even:bg-white</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info">
+          <strong>조합 가능:</strong> <span class="code">md:hover:bg-blue-500</span> (태블릿 이상에서만 호버 효과), <span class="code">dark:lg:text-white</span> (다크모드 + 데스크탑)
+        </div>
+      </div>
+    </section>
+
+    <!-- Part 2: 레이아웃 -->
+    <section class="section" id="part-2">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <div>
+          <h2 class="section-title">레이아웃</h2>
+          <p class="section-desc">Display, Flexbox, Grid, Position</p>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-table-cells"></i> Display</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Tailwind</th>
+              <th>CSS</th>
+              <th>설명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">block</span></td><td><span class="css">display: block;</span></td><td>블록 요소</td></tr>
+            <tr><td><span class="code">inline-block</span></td><td><span class="css">display: inline-block;</span></td><td>인라인이지만 크기 조절 가능</td></tr>
+            <tr><td><span class="code">inline</span></td><td><span class="css">display: inline;</span></td><td>인라인 요소</td></tr>
+            <tr><td><span class="code">flex</span></td><td><span class="css">display: flex;</span></td><td>플렉스박스</td></tr>
+            <tr><td><span class="code">inline-flex</span></td><td><span class="css">display: inline-flex;</span></td><td>인라인 플렉스</td></tr>
+            <tr><td><span class="code">grid</span></td><td><span class="css">display: grid;</span></td><td>그리드</td></tr>
+            <tr><td><span class="code">inline-grid</span></td><td><span class="css">display: inline-grid;</span></td><td>인라인 그리드</td></tr>
+            <tr><td><span class="code">hidden</span></td><td><span class="css">display: none;</span></td><td>숨김</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-grip-lines"></i> Flexbox</h3>
+
+        <h4 class="subsection-subtitle">Flex Direction</h4>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">flex-row</span></td><td><span class="css">flex-direction: row;</span></td><td>가로 방향 (기본)</td></tr>
+            <tr><td><span class="code">flex-col</span></td><td><span class="css">flex-direction: column;</span></td><td>세로 방향</td></tr>
+            <tr><td><span class="code">flex-row-reverse</span></td><td><span class="css">flex-direction: row-reverse;</span></td><td>가로 역방향</td></tr>
+            <tr><td><span class="code">flex-col-reverse</span></td><td><span class="css">flex-direction: column-reverse;</span></td><td>세로 역방향</td></tr>
+          </tbody>
+        </table>
+
+        <h4 class="subsection-subtitle">Justify Content (주축 정렬)</h4>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">justify-start</span></td><td><span class="css">justify-content: flex-start;</span></td><td>시작점</td></tr>
+            <tr><td><span class="code">justify-center</span></td><td><span class="css">justify-content: center;</span></td><td>중앙 ⭐</td></tr>
+            <tr><td><span class="code">justify-end</span></td><td><span class="css">justify-content: flex-end;</span></td><td>끝점</td></tr>
+            <tr><td><span class="code">justify-between</span></td><td><span class="css">justify-content: space-between;</span></td><td>양쪽 정렬 ⭐ 많이 씀</td></tr>
+            <tr><td><span class="code">justify-around</span></td><td><span class="css">justify-content: space-around;</span></td><td>주위 균등 분배</td></tr>
+            <tr><td><span class="code">justify-evenly</span></td><td><span class="css">justify-content: space-evenly;</span></td><td>완전 균등 분배</td></tr>
+          </tbody>
+        </table>
+
+        <h4 class="subsection-subtitle">Align Items (교차축 정렬)</h4>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">items-start</span></td><td><span class="css">align-items: flex-start;</span></td><td>시작점</td></tr>
+            <tr><td><span class="code">items-center</span></td><td><span class="css">align-items: center;</span></td><td>중앙 ⭐⭐ 가장 많이 씀</td></tr>
+            <tr><td><span class="code">items-end</span></td><td><span class="css">align-items: flex-end;</span></td><td>끝점</td></tr>
+            <tr><td><span class="code">items-baseline</span></td><td><span class="css">align-items: baseline;</span></td><td>베이스라인</td></tr>
+            <tr><td><span class="code">items-stretch</span></td><td><span class="css">align-items: stretch;</span></td><td>늘려서 채움 (기본)</td></tr>
+          </tbody>
+        </table>
+
+        <div class="pattern">
+          <div class="pattern-title">💡 완벽 가운데 정렬 (가장 많이 쓰는 패턴!)</div>
+          <div class="pattern-code">&lt;div class="flex items-center justify-center h-screen"&gt;
+  정중앙!
+&lt;/div&gt;
+
+&lt;div class="flex items-center justify-between"&gt;
+  &lt;div&gt;왼쪽&lt;/div&gt;
+  &lt;div&gt;오른쪽&lt;/div&gt;
+&lt;/div&gt;</div>
+        </div>
+
+        <h4 class="subsection-subtitle">Gap (간격)</h4>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>값</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">gap-0</span></td><td>0</td><td>간격 없음</td></tr>
+            <tr><td><span class="code">gap-1</span></td><td>0.25rem (4px)</td><td>아주 작은 간격</td></tr>
+            <tr><td><span class="code">gap-2</span></td><td>0.5rem (8px)</td><td>작은 간격</td></tr>
+            <tr><td><span class="code">gap-4</span></td><td>1rem (16px)</td><td>보통 ⭐ 가장 많이 씀</td></tr>
+            <tr><td><span class="code">gap-6</span></td><td>1.5rem (24px)</td><td>큰 간격</td></tr>
+            <tr><td><span class="code">gap-8</span></td><td>2rem (32px)</td><td>더 큰 간격</td></tr>
+            <tr><td><span class="code">gap-x-4</span></td><td>1rem (가로만)</td><td>가로 간격만</td></tr>
+            <tr><td><span class="code">gap-y-4</span></td><td>1rem (세로만)</td><td>세로 간격만</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-table-cells-large"></i> Grid</h3>
+
+        <h4 class="subsection-subtitle">Grid Template Columns</h4>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">grid-cols-1</span></td><td><span class="css">repeat(1, 1fr)</span></td><td>1개 컬럼 (모바일)</td></tr>
+            <tr><td><span class="code">grid-cols-2</span></td><td><span class="css">repeat(2, 1fr)</span></td><td>2개 컬럼</td></tr>
+            <tr><td><span class="code">grid-cols-3</span></td><td><span class="css">repeat(3, 1fr)</span></td><td>3개 컬럼</td></tr>
+            <tr><td><span class="code">grid-cols-4</span></td><td><span class="css">repeat(4, 1fr)</span></td><td>4개 컬럼 ⭐ 카드 그리드</td></tr>
+            <tr><td><span class="code">grid-cols-6</span></td><td><span class="css">repeat(6, 1fr)</span></td><td>6개 컬럼</td></tr>
+            <tr><td><span class="code">grid-cols-12</span></td><td><span class="css">repeat(12, 1fr)</span></td><td>12개 컬럼 (Bootstrap 스타일)</td></tr>
+          </tbody>
+        </table>
+
+        <h4 class="subsection-subtitle">Grid Column Span (개별 아이템)</h4>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">col-span-1</span></td><td>1칸 차지</td></tr>
+            <tr><td><span class="code">col-span-2</span></td><td>2칸 차지</td></tr>
+            <tr><td><span class="code">col-span-6</span></td><td>6칸 차지 (절반)</td></tr>
+            <tr><td><span class="code">col-span-full</span></td><td>전체 폭</td></tr>
+          </tbody>
+        </table>
+
+        <div class="pattern">
+          <div class="pattern-title">💡 반응형 그리드 + Gap (실전 패턴)</div>
+          <div class="pattern-code">&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"&gt;
+  &lt;div class="bg-white p-6 rounded-lg"&gt;카드 1&lt;/div&gt;
+  &lt;div class="bg-white p-6 rounded-lg"&gt;카드 2&lt;/div&gt;
+  &lt;div class="bg-white p-6 rounded-lg col-span-2"&gt;넓은 카드&lt;/div&gt;
+&lt;/div&gt;</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-location-dot"></i> Position</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">static</span></td><td><span class="css">position: static;</span></td><td>기본값</td></tr>
+            <tr><td><span class="code">relative</span></td><td><span class="css">position: relative;</span></td><td>상대 위치</td></tr>
+            <tr><td><span class="code">absolute</span></td><td><span class="css">position: absolute;</span></td><td>절대 위치</td></tr>
+            <tr><td><span class="code">fixed</span></td><td><span class="css">position: fixed;</span></td><td>고정 (스크롤 무관)</td></tr>
+            <tr><td><span class="code">sticky</span></td><td><span class="css">position: sticky;</span></td><td>스티키 (스크롤 시 고정)</td></tr>
+          </tbody>
+        </table>
+
+        <h4 class="subsection-subtitle">Top / Right / Bottom / Left</h4>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">top-0</span></td><td><span class="css">top: 0;</span></td><td>상단에 붙임</td></tr>
+            <tr><td><span class="code">right-0</span></td><td><span class="css">right: 0;</span></td><td>우측에 붙임</td></tr>
+            <tr><td><span class="code">bottom-0</span></td><td><span class="css">bottom: 0;</span></td><td>하단에 붙임</td></tr>
+            <tr><td><span class="code">left-0</span></td><td><span class="css">left: 0;</span></td><td>좌측에 붙임</td></tr>
+            <tr><td><span class="code">inset-0</span></td><td><span class="css">top/right/bottom/left: 0;</span></td><td>사방에 붙임 (모달 오버레이)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Part 3: 간격 & 크기 -->
+    <section class="section" id="part-3">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <div>
+          <h2 class="section-title">간격 & 크기</h2>
+          <p class="section-desc">Padding, Margin, Width, Height</p>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-expand"></i> Spacing Scale (핵심!)</h3>
+        <table class="table">
+          <thead>
+            <tr><th>클래스</th><th>값</th><th>픽셀</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">0</span></td><td>0</td><td>0px</td><td>간격 없음</td></tr>
+            <tr><td><span class="code">px</span></td><td>1px</td><td>1px</td><td>선 정도</td></tr>
+            <tr><td><span class="code">0.5</span></td><td>0.125rem</td><td>2px</td><td>아주 작은 간격</td></tr>
+            <tr><td><span class="code">1</span></td><td>0.25rem</td><td>4px</td><td>작은 간격</td></tr>
+            <tr><td><span class="code">2</span></td><td>0.5rem</td><td>8px</td><td>보통 작음</td></tr>
+            <tr><td><span class="code">3</span></td><td>0.75rem</td><td>12px</td><td>중간</td></tr>
+            <tr><td><span class="code">4</span></td><td>1rem</td><td>16px</td><td>⭐⭐ 가장 많이 씀!</td></tr>
+            <tr><td><span class="code">5</span></td><td>1.25rem</td><td>20px</td><td>-</td></tr>
+            <tr><td><span class="code">6</span></td><td>1.5rem</td><td>24px</td><td>넓은 간격 ⭐</td></tr>
+            <tr><td><span class="code">8</span></td><td>2rem</td><td>32px</td><td>큰 간격 ⭐</td></tr>
+            <tr><td><span class="code">10</span></td><td>2.5rem</td><td>40px</td><td>-</td></tr>
+            <tr><td><span class="code">12</span></td><td>3rem</td><td>48px</td><td>섹션 간격</td></tr>
+            <tr><td><span class="code">16</span></td><td>4rem</td><td>64px</td><td>큰 섹션</td></tr>
+            <tr><td><span class="code">20</span></td><td>5rem</td><td>80px</td><td>-</td></tr>
+            <tr><td><span class="code">24</span></td><td>6rem</td><td>96px</td><td>매우 큰 간격</td></tr>
+          </tbody>
+        </table>
+
+        <div class="info">
+          <strong>패턴:</strong> 4의 배수가 많이 쓰임 → p-4, p-8, p-12, p-16 / m-4, m-8 등
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-ruler-combined"></i> Padding & Margin</h3>
+
+        <h4 class="subsection-subtitle">Padding (내부 여백)</h4>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">p-4</span></td><td><span class="css">padding: 1rem;</span></td><td>모든 방향 1rem</td></tr>
+            <tr><td><span class="code">px-4</span></td><td><span class="css">padding-left/right: 1rem;</span></td><td>좌우만</td></tr>
+            <tr><td><span class="code">py-4</span></td><td><span class="css">padding-top/bottom: 1rem;</span></td><td>상하만</td></tr>
+            <tr><td><span class="code">pt-4</span></td><td><span class="css">padding-top: 1rem;</span></td><td>위만</td></tr>
+            <tr><td><span class="code">pr-4</span></td><td><span class="css">padding-right: 1rem;</span></td><td>오른쪽만</td></tr>
+            <tr><td><span class="code">pb-4</span></td><td><span class="css">padding-bottom: 1rem;</span></td><td>아래만</td></tr>
+            <tr><td><span class="code">pl-4</span></td><td><span class="css">padding-left: 1rem;</span></td><td>왼쪽만</td></tr>
+          </tbody>
+        </table>
+
+        <h4 class="subsection-subtitle">Margin (외부 여백)</h4>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">m-4</span></td><td><span class="css">margin: 1rem;</span></td><td>모든 방향</td></tr>
+            <tr><td><span class="code">mx-4</span></td><td><span class="css">margin-left/right: 1rem;</span></td><td>좌우만</td></tr>
+            <tr><td><span class="code">my-4</span></td><td><span class="css">margin-top/bottom: 1rem;</span></td><td>상하만</td></tr>
+            <tr><td><span class="code">-m-4</span></td><td><span class="css">margin: -1rem;</span></td><td>음수 마진</td></tr>
+            <tr><td><span class="code">mx-auto</span></td><td><span class="css">margin-left/right: auto;</span></td><td>⭐ 가운데 정렬</td></tr>
+          </tbody>
+        </table>
+
+        <div class="pattern">
+          <div class="pattern-title">💡 카드 패딩 패턴</div>
+          <div class="pattern-code">&lt;div class="bg-white p-6 rounded-lg"&gt; &lt;!-- 카드 전체 패딩 --&gt;
+  &lt;h3 class="text-lg font-bold mb-2"&gt;제목&lt;/h3&gt; &lt;!-- 제목 하단 마진 --&gt;
+  &lt;p class="text-gray-600"&gt;내용&lt;/p&gt;
+&lt;/div&gt;</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-arrows-left-right"></i> Width</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">w-0 ~ w-96</span></td><td><span class="css">width: 0 ~ 24rem;</span></td><td>고정 너비 (Spacing Scale)</td></tr>
+            <tr><td><span class="code">w-auto</span></td><td><span class="css">width: auto;</span></td><td>자동</td></tr>
+            <tr><td><span class="code">w-full</span></td><td><span class="css">width: 100%;</span></td><td>⭐ 전체 폭</td></tr>
+            <tr><td><span class="code">w-screen</span></td><td><span class="css">width: 100vw;</span></td><td>뷰포트 폭</td></tr>
+            <tr><td><span class="code">w-1/2</span></td><td><span class="css">width: 50%;</span></td><td>절반</td></tr>
+            <tr><td><span class="code">w-1/3</span></td><td><span class="css">width: 33.333%;</span></td><td>1/3</td></tr>
+            <tr><td><span class="code">w-2/3</span></td><td><span class="css">width: 66.666%;</span></td><td>2/3</td></tr>
+            <tr><td><span class="code">w-1/4</span></td><td><span class="css">width: 25%;</span></td><td>1/4</td></tr>
+            <tr><td><span class="code">max-w-sm</span></td><td><span class="css">max-width: 24rem;</span></td><td>작은 최대폭</td></tr>
+            <tr><td><span class="code">max-w-md</span></td><td><span class="css">max-width: 28rem;</span></td><td>중간 최대폭</td></tr>
+            <tr><td><span class="code">max-w-lg</span></td><td><span class="css">max-width: 32rem;</span></td><td>큰 최대폭</td></tr>
+            <tr><td><span class="code">max-w-xl</span></td><td><span class="css">max-width: 36rem;</span></td><td>더 큰 최대폭</td></tr>
+            <tr><td><span class="code">max-w-7xl</span></td><td><span class="css">max-width: 80rem;</span></td><td>⭐ 컨테이너 폭</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-arrows-up-down"></i> Height</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">h-0 ~ h-96</span></td><td><span class="css">height: 0 ~ 24rem;</span></td><td>고정 높이</td></tr>
+            <tr><td><span class="code">h-auto</span></td><td><span class="css">height: auto;</span></td><td>자동</td></tr>
+            <tr><td><span class="code">h-full</span></td><td><span class="css">height: 100%;</span></td><td>⭐ 전체 높이</td></tr>
+            <tr><td><span class="code">h-screen</span></td><td><span class="css">height: 100vh;</span></td><td>⭐ 뷰포트 높이 (히어로)</td></tr>
+            <tr><td><span class="code">min-h-screen</span></td><td><span class="css">min-height: 100vh;</span></td><td>최소 뷰포트 높이</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Part 4: 색상 -->
+    <section class="section" id="part-4">
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <div>
+          <h2 class="section-title">색상</h2>
+          <p class="section-desc">Text, Background, Border Colors</p>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-palette"></i> 색상 팔레트</h3>
+        <div class="info">
+          <strong>구조:</strong> <span class="code">색상명-단계</span> (예: <span class="code">blue-500</span>)<br>
+          <strong>단계:</strong> 50 (가장 연함) → 100 → 200 → ... → 900 → 950 (가장 진함)<br>
+          <strong>기본 색상:</strong> slate, gray, zinc, neutral, stone, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+        </div>
+
+        <h4 class="subsection-subtitle">회색 계열 (가장 많이 씀)</h4>
+        <table class="table">
+          <thead>
+            <tr><th>색상</th><th>특징</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="swatch" style="background:#f8fafc"></span><span class="code">slate</span></td><td>차가운 회색</td><td>⭐ 가장 많이 씀 (UI 기본)</td></tr>
+            <tr><td><span class="swatch" style="background:#f9fafb"></span><span class="code">gray</span></td><td>중간 회색</td><td>⭐ 많이 씀</td></tr>
+            <tr><td><span class="swatch" style="background:#fafafa"></span><span class="code">zinc</span></td><td>따뜻한 회색</td><td>-</td></tr>
+            <tr><td><span class="swatch" style="background:#fafafa"></span><span class="code">neutral</span></td><td>중립 회색</td><td>-</td></tr>
+            <tr><td><span class="swatch" style="background:#fafaf9"></span><span class="code">stone</span></td><td>돌색 회색</td><td>자연스러운 UI</td></tr>
+          </tbody>
+        </table>
+
+        <h4 class="subsection-subtitle">Primary 색상</h4>
+        <table class="table">
+          <thead>
+            <tr><th>색상</th><th>설명</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="swatch" style="background:#3b82f6"></span><span class="code">blue-500</span></td><td>파란색</td><td>⭐ 가장 많이 쓰는 Primary 색</td></tr>
+            <tr><td><span class="swatch" style="background:#0ea5e9"></span><span class="code">sky-500</span></td><td>하늘색</td><td>밝은 Primary</td></tr>
+            <tr><td><span class="swatch" style="background:#6366f1"></span><span class="code">indigo-500</span></td><td>남색</td><td>-</td></tr>
+            <tr><td><span class="swatch" style="background:#8b5cf6"></span><span class="code">violet-500</span></td><td>보라</td><td>-</td></tr>
+            <tr><td><span class="swatch" style="background:#a855f7"></span><span class="code">purple-500</span></td><td>자주색</td><td>-</td></tr>
+            <tr><td><span class="swatch" style="background:#14b8a6"></span><span class="code">teal-500</span></td><td>청록색</td><td>-</td></tr>
+            <tr><td><span class="swatch" style="background:#10b981"></span><span class="code">green-500</span></td><td>초록</td><td>성공 메시지</td></tr>
+          </tbody>
+        </table>
+
+        <h4 class="subsection-subtitle">경고/오류 색상</h4>
+        <table class="table">
+          <thead>
+            <tr><th>색상</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="swatch" style="background:#eab308"></span><span class="code">yellow-500</span></td><td>경고 (Warning)</td></tr>
+            <tr><td><span class="swatch" style="background:#f97316"></span><span class="code">orange-500</span></td><td>주의 (Caution)</td></tr>
+            <tr><td><span class="swatch" style="background:#ef4444"></span><span class="code">red-500</span></td><td>⭐ 오류/삭제 (Error/Danger)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-text-height"></i> Text Color</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">text-slate-900</span></td><td><span class="css">color: #0f172a;</span></td><td>⭐ 기본 텍스트 (진한 회색)</td></tr>
+            <tr><td><span class="code">text-slate-600</span></td><td><span class="css">color: #475569;</span></td><td>⭐ 보조 텍스트 (중간 회색)</td></tr>
+            <tr><td><span class="code">text-slate-400</span></td><td><span class="css">color: #94a3b8;</span></td><td>약한 텍스트 (연한 회색)</td></tr>
+            <tr><td><span class="code">text-white</span></td><td><span class="css">color: #fff;</span></td><td>흰색 텍스트</td></tr>
+            <tr><td><span class="code">text-black</span></td><td><span class="css">color: #000;</span></td><td>검은색 텍스트</td></tr>
+            <tr><td><span class="code">text-blue-500</span></td><td><span class="css">color: #3b82f6;</span></td><td>파란 텍스트 (링크 등)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-fill-drip"></i> Background Color</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">bg-white</span></td><td><span class="css">background-color: #fff;</span></td><td>⭐ 카드 배경</td></tr>
+            <tr><td><span class="code">bg-slate-50</span></td><td><span class="css">background-color: #f8fafc;</span></td><td>⭐ 페이지 배경</td></tr>
+            <tr><td><span class="code">bg-slate-100</span></td><td><span class="css">background-color: #f1f5f9;</span></td><td>호버 배경</td></tr>
+            <tr><td><span class="code">bg-blue-500</span></td><td><span class="css">background-color: #3b82f6;</span></td><td>⭐ Primary 버튼</td></tr>
+            <tr><td><span class="code">bg-gray-900</span></td><td><span class="css">background-color: #111827;</span></td><td>다크 배경</td></tr>
+            <tr><td><span class="code">bg-transparent</span></td><td><span class="css">background-color: transparent;</span></td><td>투명</td></tr>
+          </tbody>
+        </table>
+
+        <div class="pattern">
+          <div class="pattern-title">💡 버튼 색상 패턴</div>
+          <div class="pattern-code">&lt;!-- Primary 버튼 --&gt;
+&lt;button class="bg-blue-500 hover:bg-blue-600 text-white"&gt;
+
+&lt;!-- Danger 버튼 --&gt;
+&lt;button class="bg-red-500 hover:bg-red-600 text-white"&gt;
+
+&lt;!-- Secondary 버튼 --&gt;
+&lt;button class="bg-gray-200 hover:bg-gray-300 text-gray-900"&gt;</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-border-style"></i> Border Color</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">border-slate-200</span></td><td>⭐ 기본 테두리 (연한 회색)</td></tr>
+            <tr><td><span class="code">border-slate-300</span></td><td>조금 진한 테두리</td></tr>
+            <tr><td><span class="code">border-blue-500</span></td><td>포커스 테두리</td></tr>
+            <tr><td><span class="code">border-transparent</span></td><td>투명 테두리</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Part 5: 타이포그래피 -->
+    <section class="section" id="part-5">
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <div>
+          <h2 class="section-title">타이포그래피</h2>
+          <p class="section-desc">Font Size, Weight, Line Height</p>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-text-width"></i> Font Size</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>Font Size</th><th>Line Height</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">text-xs</span></td><td>0.75rem (12px)</td><td>1rem</td><td>아주 작은 텍스트 (캡션)</td></tr>
+            <tr><td><span class="code">text-sm</span></td><td>0.875rem (14px)</td><td>1.25rem</td><td>작은 텍스트</td></tr>
+            <tr><td><span class="code">text-base</span></td><td>1rem (16px)</td><td>1.5rem</td><td>⭐ 기본 본문</td></tr>
+            <tr><td><span class="code">text-lg</span></td><td>1.125rem (18px)</td><td>1.75rem</td><td>큰 본문</td></tr>
+            <tr><td><span class="code">text-xl</span></td><td>1.25rem (20px)</td><td>1.75rem</td><td>부제목</td></tr>
+            <tr><td><span class="code">text-2xl</span></td><td>1.5rem (24px)</td><td>2rem</td><td>⭐ 제목 (h3)</td></tr>
+            <tr><td><span class="code">text-3xl</span></td><td>1.875rem (30px)</td><td>2.25rem</td><td>⭐ 제목 (h2)</td></tr>
+            <tr><td><span class="code">text-4xl</span></td><td>2.25rem (36px)</td><td>2.5rem</td><td>⭐ 큰 제목 (h1)</td></tr>
+            <tr><td><span class="code">text-5xl</span></td><td>3rem (48px)</td><td>1</td><td>매우 큰 제목</td></tr>
+            <tr><td><span class="code">text-6xl</span></td><td>3.75rem (60px)</td><td>1</td><td>-</td></tr>
+            <tr><td><span class="code">text-7xl</span></td><td>4.5rem (72px)</td><td>1</td><td>히어로 타이틀</td></tr>
+            <tr><td><span class="code">text-8xl</span></td><td>6rem (96px)</td><td>1</td><td>-</td></tr>
+            <tr><td><span class="code">text-9xl</span></td><td>8rem (128px)</td><td>1</td><td>초대형 텍스트</td></tr>
+          </tbody>
+        </table>
+
+        <div class="pattern">
+          <div class="pattern-title">💡 타이포그래피 계층 패턴</div>
+          <div class="pattern-code">&lt;h1 class="text-4xl font-bold"&gt;메인 제목&lt;/h1&gt;
+&lt;h2 class="text-3xl font-bold"&gt;섹션 제목&lt;/h2&gt;
+&lt;h3 class="text-2xl font-semibold"&gt;서브 제목&lt;/h3&gt;
+&lt;p class="text-base text-slate-600"&gt;본문 텍스트&lt;/p&gt;
+&lt;small class="text-sm text-slate-400"&gt;작은 텍스트&lt;/small&gt;</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-bold"></i> Font Weight</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">font-thin</span></td><td>100</td><td>매우 얇음</td></tr>
+            <tr><td><span class="code">font-extralight</span></td><td>200</td><td>아주 얇음</td></tr>
+            <tr><td><span class="code">font-light</span></td><td>300</td><td>얇음</td></tr>
+            <tr><td><span class="code">font-normal</span></td><td>400</td><td>⭐ 보통 (기본)</td></tr>
+            <tr><td><span class="code">font-medium</span></td><td>500</td><td>중간 (약간 진함)</td></tr>
+            <tr><td><span class="code">font-semibold</span></td><td>600</td><td>⭐ 세미볼드 (부제목)</td></tr>
+            <tr><td><span class="code">font-bold</span></td><td>700</td><td>⭐⭐ 볼드 (제목)</td></tr>
+            <tr><td><span class="code">font-extrabold</span></td><td>800</td><td>아주 진함</td></tr>
+            <tr><td><span class="code">font-black</span></td><td>900</td><td>가장 진함</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-align-left"></i> Text Align & Transform</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">text-left</span></td><td>text-align: left;</td><td>왼쪽 정렬</td></tr>
+            <tr><td><span class="code">text-center</span></td><td>text-align: center;</td><td>⭐ 중앙 정렬</td></tr>
+            <tr><td><span class="code">text-right</span></td><td>text-align: right;</td><td>오른쪽 정렬</td></tr>
+            <tr><td><span class="code">text-justify</span></td><td>text-align: justify;</td><td>양쪽 정렬</td></tr>
+            <tr><td><span class="code">uppercase</span></td><td>text-transform: uppercase;</td><td>대문자</td></tr>
+            <tr><td><span class="code">lowercase</span></td><td>text-transform: lowercase;</td><td>소문자</td></tr>
+            <tr><td><span class="code">capitalize</span></td><td>text-transform: capitalize;</td><td>첫글자 대문자</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-lines-leaning"></i> Line Height & Letter Spacing</h3>
+
+        <h4 class="subsection-subtitle">Line Height (행간)</h4>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>값</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">leading-none</span></td><td>1</td><td>행간 없음</td></tr>
+            <tr><td><span class="code">leading-tight</span></td><td>1.25</td><td>좁은 행간 (제목)</td></tr>
+            <tr><td><span class="code">leading-snug</span></td><td>1.375</td><td>약간 좁은 행간</td></tr>
+            <tr><td><span class="code">leading-normal</span></td><td>1.5</td><td>⭐ 보통 행간 (본문)</td></tr>
+            <tr><td><span class="code">leading-relaxed</span></td><td>1.625</td><td>여유있는 행간</td></tr>
+            <tr><td><span class="code">leading-loose</span></td><td>2</td><td>넓은 행간</td></tr>
+          </tbody>
+        </table>
+
+        <h4 class="subsection-subtitle">Letter Spacing (자간)</h4>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>값</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">tracking-tighter</span></td><td>-0.05em</td><td>매우 좁은 자간</td></tr>
+            <tr><td><span class="code">tracking-tight</span></td><td>-0.025em</td><td>좁은 자간</td></tr>
+            <tr><td><span class="code">tracking-normal</span></td><td>0</td><td>보통 자간</td></tr>
+            <tr><td><span class="code">tracking-wide</span></td><td>0.025em</td><td>넓은 자간 (버튼 텍스트)</td></tr>
+            <tr><td><span class="code">tracking-wider</span></td><td>0.05em</td><td>더 넓은 자간</td></tr>
+            <tr><td><span class="code">tracking-widest</span></td><td>0.1em</td><td>가장 넓은 자간 (대문자)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Part 6: 테두리 & 둥근 모서리 -->
+    <section class="section" id="part-6">
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <div>
+          <h2 class="section-title">테두리 & 둥근 모서리</h2>
+          <p class="section-desc">Border, Border Radius, Ring</p>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-border-all"></i> Border Width</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">border</span></td><td>border-width: 1px;</td><td>⭐ 기본 테두리</td></tr>
+            <tr><td><span class="code">border-0</span></td><td>border-width: 0;</td><td>테두리 제거</td></tr>
+            <tr><td><span class="code">border-2</span></td><td>border-width: 2px;</td><td>⭐ 두꺼운 테두리</td></tr>
+            <tr><td><span class="code">border-4</span></td><td>border-width: 4px;</td><td>더 두꺼운 테두리</td></tr>
+            <tr><td><span class="code">border-8</span></td><td>border-width: 8px;</td><td>매우 두꺼운 테두리</td></tr>
+            <tr><td><span class="code">border-t</span></td><td>border-top-width: 1px;</td><td>위쪽만</td></tr>
+            <tr><td><span class="code">border-r</span></td><td>border-right-width: 1px;</td><td>오른쪽만</td></tr>
+            <tr><td><span class="code">border-b</span></td><td>border-bottom-width: 1px;</td><td>⭐ 아래만 (구분선)</td></tr>
+            <tr><td><span class="code">border-l</span></td><td>border-left-width: 1px;</td><td>왼쪽만</td></tr>
+          </tbody>
+        </table>
+
+        <div class="pattern">
+          <div class="pattern-title">💡 카드 테두리 패턴</div>
+          <div class="pattern-code">&lt;div class="border border-slate-200 rounded-lg p-6"&gt;
+  카드 내용
+&lt;/div&gt;</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-circle"></i> Border Radius (둥근 모서리)</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">rounded-none</span></td><td>border-radius: 0;</td><td>각진 모서리</td></tr>
+            <tr><td><span class="code">rounded-sm</span></td><td>border-radius: 0.125rem;</td><td>약간 둥근</td></tr>
+            <tr><td><span class="code">rounded</span></td><td>border-radius: 0.25rem;</td><td>보통 둥근</td></tr>
+            <tr><td><span class="code">rounded-md</span></td><td>border-radius: 0.375rem;</td><td>중간 둥근</td></tr>
+            <tr><td><span class="code">rounded-lg</span></td><td>border-radius: 0.5rem;</td><td>⭐⭐ 큰 둥근 (카드)</td></tr>
+            <tr><td><span class="code">rounded-xl</span></td><td>border-radius: 0.75rem;</td><td>더 큰 둥근</td></tr>
+            <tr><td><span class="code">rounded-2xl</span></td><td>border-radius: 1rem;</td><td>매우 큰 둥근</td></tr>
+            <tr><td><span class="code">rounded-3xl</span></td><td>border-radius: 1.5rem;</td><td>초대형 둥근</td></tr>
+            <tr><td><span class="code">rounded-full</span></td><td>border-radius: 9999px;</td><td>⭐ 완전한 원 (프로필 이미지, 배지)</td></tr>
+            <tr><td><span class="code">rounded-t-lg</span></td><td>border-top-*-radius: 0.5rem;</td><td>위쪽만</td></tr>
+            <tr><td><span class="code">rounded-r-lg</span></td><td>border-*-right-radius: 0.5rem;</td><td>오른쪽만</td></tr>
+            <tr><td><span class="code">rounded-b-lg</span></td><td>border-bottom-*-radius: 0.5rem;</td><td>아래만</td></tr>
+            <tr><td><span class="code">rounded-l-lg</span></td><td>border-*-left-radius: 0.5rem;</td><td>왼쪽만</td></tr>
+          </tbody>
+        </table>
+
+        <div class="pattern">
+          <div class="pattern-title">💡 버튼/배지 둥근 모서리 패턴</div>
+          <div class="pattern-code">&lt;!-- 기본 버튼 --&gt;
+&lt;button class="rounded-md"&gt;버튼&lt;/button&gt;
+
+&lt;!-- 둥근 버튼 --&gt;
+&lt;button class="rounded-lg"&gt;둥근 버튼&lt;/button&gt;
+
+&lt;!-- 완전히 둥근 버튼 (Pill) --&gt;
+&lt;button class="rounded-full"&gt;Pill 버튼&lt;/button&gt;
+
+&lt;!-- 원형 아이콘 버튼 --&gt;
+&lt;button class="w-10 h-10 rounded-full"&gt;+&lt;/button&gt;</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-ring"></i> Ring (포커스 아웃라인)</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>설명</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">ring-0</span></td><td>링 제거</td><td>-</td></tr>
+            <tr><td><span class="code">ring-1</span></td><td>1px 링</td><td>-</td></tr>
+            <tr><td><span class="code">ring-2</span></td><td>2px 링</td><td>⭐ 포커스 링</td></tr>
+            <tr><td><span class="code">ring-4</span></td><td>4px 링</td><td>강한 포커스</td></tr>
+            <tr><td><span class="code">ring-blue-500</span></td><td>파란색 링</td><td>Primary 색상</td></tr>
+            <tr><td><span class="code">ring-offset-2</span></td><td>2px 오프셋</td><td>링과 요소 사이 간격</td></tr>
+            <tr><td><span class="code">focus:ring-2</span></td><td>포커스 시 링 표시</td><td>⭐⭐ 접근성 필수</td></tr>
+          </tbody>
+        </table>
+
+        <div class="pattern">
+          <div class="pattern-title">💡 Input 포커스 패턴 (접근성)</div>
+          <div class="pattern-code">&lt;input
+  class="border border-slate-300 rounded-md px-4 py-2
+         focus:outline-none focus:ring-2 focus:ring-blue-500"
+&gt;</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Part 7: 효과 -->
+    <section class="section" id="part-7">
+      <div class="section-header">
+        <div class="section-number">7</div>
+        <div>
+          <h2 class="section-title">효과</h2>
+          <p class="section-desc">Shadow, Opacity, Transition</p>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-star-half-stroke"></i> Shadow (그림자)</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>설명</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">shadow-none</span></td><td>그림자 없음</td><td>-</td></tr>
+            <tr><td><span class="code">shadow-sm</span></td><td>아주 작은 그림자</td><td>약한 구분</td></tr>
+            <tr><td><span class="code">shadow</span></td><td>작은 그림자</td><td>⭐ 기본 카드</td></tr>
+            <tr><td><span class="code">shadow-md</span></td><td>중간 그림자</td><td>⭐ 부각된 카드</td></tr>
+            <tr><td><span class="code">shadow-lg</span></td><td>큰 그림자</td><td>⭐ 떠있는 효과</td></tr>
+            <tr><td><span class="code">shadow-xl</span></td><td>매우 큰 그림자</td><td>모달, 드롭다운</td></tr>
+            <tr><td><span class="code">shadow-2xl</span></td><td>초대형 그림자</td><td>강한 부각</td></tr>
+          </tbody>
+        </table>
+
+        <div class="pattern">
+          <div class="pattern-title">💡 카드 그림자 + 호버 효과</div>
+          <div class="pattern-code">&lt;div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow"&gt;
+  호버하면 그림자 커짐
+&lt;/div&gt;</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-eye-slash"></i> Opacity (투명도)</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>값</th><th>용도</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">opacity-0</span></td><td>0% (완전 투명)</td><td>숨김</td></tr>
+            <tr><td><span class="code">opacity-25</span></td><td>25%</td><td>-</td></tr>
+            <tr><td><span class="code">opacity-50</span></td><td>50%</td><td>⭐ disabled 상태</td></tr>
+            <tr><td><span class="code">opacity-75</span></td><td>75%</td><td>약한 요소</td></tr>
+            <tr><td><span class="code">opacity-100</span></td><td>100% (불투명)</td><td>기본값</td></tr>
+            <tr><td><span class="code">hover:opacity-75</span></td><td>호버 시 75%</td><td>⭐ 이미지 호버</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-arrows-rotate"></i> Transition (전환 효과)</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">transition</span></td><td>모든 속성 전환</td><td>⭐ 기본 전환</td></tr>
+            <tr><td><span class="code">transition-colors</span></td><td>색상만 전환</td><td>⭐ 버튼 호버</td></tr>
+            <tr><td><span class="code">transition-shadow</span></td><td>그림자만 전환</td><td>카드 호버</td></tr>
+            <tr><td><span class="code">transition-transform</span></td><td>변형만 전환</td><td>-</td></tr>
+            <tr><td><span class="code">duration-150</span></td><td>150ms</td><td>빠름</td></tr>
+            <tr><td><span class="code">duration-300</span></td><td>300ms</td><td>⭐ 기본 속도</td></tr>
+            <tr><td><span class="code">duration-500</span></td><td>500ms</td><td>느림</td></tr>
+            <tr><td><span class="code">ease-in-out</span></td><td>ease-in-out</td><td>⭐ 자연스러운 easing</td></tr>
+          </tbody>
+        </table>
+
+        <div class="pattern">
+          <div class="pattern-title">💡 버튼 호버 전환 패턴</div>
+          <div class="pattern-code">&lt;button class="bg-blue-500 hover:bg-blue-600
+               transition-colors duration-300"&gt;
+  부드러운 색상 변화
+&lt;/button&gt;
+
+&lt;button class="transform hover:scale-105
+               transition-transform duration-200"&gt;
+  호버 시 커짐
+&lt;/button&gt;</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Transform</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Tailwind</th><th>CSS</th><th>설명</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="code">scale-100</span></td><td>scale(1)</td><td>기본 크기</td></tr>
+            <tr><td><span class="code">scale-105</span></td><td>scale(1.05)</td><td>⭐ 5% 확대 (호버)</td></tr>
+            <tr><td><span class="code">scale-110</span></td><td>scale(1.1)</td><td>10% 확대</td></tr>
+            <tr><td><span class="code">scale-75</span></td><td>scale(0.75)</td><td>75% 축소</td></tr>
+            <tr><td><span class="code">rotate-45</span></td><td>rotate(45deg)</td><td>45도 회전</td></tr>
+            <tr><td><span class="code">rotate-90</span></td><td>rotate(90deg)</td><td>90도 회전</td></tr>
+            <tr><td><span class="code">-rotate-45</span></td><td>rotate(-45deg)</td><td>-45도 회전</td></tr>
+            <tr><td><span class="code">translate-x-4</span></td><td>translateX(1rem)</td><td>가로 이동</td></tr>
+            <tr><td><span class="code">translate-y-4</span></td><td>translateY(1rem)</td><td>세로 이동</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Part 8: 자주 쓰는 패턴 -->
+    <section class="section" id="part-8">
+      <div class="section-header">
+        <div class="section-number">8</div>
+        <div>
+          <h2 class="section-title">자주 쓰는 패턴</h2>
+          <p class="section-desc">실전 코드 스니펫</p>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-fire"></i> 버튼 패턴</h3>
+
+        <div class="pattern">
+          <div class="pattern-title">Primary 버튼</div>
+          <div class="pattern-code">&lt;button class="bg-blue-500 hover:bg-blue-600 text-white
+               px-6 py-2 rounded-lg font-medium
+               transition-colors duration-300"&gt;
+  버튼
+&lt;/button&gt;</div>
+        </div>
+
+        <div class="pattern">
+          <div class="pattern-title">Outline 버튼</div>
+          <div class="pattern-code">&lt;button class="border-2 border-blue-500 text-blue-500
+               hover:bg-blue-500 hover:text-white
+               px-6 py-2 rounded-lg font-medium
+               transition-all duration-300"&gt;
+  Outline
+&lt;/button&gt;</div>
+        </div>
+
+        <div class="pattern">
+          <div class="pattern-title">Disabled 버튼</div>
+          <div class="pattern-code">&lt;button disabled class="bg-gray-300 text-gray-500
+               px-6 py-2 rounded-lg font-medium
+               cursor-not-allowed opacity-60"&gt;
+  Disabled
+&lt;/button&gt;</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-square"></i> 카드 패턴</h3>
+
+        <div class="pattern">
+          <div class="pattern-title">기본 카드</div>
+          <div class="pattern-code">&lt;div class="bg-white rounded-lg shadow-md p-6"&gt;
+  &lt;h3 class="text-xl font-bold mb-2"&gt;제목&lt;/h3&gt;
+  &lt;p class="text-slate-600"&gt;내용&lt;/p&gt;
+&lt;/div&gt;</div>
+        </div>
+
+        <div class="pattern">
+          <div class="pattern-title">호버 효과 카드</div>
+          <div class="pattern-code">&lt;div class="bg-white rounded-lg shadow-md hover:shadow-xl
+            p-6 transition-shadow duration-300 cursor-pointer"&gt;
+  &lt;h3 class="text-xl font-bold mb-2"&gt;제목&lt;/h3&gt;
+  &lt;p class="text-slate-600"&gt;내용&lt;/p&gt;
+&lt;/div&gt;</div>
+        </div>
+
+        <div class="pattern">
+          <div class="pattern-title">이미지 카드</div>
+          <div class="pattern-code">&lt;div class="bg-white rounded-lg shadow-md overflow-hidden"&gt;
+  &lt;img src="..." class="w-full h-48 object-cover"&gt;
+  &lt;div class="p-6"&gt;
+    &lt;h3 class="text-xl font-bold mb-2"&gt;제목&lt;/h3&gt;
+    &lt;p class="text-slate-600"&gt;내용&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-keyboard"></i> Input & Form 패턴</h3>
+
+        <div class="pattern">
+          <div class="pattern-title">Input 필드</div>
+          <div class="pattern-code">&lt;input type="text"
+       class="w-full px-4 py-2
+              border border-slate-300 rounded-md
+              focus:outline-none focus:ring-2 focus:ring-blue-500
+              transition-all"
+       placeholder="입력하세요"
+&gt;</div>
+        </div>
+
+        <div class="pattern">
+          <div class="pattern-title">Label + Input</div>
+          <div class="pattern-code">&lt;div class="mb-4"&gt;
+  &lt;label class="block text-sm font-medium text-slate-700 mb-2"&gt;
+    이메일
+  &lt;/label&gt;
+  &lt;input type="email"
+         class="w-full px-4 py-2
+                border border-slate-300 rounded-md
+                focus:outline-none focus:ring-2 focus:ring-blue-500"&gt;
+&lt;/div&gt;</div>
+        </div>
+
+        <div class="pattern">
+          <div class="pattern-title">Textarea</div>
+          <div class="pattern-code">&lt;textarea
+  class="w-full px-4 py-2 h-32
+         border border-slate-300 rounded-md
+         focus:outline-none focus:ring-2 focus:ring-blue-500
+         resize-none"
+  placeholder="메시지를 입력하세요..."
+&gt;&lt;/textarea&gt;</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-layer-group"></i> 레이아웃 패턴</h3>
+
+        <div class="pattern">
+          <div class="pattern-title">Header (Navbar)</div>
+          <div class="pattern-code">&lt;header class="bg-white border-b border-slate-200"&gt;
+  &lt;div class="max-w-7xl mx-auto px-4 py-4"&gt;
+    &lt;div class="flex items-center justify-between"&gt;
+      &lt;div class="text-xl font-bold"&gt;Logo&lt;/div&gt;
+      &lt;nav class="flex gap-6"&gt;
+        &lt;a href="#" class="hover:text-blue-500"&gt;Home&lt;/a&gt;
+        &lt;a href="#" class="hover:text-blue-500"&gt;About&lt;/a&gt;
+        &lt;a href="#" class="hover:text-blue-500"&gt;Contact&lt;/a&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</div>
+        </div>
+
+        <div class="pattern">
+          <div class="pattern-title">Hero Section (히어로 섹션)</div>
+          <div class="pattern-code">&lt;section class="bg-gradient-to-r from-blue-500 to-purple-600"&gt;
+  &lt;div class="max-w-7xl mx-auto px-4 py-24 text-center text-white"&gt;
+    &lt;h1 class="text-5xl font-bold mb-4"&gt;큰 제목&lt;/h1&gt;
+    &lt;p class="text-xl mb-8"&gt;설명 텍스트&lt;/p&gt;
+    &lt;button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold"&gt;
+      시작하기
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</div>
+        </div>
+
+        <div class="pattern">
+          <div class="pattern-title">Container (컨테이너)</div>
+          <div class="pattern-code">&lt;div class="max-w-7xl mx-auto px-4"&gt;
+  &lt;!-- 중앙 정렬된 컨테이너, 최대폭 80rem --&gt;
+&lt;/div&gt;
+
+&lt;!-- 반응형 컨테이너 --&gt;
+&lt;div class="max-w-full md:max-w-7xl mx-auto px-4 md:px-8"&gt;
+  모바일: 전체폭 / 데스크탑: 제한된 폭
+&lt;/div&gt;</div>
+        </div>
+
+        <div class="pattern">
+          <div class="pattern-title">반응형 그리드 (상품 목록)</div>
+          <div class="pattern-code">&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"&gt;
+  &lt;div class="bg-white rounded-lg shadow-md p-6"&gt;상품 1&lt;/div&gt;
+  &lt;div class="bg-white rounded-lg shadow-md p-6"&gt;상품 2&lt;/div&gt;
+  &lt;div class="bg-white rounded-lg shadow-md p-6"&gt;상품 3&lt;/div&gt;
+  &lt;div class="bg-white rounded-lg shadow-md p-6"&gt;상품 4&lt;/div&gt;
+&lt;/div&gt;</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title"><i class="fa-solid fa-check"></i> 유틸리티 조합</h3>
+
+        <div class="pattern">
+          <div class="pattern-title">완벽 가운데 정렬</div>
+          <div class="pattern-code">&lt;div class="flex items-center justify-center h-screen"&gt;
+  화면 정중앙
+&lt;/div&gt;</div>
+        </div>
+
+        <div class="pattern">
+          <div class="pattern-title">Truncate (말줄임표)</div>
+          <div class="pattern-code">&lt;p class="truncate"&gt;
+  긴 텍스트는 ...으로 표시됩니다
+&lt;/p&gt;
+
+&lt;!-- 2줄 이상 자르기 --&gt;
+&lt;p class="line-clamp-2"&gt;
+  2줄까지만 보이고 나머지는 ...
+&lt;/p&gt;</div>
+        </div>
+
+        <div class="pattern">
+          <div class="pattern-title">Sticky Header</div>
+          <div class="pattern-code">&lt;header class="sticky top-0 bg-white shadow-md z-50"&gt;
+  스크롤해도 상단 고정
+&lt;/header&gt;</div>
+        </div>
+
+        <div class="pattern">
+          <div class="pattern-title">Modal Overlay</div>
+          <div class="pattern-code">&lt;!-- 배경 어둡게 --&gt;
+&lt;div class="fixed inset-0 bg-black bg-opacity-50
+            flex items-center justify-center z-50"&gt;
+  &lt;!-- 모달 --&gt;
+  &lt;div class="bg-white rounded-lg p-8 max-w-md w-full"&gt;
+    모달 내용
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 마지막 안내 -->
+    <div style="margin: 60px 0; padding: 40px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 16px; color: white; text-align: center;">
+      <h3 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 16px;">💡 사용 팁</h3>
+      <p style="font-size: 1rem; opacity: 0.95; line-height: 1.8;">
+        1. <strong>검색 활용:</strong> 상단 검색으로 CSS 속성이나 클래스명 빠르게 찾기<br>
+        2. <strong>조합:</strong> 반응형(md:) + 상태(hover:) + 속성 자유롭게 조합 가능<br>
+        3. <strong>공식 문서:</strong> <a href="https://tailwindcss.com/docs" target="_blank" style="color: white; text-decoration: underline;">tailwindcss.com/docs</a> 더 많은 유틸리티 확인<br>
+        4. <strong>VS Code:</strong> Tailwind CSS IntelliSense 확장 필수!
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" id="scrollTop">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    // Scroll to Top
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Search Functionality
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      const rows = document.querySelectorAll('.table tbody tr');
+
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(term) ? '' : 'none';
+      });
+
+      // 패턴 카드도 검색
+      const patterns = document.querySelectorAll('.pattern');
+      patterns.forEach(pattern => {
+        const text = pattern.textContent.toLowerCase();
+        pattern.style.display = text.includes(term) ? '' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

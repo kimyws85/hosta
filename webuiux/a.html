@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
+        body { font-family: 'Pretendard', sans-serif; }
+    </style>
+    <title>Tailwind CSS 마스터 설계 가이드</title>
+</head>
+<body class="bg-gray-100 p-4 md:p-10">
+
+    <div class="max-w-7xl mx-auto">
+        <div class="bg-white p-8 rounded-3xl shadow-sm mb-10 border border-gray-200">
+            <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight">Tailwind CSS Master Reference</h1>
+            <p class="text-gray-500 mt-3 text-lg leading-relaxed">
+                시니어 설계자가 주니어에게 전수하는 <strong>구조적 마크업</strong>의 정석. 
+                단순 암기가 아닌 <span class="text-indigo-600 font-bold">Design Token</span>의 이해를 목표로 합니다.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8">
+            
+            <section class="bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-200">
+                <div class="bg-indigo-600 px-6 py-4 text-white font-bold text-xl">01. Layout & Alignment (구조와 정렬)</div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-50 border-b border-gray-200 text-gray-600 text-sm">
+                                <th class="p-4 w-1/4">카테고리</th>
+                                <th class="p-4 w-1/4">클래스 예시</th>
+                                <th class="p-4 w-1/4">설명 및 수치</th>
+                                <th class="p-5 w-1/4">설계자 코멘트</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="p-4 font-bold text-gray-800">Flexbox</td>
+                                <td class="p-4"><code class="text-pink-600">flex, flex-col, flex-1</code></td>
+                                <td class="p-4 text-sm">요소를 선형으로 배치. <br>1:1 비율은 <code class="bg-gray-100">flex-1</code></td>
+                                <td class="p-4 text-xs text-gray-500 italic">"거의 모든 UI의 시작은 flex입니다. 방향(row/col) 설정이 핵심입니다."</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-gray-800">Grid</td>
+                                <td class="p-4"><code class="text-pink-600">grid-cols-{n}, gap-{n}</code></td>
+                                <td class="p-4 text-sm">복잡한 격자 배치. <br><code class="bg-gray-100">gap</code>은 요소 사이 간격</td>
+                                <td class="p-4 text-xs text-gray-500 italic">"카드 리스트나 대시보드 설계 시 Margin 대신 Gap을 쓰세요."</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-gray-800">Position</td>
+                                <td class="p-4"><code class="text-pink-600">relative, absolute, fixed</code></td>
+                                <td class="p-4 text-sm">좌표 기반 배치. <br><code class="bg-gray-100">z-{index}</code>와 함께 사용</td>
+                                <td class="p-4 text-xs text-gray-500 italic">"GNB(상단바)는 fixed, 팝업은 z-50 이상을 권장합니다."</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-200">
+                <div class="bg-emerald-600 px-6 py-4 text-white font-bold text-xl">02. Spacing & Sizing (간격과 크기 시스템)</div>
+                <div class="p-6 bg-emerald-50 text-emerald-800 text-sm font-bold border-b border-emerald-100">
+                    💡 핵심 공식: 숫자 n = n * 0.25rem (4px) | 예: p-4 = 1rem = 16px
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <tbody class="divide-y divide-gray-100 text-sm">
+                            <tr>
+                                <td class="p-4 font-bold w-1/4">Padding / Margin</td>
+                                <td class="p-4 w-1/4"><code class="text-pink-600 text-xs">p-{n}, px-{n}, py-{n}, m-{n}</code></td>
+                                <td class="p-4 w-2/4 text-gray-600 italic">
+                                    상하좌우(p-), 좌우(px-), 상하(py-) 개별 제어가 가능합니다. 
+                                    마이너스 값은 <code class="bg-gray-100">-m-4</code> 형태로 사용합니다.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold">Width / Height</td>
+                                <td class="p-4"><code class="text-pink-600 text-xs">w-{n}, w-full, h-screen</code></td>
+                                <td class="p-4 text-gray-600 italic">
+                                    <code class="bg-gray-100">w-full</code>은 100%, <code class="bg-gray-100">w-screen</code>은 뷰포트 전체 너비입니다.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-200">
+                <div class="bg-blue-600 px-6 py-4 text-white font-bold text-xl">03. Typography & Visuals (가독성과 심미성)</div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="p-4 font-bold w-1/4 text-gray-800">Font Size</td>
+                                <td class="p-4 w-1/4"><code class="text-pink-600">text-xs ~ text-9xl</code></td>
+                                <td class="p-4 w-2/4 text-gray-500">
+                                    <span class="text-xs">xs(12px)</span>, <span class="text-sm">sm(14px)</span>, <span class="text-base">base(16px)</span>, <span class="text-xl font-bold">xl(20px)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-gray-800">Border Radius</td>
+                                <td class="p-4"><code class="text-pink-600">rounded-none ~ rounded-full</code></td>
+                                <td class="p-4">
+                                    <div class="flex gap-2 text-[10px] text-center">
+                                        <div class="w-10 h-10 bg-gray-200 rounded-sm leading-10">sm</div>
+                                        <div class="w-10 h-10 bg-gray-200 rounded-md leading-10">md</div>
+                                        <div class="w-10 h-10 bg-gray-200 rounded-2xl leading-10 text-[8px]">2xl</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-200">
+                <div class="bg-rose-600 px-6 py-4 text-white font-bold text-xl">04. Responsive Design (반응형 설계의 기준)</div>
+                <div class="p-6">
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                        <div class="border p-4 rounded-xl text-center"><div class="font-bold">기본 (Mobile)</div><div class="text-xs text-gray-400">0px ~</div></div>
+                        <div class="border p-4 rounded-xl text-center border-rose-500 bg-rose-50"><div class="font-bold text-rose-600">sm:</div><div class="text-xs text-gray-400">640px ~</div></div>
+                        <div class="border p-4 rounded-xl text-center"><div class="font-bold">md:</div><div class="text-xs text-gray-400">768px ~</div></div>
+                        <div class="border p-4 rounded-xl text-center"><div class="font-bold">lg:</div><div class="text-xs text-gray-400">1024px ~</div></div>
+                        <div class="border p-4 rounded-xl text-center"><div class="font-bold">xl:</div><div class="text-xs text-gray-400">1280px ~</div></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer class="mt-12 text-center text-gray-400 pb-10">
+            <p>© 2024 AI Web Architect Curriculum - 시니어 설계자의 마인드로 코딩합시다.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
