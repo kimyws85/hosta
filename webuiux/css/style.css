@@ -365,7 +365,7 @@ body.theme-ux .topic-card__icon {
 }
 
 .topic-card.open .topic-card__body {
-  max-height: 15000px;
+  max-height: 25000px;
   padding: 0 var(--sp-lg) var(--sp-lg);
 }
 
