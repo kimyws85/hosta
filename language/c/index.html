@@ -6096,6 +6096,10 @@ printf(<span class="str">"\n=== 성적 순위 ===\n"</span>);
 
   <script>
     /* 토픽 접기/펼치기 */
+    document.querySelectorAll('.topic').forEach(function (topic) {
+      topic.classList.add('collapsed');  // 기본은 접힌 상태
+    });
+    
     function toggleTopic(header) {
       header.parentElement.classList.toggle('collapsed');
     }
