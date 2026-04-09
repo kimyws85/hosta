@@ -60,3 +60,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+/* ===== 웹 기술 스택 탭 전환 ===== */
+document.querySelectorAll('.stack-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab;
+
+    document.querySelectorAll('.stack-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.stack-panel').forEach(p => p.classList.remove('active'));
+
+    tab.classList.add('active');
+    const panel = document.getElementById('tab-' + target);
+    if (panel) panel.classList.add('active');
+  });
+});
