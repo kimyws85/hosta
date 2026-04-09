@@ -2983,11 +2983,13 @@ ul {
 
 /* 그룹 컬러 시스템 */
 [data-group="roles"]   { --gc: #7c3aed; --gc-light: #f5f3ff; --gc-dark: #5b21b6; }
-[data-group="client"]  { --gc: #2563eb; --gc-light: #eff6ff; --gc-dark: #1d4ed8; }
-[data-group="http"]    { --gc: #0891b2; --gc-light: #ecfeff; --gc-dark: #0e7490; }
-[data-group="browser"] { --gc: #059669; --gc-light: #ecfdf5; --gc-dark: #047857; }
-[data-group="dom"]     { --gc: #d97706; --gc-light: #fffbeb; --gc-dark: #b45309; }
-[data-group="api"]     { --gc: #dc2626; --gc-light: #fef2f2; --gc-dark: #b91c1c; }
+[data-group="web-basic"]  { --gc: #2563eb; --gc-light: #eff6ff; --gc-dark: #1d4ed8; }
+[data-group="browser-server"]    { --gc: #0891b2; --gc-light: #ecfeff; --gc-dark: #0e7490; }
+[data-group="html-css-js"] { --gc: #059669; --gc-light: #ecfdf5; --gc-dark: #047857; }
+[data-group="responsive"]     { --gc: #d97706; --gc-light: #fffbeb; --gc-dark: #b45309; }
+[data-group="dom-basic"]     { --gc: #dc2626; --gc-light: #fef2f2; --gc-dark: #b91c1c; }
+
+
 [data-group="storage"] { --gc: #db2777; --gc-light: #fdf2f8; --gc-dark: #be185d; }
 [data-group="hosting"] { --gc: #0284c7; --gc-light: #f0f9ff; --gc-dark: #0369a1; }
 [data-group="bundler"] { --gc: #65a30d; --gc-light: #f7fee7; --gc-dark: #4d7c0f; }

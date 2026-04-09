@@ -701,2071 +701,789 @@
         <button class="stack-tab" data-tab="js">JavaScript</button>
         <button class="stack-tab" data-tab="react">React</button>
         <button class="stack-tab" data-tab="tools">도구 &amp; 협업</button>
+        <button class="stack-tab" data-tab="backend">백엔드 기술</button>
       </div>
 
       <!-- 웹 기초 개념 탭 -->
+
       <div class="stack-panel active" id="tab-web-basics">
-        <div class="stack-panel-header stack-panel-header-basics">
-          <div class="stack-panel-num">00</div>
-          <div>
-            <div class="stack-panel-label">기초 개념 / Fundamentals</div>
-            <h3 class="stack-panel-name">웹 기초 개념</h3>
-            <p class="stack-panel-summary">코드를 배우기 전에 반드시 알아야 할 것들. 웹 직군이 어떻게 나뉘는지, 브라우저와 서버가 어떻게 대화하는지, DOM이 무엇인지 이해하면 코드가 보이기 시작합니다.</p>
-          </div>
-        </div>
-        <div class="stack-panel-body">
-
-          <!-- 웹 직군 & 역할 -->
-          <div class="stack-concept-group" data-group="roles">
-            <div class="stack-concept-group-header">
-              <div class="stack-cg-num">00</div>
-              <div class="stack-cg-info">
-                <div class="stack-cg-title">웹 직군 &amp; 역할</div>
-                <div class="stack-cg-sub">내가 어디로 가는지 알아야 방향이 생긴다</div>
-              </div>
-            </div>
-            <div class="stack-role-grid">
-              <div class="stack-role-card stack-role-design">
-                <div class="stack-role-tag">Design</div>
-                <div class="stack-role-name">웹 디자이너</div>
-                <div class="stack-role-work">시각 디자인, 색상 시스템, 레이아웃 설계, 브랜드 아이덴티티 구성. 사용자가 처음 보는 순간의 인상을 책임집니다.</div>
-                <div class="stack-role-tools">Figma / Photoshop / Illustrator</div>
-                <div class="stack-role-desc">웹사이트의 외형 전체를 설계하는 역할입니다. 색상 팔레트 선정, 타이포그래피 체계, 아이콘 스타일, 여백 규칙 등 시각적 언어를 만들고 Figma로 시안을 제작합니다. 퍼블리셔와 개발자에게 디자인 파일을 전달하고 구현 결과를 검수합니다. 최근에는 디자인 시스템을 만들어 컴포넌트를 재사용 가능한 형태로 관리하는 역량이 중요해졌습니다.</div>
-                <div class="stack-role-skills"><span class="stack-role-skill">Figma</span><span class="stack-role-skill">Adobe XD</span><span class="stack-role-skill">Photoshop</span><span class="stack-role-skill">Illustrator</span><span class="stack-role-skill">색상이론</span><span class="stack-role-skill">타이포그래피</span><span class="stack-role-skill">그리드시스템</span><span class="stack-role-skill">디자인시스템</span></div>
-                <div class="stack-role-point">이 수업에서 1개월차 웹디자인 기본 -- 색상, 폰트, 여백의 원칙을 배웁니다.</div>
-              </div>
-              <div class="stack-role-card stack-role-ux">
-                <div class="stack-role-tag">UX</div>
-                <div class="stack-role-name">UI/UX 기획자</div>
-                <div class="stack-role-work">사용자 경험 설계, 와이어프레임, 유저 플로우, 정보 구조(IA) 설계 및 사용성 테스트. "왜 사용자가 이 버튼을 누르지 않는가"를 분석합니다.</div>
-                <div class="stack-role-tools">Figma / Notion / Miro</div>
-                <div class="stack-role-desc">사용자가 서비스를 어떻게 경험하는지 설계하는 역할입니다. 사용자 리서치, 페르소나 작성, 유저 저니 맵 작성으로 시작해 와이어프레임과 프로토타입으로 구체화합니다. 개발팀과 디자인팀 사이에서 요구사항을 명확히 전달하는 커뮤니케이터 역할도 합니다. AI 시대에는 ChatGPT/Claude로 사용자 리서치 분석, 기획서 초안 작성, 경쟁사 분석을 빠르게 처리하는 능력이 핵심 차별점입니다.</div>
-                <div class="stack-role-skills"><span class="stack-role-skill">Figma</span><span class="stack-role-skill">Notion</span><span class="stack-role-skill">Miro</span><span class="stack-role-skill">사용자리서치</span><span class="stack-role-skill">와이어프레임</span><span class="stack-role-skill">유저플로우</span><span class="stack-role-skill">IA설계</span><span class="stack-role-skill">프로토타입</span><span class="stack-role-skill">사용성테스트</span></div>
-                <div class="stack-role-point">이 수업의 4개월차 -- UX 원칙과 기획 방법론을 직접 배웁니다. AI 활용 기획자 방향의 핵심 포지션입니다.</div>
-              </div>
-              <div class="stack-role-card stack-role-publish">
-                <div class="stack-role-tag">Publishing</div>
-                <div class="stack-role-name">퍼블리셔 (HTML/CSS 개발자)</div>
-                <div class="stack-role-work">디자이너의 Figma 시안을 HTML/CSS로 픽셀 단위로 구현. 크로스 브라우저 대응, 반응형 웹 구현, 웹 표준 준수가 핵심입니다.</div>
-                <div class="stack-role-tools">HTML / CSS / JS 기초</div>
-                <div class="stack-role-desc">디자인 파일을 실제 동작하는 웹 페이지로 변환하는 역할입니다. 디자인과 개발의 중간에 위치하며, 마크업 구조를 설계하고 CSS로 정교하게 스타일을 구현합니다. 반응형 웹(모바일~데스크톱), 크로스 브라우저(Chrome, Safari, Firefox, IE) 대응이 주요 업무입니다. 공공기관, 대기업 웹사이트, 이커머스 사이트 구축 프로젝트에서 활발히 활동합니다. JS는 간단한 인터랙션(탭, 슬라이더, 모달) 수준만 다루며, 복잡한 기능은 프론트엔드 개발자에게 넘깁니다.</div>
-                <div class="stack-role-skills"><span class="stack-role-skill">HTML5</span><span class="stack-role-skill">CSS3</span><span class="stack-role-skill">JavaScript기초</span><span class="stack-role-skill">Sass/SCSS</span><span class="stack-role-skill">반응형웹</span><span class="stack-role-skill">크로스브라우저</span><span class="stack-role-skill">웹표준</span><span class="stack-role-skill">웹접근성</span><span class="stack-role-skill">jQuery</span></div>
-                <div class="stack-role-point">이 수업의 2개월차 -- HTML/CSS/JS를 배우고 Claude와 함께 퍼블리싱 실습을 합니다.</div>
-              </div>
-              <div class="stack-role-card stack-role-frontend">
-                <div class="stack-role-tag">Frontend</div>
-                <div class="stack-role-name">프론트엔드 개발자</div>
-                <div class="stack-role-work">JS/React로 동작, API 연동, 상태 관리까지. 사용자가 보고 조작하는 화면 전체를 구현하며, 백엔드 API와 연결해 실제로 작동하는 서비스를 만듭니다.</div>
-                <div class="stack-role-tools">HTML/CSS/JS / React / TypeScript</div>
-                <div class="stack-role-desc">퍼블리셔보다 한 단계 깊은 개발 역할입니다. React, Vue, TypeScript로 컴포넌트를 설계하고, 백엔드 API와 연동해 실제로 데이터가 흐르는 서비스를 구현합니다. 로그인, 검색, 장바구니, 실시간 채팅 같은 복잡한 기능을 담당합니다. 성능 최적화, 코드 품질, 테스트도 프론트엔드 개발자의 책임 범위입니다. 국내 스타트업과 IT 기업에서 가장 수요가 높은 직군 중 하나이며, 신입 기준 연봉이 퍼블리셔보다 높습니다. AI 코딩 도구(Claude, GitHub Copilot)를 활용하면 혼자서도 팀 단위의 생산성을 낼 수 있습니다.</div>
-                <div class="stack-role-skills"><span class="stack-role-skill">React</span><span class="stack-role-skill">TypeScript</span><span class="stack-role-skill">JavaScript(ES6+)</span><span class="stack-role-skill">CSS/Tailwind</span><span class="stack-role-skill">Git</span><span class="stack-role-skill">REST API연동</span><span class="stack-role-skill">상태관리(Zustand)</span><span class="stack-role-skill">번들러(Vite)</span></div>
-                <div class="stack-role-point">이 수업의 최종 목표 방향 중 하나 -- 3개월차 React까지 배우고 실무형 포트폴리오를 만듭니다.</div>
-              </div>
-              <div class="stack-role-card stack-role-backend">
-                <div class="stack-role-tag">Backend</div>
-                <div class="stack-role-name">백엔드 개발자</div>
-                <div class="stack-role-work">서버, 데이터베이스, API 개발. 프론트가 요청하면 데이터를 처리해 응답하는 엔진을 만듭니다. 사용자에게 보이지 않지만 서비스의 핵심 로직을 담당합니다.</div>
-                <div class="stack-role-tools">Node.js / Python / DB / AWS</div>
-                <div class="stack-role-desc">회원가입과 로그인, 데이터 저장과 조회, 결제, 이메일 발송 같은 서버 측 로직을 구현합니다. 데이터베이스(MySQL, PostgreSQL, MongoDB)를 설계하고, REST API나 GraphQL API를 만들어 프론트엔드에 제공합니다. 서버 보안, 성능 최적화, 배포 자동화(CI/CD)도 담당합니다. Node.js(JavaScript), Python(Django/FastAPI), Java(Spring) 등 다양한 언어와 프레임워크가 사용됩니다. 이 수업은 프론트엔드 중심이지만, 백엔드 API를 읽고 활용하는 능력은 3개월차에 함께 배웁니다.</div>
-                <div class="stack-role-skills"><span class="stack-role-skill">Node.js</span><span class="stack-role-skill">Python</span><span class="stack-role-skill">SQL</span><span class="stack-role-skill">REST API설계</span><span class="stack-role-skill">데이터베이스</span><span class="stack-role-skill">서버배포</span><span class="stack-role-skill">AWS</span><span class="stack-role-skill">Docker</span><span class="stack-role-skill">인증/보안</span></div>
-                <div class="stack-role-point">이 수업은 프론트 중심이지만 -- API 구조와 백엔드 개념을 이해해야 협업이 원활합니다.</div>
-              </div>
-              <div class="stack-role-card stack-role-fullstack">
-                <div class="stack-role-tag">Fullstack</div>
-                <div class="stack-role-name">풀스택 개발자</div>
-                <div class="stack-role-work">프론트엔드 + 백엔드 둘 다. 혼자 서비스를 기획부터 배포까지 전 과정을 책임집니다. 스타트업 초기 단계에서 가장 많이 찾는 인재 유형입니다.</div>
-                <div class="stack-role-tools">프론트 + 백엔드 전부</div>
-                <div class="stack-role-desc">화면 구현(프론트)부터 서버와 DB(백엔드)까지 혼자 처리할 수 있는 개발자입니다. 소규모 팀이나 스타트업에서 빠르게 제품을 만들어야 할 때 매우 유리합니다. 프론트와 백엔드 사이의 API를 직접 설계하고 구현하므로 커뮤니케이션 비용이 줄어듭니다. Next.js(React 기반 풀스택 프레임워크)나 Supabase 같은 BaaS를 활용하면 혼자서도 완성도 높은 서비스를 빠르게 출시할 수 있습니다. AI 도구를 적극 활용하면 풀스택 개발자 1명이 작은 팀 전체의 역할을 대체할 수 있는 시대가 되고 있습니다.</div>
-                <div class="stack-role-skills"><span class="stack-role-skill">React</span><span class="stack-role-skill">Node.js</span><span class="stack-role-skill">데이터베이스</span><span class="stack-role-skill">API설계</span><span class="stack-role-skill">배포</span><span class="stack-role-skill">Docker</span><span class="stack-role-skill">Next.js</span><span class="stack-role-skill">Supabase</span><span class="stack-role-skill">AWS</span></div>
-                <div class="stack-role-point">이 수업 + AI 활용 능력이 쌓이면 -- 풀스택으로 가는 것도 충분히 가능한 경로입니다.</div>
-              </div>
-              <div class="stack-role-card stack-role-pm">
-                <div class="stack-role-tag">Planning</div>
-                <div class="stack-role-name">PM / 서비스 기획자</div>
-                <div class="stack-role-work">서비스 설계, 요구사항 정의, 로드맵 관리, 개발, 디자인, 마케팅팀 조율. "무엇을 만들 것인가"를 결정하고 "어떻게 만들 것인가"를 조율하는 역할입니다.</div>
-                <div class="stack-role-tools">Notion / Jira / Figma / 기획서</div>
-                <div class="stack-role-desc">제품의 방향을 결정하는 리더 역할입니다. 사용자 니즈 파악, 경쟁사 분석, 기능 우선순위 결정, 스프린트 계획 수립을 담당합니다. 개발팀과 디자인팀이 이해할 수 있는 기획서, 와이어프레임, 기능 명세서를 작성합니다. 기술을 직접 구현하지 않지만, 개발이 어떻게 작동하는지 이해해야 현실적인 기획이 가능합니다. "기술을 이해하는 기획자"는 개발팀의 신뢰를 얻고 더 효과적으로 협업할 수 있습니다. AI로 기획 문서 초안, 사용자 리서치 분석, 시장 조사를 빠르게 처리하는 AI 활용 기획자가 주목받고 있습니다.</div>
-                <div class="stack-role-skills"><span class="stack-role-skill">Notion</span><span class="stack-role-skill">Jira</span><span class="stack-role-skill">Figma</span><span class="stack-role-skill">SQL기초</span><span class="stack-role-skill">데이터분석</span><span class="stack-role-skill">기획서작성</span><span class="stack-role-skill">요구사항정의</span><span class="stack-role-skill">스프린트관리</span><span class="stack-role-skill">AI도구활용</span></div>
-                <div class="stack-role-point">이 수업의 두 번째 취업 방향 -- AI 활용 기획자. 웹 기술을 이해한 기획자는 현업에서 바로 차별화됩니다.</div>
-              </div>
-            </div>
-            <div class="stack-role-direction">
-              <span class="stack-role-direction-label">이 수업의 방향</span>
-              퍼블리셔 &rarr; <strong>프론트엔드 개발자</strong> &nbsp;/&nbsp; UI/UX 감각을 갖춘 <strong>AI 활용 기획자</strong>
-            </div>
-            <div class="stack-concept-grid" style="margin-top:20px;">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">취업 시장 현황 (2025년 기준)</div>
-                <div class="stack-concept-tags"><span class="sct">연봉</span><span class="sct">수요</span><span class="sct">취업</span></div>
-                <div class="stack-concept-code">직군별 신입 연봉 범위 (국내 기준):
-프론트엔드 개발자: 3,000~4,500만원
-백엔드 개발자:     3,200~5,000만원
-풀스택 개발자:     3,500~5,500만원
-퍼블리셔:          2,500~3,500만원
-UI/UX 기획자:     2,800~4,000만원
-PM:                3,000~4,500만원
-
-채용 공고 키워드 추이:
-React   -- 프론트 채용의 70%+ 에서 요구
-TypeScript -- 점점 필수 요건으로 확대
-AI활용  -- 2024년부터 급격히 증가</div>
-                <div class="stack-concept-desc">국내 IT 기업에서 프론트엔드 개발자 수요는 꾸준히 높습니다. 특히 React 경험자는 스타트업부터 대기업까지 폭넓게 채용됩니다. AI 도구를 능숙하게 활용하는 개발자는 동일 경험에서도 더 높은 연봉과 빠른 성장 기회를 얻고 있습니다. 포트폴리오 3~4개와 GitHub 활동 이력이 신입 취업의 핵심 요소입니다. 퍼블리셔에서 시작해 프론트엔드로 성장하는 경력 경로도 국내에서 여전히 유효합니다.</div>
-                <div class="stack-concept-tip"><b>핵심</b> -- 연봉보다 "성장 속도"가 중요합니다. AI를 잘 쓰는 신입 1명이 AI 모르는 경력 3년차보다 빠르게 성장하는 사례가 늘고 있습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">포트폴리오 전략</div>
-                <div class="stack-concept-tags"><span class="sct">포트폴리오</span><span class="sct">GitHub</span><span class="sct">배포</span></div>
-                <div class="stack-concept-code">필수 포트폴리오 구성:
-1. 자기소개 페이지      -- 개인 브랜딩
-2. 클론 코딩           -- 기술 구현력 증명
-3. 기능이 있는 앱      -- CRUD, API 연동
-4. 팀 프로젝트 (선택)  -- 협업 능력
-
-배포 체크리스트:
-  [ ] Vercel/Netlify에 실제 URL이 있는가?
-  [ ] GitHub repo가 공개되어 있는가?
-  [ ] README에 기술 스택이 정리되어 있는가?
-  [ ] 모바일에서 깨지지 않는가?
-  [ ] Lighthouse 성능 점수 80점 이상인가?</div>
-                <div class="stack-concept-desc">면접관이 포트폴리오를 볼 때 가장 먼저 확인하는 것은 "실제로 배포된 링크"입니다. 로컬에서만 실행되는 프로젝트는 포트폴리오로 인정받기 어렵습니다. GitHub에 코드가 없으면 "이 사람이 직접 만들었는가"를 확인할 수 없습니다. Claude를 활용해 만든 프로젝트도 "AI를 활용해 빠르게 구현하고 직접 이해했다"면 충분한 포트폴리오가 됩니다. 이 수업이 끝날 때 배포된 포트폴리오 3개를 목표로 합니다.</div>
-                <div class="stack-concept-note"><b>실무 포인트</b> -- "만들었어요"보다 "배포해서 사람들이 쓰고 있어요"가 훨씬 강력합니다. 지금 당장 Vercel로 배포하는 습관을 들이세요.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 클라이언트 & 서버 -->
-          <div class="stack-concept-group" data-group="client">
-            <div class="stack-concept-group-header">
-              <div class="stack-cg-num">01</div>
-              <div class="stack-cg-info">
-                <div class="stack-cg-title">클라이언트 &amp; 서버</div>
-                <div class="stack-cg-sub">모든 웹은 요청과 응답으로 작동한다</div>
-              </div>
-            </div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">클라이언트 (Client)</div>
-                <div class="stack-concept-tags"><span class="sct">브라우저</span><span class="sct">요청</span><span class="sct">사용자</span></div>
-                <div class="stack-concept-desc">요청을 보내는 쪽. 사용자의 브라우저가 가장 대표적인 클라이언트입니다. URL을 입력하거나 버튼을 클릭하는 순간 서버에 요청을 보냅니다. 브라우저뿐 아니라 모바일 앱, 데스크톱 앱, 심지어 다른 서버도 클라이언트가 될 수 있습니다. 클라이언트의 역할은 크게 세 가지입니다. 첫째, 서버에 필요한 것을 요청합니다. 둘째, 서버에서 받은 데이터를 화면에 표시합니다. 셋째, 사용자의 입력을 받아 서버로 전달합니다. 프론트엔드 개발자가 만드는 모든 코드(HTML, CSS, JS)는 클라이언트에서 실행됩니다. 클라이언트 코드는 사용자가 F12를 눌러 볼 수 있으므로 비밀 정보(API 키, 비밀번호)를 절대 클라이언트 코드에 넣으면 안 됩니다.</div>
-                <div class="stack-concept-code">브라우저     -- 가장 흔한 클라이언트
-모바일 앱   -- iOS/Android 앱도 클라이언트
-데스크톱 앱 -- 일렉트론 앱 (VS Code, Discord)
-CLI 도구    -- curl, fetch 명령으로 API 호출
-다른 서버   -- 서버-서버 간 API 호출 (마이크로서비스)
-
-// 브라우저 점유율 (2025년)
-Chrome:  65%  -- 개발 표준 기준
-Safari:  19%  -- iOS/macOS 기본, 별도 테스트 필요
-Edge:     4%  -- 기업 환경에서 많이 씀
-Firefox:  3%  -- 개발자 사용 많음</div>
-                <div class="stack-concept-note"><b>실무 포인트</b> -- Chrome DevTools에서 Network 탭을 열면 클라이언트가 어떤 요청을 보내는지 실시간으로 볼 수 있습니다. API 연동 문제가 생기면 여기서 원인의 80%를 찾을 수 있습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">서버 (Server)</div>
-                <div class="stack-concept-tags"><span class="sct">응답</span><span class="sct">24/7</span><span class="sct">데이터</span></div>
-                <div class="stack-concept-desc">요청을 받아 응답을 돌려주는 컴퓨터. 항상 켜져 있으며, 클라이언트가 요청한 HTML, 이미지, 데이터 등을 보내줍니다. "서버"는 소프트웨어(프로그램)를 가리킬 수도 있고, 하드웨어(컴퓨터 자체)를 가리킬 수도 있습니다. 서버가 하는 일은 다양합니다. 웹 서버는 HTML 파일을 전달하고, API 서버는 JSON 데이터를 전달하고, 데이터베이스 서버는 데이터를 저장하고 조회합니다. 실제 서비스는 이런 서버들이 여러 개 조합되어 작동합니다. 개발 중에는 내 컴퓨터에서 서버를 실행하고(localhost), 배포 후에는 클라우드 서버가 이 역할을 24시간 365일 대신합니다. 서버가 다운되면 서비스 전체가 멈추므로, 고가용성(HA)과 장애 대응이 중요합니다.</div>
-                <div class="stack-concept-code">웹 서버:  HTML, CSS, JS, 이미지 파일 전달
-         (Nginx, Apache)
-API 서버: JSON 데이터 전달 (REST API)
-          (Node.js/Express, Python/FastAPI)
-DB 서버:  데이터 저장 및 조회
-          (MySQL, PostgreSQL, MongoDB)
-
-개발 환경 (내 컴퓨터):
-  localhost:3000  -- Vite React 개발 서버
-  localhost:8080  -- 백엔드 API 서버
-
-배포 환경 (클라우드):
-  https://myapp.vercel.app  -- 전 세계 접속 가능
-  서버 사양: CPU, RAM, 스토리지에 따라 비용 결정</div>
-                <div class="stack-concept-tip"><b>핵심</b> -- 서버리스(Serverless) 아키텍처를 쓰면 서버를 직접 관리하지 않아도 됩니다. Vercel Functions, Supabase 등이 이 방식입니다. 프론트엔드 개발자도 간단한 백엔드 기능을 구현할 수 있게 됩니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">요청 &amp; 응답 흐름</div>
-                <div class="stack-concept-tags"><span class="sct">HTTP</span><span class="sct">DNS</span><span class="sct">흐름</span></div>
-                <div class="stack-concept-code">상세 흐름:
-1. 주소창에 URL 입력: naver.com
-2. 브라우저 캐시 확인 (DNS 캐시가 있으면 바로 사용)
-3. DNS 서버에 naver.com의 IP 주소 질의
-4. DNS 서버 응답: 223.130.200.104
-5. 해당 IP의 443번 포트로 HTTPS 연결 요청
-6. SSL/TLS 핸드셰이크 (암호화 채널 수립)
-7. HTTP GET 요청 전송 (헤더 포함)
-8. 서버가 HTML 파일로 응답 (200 OK)
-9. 브라우저가 HTML 파싱 시작
-10. HTML 안의 CSS, JS, 이미지 추가 요청
-11. 모든 리소스 로딩 완료 -> 화면 완성
-
-실제 소요 시간:
-DNS 조회:      1~50ms
-TCP 연결:      20~100ms
-서버 응답:     10ms~수초 (서버 성능에 따라)
-전체 로딩:     0.5~3초 (최적화 여부에 따라)</div>
-                <div class="stack-concept-desc">웹 페이지 하나를 여는 데도 이 10단계 이상이 실행됩니다. 로그인, 댓글 작성, 데이터 저장도 같은 기본 구조를 따릅니다. 이 흐름을 이해하면 "페이지가 느린 이유", "API 오류의 원인", "CORS 에러가 발생하는 위치"를 빠르게 파악할 수 있습니다. Chrome DevTools의 Network 탭에서 각 단계의 소요 시간을 시각적으로 확인할 수 있습니다. 실무에서 "서버 응답 시간이 길다"와 "네트워크 지연이 크다"는 해결 방법이 다르므로 구분할 줄 알아야 합니다. 프론트엔드 개발자는 서버 응답 시간 외의 나머지 단계(렌더링 최적화, 캐시 활용, 이미지 최적화)를 책임집니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">정적 vs 동적 사이트</div>
-                <div class="stack-concept-tags"><span class="sct">Static</span><span class="sct">Dynamic</span><span class="sct">SPA</span></div>
-                <div class="stack-concept-code">정적(Static) 사이트:
-  서버 -> 미리 만들어진 HTML 파일 그대로 전달
-  장점: 빠름, 보안 강함, CDN 캐싱 쉬움
-  단점: 내용이 자주 바뀌면 관리 어려움
-  예: 포트폴리오, 랜딩페이지, 문서 사이트
-  배포: GitHub Pages, Vercel, Netlify (무료)
-
-동적(Dynamic) 사이트:
-  서버 -> 사용자/시간/상태에 따라 HTML 즉석 생성
-  장점: 사용자별 맞춤 내용, 실시간 데이터
-  단점: 서버 비용, 속도가 상대적으로 느림
-  예: SNS, 쇼핑몰, 은행, 이메일
-  배포: AWS, GCP, Azure (유료)
-
-SPA (Single Page Application):
-  React/Vue로 만든 앱. 처음에 빈 HTML 한 장 받음
-  JS가 실행되면서 동적으로 화면을 채움
-  URL이 바뀌어도 서버 요청 없이 화면만 교체
-  예: Gmail, Notion, Figma
-
-SSR (Server-Side Rendering):
-  Next.js가 대표적. 정적+동적의 장점을 합침
-  SEO + 빠른 초기 로딩 + 동적 내용 모두 가능</div>
-                <div class="stack-concept-desc">이 수업에서는 정적 사이트(1~2개월차)에서 시작해 SPA React 앱(3개월차)으로 나아갑니다. 포트폴리오 사이트는 정적으로 만들어 Vercel에 무료 배포합니다. 동적 사이트는 사용자 로그인 정보, 상품 재고, 게시판 댓글처럼 실시간으로 바뀌는 데이터가 필요할 때 씁니다. React 앱은 기술적으로는 정적 파일이지만 동작은 동적입니다. 검색 엔진 최적화(SEO)가 중요한 서비스는 SSR(Next.js)을 함께 씁니다. 취업 포트폴리오 수준에서는 SPA로 충분합니다.</div>
-                <div class="stack-concept-tip"><b>핵심</b> -- 이 수업의 포트폴리오 사이트는 정적 방식으로 Vercel에 무료 배포합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">포트 (Port)</div>
-                <div class="stack-concept-tags"><span class="sct">localhost</span><span class="sct">포트</span><span class="sct">개발환경</span></div>
-                <div class="stack-concept-code">포트 번호 = 같은 IP에서 서비스를 구분하는 번호
-
-자주 쓰는 포트:
-  :80   -- HTTP 기본 포트 (http://naver.com -> :80)
-  :443  -- HTTPS 기본 포트 (자물쇠 아이콘)
-  :22   -- SSH (서버 원격 접속)
-  :3306 -- MySQL 데이터베이스
-  :5432 -- PostgreSQL 데이터베이스
-  :6379 -- Redis 캐시 서버
-
-개발 환경 예시:
-  프론트엔드: localhost:5173  (Vite)
-  백엔드 API: localhost:8080  (Node/Express)
-  데이터베이스: localhost:3306 (MySQL)
-  -> 세 개를 동시에 실행해 서로 통신
-
-포트 충돌:
-  "Port 3000 is already in use" 에러가 뜨면
-  다른 프로세스가 그 포트를 점유 중.
-  lsof -i :3000 명령으로 확인 후 종료.</div>
-                <div class="stack-concept-desc">같은 IP 주소(컴퓨터)에서 여러 서비스를 동시에 실행할 때 포트 번호로 구분합니다. 백엔드 서버와 프론트엔드 개발 서버를 동시에 실행할 때 포트가 다르므로 충돌하지 않습니다. CORS 에러가 발생하는 이유도 여기 있습니다. 같은 컴퓨터라도 포트가 다르면 "다른 출처(origin)"로 취급하기 때문입니다. http://localhost:3000에서 http://localhost:8080의 API를 호출하면 CORS가 발생합니다. 이것은 정상적인 보안 동작이며, 개발 환경에서는 프록시 설정으로 해결합니다. 배포 환경에서는 동일한 도메인을 쓰거나 CORS 헤더를 설정합니다.</div>
-                <div class="stack-concept-note"><b>실무 포인트</b> -- 개발할 때 "포트가 이미 사용 중"이라는 에러가 자주 납니다. 그냥 터미널을 껐다 켜거나, VS Code를 재시작하면 대부분 해결됩니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">클라우드 서버</div>
-                <div class="stack-concept-tags"><span class="sct">AWS</span><span class="sct">Vercel</span><span class="sct">클라우드</span></div>
-                <div class="stack-concept-code">주요 클라우드 서비스:
-AWS (Amazon Web Services):
-  전 세계 점유율 1위 (약 33%)
-  EC2(서버), S3(파일저장), RDS(DB) 등
-  국내 대기업 및 스타트업 대부분 사용
-
-GCP (Google Cloud):
-  Google의 인프라 활용 (BigQuery, AI/ML 강점)
-
-Azure (Microsoft):
-  기업 및 B2B 환경에서 강세
-
-프론트엔드 배포 특화:
-  Vercel   -- Next.js 만든 회사. 무료 플랜 관대
-  Netlify  -- 드래그 앤 드롭 배포, 폼 기능 내장
-  Cloudflare Pages -- CDN 최강, 무료
-
-서버 비용 대략:
-  작은 서버 (EC2 t3.micro): 월 약 10~15달러
-  Vercel 무료 플랜: 개인 프로젝트 충분히 커버
-  Supabase 무료 플랜: DB + 인증 + API 무료</div>
-                <div class="stack-concept-desc">클라우드는 서버 컴퓨터를 직접 구매하고 관리하는 대신 대여해서 쓰는 방식입니다. 사용한 만큼만 비용을 내는 종량제 모델이 대부분입니다. 현업에서 거의 모든 서비스가 클라우드를 씁니다. 프론트엔드 개발자는 Vercel이나 Netlify를 가장 많이 사용하고, 복잡한 서버 설정 없이 GitHub 연동만으로 배포할 수 있습니다. AWS는 EC2, S3, Lambda 등 다양한 서비스를 조합해 사용하며, 취업 후 자연스럽게 접하게 됩니다. Vercel의 무료 플랜으로 이 수업의 포트폴리오를 모두 배포할 수 있습니다. 클라우드 비용은 트래픽이 폭발적으로 늘거나 서비스를 잘못 설정하면 갑자기 커질 수 있으므로, 처음에는 무료 플랜 안에서 시작하는 것이 좋습니다.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- HTTP & URL -->
-          <div class="stack-concept-group" data-group="http">
-            <div class="stack-concept-group-header">
-              <div class="stack-cg-num">02</div>
-              <div class="stack-cg-info">
-                <div class="stack-cg-title">HTTP &amp; URL</div>
-                <div class="stack-cg-sub">브라우저와 서버가 대화하는 언어</div>
-              </div>
-            </div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">HTTP / HTTPS</div>
-                <div class="stack-concept-tags"><span class="sct">보안</span><span class="sct">암호화</span><span class="sct">SSL</span></div>
-                <div class="stack-concept-code">프로토콜 비교:
-http://   -- 평문 전송 (도청 가능)
-           중간에서 패킷 캡처하면 내용 그대로 보임
-https://  -- TLS(SSL) 암호화 전송
-           키 없이는 내용 해독 불가
-
-TLS 핸드셰이크 과정:
-1. 클라이언트 -> 서버: "TLS 연결 원함"
-2. 서버 -> 클라이언트: 인증서(공개키 포함) 전달
-3. 클라이언트: 인증서 유효성 검증 (CA 확인)
-4. 대칭 세션 키 교환 (암호화된 채널 수립)
-5. 이후 모든 데이터는 세션 키로 암호화
-
-SSL 인증서 종류:
-  DV (Domain Validation): 도메인 소유만 확인
-    -> Let's Encrypt 무료 발급
-  OV (Organization): 조직 확인 (기업)
-  EV (Extended): 최고 수준 (은행, 금융)
-
-브라우저 표시:
-  자물쇠 아이콘 = HTTPS 적용 중
-  "안전하지 않음" = HTTP만 사용 중</div>
-                <div class="stack-concept-desc">HTTP는 HyperText Transfer Protocol의 약자로, 웹의 데이터 전송 규칙입니다. 1991년에 만들어진 HTTP/1.0부터 현재의 HTTP/3까지 진화해왔습니다. HTTPS는 HTTP에 TLS(Transport Layer Security) 암호화를 추가한 버전입니다. 로그인 폼, 결제 정보, 개인정보가 있는 모든 페이지는 반드시 HTTPS여야 합니다. HTTP만 쓰는 사이트는 Chrome에서 "안전하지 않음"으로 표시되고, 방문자가 이탈할 가능성이 높습니다. Let's Encrypt를 통해 무료로 SSL 인증서를 발급받을 수 있습니다. Vercel과 Netlify는 배포 시 자동으로 HTTPS를 적용해 줍니다. Google 검색 순위에도 HTTPS 여부가 영향을 줍니다. HTTP/2는 한 연결에서 여러 요청을 동시에 처리해 속도를 높이고, HTTP/3는 UDP 기반으로 더욱 빠릅니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">URL 구조</div>
-                <div class="stack-concept-tags"><span class="sct">도메인</span><span class="sct">쿼리</span><span class="sct">경로</span></div>
-                <div class="stack-concept-code">URL 전체 구조:
-https://api.mysite.com:443/users/123/posts?page=2&amp;sort=latest#comments
-  |       |              |   |       |       |                |
-  |       |              |   |       |       쿼리스트링       앵커(해시)
-  |       |              |   |       리소스 경로
-  |       |              |   동적 ID (사용자 123번)
-  |       |              포트 (443은 생략 가능)
-  |       서브도메인.도메인.TLD
-  프로토콜
-
-쿼리스트링 활용 예:
-  ?page=2&amp;sort=latest       -- 페이지네이션, 정렬
-  ?category=react&amp;lang=ko   -- 필터링
-  ?ref=instagram            -- 유입 경로 추적 (UTM)
-  ?q=검색어                 -- 검색
-
-React Router에서의 URL:
-  /          -- 홈 (index route)
-  /about     -- 소개 페이지
-  /posts     -- 글 목록
-  /posts/42  -- 42번 글 상세 (dynamic route)
-  /posts?tag=react -- 태그 필터 (query string)</div>
-                <div class="stack-concept-desc">URL의 각 부분을 이해하는 것은 API 연동, 라우팅 설계, 링크 공유 기능 구현에 필수입니다. 쿼리 파라미터는 상태를 URL에 저장해 링크로 공유 가능하게 만드는 데 씁니다. 예를 들어 필터된 검색 결과, 페이지 번호, 정렬 방식을 URL에 담으면 사용자가 링크를 복사해 공유할 수 있습니다. 앵커(#)는 긴 페이지에서 특정 섹션으로 바로 이동할 때 씁니다. React Router에서는 URL 경로에 따라 어떤 컴포넌트를 렌더링할지 결정합니다. RESTful API 설계에서 URL은 자원을 표현하고, HTTP 메서드는 행동을 표현합니다. URL에 한글이나 특수문자가 들어가면 인코딩(URL Encoding, %EC%9B%B9)이 필요합니다. JavaScript에서 encodeURIComponent()로 처리할 수 있습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">DNS (Domain Name System)</div>
-                <div class="stack-concept-tags"><span class="sct">도메인</span><span class="sct">IP</span><span class="sct">DNS</span></div>
-                <div class="stack-concept-code">DNS 조회 흐름 (상세):
-1. 브라우저 캐시 확인 (빠름)
-2. OS 캐시 확인 (/etc/hosts 파일)
-3. 로컬 DNS 서버(공유기/ISP) 질의
-4. 루트 네임서버 질의
-5. TLD 서버(.com, .kr) 질의
-6. 권한 네임서버(도메인 등록 업체) 응답
-   naver.com -> 223.130.200.104
-
-DNS 레코드 종류:
-  A 레코드:    도메인 -> IPv4 주소
-               mysite.com -> 1.2.3.4
-  CNAME:      도메인 -> 다른 도메인 별칭
-               www.mysite.com -> mysite.vercel.app
-  MX 레코드:  이메일 서버 지정
-  TXT 레코드: 도메인 소유 확인, SPF 설정
-
-TTL (Time To Live):
-  DNS 응답을 캐시하는 시간
-  낮으면: 변경 즉시 반영, DNS 서버 부하
-  높으면: 빠른 조회, 변경에 시간 걸림
-  일반적으로 3600초(1시간) ~ 86400초(1일)</div>
-                <div class="stack-concept-desc">DNS는 인터넷의 전화번호부 역할을 합니다. 전 세계에 수천 개의 DNS 서버가 분산되어 있으며, 계층 구조로 운영됩니다. 도메인을 구매하면 해당 도메인의 DNS 레코드를 관리할 수 있습니다. Vercel이나 Netlify에 커스텀 도메인을 연결할 때 CNAME 레코드를 추가하는 작업을 합니다. 이것이 "도메인을 배포 서버에 연결"하는 것의 실제 과정입니다. DNS 변경은 TTL 시간만큼 전파되는 데 시간이 걸립니다. 최대 48시간까지 걸릴 수 있지만, 보통 1~4시간 내에 적용됩니다. DNS 조회 결과는 캐시되므로, 변경 직후에는 사용자마다 다른 결과를 볼 수 있습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">HTTP 메서드</div>
-                <div class="stack-concept-tags"><span class="sct">GET</span><span class="sct">POST</span><span class="sct">REST</span></div>
-                <div class="stack-concept-code">메서드별 특징:
-GET:
-  - URL에 데이터 포함 (?name=value)
-  - 캐싱 가능 (브라우저가 결과를 저장)
-  - 북마크 가능
-  - 길이 제한 있음 (약 2000자)
-  - 사용: 페이지 로딩, 검색, 데이터 조회
-
-POST:
-  - 데이터를 요청 본문(body)에 담음
-  - 캐싱 안 됨
-  - 길이 제한 없음 (파일 업로드 가능)
-  - 사용: 로그인, 회원가입, 파일 업로드
-
-PUT vs PATCH:
-  PUT  -> 전체 교체 (빠진 필드는 null)
-  PATCH -> 일부만 수정 (보낸 필드만 변경)
-
-  예: 사용자 프로필 수정 시
-  PUT:   { name, email, phone, address } 전부 필요
-  PATCH: { name: "새이름" } 이름만 보내면 됨
-
-DELETE:
-  - body 없이 URL만으로 삭제 대상 지정
-  - 멱등성: 여러 번 호출해도 결과 동일</div>
-                <div class="stack-concept-desc">HTTP 메서드는 서버에게 "무엇을 하고 싶은지"를 전달하는 동사 역할입니다. REST API 설계에서 URL은 자원(명사)을 나타내고, 메서드는 행동(동사)을 나타냅니다. 브라우저 주소창으로는 GET 요청만 가능합니다. fetch()나 axios로 POST, PUT, DELETE 등을 보낼 수 있습니다. 안전한(safe) 메서드는 서버 상태를 변경하지 않습니다(GET, HEAD). 멱등(idempotent) 메서드는 같은 요청을 여러 번 보내도 결과가 같습니다(GET, PUT, DELETE). POST는 멱등하지 않으므로, 더블 클릭 방지 처리가 필요합니다. API 문서를 읽을 때 메서드와 URL을 함께 보는 것이 핵심입니다.</div>
-                <div class="stack-concept-note"><b>실무 포인트</b> -- Chrome DevTools Network 탭에서 각 요청의 Method 컬럼을 확인하세요. API 문제가 생기면 메서드가 맞는지 먼저 확인하는 것이 디버깅의 첫 단계입니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">HTTP 헤더 (Header)</div>
-                <div class="stack-concept-tags"><span class="sct">헤더</span><span class="sct">인증</span><span class="sct">메타정보</span></div>
-                <div class="stack-concept-code">자주 쓰는 요청 헤더:
-  Content-Type: application/json
-    -> 요청 body가 JSON 형식임을 명시
-  Content-Type: multipart/form-data
-    -> 파일 업로드 시 사용
-  Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...
-    -> JWT 인증 토큰 전달
-  Accept: application/json
-    -> JSON 응답을 원함
-  Accept-Language: ko-KR,ko;q=0.9
-    -> 한국어 페이지 요청
-
-자주 쓰는 응답 헤더:
-  Content-Type: application/json; charset=utf-8
-    -> 응답이 JSON임을 알림
-  Cache-Control: max-age=3600, public
-    -> 1시간 동안 CDN과 브라우저에서 캐시 가능
-  Cache-Control: no-cache, no-store
-    -> 캐시 금지 (민감한 데이터)
-  Set-Cookie: sessionId=abc; HttpOnly; Secure; SameSite=Strict
-    -> 쿠키 설정
-  Access-Control-Allow-Origin: https://mysite.com
-    -> CORS 허용 출처
-
-// JS에서 헤더 설정:
-fetch('/api/users', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${token}`
-  },
-  body: JSON.stringify({ name: '홍길동' })
-});</div>
-                <div class="stack-concept-desc">HTTP 헤더는 요청과 응답에 대한 부가 정보를 담는 메타데이터입니다. 본문(body)에는 실제 데이터를 담고, 헤더에는 그 데이터를 어떻게 처리해야 하는지 설명하는 정보를 담습니다. 인증이 필요한 API는 Authorization 헤더에 토큰을 담아 보냅니다. Content-Type을 잘못 설정하면 서버가 body를 파싱하지 못해 에러가 납니다. 캐시 관련 헤더를 적절히 설정하면 성능을 크게 개선할 수 있습니다. Set-Cookie 헤더로 서버가 브라우저에 쿠키를 심습니다. CORS 에러의 실제 해결책도 Access-Control-Allow-Origin 헤더를 서버에서 추가하는 것입니다. DevTools Network 탭에서 각 요청의 Headers 탭을 클릭하면 요청/응답 헤더를 모두 볼 수 있습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">HTTP 상태 코드</div>
-                <div class="stack-concept-tags"><span class="sct">200</span><span class="sct">404</span><span class="sct">500</span></div>
-                <div class="stack-concept-code">상태 코드 전체 분류:
-1xx 정보성 (거의 사용 안 함)
-  100 Continue -- 요청 계속 보내도 됨
-
-2xx 성공
-  200 OK           -- 일반적인 성공
-  201 Created      -- 리소스 생성 성공 (POST)
-  204 No Content   -- 성공했지만 반환 데이터 없음 (DELETE)
-
-3xx 리다이렉트
-  301 Moved Permanently -- 영구 이동 (SEO에 중요)
-  302 Found            -- 임시 이동
-  304 Not Modified     -- 캐시 사용 (If-Modified-Since)
-
-4xx 클라이언트 오류 (내 잘못)
-  400 Bad Request  -- 요청 형식이 잘못됨
-  401 Unauthorized -- 인증 필요 (로그인 안 함)
-  403 Forbidden    -- 권한 없음 (로그인해도 접근 불가)
-  404 Not Found    -- 없는 URL
-  405 Method Not Allowed -- 잘못된 HTTP 메서드
-  409 Conflict     -- 이미 존재하는 데이터 (중복 이메일)
-  422 Unprocessable -- 유효성 검사 실패
-  429 Too Many Requests -- API 요청 한도 초과
-
-5xx 서버 오류 (서버 잘못)
-  500 Internal Server Error -- 서버 내부 오류
-  502 Bad Gateway  -- 게이트웨이 오류
-  503 Service Unavailable -- 서버 과부하/점검
-  504 Gateway Timeout -- 응답 시간 초과</div>
-                <div class="stack-concept-desc">상태 코드는 요청이 어떻게 처리됐는지 알려주는 숫자 코드입니다. 프론트엔드 개발자는 2xx(성공)와 4xx(실패) 코드를 기준으로 UI를 처리합니다. 401은 토큰 만료나 로그인이 필요한 경우로, 로그인 페이지로 리다이렉트하거나 토큰 갱신 로직을 실행합니다. 403은 로그인했어도 해당 리소스에 접근 권한이 없는 경우입니다. 404는 URL 오타나 삭제된 리소스입니다. 5xx 에러는 서버 문제이므로 프론트에서 할 수 있는 것은 에러 메시지를 사용자에게 친절하게 보여주는 것뿐입니다. 429는 API를 너무 빠르게 많이 호출할 때 발생하는 Rate Limiting입니다. 상태 코드를 기반으로 에러 메시지를 분기 처리하는 것이 좋은 UX의 핵심입니다.</div>
-                <div class="stack-concept-note"><b>실무 포인트</b> -- API 에러 발생 시 상태 코드를 먼저 확인합니다. 401이면 로그인 만료, 404면 URL 오타, 500이면 백엔드 개발자에게 전달합니다.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 브라우저 & 렌더링 -->
-          <div class="stack-concept-group" data-group="browser">
-            <div class="stack-concept-group-header">
-              <div class="stack-cg-num">03</div>
-              <div class="stack-cg-info">
-                <div class="stack-cg-title">브라우저 &amp; 렌더링</div>
-                <div class="stack-cg-sub">코드가 어떻게 화면이 되는가</div>
-              </div>
-            </div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">브라우저의 역할</div>
-                <div class="stack-concept-tags"><span class="sct">Chrome</span><span class="sct">Safari</span><span class="sct">엔진</span></div>
-                <div class="stack-concept-code">브라우저 구성 요소:
-  렌더링 엔진: HTML/CSS 해석 -> 화면 그리기
-  JS 엔진:    JavaScript 실행
-              (Chrome: V8, Safari: JavaScriptCore)
-  네트워킹:   HTTP/HTTPS 요청 처리
-  스토리지:   쿠키, localStorage, IndexedDB
-  DevTools:   개발자 도구
-
-브라우저별 렌더링 엔진:
-  Chrome/Edge -- Blink (WebKit에서 분기)
-  Safari      -- WebKit (iOS는 다른 앱도 WebKit 강제)
-  Firefox     -- Gecko
-
-브라우저 점유율 (2025):
-  Chrome:  65%
-  Safari:  19%  -- 한국 모바일: iOS 비율 높음
-  Edge:     4%
-  Firefox:  3%
-
-브라우저 호환성 확인:
-  caniuse.com -- CSS/JS 기능별 지원 현황</div>
-                <div class="stack-concept-desc">브라우저는 HTML, CSS, JS 파일을 사람이 볼 수 있는 화면으로 변환하는 복잡한 프로그램입니다. 렌더링 엔진이 HTML을 해석해 DOM 트리를 만들고, CSS를 해석해 CSSOM 트리를 만든 뒤, 두 트리를 합쳐 화면을 그립니다. JavaScript 엔진이 코드를 실행하고 DOM을 조작합니다. 각 브라우저마다 엔진이 달라 같은 코드가 다르게 동작할 수 있습니다. 특히 Safari(WebKit)는 iOS에서 Chrome, Firefox 등 다른 앱도 강제로 WebKit을 사용하게 되어 있습니다. 즉, iOS에서는 어떤 브라우저를 설치해도 내부 엔진은 Safari와 동일합니다. 이로 인해 "Chrome에서는 되는데 아이폰에서는 안 된다"는 문제가 생깁니다. 개발 시 Chrome을 기준으로 개발하되, 배포 전 Safari와 모바일에서 반드시 테스트해야 합니다. 브라우저의 최신 기능은 caniuse.com에서 지원 현황을 확인하고 사용해야 합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">렌더링 순서</div>
-                <div class="stack-concept-tags"><span class="sct">DOM</span><span class="sct">CSSOM</span><span class="sct">Paint</span></div>
-                <div class="stack-concept-code">Critical Rendering Path (상세):
-
-1. HTML 파싱 -> DOM 트리 생성
-   &lt;html&gt; &lt;head&gt; &lt;body&gt; 순서로 읽어 내려감
-   script 태그 만나면 파싱 중단 -> JS 실행 후 재개
-
-2. CSS 파싱 -> CSSOM 트리 생성
-   link 태그의 외부 CSS 파일 다운로드
-   CSS는 파싱을 막지 않지만 렌더링을 막음
-   (CSSOM 없이는 렌더 트리를 못 만들기 때문)
-
-3. DOM + CSSOM -> 렌더 트리 생성
-   display:none 요소는 렌더 트리에서 제외
-
-4. Layout (Reflow)
-   각 요소의 크기와 위치 계산
-   부모가 바뀌면 자식도 재계산 -> 비용 큼
-
-5. Paint (Rasterize)
-   픽셀로 그리기 (색상, 배경, 이미지)
-   transform, opacity는 GPU 가속 가능
-
-6. Composite
-   레이어를 합쳐 최종 화면 출력
-
-JS 로딩 최적화:
-  // 나쁜 방법 (파싱 차단)
-  &lt;script src="app.js"&gt;&lt;/script&gt;
-
-  // 좋은 방법
-  &lt;script src="app.js" defer&gt;&lt;/script&gt;   // HTML 파싱 후 실행
-  &lt;script src="app.js" async&gt;&lt;/script&gt;   // 다운로드 완료 즉시 실행</div>
-                <div class="stack-concept-desc">렌더링 순서를 이해하면 "왜 JS를 body 맨 끝에 두는가", "왜 CSS를 head에서 로딩하는가", "왜 레이아웃을 자주 바꾸면 느려지는가"의 답을 알 수 있습니다. DOM 조작이 잦으면 Reflow(레이아웃 재계산)가 반복되어 성능이 떨어집니다. React의 Virtual DOM이 이 문제를 해결하기 위해 등장했습니다. CSS에서 transform과 opacity를 이용한 애니메이션이 권장되는 이유는 Layout, Paint 단계를 건너뛰고 GPU에서 처리되기 때문입니다. defer 속성은 HTML 파싱을 막지 않고 백그라운드에서 JS를 로드하다 파싱 완료 후 실행합니다. async는 다운로드 완료 즉시 실행되므로 실행 순서가 보장되지 않습니다. 모듈 기반 JS에서는 type="module"을 쓰면 자동으로 defer처럼 동작합니다. Chrome DevTools Performance 탭에서 각 단계의 소요 시간을 분석할 수 있습니다.</div>
-                <div class="stack-concept-tip"><b>핵심</b> -- script 태그에 defer를 붙이면 HTML 파싱을 막지 않습니다. 항상 defer를 기본으로 쓰세요.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">뷰포트 (Viewport)</div>
-                <div class="stack-concept-tags"><span class="sct">반응형</span><span class="sct">모바일</span><span class="sct">meta</span></div>
-                <div class="stack-concept-code">뷰포트 메타 태그:
-&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  width=device-width: 뷰포트 너비 = 기기 화면 너비
-  initial-scale=1.0:  초기 줌 배율 1배 (원본 크기)
-
-반응형 CSS와의 연결:
-  /* 뷰포트 너비를 기준으로 스타일 분기 */
-  @media (max-width: 768px) {  /* 768px 이하 */
-    .container { padding: 16px; }
-    .grid { grid-template-columns: 1fr; }
-  }
-
-  @media (min-width: 1024px) { /* 1024px 이상 */
-    .container { max-width: 1200px; margin: 0 auto; }
-  }
-
-CSS 단위와 뷰포트:
-  vw  -- viewport width의 %  (100vw = 화면 전체 너비)
-  vh  -- viewport height의 % (100vh = 화면 전체 높이)
-  vmin, vmax -- 더 작은/큰 쪽 기준
-
-주의사항:
-  100vh on iOS:
-  iOS Safari는 주소창 높이가 포함되어
-  실제 100vh가 화면보다 크게 나오는 문제
-  해결: min-height: -webkit-fill-available;</div>
-                <div class="stack-concept-desc">뷰포트는 브라우저가 콘텐츠를 표시하는 실제 화면 영역입니다. viewport meta 태그가 없으면 모바일 브라우저는 데스크톱 너비(980px)로 가정해 전체 페이지를 축소해서 보여줍니다. 그러면 글자가 아주 작게 보이고 확대해야 내용을 읽을 수 있게 됩니다. width=device-width를 설정하면 모바일 화면 너비를 뷰포트로 사용합니다. 반응형 웹에서 미디어 쿼리가 뷰포트 너비를 기준으로 작동합니다. vw, vh 단위는 뷰포트 크기에 비례하는 값으로, 화면 꽉 채우기, 글자 크기 조정 등에 활용됩니다. 모바일에서 가로 스크롤이 생기는 문제의 주요 원인은 overflow:hidden이 빠진 요소나 고정 width를 px로 지정한 경우입니다. iOS Safari는 100vh가 주소창 높이를 포함하는 버그가 있어, 전체 화면 섹션을 만들 때 주의가 필요합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">캐시 (Cache)</div>
-                <div class="stack-concept-tags"><span class="sct">캐시</span><span class="sct">성능</span><span class="sct">새로고침</span></div>
-                <div class="stack-concept-code">브라우저 캐시 유형:
-  메모리 캐시: RAM에 저장 (탭 닫으면 사라짐, 매우 빠름)
-  디스크 캐시: 하드디스크에 저장 (지속적, 빠름)
-  Service Worker 캐시: 오프라인에서도 동작 가능
-
-캐시 제어 (HTTP 헤더):
-  Cache-Control: max-age=31536000  -- 1년 캐시
-    (이미지, 폰트, CSS - 해시값으로 파일명 관리)
-  Cache-Control: no-cache
-    -- 캐시하되 매번 서버에 유효성 확인
-  Cache-Control: no-store
-    -- 캐시 완전 금지 (개인정보 페이지)
-
-번들러의 캐시 전략:
-  // Vite/Webpack이 생성하는 파일명
-  app-Dj3k9mN2.js  // 해시값이 파일명에 포함
-  style-BNmx4kL1.css
-
-  // 파일 내용이 변경되면 해시값이 바뀜
-  // -> 브라우저가 새 파일로 인식해 다시 받음
-  // -> 캐시 문제 자동 해결
-
-개발 중 캐시 해제:
-  Ctrl+Shift+R (또는 Cmd+Shift+R) -- 강력 새로고침
-  DevTools > Network > Disable cache (DevTools 열린 동안)
-  DevTools > Application > Storage > Clear site data</div>
-                <div class="stack-concept-desc">캐시는 한 번 받은 파일을 저장해서 다음에 다시 받지 않아도 되도록 하는 메커니즘입니다. 이미지, CSS, JS, 폰트 파일은 보통 오래 캐시됩니다. 캐시 덕분에 재방문 시 로딩이 훨씬 빠릅니다. 개발 중 "수정한 CSS가 반영이 안 된다"면 99% 캐시 문제입니다. Ctrl+Shift+R(강력 새로고침)이나 DevTools의 Disable cache로 해결할 수 있습니다. 배포 환경에서 사용자가 캐시된 구버전을 보는 문제를 방지하기 위해, Vite/Webpack은 빌드 시 파일명에 해시값을 붙입니다. 파일 내용이 바뀌면 해시값이 바뀌므로 브라우저가 새 파일로 인식합니다. 이로써 "캐시는 길게, 내용 변경 시 즉시 갱신"이 동시에 가능합니다. HTTP Cache-Control 헤더로 캐시 기간을 세밀하게 제어할 수 있습니다. CDN과 캐시 전략을 잘 조합하면 서버 비용을 크게 줄이고 속도도 높일 수 있습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">크로스 브라우저</div>
-                <div class="stack-concept-tags"><span class="sct">호환성</span><span class="sct">webkit</span><span class="sct">caniuse</span></div>
-                <div class="stack-concept-code">대표적인 크로스 브라우저 이슈:
-
-CSS gap (Flexbox):
-  구형 iOS Safari: flex gap 미지원
-  해결: margin으로 대체하거나 postcss-gap-properties
-
-CSS :has() 선택자:
-  Firefox 119 이전: 미지원
-  -> caniuse.com에서 확인 후 사용
-
-스크롤 동작:
-  scroll-behavior: smooth -- IE 미지원
-  iOS Safari: 관성 스크롤 (-webkit-overflow-scrolling)
-
-날짜 형식:
-  new Date('2024-01-15') -- Chrome: 정상
-                          -- Safari: Invalid Date!
-  해결: new Date('2024/01/15') 또는 dayjs 라이브러리
-
-input type="date":
-  IE, 구형 Safari: 텍스트로 폴백
-
-vh 단위:
-  iOS Safari: 주소창 포함해 100vh가 넘어감
-  해결: dvh(dynamic viewport height) 사용
-
-벤더 프리픽스:
-  -webkit-: Chrome, Safari
-  -moz-:    Firefox (구버전)
-  -ms-:     IE
-  PostCSS Autoprefixer가 자동으로 추가해줌</div>
-                <div class="stack-concept-desc">같은 HTML/CSS/JS 코드라도 브라우저에 따라 다르게 렌더링될 수 있습니다. 이를 크로스 브라우저 호환성 이슈라고 합니다. 가장 큰 주범은 Safari입니다. iOS에서는 모든 앱이 WebKit(Safari 엔진)을 사용하므로, "iOS에서 안 된다"는 문제는 Safari 이슈입니다. caniuse.com에서 사용하려는 CSS/JS 기능이 대상 브라우저에서 지원되는지 미리 확인하는 습관이 중요합니다. Autoprefixer(PostCSS 플러그인)을 사용하면 벤더 프리픽스를 자동으로 추가해 주어 대부분의 CSS 호환성 문제를 해결할 수 있습니다. 프로젝트에서 지원해야 하는 브라우저 목록을 .browserslistrc 파일로 명시하면 번들러가 자동으로 트랜스파일 범위를 결정합니다. 실무에서는 "어떤 브라우저를 지원할 것인가"를 기획 단계에서 명확히 결정합니다. 일반적으로 Chrome, Safari 최신 2버전, Firefox 최신 버전을 기준으로 합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">개발자 도구 (DevTools)</div>
-                <div class="stack-concept-tags"><span class="sct">DevTools</span><span class="sct">디버깅</span><span class="sct">Network</span></div>
-                <div class="stack-concept-code">단축키: F12 또는 Ctrl+Shift+I (Mac: Cmd+Option+I)
-
-필수 탭 활용법:
-
-Elements 탭:
-  클릭 -> HTML 요소 선택 후 확인
-  CSS 패널에서 스타일 실시간 수정
-  computed: 최종 적용된 스타일 확인
-  box model: margin/padding/border 시각화
-
-Console 탭:
-  console.log('값:', value)  // 디버깅
-  console.error('에러!')     // 에러 강조
-  console.table(array)       // 배열/객체를 표로
-  $0                         // 마지막 선택 요소
-  JS 코드 직접 실행 가능
-
-Network 탭:
-  All / Fetch|XHR / JS / CSS / Img 필터
-  요청 클릭 -> Headers, Preview, Response, Timing
-  Timing: DNS, TCP, Request, Response 각 소요 시간
-  Size: 전송 크기 / 실제 크기 (캐시 사용 시 "disk cache")
-  Waterfall: 요청 순서와 병렬 처리 시각화
-
-Application 탭:
-  Cookies: 쿠키 목록 및 속성 확인
-  Local Storage / Session Storage: 값 확인, 수정, 삭제
-  Cache Storage: Service Worker 캐시
-
-Lighthouse 탭:
-  분석 시작 -> 60초 후 Performance/Accessibility/SEO 점수
-  항목별 개선 방안 제시</div>
-                <div class="stack-concept-desc">DevTools는 웹 개발자의 가장 강력한 도구입니다. 코드를 매번 수정하지 않고 Elements 탭에서 CSS를 실시간으로 조정하면서 원하는 값을 찾은 뒤 코드에 옮기는 방식이 효율적입니다. Console 탭에서 오류 메시지를 읽는 것이 문제 해결의 첫 단계입니다. 오류 메시지를 그대로 Claude에게 붙여넣으면 대부분 빠르게 해결됩니다. Network 탭은 API 요청과 응답을 실시간으로 확인하므로 API 연동 디버깅에 필수입니다. 요청이 가는지, 응답이 200인지, 응답 body가 예상한 형태인지 확인할 수 있습니다. Application 탭에서 localStorage와 쿠키 값을 직접 확인하고 수정할 수 있습니다. Lighthouse로 성능, 접근성, SEO 점수를 측정하고 개선할 수 있습니다. DevTools를 능숙하게 다루는 것이 "코드를 잘 짜는 것"만큼이나 중요한 역량입니다.</div>
-                <div class="stack-concept-note"><b>실무 포인트</b> -- DevTools는 개발자의 눈입니다. Elements, Console, Network 세 탭을 자유롭게 쓸 수 있게 되면 문제 해결 속도가 3배 이상 빨라집니다.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- DOM -->
-          <div class="stack-concept-group" data-group="dom">
-            <div class="stack-concept-group-header">
-              <div class="stack-cg-num">04</div>
-              <div class="stack-cg-info">
-                <div class="stack-cg-title">DOM</div>
-                <div class="stack-cg-sub">JS가 HTML을 움직이는 원리</div>
-              </div>
-            </div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">DOM이란?</div>
-                <div class="stack-concept-tags"><span class="sct">DOM</span><span class="sct">트리</span><span class="sct">객체모델</span></div>
-                <div class="stack-concept-desc">Document Object Model. 브라우저가 HTML을 읽어서 메모리에 올린 트리 구조의 객체 모델입니다. HTML 파일 자체는 텍스트에 불과하지만, 브라우저가 파싱해서 DOM 트리를 생성하면 JavaScript로 조작 가능한 살아있는 객체가 됩니다. DOM은 HTML 문서의 구조, 스타일, 내용을 표현하는 프로그래밍 인터페이스(API)입니다. JS는 이 DOM API를 통해 HTML 요소를 선택하고, 내용을 바꾸고, 스타일을 수정하고, 새 요소를 추가하거나 삭제합니다. DOM을 수정하면 브라우저가 자동으로 화면을 업데이트합니다. 이것이 "버튼을 클릭하면 팝업이 나타나는" 모든 동적 기능의 작동 원리입니다. React는 DOM을 직접 조작하는 대신 Virtual DOM을 통해 변경된 부분만 효율적으로 업데이트합니다. DOM 조작은 느린 작업이므로, 빈번한 DOM 수정은 성능 저하의 주요 원인이 됩니다.</div>
-                <div class="stack-concept-code">DOM의 계층 구조:
-  window           -- 브라우저 창 전체
-  +-- document     -- HTML 문서 전체
-       +-- html    -- &lt;html&gt; 루트 요소
-            |-- head
-            |    |-- title
-            |    +-- meta, link, script
-            +-- body
-                 |-- header
-                 |-- main
-                 |    +-- section
-                 |         +-- article
-                 +-- footer
-
-DOM 노드 종류:
-  Element 노드:  &lt;div&gt;, &lt;p&gt; 등 HTML 태그
-  Text 노드:     태그 안의 텍스트 내용
-  Comment 노드:  &lt;!-- 주석 --&gt;
-  Document 노드: document 객체 자체</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">DOM 트리 구조</div>
-                <div class="stack-concept-tags"><span class="sct">트리</span><span class="sct">노드</span><span class="sct">부모자식</span></div>
-                <div class="stack-concept-code">// DOM 트리 탐색
-const parent = el.parentElement;       // 부모 요소
-const children = el.children;          // 자식 요소 모음
-const first = el.firstElementChild;    // 첫 번째 자식
-const next = el.nextElementSibling;    // 다음 형제 요소
-
-// 요소 추가
-const newEl = document.createElement('div');
-newEl.textContent = '새 요소';
-parent.appendChild(newEl);             // 마지막에 추가
-parent.insertBefore(newEl, target);    // 특정 요소 앞에
-parent.prepend(newEl);                 // 첫 번째에 추가
-
-// 요소 삭제
-el.remove();                           // 요소 자체 삭제
-parent.removeChild(el);               // 부모에서 자식 삭제
-
-// 요소 이동
-// insertBefore로 다른 위치에 넣으면 자동으로 이동
-document.body.appendChild(el);        // body 맨 끝으로 이동</div>
-                <div class="stack-concept-desc">HTML의 모든 요소가 트리의 노드로 연결되어 있습니다. 부모-자식-형제 관계가 CSS 선택자 작성과 JS DOM 탐색의 기반이 됩니다. CSS에서 nav &gt; ul &gt; li라고 쓰는 것이 DOM 트리의 부모-자식 관계를 그대로 표현한 것입니다. JS에서 parentElement, children, nextElementSibling 등의 속성으로 트리를 탐색할 수 있습니다. React 컴포넌트 트리도 결국 DOM 트리로 변환됩니다. 깊게 중첩된 DOM 트리는 렌더링 성능에 영향을 줄 수 있으므로, HTML 구조를 가능한 단순하게 유지하는 것이 좋습니다. DevTools Elements 탭에서 DOM 트리를 시각적으로 탐색할 수 있고, 특정 요소를 우클릭해 "중단점 설정"으로 DOM 변경을 추적할 수도 있습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">DOM 선택 &amp; 조작</div>
-                <div class="stack-concept-tags"><span class="sct">querySelector</span><span class="sct">classList</span><span class="sct">조작</span></div>
-                <div class="stack-concept-code">// 요소 선택
-document.querySelector('.card')        // CSS 선택자 (첫 번째)
-document.querySelectorAll('li')        // CSS 선택자 (전체, NodeList)
-document.getElementById('header')      // id로 선택 (가장 빠름)
-document.getElementsByClassName('btn') // 클래스로 선택 (HTMLCollection)
-
-// 내용 읽기/쓰기
-el.textContent         // 텍스트만 (안전, XSS 방지)
-el.innerHTML           // HTML 포함 (주의! XSS 위험)
-el.value               // 입력 요소의 값
-
-// 속성 조작
-el.getAttribute('href')
-el.setAttribute('href', 'https://...')
-el.removeAttribute('disabled')
-el.dataset.userId      // data-user-id 속성 읽기
-
-// 클래스 조작 (가장 자주 씀)
-el.classList.add('active', 'show')     // 여러 개 동시 추가
-el.classList.remove('hidden')
-el.classList.toggle('open')            // 있으면 제거, 없으면 추가
-el.classList.contains('active')        // 포함 여부 확인
-el.classList.replace('old', 'new')     // 교체
-
-// 스타일 직접 조작 (인라인 스타일)
-el.style.display = 'flex';
-el.style.backgroundColor = '#3b82f6';  // 카멜케이스!
-el.style.cssText = 'display:flex; gap:8px;'; // 여러 속성 한번에</div>
-                <div class="stack-concept-desc">DOM 조작은 JS가 화면을 동적으로 바꾸는 핵심 수단입니다. querySelector는 CSS 선택자를 그대로 사용할 수 있어 직관적입니다. classList.toggle은 메뉴 열기/닫기, 다크모드 전환, 드롭다운 같은 토글 UI에 빠질 수 없는 패턴입니다. textContent로 내용을 바꾸는 것이 innerHTML보다 안전합니다. innerHTML에 사용자 입력값을 직접 넣으면 XSS(크로스 사이트 스크립팅) 공격에 취약합니다. el.style로 인라인 스타일을 직접 수정하는 방법보다, 클래스를 추가/제거해서 CSS에서 스타일을 제어하는 방법이 유지보수에 유리합니다. DOM 조작은 Reflow와 Repaint를 일으키므로, 변경 사항을 최대한 묶어서 한 번에 처리하는 것이 성능에 좋습니다. DocumentFragment를 사용하거나, 요소를 DOM에서 분리 후 수정하고 재삽입하는 방법을 씁니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">이벤트 (Event)</div>
-                <div class="stack-concept-tags"><span class="sct">click</span><span class="sct">addEventListener</span><span class="sct">이벤트</span></div>
-                <div class="stack-concept-code">// 이벤트 등록
-element.addEventListener('이벤트명', 핸들러함수);
-element.removeEventListener('이벤트명', 핸들러함수);
-
-// 자주 쓰는 이벤트
-마우스:
-  click        -- 클릭 (터치도 포함)
-  dblclick     -- 더블 클릭
-  mouseenter   -- 요소에 마우스 진입 (버블링 없음)
-  mouseleave   -- 요소에서 마우스 벗어남
-  contextmenu  -- 우클릭 메뉴
-
-키보드:
-  keydown      -- 키 누름 (연속 발생)
-  keyup        -- 키 놓음
-
-폼:
-  input        -- 값 변경마다 (실시간)
-  change       -- 포커스 잃을 때 최종 값
-  submit       -- 폼 제출
-  focus / blur -- 포커스 얻음/잃음
-
-문서:
-  DOMContentLoaded -- HTML 파싱 완료 (JS 실행 안전)
-  load             -- 이미지, CSS 포함 전부 로딩 완료
-  scroll           -- 스크롤
-  resize           -- 창 크기 변경
-
-// 이벤트 객체 활용
-btn.addEventListener('click', (e) =&gt; {
-  e.preventDefault();        // 기본 동작 막기 (링크, 폼 제출)
-  e.stopPropagation();       // 이벤트 전파 차단
-  console.log(e.target);     // 실제 클릭된 요소
-  console.log(e.currentTarget); // 이벤트 리스너가 붙은 요소
-  console.log(e.clientX, e.clientY); // 클릭 좌표
-});</div>
-                <div class="stack-concept-desc">이벤트는 사용자와 웹 페이지가 상호작용하는 모든 순간을 의미합니다. 클릭, 키보드 입력, 스크롤, 마우스 이동 등 모든 행동이 이벤트입니다. addEventListener는 같은 요소에 여러 개를 등록할 수 있으며, 이벤트 핸들러 함수를 인자로 받습니다. 이벤트 객체(e 또는 event)에는 이벤트에 대한 상세 정보가 담겨 있습니다. e.preventDefault()는 링크 클릭 시 페이지 이동, 폼 제출 시 새로고침 같은 브라우저 기본 동작을 막을 때 씁니다. e.target은 실제로 클릭된 요소, e.currentTarget은 이벤트 리스너가 등록된 요소입니다. 둘이 다를 수 있는 이유는 이벤트 버블링 때문입니다. 불필요한 이벤트 리스너는 메모리 누수의 원인이 되므로 removeEventListener로 정리해야 합니다. React에서는 onClick, onSubmit 같은 JSX 속성으로 이벤트를 등록하며, React가 내부적으로 addEventListener를 관리합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">이벤트 버블링 (Bubbling)</div>
-                <div class="stack-concept-tags"><span class="sct">버블링</span><span class="sct">전파</span><span class="sct">stopPropagation</span></div>
-                <div class="stack-concept-code">// 이벤트 전파 방향
-캡처링 (top -&gt; bottom):
-  document -&gt; html -&gt; body -&gt; div -&gt; button
-
-버블링 (bottom -&gt; top):
-  button -&gt; div -&gt; body -&gt; html -&gt; document
-
-// 실제 예시
-&lt;div class="modal-overlay"&gt;     &lt;!-- 3: 실행됨 --&gt;
-  &lt;div class="modal"&gt;           &lt;!-- 2: 실행됨 --&gt;
-    &lt;button class="close-btn"&gt;닫기&lt;/button&gt;  &lt;!-- 1: 실행됨 --&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-// 모달 바깥 클릭 시 닫기 구현
-overlay.addEventListener('click', (e) =&gt; {
-  if (e.target === overlay) {  // 오버레이 자체 클릭 시만
-    closeModal();
-  }
-});
-
-// 또는 모달 안 클릭이 버블링으로 전파 못하게
-modal.addEventListener('click', (e) =&gt; {
-  e.stopPropagation();  // 버블링 중단
-});
-
-// 이벤트 위임 (Event Delegation) 패턴
-// 100개의 li에 각각 등록 대신, ul 하나에만 등록
-ul.addEventListener('click', (e) =&gt; {
-  if (e.target.tagName === 'LI') {
-    e.target.classList.toggle('selected');
-  }
-});</div>
-                <div class="stack-concept-desc">이벤트 버블링은 하위 요소에서 발생한 이벤트가 상위 요소로 순서대로 전파되는 현상입니다. 이를 이해하면 복잡한 UI 인터랙션을 간단하게 구현할 수 있습니다. 대표적인 활용이 이벤트 위임(Delegation) 패턴입니다. 100개의 리스트 아이템에 각각 이벤트를 등록하는 대신, 부모 요소 하나에 이벤트를 등록하고 어떤 자식이 클릭됐는지 e.target으로 확인합니다. 메모리 효율적이고, 동적으로 추가된 요소에도 자동으로 이벤트가 적용됩니다. 모달 바깥 클릭 시 닫기도 버블링을 활용합니다. 오버레이(배경)에 클릭 이벤트를 등록하되, 모달 안쪽 클릭은 stopPropagation으로 전파를 막습니다. 캡처링(top-down)은 addEventListener의 세 번째 인자를 true로 설정할 때 사용하며, 특수한 경우에만 씁니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">가상 DOM (Virtual DOM)</div>
-                <div class="stack-concept-tags"><span class="sct">React</span><span class="sct">Virtual DOM</span><span class="sct">diffing</span></div>
-                <div class="stack-concept-code">// 실제 DOM vs Virtual DOM
-
-// 직접 DOM 조작 (느림):
-for (let i = 0; i &lt; 1000; i++) {
-  const li = document.createElement('li');
-  li.textContent = `아이템 ${i}`;
-  ul.appendChild(li);  // 매번 Reflow 발생 -&gt; 느림
-}
-
-// DocumentFragment 최적화:
-const frag = document.createDocumentFragment();
-for (let i = 0; i &lt; 1000; i++) {
-  const li = document.createElement('li');
-  li.textContent = `아이템 ${i}`;
-  frag.appendChild(li);  // Fragment는 DOM에 없음
-}
-ul.appendChild(frag);  // 한 번만 Reflow
-
-// React Virtual DOM 방식:
-// 1. 상태(state) 변경
-// 2. 새로운 Virtual DOM 트리 생성
-// 3. 이전 Virtual DOM과 비교 (Diffing 알고리즘)
-// 4. 실제로 변경된 노드만 실제 DOM에 반영
-
-// key prop의 중요성:
-// React가 list item을 구분하는 식별자
-// key가 없으면 전체 리스트를 다시 렌더링
-// {items.map(item =&gt; (
-//   &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
-// ))}</div>
-                <div class="stack-concept-desc">Virtual DOM은 실제 DOM의 메모리 상 복사본입니다. React는 상태가 변경될 때마다 새로운 Virtual DOM 트리를 만들고, 이전 Virtual DOM과 비교(Diffing)해서 어떤 노드가 바뀌었는지 최소한으로 계산합니다. 그리고 실제로 변경된 부분만 실제 DOM에 반영(Reconciliation)합니다. 이것이 React가 효율적인 이유입니다. React에서 state를 직접 수정하면 안 되는 이유가 여기 있습니다. 직접 수정하면 이전 Virtual DOM과 비교할 기준이 없어져 React가 변경을 감지하지 못합니다. 반드시 setState나 useState setter를 사용해야 React가 변경을 감지하고 재렌더링합니다. list를 렌더링할 때 key prop이 필요한 이유도 Diffing 알고리즘과 관련 있습니다. key로 각 아이템을 식별해야 어떤 아이템이 추가/삭제/이동됐는지 효율적으로 판단할 수 있습니다. React 18의 Concurrent Mode는 렌더링을 중단하고 더 급한 업데이트(사용자 입력)를 먼저 처리하는 기능입니다.</div>
-                <div class="stack-concept-tip"><b>핵심</b> -- React를 배울 때 "왜 state를 직접 수정하면 안 되나?"의 답이 Virtual DOM Diffing 메커니즘에 있습니다. setState를 통해서만 React가 변경을 감지할 수 있습니다.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- API & 데이터 -->
-          <div class="stack-concept-group" data-group="api">
-            <div class="stack-concept-group-header">
-              <div class="stack-cg-num">05</div>
-              <div class="stack-cg-info">
-                <div class="stack-cg-title">API &amp; 데이터</div>
-                <div class="stack-cg-sub">서버와 데이터를 주고받는 방법</div>
-              </div>
-            </div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">API란?</div>
-                <div class="stack-concept-tags"><span class="sct">API</span><span class="sct">인터페이스</span><span class="sct">약속</span></div>
-                <div class="stack-concept-desc">Application Programming Interface. 서버가 데이터를 주고받기 위해 열어둔 창구입니다. "이 주소로 이렇게 요청하면 이 데이터를 줄게"라는 약속입니다. 날씨 앱, 지도 서비스, 소셜 로그인 모두 외부 API를 활용합니다. 프론트엔드 개발자는 API를 직접 만들지 않고 사용하는 방법을 익힙니다. API는 웹 API만 있는 것이 아닙니다. 브라우저 API(DOM, fetch, localStorage), 운영체제 API, 라이브러리 API 등 소프트웨어 간 통신 규약을 모두 API라고 부릅니다. 웹 개발에서 "API"라고 하면 보통 REST API(HTTP 기반 서버 API)를 의미합니다. API 문서를 읽고 이해하는 능력이 프론트엔드 개발의 핵심 역량 중 하나입니다. Swagger나 Postman 같은 도구로 API를 테스트할 수 있습니다.</div>
-                <div class="stack-concept-code">날씨 앱 --&gt; 기상청 API --&gt; 날씨 데이터
-지도 앱  --&gt; 카카오맵 API --&gt; 지도 타일
-로그인  --&gt; 카카오 로그인 API --&gt; 사용자 정보
-
-API 종류:
-  브라우저 API: DOM, fetch, localStorage, Geolocation
-  서버 API:    REST API, GraphQL API
-  외부 API:    카카오, 네이버, Google 등 제공
-  라이브러리 API: React, axios 등의 함수/메서드
-
-API 테스트 도구:
-  Postman -- GUI로 API 요청 테스트
-  Thunder Client -- VS Code 확장
-  curl -- 터미널에서 API 호출</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">REST API</div>
-                <div class="stack-concept-tags"><span class="sct">REST</span><span class="sct">URL설계</span><span class="sct">CRUD</span></div>
-                <div class="stack-concept-code">// URL + HTTP 메서드로 의미를 표현
-GET    /api/posts       -- 글 목록
-GET    /api/posts/1     -- 1번 글 상세
-POST   /api/posts       -- 글 작성
-PUT    /api/posts/1     -- 1번 글 수정
-DELETE /api/posts/1     -- 1번 글 삭제
-
-GET    /api/users/5/posts -- 5번 유저의 글 목록
-
-// 페이지네이션
-GET /api/posts?page=2&amp;limit=20
-
-// 필터 + 정렬
-GET /api/posts?category=react&amp;sort=latest
-
-// 검색
-GET /api/posts?q=JavaScript
-
-// 실무 API 응답 형태
-{
-  "success": true,
-  "data": [...],
-  "pagination": {
-    "page": 2,
-    "totalPages": 10,
-    "totalCount": 195
-  }
-}</div>
-                <div class="stack-concept-desc">현업에서 가장 많이 쓰는 API 설계 방식입니다. URL은 자원(명사), HTTP 메서드는 행동(동사)으로 표현합니다. REST API 문서를 읽고 이해하는 능력이 프론트엔드 개발의 핵심 역량 중 하나입니다. 잘 설계된 REST API는 URL만 봐도 어떤 데이터를 다루는지 직관적으로 알 수 있습니다. 중첩 자원은 /users/5/posts처럼 계층적으로 표현합니다. 페이지네이션, 필터, 정렬은 쿼리 파라미터로 처리합니다. 실무에서는 API 응답에 성공/실패 여부, 데이터, 페이지네이션 정보가 함께 옵니다. GraphQL은 REST의 대안으로, 클라이언트가 원하는 데이터 구조를 직접 지정할 수 있습니다. 하지만 대부분의 프로젝트에서는 REST API로 충분합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">JSON</div>
-                <div class="stack-concept-tags"><span class="sct">JSON</span><span class="sct">데이터형식</span><span class="sct">파싱</span></div>
-                <div class="stack-concept-code">// API 응답 예시
-{
-  "status": "success",
-  "data": {
-    "id": 1,
-    "title": "첫 번째 글",
-    "author": "홍길동",
-    "tags": ["웹", "개발"],
-    "published": true,
-    "createdAt": "2024-01-15T09:30:00Z"
-  }
-}
-
-JSON.parse(str)     // 문자열 -&gt; JS 객체
-JSON.stringify(obj) // JS 객체 -&gt; 문자열
-
-// JSON vs JS 객체 차이
-// JSON: 키에 반드시 큰따옴표, 함수 불가, undefined 불가
-// JS:   키에 따옴표 선택, 함수 가능, undefined 가능
-
-// 중첩 데이터 접근
-const title = data.data.title;
-const firstTag = data.data.tags[0];
-
-// 옵셔널 체이닝 (안전한 접근)
-const name = data?.user?.name ?? '이름 없음';</div>
-                <div class="stack-concept-desc">서버와 클라이언트가 데이터를 주고받는 표준 형식입니다. JavaScript Object Notation의 약자로, JS 객체와 거의 같은 문법이라 다루기 쉽습니다. API 응답이 JSON으로 오면 res.json()으로 파싱해서 JS 객체로 변환해야 사용할 수 있습니다. JSON은 문자열, 숫자, 불리언, 배열, 객체, null만 담을 수 있고, 함수나 undefined는 담을 수 없습니다. localStorage에 객체를 저장할 때도 JSON.stringify로 문자열로 변환하고, 읽을 때 JSON.parse로 복원합니다. 중첩된 JSON 데이터에 안전하게 접근하려면 옵셔널 체이닝(?.)을 사용합니다. API 응답의 날짜는 보통 ISO 8601 형식(2024-01-15T09:30:00Z)으로 오며, dayjs로 포맷팅합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">CORS (Cross-Origin Resource Sharing)</div>
-                <div class="stack-concept-tags"><span class="sct">CORS</span><span class="sct">보안</span><span class="sct">출처</span></div>
-                <div class="stack-concept-code">// 브라우저 콘솔에 뜨는 에러
-Access to fetch at 'https://api.example.com'
-from origin 'http://localhost:3000'
-has been blocked by CORS policy.
-
-// 출처(Origin) = 프로토콜 + 도메인 + 포트
-http://localhost:3000  -- 출처 A
-http://localhost:8080  -- 출처 B (포트 다름 = 다른 출처!)
-https://mysite.com     -- 출처 C
-
-// 해결 방법 1: 서버에서 헤더 추가
-Access-Control-Allow-Origin: http://localhost:3000
-
-// 해결 방법 2: 개발 환경 프록시 (Vite)
-// vite.config.js
-server: {
-  proxy: {
-    '/api': 'http://localhost:8080'
-  }
-}
-
-// 해결 방법 3: 배포 시 같은 도메인 사용
-// mysite.com (프론트) + mysite.com/api (백엔드)</div>
-                <div class="stack-concept-desc">보안을 위해 브라우저가 다른 출처의 API 요청을 기본으로 차단하는 정책입니다. API 연동 시 100% 마주치는 에러입니다. 출처(Origin)는 프로토콜, 도메인, 포트 세 가지를 합친 것이며, 하나라도 다르면 다른 출처입니다. CORS는 브라우저의 보안 정책이므로 서버-서버 간 요청에서는 발생하지 않습니다. 서버에서 Access-Control-Allow-Origin 헤더를 추가하는 것이 정석 해결법입니다. 개발 환경에서는 Vite의 프록시 설정으로 우회할 수 있습니다. 프록시는 브라우저가 같은 출처(localhost:5173)로 요청하게 만들고, Vite 서버가 대신 백엔드에 전달하는 방식입니다. 배포 환경에서는 동일한 도메인을 사용하거나, 서버에 CORS 설정을 추가합니다.</div>
-                <div class="stack-concept-note"><b>실무 포인트</b> -- CORS 에러는 프론트 문제가 아닙니다. 백엔드 개발자에게 "Allow-Origin 헤더 추가 요청"이라고 정확히 전달하세요.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">fetch &amp; async/await</div>
-                <div class="stack-concept-tags"><span class="sct">fetch</span><span class="sct">async</span><span class="sct">await</span></div>
-                <div class="stack-concept-code">// 기본 GET 요청
-async function getPosts() {
-  const res  = await fetch('/api/posts');
-  const data = await res.json();
-  console.log(data);
-}
-
-// POST 요청 (데이터 생성)
-async function createPost(title, content) {
-  const res = await fetch('/api/posts', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ title, content })
-  });
-  return await res.json();
-}
-
-// 에러 처리 (실무 필수)
-try {
-  const res = await fetch('/api/posts');
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const data = await res.json();
-} catch (err) {
-  console.error('API 요청 실패:', err);
-  // 사용자에게 에러 메시지 표시
-}
-
-// axios 비교 (더 간결)
-const { data } = await axios.get('/api/posts');
-const { data } = await axios.post('/api/posts', { title });</div>
-                <div class="stack-concept-desc">fetch는 브라우저 내장 API 호출 함수입니다. async/await으로 비동기 코드를 순서대로 읽기 쉽게 작성할 수 있습니다. fetch는 네트워크 에러만 reject하고 HTTP 에러(404, 500)는 reject하지 않으므로, res.ok를 반드시 확인해야 합니다. 에러 처리를 함께 넣는 것이 실무 기본입니다. axios 라이브러리를 쓰면 HTTP 에러도 자동으로 catch되고, 요청/응답 인터셉터, 요청 취소 등 편리한 기능을 제공합니다. React에서는 useEffect 안에서 fetch를 호출하고 state에 저장하는 패턴이 기본입니다. React Query(TanStack Query)를 쓰면 캐싱, 재시도, 로딩/에러 상태 관리를 자동으로 처리할 수 있습니다. API 호출 시 로딩 스피너, 에러 메시지, 빈 상태를 모두 처리하는 것이 좋은 UX의 기본입니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">인증 &amp; 토큰 (JWT)</div>
-                <div class="stack-concept-tags"><span class="sct">JWT</span><span class="sct">인증</span><span class="sct">토큰</span></div>
-                <div class="stack-concept-code">로그인 흐름:
-1. 클라이언트 --&gt; 서버: ID/PW 전송
-2. 서버 --&gt; 클라이언트: JWT 토큰 발급
-3. 이후 요청마다 헤더에 토큰 포함
-   Authorization: Bearer eyJhbGci...
-4. 서버가 토큰 검증 후 데이터 응답
-
-JWT 구조:
-  헤더.페이로드.서명
-  eyJhbGci.eyJ1c2Vy.SflKxwRJ
-  |        |         |
-  알고리즘  사용자정보  위변조검증
-
-토큰 저장 위치:
-  localStorage  -- 간편하지만 XSS에 취약
-  httpOnly 쿠키 -- JS 접근 불가, 더 안전
-  메모리(변수)  -- 새로고침 시 사라짐, 가장 안전
-
-토큰 갱신:
-  Access Token:  만료 짧음 (15분~1시간)
-  Refresh Token: 만료 김 (7일~30일)
-  Access Token 만료 시 Refresh Token으로 재발급</div>
-                <div class="stack-concept-desc">로그인 상태를 유지하는 방법입니다. JWT(JSON Web Token)는 서버가 발급하는 암호화된 인증 증명서입니다. 토큰이 유효하면 로그인된 것으로 인정합니다. JWT는 헤더(알고리즘 정보), 페이로드(사용자 정보), 서명(위변조 방지)으로 구성됩니다. 서버는 비밀키로 서명을 생성하고, 이후 요청에서 서명을 검증해 토큰이 위변조되지 않았는지 확인합니다. 토큰은 localStorage 또는 httpOnly 쿠키에 저장합니다. 보안이 중요한 서비스는 httpOnly 쿠키를 권장합니다. Access Token은 만료가 짧고, Refresh Token으로 재발급합니다. 프론트엔드에서는 401 응답을 받으면 자동으로 토큰 갱신 로직을 실행하는 인터셉터를 구현합니다.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 데이터 저장 -->
-          <div class="stack-concept-group" data-group="storage">
-            <div class="stack-concept-group-header">
-              <div class="stack-cg-num">06</div>
-              <div class="stack-cg-info">
-                <div class="stack-cg-title">데이터 저장</div>
-                <div class="stack-cg-sub">브라우저와 서버가 데이터를 기억하는 법</div>
-              </div>
-            </div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">쿠키 (Cookie)</div>
-                <div class="stack-concept-tags"><span class="sct">쿠키</span><span class="sct">HttpOnly</span><span class="sct">보안</span></div>
-                <div class="stack-concept-code">// 서버가 심어줌, 이후 자동 전송
-Set-Cookie: sessionId=abc; HttpOnly; Secure; SameSite=Strict
-
-속성 설명:
-  HttpOnly  -- JS로 접근 불가 (XSS 방어)
-  Secure    -- HTTPS에서만 전송
-  SameSite  -- 크로스 사이트 요청 시 전송 제한
-    Strict: 다른 사이트에서 온 요청에 포함 안 됨
-    Lax:    GET 요청은 포함 (기본값)
-    None:   항상 포함 (Secure 필수)
-
-  Max-Age   -- 만료 시간 (초 단위)
-  Domain    -- 쿠키가 전송될 도메인
-  Path      -- 쿠키가 전송될 경로
-
-특징:
-- 용량 4KB 제한
-- 요청마다 서버로 자동 전송
-- 도메인별로 분리 관리</div>
-                <div class="stack-concept-desc">로그인 상태 유지, 장바구니 기억, 광고 추적 등에 사용됩니다. 서버가 Set-Cookie 헤더로 심고 브라우저가 자동으로 관리합니다. HttpOnly 쿠키는 JS로 접근이 불가해 XSS 공격으로부터 안전합니다. 보안이 중요한 인증 토큰은 httpOnly 쿠키에 저장하는 것이 권장됩니다. SameSite 속성은 CSRF(크로스 사이트 요청 위조) 공격을 방지합니다. 쿠키는 도메인별로 분리되어 있어 naver.com의 쿠키를 google.com이 읽을 수 없습니다. 서드파티 쿠키(광고 추적용)는 개인정보 보호 강화로 Chrome에서도 차단되는 추세입니다. DevTools Application 탭에서 쿠키 목록과 속성을 직접 확인하고 수정, 삭제할 수 있습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">세션 (Session)</div>
-                <div class="stack-concept-tags"><span class="sct">세션</span><span class="sct">서버저장</span><span class="sct">인증</span></div>
-                <div class="stack-concept-code">서버 메모리 or DB:
-  sessions = {
-    "abc123": { userId: 42, role: "admin", loginAt: "..." }
-  }
-
-브라우저 쿠키:
-  sessionId=abc123
-
--- 실제 데이터는 서버에, ID만 클라이언트에
-
-세션 vs JWT 비교:
-  세션: 서버에 상태 저장 (stateful)
-    장점: 서버에서 즉시 무효화 가능
-    단점: 서버 메모리 사용, 서버 확장 어려움
-  JWT:  토큰에 정보 포함 (stateless)
-    장점: 서버 부하 적음, 확장 쉬움
-    단점: 즉시 무효화 어려움 (만료까지 유효)
-
-세션 스토어:
-  Redis  -- 인메모리 DB, 빠름 (가장 많이 씀)
-  MySQL  -- 영구 저장, 느림
-  Memory -- 서버 재시작 시 초기화</div>
-                <div class="stack-concept-desc">보안이 중요한 데이터(로그인 정보, 권한)는 서버에 저장하고, 브라우저에는 세션 ID만 쿠키로 저장합니다. 세션 방식은 서버가 상태를 관리하므로 stateful합니다. 관리자가 특정 사용자의 세션을 즉시 무효화(강제 로그아웃)할 수 있다는 장점이 있습니다. 반면 서버가 여러 대일 때 세션을 공유하는 것이 복잡해지는 단점이 있습니다. Redis 같은 외부 세션 스토어를 사용하면 여러 서버가 세션을 공유할 수 있습니다. JWT는 서버에 상태를 저장하지 않아 확장성이 좋지만, 토큰을 즉시 무효화하기 어렵습니다. 현대 웹 서비스 대부분은 JWT 방식을 사용하며, 이 수업에서도 JWT를 다룹니다. 세션과 JWT의 장단점을 이해하면 면접에서 좋은 인상을 줄 수 있습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">localStorage</div>
-                <div class="stack-concept-tags"><span class="sct">localStorage</span><span class="sct">브라우저저장</span><span class="sct">영구</span></div>
-                <div class="stack-concept-code">// 저장
-localStorage.setItem('theme', 'dark');
-localStorage.setItem('user', JSON.stringify({ id: 1, name: '홍길동' }));
-
-// 읽기
-const theme = localStorage.getItem('theme');
-const user  = JSON.parse(localStorage.getItem('user'));
-
-// 삭제
-localStorage.removeItem('theme');
-localStorage.clear(); // 전체 삭제
-
-// 존재 여부 확인
-if (localStorage.getItem('theme')) {
-  applyTheme(localStorage.getItem('theme'));
-}
-
-특징:
-  용량: 5~10MB (브라우저마다 다름)
-  수명: 직접 삭제하기 전까지 영구 보존
-  범위: 같은 출처(origin) 내에서 공유
-  전송: 서버로 자동 전송 안 됨
-  타입: 문자열만 저장 (객체는 JSON.stringify 필요)</div>
-                <div class="stack-concept-desc">다크모드 설정, 최근 검색어, 임시 저장 데이터, 사용자 선호 언어 등 UI 상태 저장에 적합합니다. 서버로 자동 전송되지 않아 쿠키보다 용량이 크고 서버 부하가 없습니다. 민감한 정보(비밀번호, 토큰)는 저장하면 XSS에 취약하므로 주의가 필요합니다. 문자열만 저장 가능하므로 객체는 JSON.stringify로 변환해야 합니다. 같은 출처(프로토콜+도메인+포트)의 모든 탭에서 공유됩니다. 시크릿 모드에서는 브라우저를 닫으면 삭제됩니다. React에서는 커스텀 훅(useLocalStorage)을 만들어 state와 localStorage를 동기화하는 패턴이 흔합니다. DevTools Application 탭에서 값을 직접 확인, 수정, 삭제할 수 있습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">sessionStorage</div>
-                <div class="stack-concept-tags"><span class="sct">sessionStorage</span><span class="sct">임시저장</span><span class="sct">탭</span></div>
-                <div class="stack-concept-code">// localStorage와 동일한 API
-sessionStorage.setItem('step', '2');
-sessionStorage.getItem('step');
-sessionStorage.removeItem('step');
-
-차이점:
-  localStorage   -- 브라우저 닫아도 유지, 모든 탭 공유
-  sessionStorage -- 탭 닫으면 사라짐, 탭별 독립
-
-활용 예:
-  결제 진행 단계 저장 (step 1 -&gt; 2 -&gt; 3)
-  다단계 폼 중간 저장
-  일회성 팝업 "오늘 그만 보기"
-  페이지 이동 전 스크롤 위치 저장</div>
-                <div class="stack-concept-desc">결제 단계별 입력값, 다단계 폼 데이터처럼 탭 세션 내에서만 유지하면 되는 임시 데이터에 사용합니다. 같은 사이트를 새 탭에서 열면 sessionStorage는 공유되지 않고 각각 독립적으로 작동합니다. localStorage와 API가 완전히 동일하므로 교체가 쉽습니다. 새로고침해도 유지되지만 탭을 닫으면 사라지므로, "한 번의 방문 동안만 유지해야 하는 데이터"에 적합합니다. 실무에서는 localStorage를 더 자주 사용하지만, 보안이 필요한 임시 데이터는 sessionStorage가 적합합니다. 결제 페이지에서 이전 단계 입력값을 sessionStorage에 저장하면 뒤로가기해도 데이터가 유지됩니다. 탭을 닫으면 자동으로 삭제되므로 정리할 필요가 없다는 장점도 있습니다.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 호스팅 & 배포 -->
-          <div class="stack-concept-group" data-group="hosting">
-            <div class="stack-concept-group-header">
-              <div class="stack-cg-num">07</div>
-              <div class="stack-cg-info">
-                <div class="stack-cg-title">호스팅 &amp; 배포</div>
-                <div class="stack-cg-sub">만든 것을 세상에 꺼내놓는 과정</div>
-              </div>
-            </div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">호스팅이란?</div>
-                <div class="stack-concept-tags"><span class="sct">호스팅</span><span class="sct">서버</span><span class="sct">배포</span></div>
-                <div class="stack-concept-desc">내가 만든 웹 파일(HTML/CSS/JS)을 항상 켜져 있는 서버에 올려서 누구나 접속할 수 있게 하는 것입니다. 서버 컴퓨터를 빌리는 행위입니다. 로컬에서만 보이던 사이트가 전 세계에서 접속 가능해지는 과정입니다. 포트폴리오를 면접관에게 링크로 공유할 수 있게 됩니다. 호스팅 서비스는 크게 공유 호스팅, VPS, 클라우드, 정적 호스팅으로 나뉩니다. 프론트엔드 개발자는 정적 호스팅(Vercel, Netlify)을 가장 많이 사용합니다. 배포(Deploy)는 개발 완료된 코드를 호스팅 서버에 올리는 행위를 말합니다. 현대 프론트엔드 배포는 Git push 한 번으로 자동화되어 있습니다.</div>
-                <div class="stack-concept-code">내 컴퓨터: localhost:3000 -- 나만 접속 가능
-호스팅 서버: https://mysite.com -- 전 세계 접속 가능
-
-호스팅 유형:
-  공유 호스팅: 여러 사이트가 한 서버 공유 (저렴)
-  VPS:        가상 서버 1개 독점 (중간)
-  클라우드:   AWS EC2 등 (유연, 종량제)
-  정적 호스팅: HTML/CSS/JS만 서비스 (무료 가능)
-
-프론트엔드 개발자 추천:
-  정적 사이트 -&gt; Vercel / Netlify (무료)
-  풀스택 앱  -&gt; Vercel (서버리스 함수 포함)
-  백엔드 필요 -&gt; Railway / Render / AWS</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">정적 호스팅 (무료)</div>
-                <div class="stack-concept-tags"><span class="sct">Vercel</span><span class="sct">Netlify</span><span class="sct">GitHub Pages</span></div>
-                <div class="stack-concept-code">GitHub Pages -- github.io 도메인 무료 제공
-  git push 하면 자동 배포
-  제한: 정적 파일만, 빌드 과정 제한적
-
-Vercel -- vercel.app 도메인 무료
-  React/Next.js 배포 특화
-  GitHub 연동 -&gt; push하면 자동 반영
-  Preview URL: PR마다 별도 미리보기 URL 생성
-  서버리스 함수 지원 (간단한 API 가능)
-
-Netlify -- netlify.app 도메인 무료
-  드래그 앤 드롭으로도 배포 가능
-  폼 기능 내장 (백엔드 없이 폼 제출 처리)
-  Split Testing (A/B 테스트) 지원
-
-배포 과정 (Vercel 기준):
-1. GitHub에 코드 push
-2. Vercel이 자동으로 감지
-3. npm run build 실행
-4. dist 폴더를 CDN에 배포
-5. URL 생성 완료 (약 30초~1분)</div>
-                <div class="stack-concept-desc">HTML/CSS/JS만 있는 정적 사이트는 무료로 배포 가능합니다. 이 수업의 포트폴리오는 여기서 배포합니다. Vercel은 GitHub 레포와 연결하면 코드를 push할 때마다 자동으로 최신 버전이 배포됩니다. Pull Request를 열면 Preview URL이 자동 생성되어 배포 전 미리 확인할 수 있습니다. Netlify는 드래그 앤 드롭으로도 배포 가능해 초보자에게 친숙합니다. GitHub Pages는 GitHub 저장소에서 바로 배포할 수 있어 간단하지만, 빌드 과정이 제한적입니다. Vercel의 무료 플랜은 개인 프로젝트에 충분하며, 월 100GB 대역폭, 서버리스 함수 호출 10만 회까지 지원합니다. 포트폴리오는 반드시 온라인에 배포하세요.</div>
-                <div class="stack-concept-tip"><b>핵심</b> -- 포트폴리오는 반드시 온라인에 배포하세요. "링크 있어요"와 "없어요"의 차이는 취업에서 큽니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">도메인 연결</div>
-                <div class="stack-concept-tags"><span class="sct">도메인</span><span class="sct">DNS</span><span class="sct">HTTPS</span></div>
-                <div class="stack-concept-code">1. 도메인 구매: Gabia, 후이즈, Namecheap
-   .com 연 약 15,000원
-   .kr  연 약 18,000원
-   .dev 연 약 15,000원 (HTTPS 강제)
-
-2. DNS 설정: 구매한 도메인 -&gt; 내 서버 IP 연결
-   A 레코드:    도메인 -&gt; IP 주소
-   CNAME:      도메인 -&gt; 다른 도메인으로 연결
-   (Vercel: CNAME cname.vercel-dns.com)
-
-3. HTTPS 설정:
-   Vercel/Netlify: 자동 적용 (설정 불필요)
-   직접 서버: Let's Encrypt (무료 SSL 인증서)
-   갱신: certbot으로 90일마다 자동 갱신
-
-4. 연결 확인:
-   DNS 전파: 최대 48시간 (보통 1~4시간)
-   whatsmydns.net에서 전파 상태 확인</div>
-                <div class="stack-concept-desc">Vercel/Netlify는 구매한 도메인을 몇 번의 클릭으로 연결할 수 있습니다. 포트폴리오에 자기 도메인을 달면 훨씬 전문적으로 보입니다. 도메인 구매는 연 1~2만원 수준으로 부담이 적습니다. .dev 도메인은 Google이 관리하며 HTTPS가 강제되어 개발자 포트폴리오에 인기가 높습니다. DNS 설정은 도메인 등록 업체의 관리 페이지에서 CNAME 레코드를 추가하는 것이 전부입니다. Vercel은 도메인을 추가하면 자동으로 SSL 인증서를 발급하고 HTTPS를 적용합니다. DNS 변경 후 전파에 시간이 걸리므로 즉시 반영되지 않을 수 있습니다. whatsmydns.net에서 전 세계 DNS 서버의 전파 상태를 실시간으로 확인할 수 있습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">CDN (Content Delivery Network)</div>
-                <div class="stack-concept-tags"><span class="sct">CDN</span><span class="sct">성능</span><span class="sct">Cloudflare</span></div>
-                <div class="stack-concept-code">CDN 없음: 한국 사용자 -&gt; 미국 서버 -&gt; 느림 (200ms+)
-CDN 있음: 한국 사용자 -&gt; 한국 CDN 서버 -&gt; 빠름 (20ms)
-
-CDN 작동 원리:
-1. 사용자가 mysite.com 접속
-2. DNS가 가장 가까운 CDN 서버로 연결
-3. CDN 서버에 캐시된 파일이 있으면 즉시 응답
-4. 캐시가 없으면 원본 서버에서 가져와 캐시 후 응답
-
-주요 CDN 서비스:
-  Cloudflare -- 무료 CDN + 보안 + DNS + DDoS 방어
-  AWS CloudFront -- AWS 생태계 연동
-  Vercel/Netlify -- CDN이 기본 내장
-
-캐시 무효화:
-  파일명 해시로 자동 처리 (app-Dk3m.js)
-  수동: Purge Cache (CDN 관리자 페이지)</div>
-                <div class="stack-concept-desc">전 세계 각지에 캐시 서버를 두고, 사용자에게 가장 가까운 서버에서 파일을 전달하는 기술입니다. 이미지, JS 파일 등 정적 파일 로딩 속도가 크게 빨라집니다. Vercel과 Netlify는 CDN이 기본 내장되어 있어 별도 설정 없이 혜택을 받을 수 있습니다. Cloudflare는 무료 플랜에서도 CDN, DNS, DDoS 방어를 제공합니다. CDN은 정적 파일에 효과적이고, API 응답 같은 동적 데이터에는 적용이 제한적입니다. 번들러가 파일명에 해시를 붙이면 CDN 캐시가 자동으로 갱신됩니다. 한국에 CDN 엣지 서버가 있는 서비스를 선택하면 국내 사용자 경험이 좋아집니다. Vercel은 서울 리전(ICN)을 지원하므로 한국 사용자에게 빠른 응답 속도를 제공합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">CI/CD (자동 배포)</div>
-                <div class="stack-concept-tags"><span class="sct">CI</span><span class="sct">CD</span><span class="sct">자동배포</span></div>
-                <div class="stack-concept-code">CI (Continuous Integration): 코드 변경 시 자동 테스트
-CD (Continuous Deployment): 테스트 통과 시 자동 배포
-
-Vercel 기준:
-  GitHub main 브랜치에 push
-  -&gt; Vercel이 자동으로 빌드
-  -&gt; 새 버전 배포 완료
-  -&gt; 이전 버전은 자동 보관 (롤백 가능)
-
-GitHub Actions 예시:
-  name: Deploy
-  on: push: branches: [main]
-  jobs:
-    build:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v4
-        - run: npm install
-        - run: npm run build
-        - run: npm run test
-        - uses: deploy-action
-
-PR 기반 워크플로우:
-  1. feature 브랜치에서 개발
-  2. PR 생성 -&gt; Preview URL 자동 생성
-  3. 코드 리뷰 + 테스트 통과 확인
-  4. main에 머지 -&gt; 자동 배포</div>
-                <div class="stack-concept-desc">코드를 올리면 자동으로 빌드하고 배포되는 파이프라인입니다. Vercel/Netlify는 GitHub 연동만 하면 기본으로 제공합니다. 배포 실패 시 이전 버전으로 자동 롤백되어 서비스 중단 없이 운영할 수 있습니다. GitHub Actions는 GitHub에서 제공하는 CI/CD 도구로, 테스트 자동화, 린트 검사, 빌드, 배포를 워크플로우로 정의할 수 있습니다. PR 기반 워크플로우에서는 feature 브랜치에서 개발하고, PR을 생성하면 Preview URL이 자동으로 만들어져 배포 전 미리 확인할 수 있습니다. 코드 리뷰와 테스트가 통과하면 main에 머지하고 자동 배포됩니다. 이 과정이 자동화되면 개발자는 코드 작성에만 집중할 수 있습니다. 포트폴리오 프로젝트에서도 이 워크플로우를 적용하면 실무 경험을 어필할 수 있습니다.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 번들러 -->
-          <div class="stack-concept-group" data-group="bundler">
-            <div class="stack-concept-group-header">
-              <div class="stack-cg-num">08</div>
-              <div class="stack-cg-info">
-                <div class="stack-cg-title">번들러</div>
-                <div class="stack-cg-sub">파일들을 묶어 빠르게 만드는 도구</div>
-              </div>
-            </div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">번들러가 왜 필요한가?</div>
-                <div class="stack-concept-tags"><span class="sct">번들링</span><span class="sct">최적화</span><span class="sct">요청</span></div>
-                <div class="stack-concept-code">파일 100개를 브라우저가 따로 요청:
-  HTML, CSS, JS, 이미지... 요청 100번 -&gt; 느림
-
-번들러 사용 후:
-  JS 파일 수십 개 -&gt; app.js 하나로 합침
-  CSS 파일 여러 개 -&gt; style.css 하나로 합침
-  -&gt; 요청 횟수 감소, 로딩 빠름
-
-번들러가 하는 일:
-  1. 모듈 해석: import/require 의존성 추적
-  2. 번들링: 여러 파일을 하나로 합침
-  3. 변환: JSX -&gt; JS, TS -&gt; JS, Sass -&gt; CSS
-  4. 최적화: 코드 압축, 불필요 코드 제거
-  5. 개발 서버: HMR, 자동 새로고침</div>
-                <div class="stack-concept-desc">React 프로젝트는 파일이 수십에서 수백 개입니다. 번들러가 이를 최적화해서 브라우저가 빠르게 로딩할 수 있는 파일로 만들어 줍니다. npm run build 한 번으로 배포용 파일이 자동으로 생성됩니다. 번들러 없이는 import/export 문법을 브라우저에서 직접 사용할 수 없습니다(ESM 모듈 제외). JSX(React 문법), TypeScript도 번들러를 거쳐야 브라우저가 이해할 수 있는 JS로 변환됩니다. 개발 중에는 HMR(Hot Module Replacement)로 코드 수정 시 페이지 새로고침 없이 변경 사항이 즉시 반영됩니다. 이것이 개발 속도를 크게 높여주는 기능입니다. 번들러는 프론트엔드 개발 인프라의 핵심이므로 기본 원리를 이해하는 것이 중요합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">Vite</div>
-                <div class="stack-concept-tags"><span class="sct">Vite</span><span class="sct">개발서버</span><span class="sct">빌드</span></div>
-                <div class="stack-concept-code">// 프로젝트 시작
-npm create vite@latest my-app
-cd my-app &amp;&amp; npm install &amp;&amp; npm run dev
-
-// 주요 명령어
-npm run dev    -- 개발 서버 실행 (빠름)
-npm run build  -- 배포용 파일 생성 (dist 폴더)
-npm run preview -- 빌드 결과물 미리보기
-
-// 프로젝트 구조
-my-app/
-  index.html       -- 진입점
-  src/
-    main.jsx       -- JS 진입점
-    App.jsx        -- 루트 컴포넌트
-    components/    -- 컴포넌트 폴더
-    assets/        -- 이미지, 폰트
-  public/          -- 그대로 복사되는 파일
-  vite.config.js   -- Vite 설정
-  package.json     -- 의존성, 스크립트
-
-// Vite가 빠른 이유
-개발 서버: ESM(ES Module) 기반 -&gt; 번들링 안 함
-  -&gt; 파일 하나 수정하면 그 파일만 교체
-빌드: Rollup 기반 -&gt; 최적화된 번들 생성</div>
-                <div class="stack-concept-desc">현재 가장 많이 쓰이는 번들러입니다. Vue.js 창시자 Evan You가 만들었으며, 개발 서버 시작이 매우 빠릅니다. React 프로젝트를 시작할 때 이 수업에서 사용합니다. Vite가 빠른 이유는 개발 모드에서 번들링을 하지 않고 ES Module을 직접 사용하기 때문입니다. 파일 하나를 수정하면 그 파일만 교체(HMR)되어 즉시 반영됩니다. Webpack은 전체 프로젝트를 다시 번들링해야 했습니다. 빌드 시에는 Rollup 기반으로 최적화된 번들을 생성합니다. TypeScript, JSX, CSS Modules, PostCSS 등을 기본 지원합니다. 설정 파일(vite.config.js)이 간단하고 직관적입니다. 2024년 이후 새 프로젝트는 대부분 Vite를 사용합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">Webpack</div>
-                <div class="stack-concept-tags"><span class="sct">Webpack</span><span class="sct">레거시</span><span class="sct">설정</span></div>
-                <div class="stack-concept-desc">Vite 이전에 표준이었던 번들러입니다. 현재도 많은 레거시 프로젝트와 Create React App이 Webpack을 씁니다. 설정이 복잡하지만 커스터마이징이 자유롭습니다. 취업 후 기존 프로젝트에서 마주칠 가능성이 높습니다. Webpack은 모든 것을 모듈로 취급합니다. JS뿐 아니라 CSS, 이미지, 폰트도 import해서 의존성 그래프에 포함시킵니다. loader(변환기)와 plugin(확장 기능)으로 거의 모든 작업을 처리할 수 있습니다. 설정이 복잡한 만큼 세밀한 제어가 가능합니다. Create React App은 Webpack 설정을 숨겨놓은 것입니다. 새 프로젝트는 Vite를 추천하지만, Webpack 프로젝트를 유지보수할 줄도 알아야 합니다.</div>
-                <div class="stack-concept-code">// webpack.config.js
-module.exports = {
-  entry: './src/index.js',
-  output: { filename: 'bundle.js', path: '/dist' },
-  module: {
-    rules: [
-      { test: /\.jsx?$/, use: 'babel-loader' },
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-      { test: /\.(png|jpg)$/, type: 'asset/resource' }
-    ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({ template: './index.html' })
-  ]
-};</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">번들러가 하는 일들</div>
-                <div class="stack-concept-tags"><span class="sct">tree-shaking</span><span class="sct">Babel</span><span class="sct">최적화</span></div>
-                <div class="stack-concept-code">모듈 번들링:  import/require를 하나로 합침
-트랜스파일:   최신 JS -&gt; 구 브라우저 호환 JS (Babel)
-             JSX -&gt; createElement() 함수 호출
-             TypeScript -&gt; JavaScript
-CSS 처리:    Sass/Less -&gt; CSS 변환
-             PostCSS: Autoprefixer 등 플러그인 처리
-             CSS Modules: 클래스명 충돌 방지
-이미지 최적화: 작은 이미지는 Base64로 인라인
-             큰 이미지는 별도 파일로 복사
-Tree shaking: 사용하지 않는 코드(export) 제거
-코드 분할:   필요한 페이지의 JS만 로딩 (lazy)
-             React.lazy() + Suspense
-Minification: 공백, 주석 제거, 변수명 축약
-Source Map:   압축된 코드 -&gt; 원본 코드 매핑 (디버깅용)</div>
-                <div class="stack-concept-desc">번들러는 단순히 합치는 것을 넘어 코드를 최적화합니다. npm run build 한 번으로 이 모든 작업이 자동으로 실행됩니다. Tree-shaking으로 사용하지 않는 코드를 제거해 번들 크기를 줄입니다. 코드 분할(Code Splitting)은 초기 로딩 속도를 높이는 핵심 기법입니다. 모든 페이지의 JS를 한 번에 받는 대신, 현재 페이지에 필요한 JS만 먼저 받고 나머지는 필요할 때 로딩합니다. React에서는 React.lazy()와 Suspense로 컴포넌트 단위의 코드 분할이 가능합니다. Source Map은 빌드된 압축 코드에서 에러가 발생했을 때 원본 소스 코드의 위치를 알려주므로 디버깅에 필수적입니다. 개발 환경에서는 활성화하고 프로덕션에서는 보안을 위해 비활성화하는 것이 일반적입니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">SPA vs MPA</div>
-                <div class="stack-concept-tags"><span class="sct">SPA</span><span class="sct">MPA</span><span class="sct">React</span></div>
-                <div class="stack-concept-code">MPA (전통적):
-  / (홈)    -&gt; 서버: home.html 전송
-  /about    -&gt; 서버: about.html 전송 (새로고침)
-  /products -&gt; 서버: products.html 전송 (새로고침)
-
-SPA (React):
-  처음에 index.html 하나만 받음
-  이후 JS Router가 URL에 따라 화면을 교체
-  서버 요청 없음 -&gt; 부드러운 전환
-
-SSR (Next.js):
-  서버에서 첫 HTML을 완성해서 전달 (SEO 유리)
-  이후는 SPA처럼 클라이언트에서 라우팅
-  = "초기 로딩은 서버, 이후는 클라이언트"
-
-SSG (Static Site Generation):
-  빌드 시점에 모든 페이지를 HTML로 생성
-  블로그, 문서 사이트에 적합 (Gatsby, Astro)</div>
-                <div class="stack-concept-desc">SPA(Single Page Application)는 HTML을 처음 한 번만 받고, 이후 JS가 페이지를 동적으로 교체합니다. MPA(Multi Page Application)는 페이지 이동할 때마다 서버에서 새 HTML을 받습니다. React는 SPA 방식이며, 이것이 "새로고침 없이 부드럽게 전환되는" 경험을 만드는 원리입니다. SPA의 단점은 초기 로딩이 느리고 SEO가 불리하다는 것입니다. Next.js의 SSR은 이 단점을 보완합니다. 서버에서 첫 HTML을 완성해서 보내므로 검색 엔진이 내용을 읽을 수 있고, 초기 로딩도 빠릅니다. SSG는 빌드 시점에 모든 페이지를 미리 만들어두는 방식으로, 블로그나 문서 사이트에 적합합니다. 전통적인 웹사이트는 MPA 방식이었으나, 현대 웹앱 대부분은 SPA로 전환되었습니다.</div>
-                <div class="stack-concept-note"><b>실무 포인트</b> -- React로 만든 앱이 "새로고침 없이 빠르게 전환"되는 이유가 SPA 구조 때문입니다. SEO가 중요한 쇼핑몰, 블로그는 SSR(Next.js)을 함께 씁니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">환경 변수 (.env)</div>
-                <div class="stack-concept-tags"><span class="sct">env</span><span class="sct">보안</span><span class="sct">API키</span></div>
-                <div class="stack-concept-code">// .env 파일 (절대 GitHub에 올리지 말 것!)
-VITE_API_URL=https://api.mysite.com
-VITE_KAKAO_KEY=abc123xyz
-VITE_GA_ID=G-XXXXXXXXXX
-
-// JS에서 읽기
-const apiUrl = import.meta.env.VITE_API_URL;
-
-// .gitignore에 추가
-.env
-.env.local
-.env.production
-
-// 환경별 파일:
-.env              -- 모든 환경 공통
-.env.local         -- 로컬 개발 (git 무시)
-.env.development   -- 개발 환경
-.env.production    -- 배포 환경
-
-// Vercel 환경 변수 설정:
-// 대시보드 -&gt; Settings -&gt; Environment Variables
-// 여기에 등록하면 빌드 시 자동 주입</div>
-                <div class="stack-concept-desc">코드에 직접 쓰면 안 되는 값들(API 키, DB 비밀번호, 서버 주소)을 별도 파일에 저장하는 방식입니다. .env 파일은 .gitignore에 추가해서 GitHub에 올라가지 않도록 합니다. Vite에서는 VITE_ 접두사가 붙은 변수만 브라우저 코드에서 읽을 수 있습니다. 접두사 없는 변수는 서버 측 코드에서만 접근 가능합니다. 개발 환경과 배포 환경의 서버 주소가 달라질 때도 환경 변수로 분리합니다. Vercel에서는 대시보드의 Environment Variables에 등록하면 빌드 시 자동으로 주입됩니다. .env 파일을 실수로 GitHub에 올리면 API 키가 노출되므로 발견 즉시 키를 폐기하고 재발급해야 합니다. git-secrets 같은 도구로 커밋 전 민감 정보 포함 여부를 자동 검사할 수 있습니다.</div>
-                <div class="stack-concept-tip"><b>핵심</b> -- .env 파일을 실수로 GitHub에 올리면 API 키가 노출됩니다. 발견 즉시 키를 폐기하고 재발급해야 합니다.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 웹 성능 -->
-          <div class="stack-concept-group" data-group="perf">
-            <div class="stack-concept-group-header">
-              <div class="stack-cg-num">09</div>
-              <div class="stack-cg-info">
-                <div class="stack-cg-title">웹 성능</div>
-                <div class="stack-cg-sub">빠른 페이지가 곧 비즈니스 경쟁력</div>
-              </div>
-            </div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">성능이 왜 중요한가?</div>
-                <div class="stack-concept-tags"><span class="sct">성능</span><span class="sct">UX</span><span class="sct">SEO</span></div>
-                <div class="stack-concept-code">로딩 1초 지연 -&gt; 전환율 7% 감소 (Amazon 연구)
-3초 이상 걸리면 -&gt; 사용자 53% 이탈 (Google)
-Google 검색 순위에 페이지 속도 반영 (Core Web Vitals)
-
-성능 개선 효과 사례:
-  Pinterest: 로딩 40% 단축 -&gt; 가입 15% 증가
-  BBC: 로딩 1초 추가 -&gt; 사용자 10% 이탈
-  Walmart: 로딩 1초 단축 -&gt; 전환율 2% 증가
-
-성능 측정 도구:
-  Lighthouse (Chrome DevTools)
-  PageSpeed Insights (web.dev/measure)
-  WebPageTest (webpagetest.org)
-  Chrome UX Report (실제 사용자 데이터)</div>
-                <div class="stack-concept-desc">느린 페이지는 사용자 이탈, 매출 감소, 검색 순위 하락으로 직결됩니다. 취업 후 성능 개선은 바로 비즈니스 성과로 연결됩니다. 포트폴리오에서 Lighthouse 점수를 높게 유지하면 기술력을 증명하는 수단이 됩니다. Google은 2021년부터 Core Web Vitals를 검색 순위 요소에 포함시켰습니다. 모바일 사용자는 데스크톱보다 네트워크가 느리고 CPU 성능이 낮으므로 성능 최적화가 더 중요합니다. 성능은 개발 초기부터 고려해야 합니다. 나중에 최적화하려면 비용이 훨씬 많이 듭니다. 성능 측정은 한 번이 아니라 지속적으로 모니터링해야 합니다. 배포 후 실제 사용자 환경에서의 성능(Field Data)이 실험실 환경(Lab Data)보다 중요합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">Core Web Vitals</div>
-                <div class="stack-concept-tags"><span class="sct">LCP</span><span class="sct">CLS</span><span class="sct">Google</span></div>
-                <div class="stack-concept-code">LCP (Largest Contentful Paint)
-  -- 가장 큰 콘텐츠가 로딩되는 시간
-  -- 좋음: 2.5초 이하 / 나쁨: 4초 이상
-  -- 개선: 이미지 최적화, 서버 응답 단축, CSS 인라인
-
-INP (Interaction to Next Paint) -- FID 대체
-  -- 사용자 입력에 반응하는 시간
-  -- 좋음: 200ms 이하
-  -- 개선: JS 실행 최적화, 메인 스레드 블로킹 방지
-
-CLS (Cumulative Layout Shift)
-  -- 화면이 갑자기 이동하는 정도
-  -- 좋음: 0.1 이하
-  -- 원인: 이미지 크기 미지정, 동적 콘텐츠 삽입
-  -- 개선: width/height 명시, font-display: swap
-
-TTFB (Time To First Byte)
-  -- 서버 첫 응답까지 시간
-  -- 좋음: 800ms 이하
-  -- 서버 성능, CDN, 캐싱에 영향 받음</div>
-                <div class="stack-concept-desc">Google이 정의한 핵심 성능 지표입니다. 이 지표들이 Google 검색 순위에 직접 영향을 줍니다. LCP는 사용자가 "페이지가 로딩됐다"고 느끼는 시점을 측정합니다. 히어로 이미지나 큰 텍스트 블록이 대상입니다. INP는 2024년에 FID를 대체한 새로운 지표로, 전체 페이지 수명 동안의 모든 상호작용 응답성을 측정합니다. CLS는 이미지에 width/height를 명시하지 않으면 로딩 중 레이아웃이 흔들리는 문제입니다. 광고, 웹폰트, 동적으로 삽입되는 콘텐츠도 CLS의 주요 원인입니다. PageSpeed Insights에서 실제 사용자 데이터(Field Data)와 실험실 데이터(Lab Data)를 모두 확인할 수 있습니다. 포트폴리오에서 "Core Web Vitals 전 항목 녹색" 달성은 좋은 어필 포인트입니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">이미지 최적화</div>
-                <div class="stack-concept-tags"><span class="sct">WebP</span><span class="sct">lazy loading</span><span class="sct">이미지</span></div>
-                <div class="stack-concept-code">// 형식 선택
-JPEG  -- 사진류 (손실 압축, 용량 작음)
-PNG   -- 투명 배경 필요 시 (무손실, 용량 큼)
-WebP  -- JPEG 대비 30% 작음 (권장, 대부분 브라우저 지원)
-AVIF  -- WebP보다 20% 더 작음 (최신, 지원 확대 중)
-SVG   -- 아이콘, 로고 (벡터, 무한 확대, 용량 작음)
-
-// 크기 최적화
-&lt;img src="photo.webp"
-     width="800" height="600"
-     loading="lazy"
-     alt="설명 텍스트"&gt;
-
-// 반응형 이미지 (화면 크기별 다른 이미지)
-&lt;picture&gt;
-  &lt;source srcset="photo-mobile.webp" media="(max-width: 768px)"&gt;
-  &lt;source srcset="photo-desktop.webp"&gt;
-  &lt;img src="photo-fallback.jpg" alt="사진"&gt;
-&lt;/picture&gt;
-
-// 변환 도구
-Squoosh.app -- 브라우저에서 무료 변환/압축
-sharp (npm) -- Node.js 이미지 처리 라이브러리</div>
-                <div class="stack-concept-desc">이미지가 페이지 용량의 60~80%를 차지합니다. WebP 변환과 lazy loading만으로도 로딩 속도가 크게 개선됩니다. Squoosh.app 같은 무료 도구로 이미지를 WebP로 변환하고 압축할 수 있습니다. loading="lazy" 속성을 추가하면 뷰포트 밖의 이미지는 스크롤할 때 로딩됩니다. 이미지에 width와 height 속성을 반드시 명시해야 CLS(레이아웃 이동)를 방지할 수 있습니다. 반응형 이미지는 picture 태그와 srcset으로 화면 크기에 맞는 이미지를 제공합니다. 모바일에서 4K 이미지를 로딩하는 것은 낭비입니다. Next.js의 Image 컴포넌트는 자동 최적화, lazy loading, 반응형 이미지를 기본 제공합니다. SVG는 아이콘과 로고에 사용하면 어떤 크기에서도 선명하고 용량도 매우 작습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">Lighthouse</div>
-                <div class="stack-concept-tags"><span class="sct">Lighthouse</span><span class="sct">점수</span><span class="sct">DevTools</span></div>
-                <div class="stack-concept-code">Chrome DevTools -&gt; Lighthouse 탭
--&gt; Analyze page load 클릭
-
-측정 항목:
-  Performance   -- 로딩 속도 (LCP, INP, CLS)
-  Accessibility -- 접근성 (alt, label, 대비)
-  Best Practices -- 보안, 코드 품질
-  SEO           -- 검색 최적화 (meta, 구조화 데이터)
-
-점수: 0~100
-  0~49:  빨강 (개선 필요)
-  50~89: 주황 (보통)
-  90~100: 녹색 (좋음)
-
-자주 나오는 개선 항목:
-  "Serve images in next-gen formats" -&gt; WebP 사용
-  "Properly size images" -&gt; 표시 크기에 맞게 리사이즈
-  "Eliminate render-blocking resources" -&gt; CSS/JS defer
-  "Reduce unused JavaScript" -&gt; 코드 분할, tree-shaking
-  "Image elements do not have explicit width and height"</div>
-                <div class="stack-concept-desc">브라우저 내장 성능 진단 도구입니다. 어떤 부분이 느린지, 어떻게 개선하면 되는지를 구체적으로 알려줍니다. 포트폴리오 점수를 높이는 데도 활용합니다. Lighthouse 결과 스크린샷을 포트폴리오에 넣으면 기술적 완성도를 어필할 수 있습니다. 성능 점수는 실행할 때마다 약간 달라질 수 있으므로 여러 번 측정하는 것이 좋습니다. DevTools에서 실행하면 확장 프로그램의 영향을 받을 수 있으므로, 시크릿 모드에서 측정하는 것이 정확합니다. PageSpeed Insights(web.dev)에서 URL을 입력하면 실제 사용자 데이터(Chrome UX Report)도 함께 볼 수 있습니다. 각 항목에 대한 개선 방법을 구체적으로 제시해 주므로 하나씩 따라하면 됩니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">폰트 최적화</div>
-                <div class="stack-concept-tags"><span class="sct">폰트</span><span class="sct">성능</span><span class="sct">FOUT</span></div>
-                <div class="stack-concept-code">/* 폰트 최적화 설정 */
-@font-face {
-  font-family: 'Pretendard';
-  src: url('font.woff2') format('woff2');
-  font-display: swap; /* 로딩 전 기본 폰트 사용 */
-  unicode-range: U+AC00-D7A3; /* 한글만 */
-}
-
-/* Google Fonts 최적화 */
-/* preconnect로 DNS 미리 연결 */
-&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
-&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
-
-/* display=swap 파라미터 추가 */
-&lt;link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&amp;display=swap"&gt;
-
-폰트 형식 비교:
-  woff2 -- 최신 압축, 가장 작음 (권장)
-  woff  -- woff2 미지원 시 폴백
-  ttf   -- 무압축, 용량 큼 (웹 비추천)
-
-한글 폰트 서브셋:
-  전체: 2~5MB -&gt; 서브셋: 300~500KB
-  Pretendard: cdn으로 서브셋 제공</div>
-                <div class="stack-concept-desc">웹 폰트는 로딩이 느리면 텍스트가 늦게 표시되거나(FOUT), 아무것도 안 보이다 갑자기 나타나는(FOIT) 현상이 생깁니다. font-display: swap을 사용하면 폰트 로딩 전에 기본 폰트로 먼저 텍스트를 보여줍니다. 한글 폰트는 영문 폰트에 비해 글자 수가 많아 용량이 큽니다. 서브셋팅으로 필요한 글자 범위만 포함시키면 2~5MB에서 300~500KB로 줄일 수 있습니다. woff2 형식이 가장 압축률이 높으므로 반드시 woff2를 사용합니다. Google Fonts는 CDN으로 빠르게 제공되지만, preconnect 설정으로 DNS 연결 시간을 미리 줄여야 합니다. Pretendard 폰트는 한국어 프로젝트에서 인기가 높으며, CDN 서브셋 버전이 제공됩니다. 폰트 최적화만 해도 LCP 점수가 크게 개선됩니다.</div>
-                <div class="stack-concept-note"><b>실무 포인트</b> -- Pretendard 폰트는 woff2 서브셋 버전이 따로 있어 용량이 크게 줄어듭니다. 한글 폰트 최적화만 해도 LCP 점수가 크게 오릅니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">코드 최적화</div>
-                <div class="stack-concept-tags"><span class="sct">minify</span><span class="sct">lazy</span><span class="sct">tree-shaking</span></div>
-                <div class="stack-concept-code">// 나쁜 예 - 라이브러리 전체 import
-import _ from 'lodash';          // 70KB
-import moment from 'moment';     // 67KB
-
-// 좋은 예 - 필요한 함수만 import
-import { debounce } from 'lodash-es';  // 2KB
-import { format } from 'date-fns';     // 4KB
-
-// React 코드 분할 (lazy loading)
-const AdminPage = React.lazy(() =&gt; import('./AdminPage'));
-
-function App() {
-  return (
-    &lt;Suspense fallback={&lt;Loading /&gt;}&gt;
-      &lt;AdminPage /&gt;
-    &lt;/Suspense&gt;
-  );
-}
-
-// 번들 크기 분석
-npx vite-bundle-visualizer
-// -&gt; 어떤 라이브러리가 번들을 차지하는지 시각화
-
-// 동적 import (필요할 때만 로딩)
-const { jsPDF } = await import('jspdf');
-// PDF 다운로드 버튼 클릭 시에만 로딩</div>
-                <div class="stack-concept-desc">배포용 코드는 공백, 주석을 제거하고 변수명을 짧게 줄이는 minification을 거칩니다. 사용되지 않는 코드는 tree-shaking으로 번들에서 제거됩니다. 큰 라이브러리는 필요한 함수만 import해서 번들 크기를 줄입니다. lodash 대신 lodash-es, moment 대신 date-fns를 쓰면 tree-shaking이 더 효과적입니다. React.lazy()와 Suspense로 컴포넌트 단위의 코드 분할이 가능합니다. 관리자 페이지처럼 일부 사용자만 접근하는 페이지는 lazy loading으로 초기 번들에서 제외합니다. vite-bundle-visualizer로 어떤 라이브러리가 번들 크기를 차지하는지 시각적으로 분석할 수 있습니다. 번들 크기가 클수록 다운로드 시간이 길어지므로 지속적인 관리가 필요합니다.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 웹 접근성 -->
-          <div class="stack-concept-group" data-group="a11y">
-            <div class="stack-concept-group-header">
-              <div class="stack-cg-num">10</div>
-              <div class="stack-cg-info">
-                <div class="stack-cg-title">웹 접근성</div>
-                <div class="stack-cg-sub">모든 사람을 위한 웹을 만드는 기준</div>
-              </div>
-            </div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">접근성이란?</div>
-                <div class="stack-concept-tags"><span class="sct">a11y</span><span class="sct">WCAG</span><span class="sct">포용성</span></div>
-                <div class="stack-concept-desc">시각 장애, 청각 장애, 지체 장애, 인지 장애가 있는 사용자도 웹을 이용할 수 있도록 설계하는 것입니다. 공공기관 웹사이트는 법적 의무 사항입니다. 접근성은 장애인만을 위한 것이 아니라, 어두운 환경에서 스마트폰을 쓰거나 한 손이 바쁜 모든 사람에게 도움이 됩니다. WCAG(Web Content Accessibility Guidelines)는 W3C가 정한 국제 접근성 표준입니다. 한국은 KWCAG(한국형 웹 콘텐츠 접근성 지침) 2.2를 적용합니다. 접근성을 고려한 웹사이트는 SEO에도 유리합니다. 스크린 리더가 읽을 수 있는 구조는 검색 엔진도 잘 이해합니다. 미국에서는 ADA(장애인 차별 금지법) 위반으로 웹사이트 소송이 증가하고 있어, 글로벌 서비스에서 접근성은 필수입니다.</div>
-                <div class="stack-concept-code">접근성이 필요한 사용자:
-  시각 장애:  스크린 리더 사용 (NVDA, VoiceOver)
-  저시력:    화면 확대, 고대비 모드
-  색각 이상: 색상만으로 정보 전달 불가
-  청각 장애: 동영상 자막 필요
-  지체 장애: 키보드만으로 조작
-  인지 장애: 명확한 언어, 단순한 UI
-
-스크린 리더 -- 화면을 읽어주는 프로그램
-키보드 탐색 -- 마우스 없이 Tab키로 이동
-고대비 모드 -- 색상 구분이 어려운 사용자
-
-WCAG 등급:
-  A:   최소 기준 (반드시 준수)
-  AA:  권장 기준 (대부분 사이트 목표)
-  AAA: 최고 수준 (특수 목적 사이트)</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">alt 텍스트 &amp; 시맨틱 태그</div>
-                <div class="stack-concept-tags"><span class="sct">alt</span><span class="sct">시맨틱</span><span class="sct">스크린리더</span></div>
-                <div class="stack-concept-code">// 이미지 대체 텍스트
-&lt;img src="logo.png" alt="웹 바이브 로고"&gt;
-&lt;img src="deco.png" alt=""&gt; &lt;!-- 장식용은 빈 값 --&gt;
-&lt;img src="chart.png" alt="2024년 월별 매출 추이: 1월 100만원에서 12월 500만원으로 상승"&gt;
-
-// 시맨틱 태그가 접근성에 중요한 이유
-&lt;div&gt;버튼&lt;/div&gt;     -- 스크린 리더가 "div"라고 읽음
-&lt;button&gt;버튼&lt;/button&gt; -- 스크린 리더가 "버튼"이라고 읽음
-
-// 시맨틱 태그 vs div
-&lt;header&gt;  -- "배너" 영역으로 인식
-&lt;nav&gt;     -- "탐색" 영역으로 인식
-&lt;main&gt;    -- "주요 내용" 영역으로 인식
-&lt;article&gt; -- 독립적인 콘텐츠 단위
-&lt;aside&gt;   -- 부가 정보 (사이드바)
-&lt;footer&gt;  -- "정보" 영역으로 인식
-
-// 제목 태그 계층 (건너뛰지 말 것)
-&lt;h1&gt;  -&gt;  &lt;h2&gt;  -&gt;  &lt;h3&gt;  (순서대로)</div>
-                <div class="stack-concept-desc">스크린 리더는 alt 텍스트로 이미지를 읽어줍니다. 시맨틱 태그를 쓰면 자동으로 접근성이 높아집니다. 장식용 이미지는 alt=""로 설정하면 스크린 리더가 건너뜁니다. 차트나 그래프 이미지는 alt에 데이터의 핵심 내용을 텍스트로 설명합니다. button 태그는 키보드 포커스, 클릭 이벤트, 스크린 리더 인식이 기본으로 지원됩니다. div에 onClick을 추가하면 이 모든 것을 수동으로 구현해야 합니다. 시맨틱 태그(header, nav, main, footer)는 스크린 리더가 페이지 구조를 파악하는 데 핵심적인 역할을 합니다. 제목 태그(h1~h6)는 계층 순서를 지켜야 합니다. h1 다음에 h3가 오면 스크린 리더 사용자가 혼란을 느낍니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">키보드 탐색 &amp; 포커스</div>
-                <div class="stack-concept-tags"><span class="sct">Tab</span><span class="sct">focus</span><span class="sct">tabindex</span></div>
-                <div class="stack-concept-code">// Tab키로 이동 가능하게
-&lt;button&gt;클릭&lt;/button&gt;    -- 기본 포커스 가능
-&lt;a href="#"&gt;링크&lt;/a&gt;    -- 기본 포커스 가능
-&lt;input type="text"&gt;     -- 기본 포커스 가능
-&lt;div tabindex="0"&gt;커스텀&lt;/div&gt; -- tabindex로 추가
-
-// tabindex 값
-tabindex="0"   -- 자연스러운 순서에 포함
-tabindex="-1"  -- JS로만 포커스 가능 (Tab 순서 제외)
-tabindex="1+"  -- 비추천! 자연스러운 순서 깨뜨림
-
-// 포커스 스타일 (없애지 말 것!)
-:focus { outline: 2px solid #3b82f6; }
-:focus-visible { outline: 2px solid #3b82f6; }
-  -- focus-visible: 키보드 포커스만 스타일 적용
-  -- 마우스 클릭 시에는 outline 안 보임
-
-// 포커스 트랩 (모달에서 필수)
-모달이 열리면 포커스가 모달 안에 갇혀야 함
-Tab으로 모달 밖으로 나가면 안 됨
-ESC로 모달을 닫을 수 있어야 함</div>
-                <div class="stack-concept-desc">마우스를 쓸 수 없는 사용자는 Tab키로만 탐색합니다. outline을 CSS로 제거하는 것은 접근성을 해치는 나쁜 관행입니다. :focus-visible을 사용하면 키보드 포커스에만 outline을 표시하고 마우스 클릭 시에는 표시하지 않아 디자인과 접근성을 모두 잡을 수 있습니다. 모달 창이 열리면 포커스가 모달 안에 갇혀야(focus trap) 합니다. Tab을 눌러도 모달 밖의 요소로 이동하면 안 됩니다. ESC 키로 모달을 닫을 수 있어야 합니다. 대화형 요소(버튼, 링크, 입력)는 기본적으로 포커스 가능합니다. div, span 같은 비대화형 요소에 클릭 기능을 추가하려면 tabindex="0"과 키보드 이벤트(Enter, Space)를 함께 처리해야 합니다. 하지만 가능하면 button이나 a 태그를 사용하는 것이 훨씬 간단하고 안전합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">색상 대비 &amp; ARIA</div>
-                <div class="stack-concept-tags"><span class="sct">색상대비</span><span class="sct">ARIA</span><span class="sct">WCAG</span></div>
-                <div class="stack-concept-code">// 색상 대비 권장 기준 (WCAG 2.1)
-일반 텍스트: 최소 4.5:1 비율
-큰 텍스트(18px+):   최소 3:1 비율
-확인 도구:   WebAIM Contrast Checker
-
-// ARIA (Accessible Rich Internet Applications)
-aria-label="닫기 버튼"     -- 보이지 않는 레이블
-aria-expanded="true"       -- 펼침/접힘 상태
-aria-hidden="true"         -- 스크린 리더에서 숨김
-aria-live="polite"         -- 동적 변경 알림
-aria-describedby="error"   -- 설명 연결
-role="dialog"              -- 모달 역할 명시
-role="alert"               -- 긴급 알림
-role="navigation"          -- 탐색 영역 (nav 태그 대체)
-
-// 자주 쓰는 ARIA 패턴
-&lt;button aria-expanded="false" aria-controls="menu"&gt;메뉴&lt;/button&gt;
-&lt;ul id="menu" hidden&gt;...&lt;/ul&gt;
-
-&lt;div role="alert" aria-live="assertive"&gt;
-  저장되었습니다!  &lt;!-- 스크린 리더가 즉시 읽음 --&gt;
-&lt;/div&gt;</div>
-                <div class="stack-concept-desc">색상만으로 정보를 전달하지 말고, ARIA 속성으로 동적 UI 요소의 의미를 보완합니다. Lighthouse가 접근성 점수를 자동으로 측정해 줍니다. 흰 배경에 연한 회색 텍스트는 대비가 부족해 접근성 기준 미달인 경우가 많습니다. ARIA는 HTML만으로 전달할 수 없는 동적 상태와 관계를 스크린 리더에 알려줍니다. aria-expanded는 아코디언, 드롭다운 같은 펼침/접힘 UI에 필수입니다. aria-live는 AJAX로 동적으로 변경되는 내용(알림, 검색 결과 수)을 스크린 리더에 알립니다. 중요한 원칙은 "ARIA를 쓰기 전에 HTML 시맨틱 태그로 해결할 수 있는지 먼저 확인"하는 것입니다. button 태그가 있는데 div에 role="button"을 쓰는 것은 불필요합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">폼 접근성</div>
-                <div class="stack-concept-tags"><span class="sct">폼</span><span class="sct">label</span><span class="sct">입력</span></div>
-                <div class="stack-concept-code">&lt;!-- 나쁜 예 --&gt;
-&lt;input type="email" placeholder="이메일 입력"&gt;
-
-&lt;!-- 좋은 예 --&gt;
-&lt;label for="email"&gt;이메일&lt;/label&gt;
-&lt;input id="email" type="email"
-       aria-required="true"
-       aria-describedby="email-error"&gt;
-&lt;span id="email-error" role="alert"&gt;
-  올바른 이메일 형식이 아닙니다
-&lt;/span&gt;
-
-&lt;!-- 숨긴 label (디자인 유지 + 접근성) --&gt;
-&lt;label for="search" class="sr-only"&gt;검색&lt;/label&gt;
-&lt;input id="search" type="search" placeholder="검색어 입력"&gt;
-
-/* sr-only 클래스 (화면에 안 보이지만 스크린 리더가 읽음) */
-.sr-only {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}</div>
-                <div class="stack-concept-desc">폼 입력 요소는 반드시 label과 연결해야 스크린 리더가 "이메일 입력란"처럼 읽어줄 수 있습니다. placeholder만으로는 접근성이 보장되지 않습니다. placeholder는 입력하면 사라져서 무엇을 입력해야 하는지 잊게 만들기 때문에 label을 항상 함께 써야 합니다. 에러 메시지도 aria-describedby로 연결하면 스크린 리더가 에러를 읽어줍니다. role="alert"는 에러 메시지가 동적으로 나타날 때 스크린 리더가 즉시 알리도록 합니다. sr-only 클래스는 화면에는 보이지 않지만 스크린 리더가 읽을 수 있게 하는 기법입니다. 검색 입력란처럼 디자인상 label을 보이게 하기 어려운 경우에 사용합니다. display:none이나 visibility:hidden은 스크린 리더도 무시하므로 사용하면 안 됩니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">접근성 체크리스트</div>
-                <div class="stack-concept-tags"><span class="sct">WCAG</span><span class="sct">체크</span><span class="sct">실무</span></div>
-                <div class="stack-concept-code">필수 체크 항목:
-  [ ] 이미지에 alt 속성 있는가?
-  [ ] 색상만으로 정보를 전달하지 않는가?
-  [ ] 색상 대비가 4.5:1 이상인가?
-  [ ] 키보드만으로 모든 기능 사용 가능한가?
-  [ ] 포커스 스타일이 보이는가?
-  [ ] 폼에 label이 연결되어 있는가?
-  [ ] 동영상에 자막이 있는가?
-  [ ] 모달에 포커스 트랩이 있는가?
-  [ ] 제목 태그 계층이 올바른가? (h1-&gt;h2-&gt;h3)
-  [ ] 링크/버튼 텍스트가 명확한가? ("여기" X, "자세히 보기" O)
-
-자동 검사 도구:
-  Lighthouse (Chrome DevTools)
-  axe DevTools (Chrome 확장) -- 가장 상세
-  WAVE (웹 접근성 평가 도구)
-  eslint-plugin-jsx-a11y (React 린트)
-
-수동 검사:
-  Tab키만으로 전체 페이지 탐색해보기
-  스크린 리더로 직접 들어보기 (NVDA: 무료)</div>
-                <div class="stack-concept-desc">실무에서 접근성은 체크리스트로 확인합니다. Lighthouse의 Accessibility 탭이 자동으로 주요 항목을 점검해 줍니다. 공공기관 사이트는 한국형 웹 콘텐츠 접근성 지침(KWCAG) 2.2 준수가 법적 의무입니다. 스크린 리더로 직접 탐색해 보는 것이 가장 확실한 테스트 방법입니다. axe DevTools는 Lighthouse보다 더 상세한 접근성 문제를 감지합니다. React 프로젝트에서는 eslint-plugin-jsx-a11y를 설치하면 코딩 단계에서 접근성 문제를 미리 잡을 수 있습니다. 자동 검사 도구가 100점을 줘도 실제 접근성이 완벽하다는 뜻은 아닙니다. 논리적 순서, 명확한 레이블, 일관된 인터랙션 같은 요소는 수동으로 확인해야 합니다. 취업 포트폴리오에서 "접근성 100점 달성"은 차별화 포인트가 됩니다.</div>
-                <div class="stack-concept-tip"><b>핵심</b> -- Lighthouse 접근성 점수 100점을 목표로 하세요. 취업 포트폴리오에서 "접근성 100점 달성"은 차별화 포인트가 됩니다.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 오픈소스 & 라이브러리 -->
-          <div class="stack-concept-group" data-group="oss">
-            <div class="stack-concept-group-header">
-              <div class="stack-cg-num">11</div>
-              <div class="stack-cg-info">
-                <div class="stack-cg-title">오픈소스 &amp; 라이브러리</div>
-                <div class="stack-cg-sub">혼자 다 만들 필요 없다 -- 생태계를 쓴다</div>
-              </div>
-            </div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">npm (Node Package Manager)</div>
-                <div class="stack-concept-tags"><span class="sct">npm</span><span class="sct">패키지</span><span class="sct">라이브러리</span></div>
-                <div class="stack-concept-code">// 라이브러리 설치
-npm install react
-npm install axios          -- API 요청 라이브러리
-npm install --save-dev vite -- 개발용 도구 (-D와 동일)
-
-// package.json: 프로젝트가 쓰는 패키지 목록
-{
-  "dependencies": {        // 배포에 포함
-    "react": "^18.2.0",
-    "axios": "^1.4.0"
-  },
-  "devDependencies": {     // 개발에만 사용
-    "vite": "^5.0.0",
-    "eslint": "^8.50.0"
-  },
-  "scripts": {             // 명령어 단축
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint src/"
-  }
-}
-
-// node_modules 폴더: 설치된 실제 파일들
-// .gitignore에 추가해서 GitHub에 올리지 않음
-// npm install로 package.json 기반 재설치
-
-// 유용한 npm 명령어
-npm outdated     -- 업데이트 가능한 패키지 확인
-npm update       -- 범위 내 최신으로 업데이트
-npm uninstall    -- 패키지 삭제
-npx              -- 설치 없이 실행 (npx create-vite)</div>
-                <div class="stack-concept-desc">전 세계 개발자가 올려둔 코드를 가져다 쓰는 저장소입니다. 현재 200만 개 이상의 패키지가 있습니다. 혼자 다 만들 필요가 없습니다. node_modules는 용량이 크므로 반드시 .gitignore에 추가하고, npm install로 재설치합니다. dependencies는 실제 서비스에 포함되는 라이브러리(React, axios)이고, devDependencies는 개발 도구(Vite, ESLint)입니다. package-lock.json은 정확한 버전을 기록해 팀원 모두 같은 환경을 보장하므로 반드시 커밋합니다. npx는 패키지를 설치하지 않고 일회성으로 실행할 때 사용합니다. 보안 취약점이 있는 패키지는 npm audit으로 확인하고 npm audit fix로 자동 수정할 수 있습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">버전 관리 (Semantic Versioning)</div>
-                <div class="stack-concept-tags"><span class="sct">semver</span><span class="sct">버전</span><span class="sct">업데이트</span></div>
-                <div class="stack-concept-code">// 버전 번호: MAJOR.MINOR.PATCH
-react: 18.2.0
-        |  |  +-- 버그 수정 (하위 호환)
-        |  +---- 기능 추가 (하위 호환)
-        +------ 큰 변경 (하위 호환 안 됨, Breaking Change)
-
-// 범위 표시
-"^18.2.0" -- 18.x.x 중 최신 (MINOR, PATCH 자동 업데이트)
-"~18.2.0" -- 18.2.x 중 최신 (PATCH만 자동 업데이트)
-"18.2.0"  -- 정확히 이 버전만
-"*"       -- 최신 버전 (위험! 비추천)
-
-// 주요 라이브러리 메이저 업데이트 사례
-React 17 -&gt; 18: Concurrent Mode, createRoot 변경
-Next.js 12 -&gt; 13: App Router 도입 (대규모 변경)
-Vue 2 -&gt; 3: Composition API, 리액티비티 변경
-
-// 업데이트 전 확인 사항
-1. CHANGELOG.md 읽기 (어떤 것이 변경되었는가)
-2. Breaking Changes 확인 (코드 수정 필요 여부)
-3. 테스트 코드 실행
-4. 단계적 업데이트 (한 번에 하나씩)</div>
-                <div class="stack-concept-desc">버전 번호를 읽을 줄 알면 업데이트 시 무엇이 바뀌는지 예측할 수 있습니다. 메이저 버전 업은 Breaking Change가 있을 수 있어 주의가 필요합니다. ^(caret)은 메이저 버전 내에서 자동 업데이트를 허용하며, npm의 기본 설정입니다. 안정적인 프로젝트 운영을 위해 package-lock.json을 함께 커밋합니다. lock 파일이 있으면 npm install 시 정확히 같은 버전이 설치됩니다. 메이저 업데이트는 CHANGELOG와 마이그레이션 가이드를 반드시 읽고 진행합니다. React 18의 createRoot, Next.js 13의 App Router 같은 대규모 변경은 코드 수정이 필요합니다. 한 번에 여러 패키지를 메이저 업데이트하면 문제 원인을 찾기 어려우므로 하나씩 단계적으로 진행합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">자주 쓰는 라이브러리</div>
-                <div class="stack-concept-tags"><span class="sct">Tailwind</span><span class="sct">axios</span><span class="sct">Zustand</span></div>
-                <div class="stack-concept-code">UI 컴포넌트:
-  Tailwind CSS  -- 유틸리티 CSS 프레임워크
-  shadcn/ui     -- 복사해서 쓰는 컴포넌트 모음
-  Radix UI      -- 접근성 좋은 headless 컴포넌트
-
-API 요청:
-  axios         -- fetch보다 편한 HTTP 클라이언트
-  TanStack Query -- 서버 상태 관리 (캐싱, 재시도)
-
-날짜 처리:
-  dayjs         -- 날짜 포맷, 계산 (2KB, moment 대체)
-  date-fns      -- 함수형 날짜 라이브러리
-
-상태 관리:
-  Zustand       -- React 전역 상태 관리 (가장 간단)
-  Jotai         -- 원자적 상태 관리
-  Redux Toolkit -- 대규모 앱 (복잡하지만 표준)
-
-폼:
-  React Hook Form -- 폼 상태 관리 (성능 우수)
-  Zod            -- 유효성 검사 스키마
-
-애니메이션:
-  Framer Motion -- React 애니메이션 (가장 인기)
-
-유틸리티:
-  clsx / cn     -- 조건부 클래스명 조합
-  lodash-es     -- 유틸 함수 모음</div>
-                <div class="stack-concept-desc">이미 잘 만들어진 라이브러리를 잘 고르고 사용하는 능력이 실무 개발 속도를 결정합니다. 라이브러리마다 문서(docs)가 있으며, 공식 문서를 읽는 습관이 중요합니다. Claude에게 "이 라이브러리 사용법 알려줘"라고 물으면 빠르게 사용 방법을 파악할 수 있습니다. 라이브러리 선택 시 번들 크기, 마지막 업데이트 날짜, GitHub Stars, npm 주간 다운로드 수를 확인합니다. Tailwind CSS는 유틸리티 클래스 기반으로 CSS를 작성하며, 현재 가장 인기 있는 CSS 프레임워크입니다. shadcn/ui는 복사해서 사용하는 방식으로 커스터마이징이 자유롭습니다. Zustand는 Redux보다 훨씬 간단하면서 대부분의 상태 관리 요구를 충족합니다. React Hook Form은 불필요한 리렌더링 없이 폼을 관리합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">GitHub &amp; 오픈소스</div>
-                <div class="stack-concept-tags"><span class="sct">GitHub</span><span class="sct">Stars</span><span class="sct">License</span></div>
-                <div class="stack-concept-code">GitHub Stars -- 인기 지표. 1만+ 이면 검증된 라이브러리
-Issues      -- 버그 제보, 기능 요청 추적
-Pull Request -- 코드 기여, 코드 리뷰
-License     -- 사용 조건
-  MIT       -- 거의 자유롭게 사용 가능 (가장 많음)
-  Apache    -- 특허 보호 포함
-  GPL       -- 수정 시 동일 라이선스 유지 의무
-
-라이브러리 선택 체크리스트:
-  [ ] GitHub Stars가 1000개 이상인가?
-  [ ] 마지막 커밋이 3개월 이내인가?
-  [ ] Issues가 관리되고 있는가? (방치 아닌가)
-  [ ] 공식 문서가 잘 정리되어 있는가?
-  [ ] npm 주간 다운로드 수가 충분한가?
-  [ ] TypeScript 지원이 되는가?
-  [ ] 번들 크기가 적절한가? (bundlephobia.com)
-
-포트폴리오에 GitHub 활동:
-  README.md 잘 작성 (프로젝트 설명, 스크린샷)
-  커밋 메시지 컨벤션 (feat:, fix:, docs:)
-  꾸준한 커밋 그래프 (잔디 심기)</div>
-                <div class="stack-concept-desc">라이브러리를 선택할 때 Stars 수, 마지막 업데이트 날짜, Issues 처리 속도를 확인합니다. 관리가 중단된 라이브러리는 보안 취약점이 방치될 수 있으므로 피합니다. bundlephobia.com에서 라이브러리의 번들 크기를 미리 확인할 수 있습니다. MIT 라이선스는 상업적 사용도 자유롭게 허용하므로 안심하고 사용할 수 있습니다. GPL 라이선스는 해당 코드를 수정하면 전체 소스 코드를 같은 라이선스로 공개해야 하므로 상업 프로젝트에서 주의가 필요합니다. 내 포트폴리오 코드를 GitHub에 올려두면 취업 시 코드 실력을 보여줄 수 있습니다. README에 프로젝트 설명, 기술 스택, 스크린샷을 정리하면 면접관이 빠르게 파악할 수 있습니다. 커밋 메시지는 feat(기능 추가), fix(버그 수정), docs(문서)처럼 컨벤션을 따르면 전문적으로 보입니다.</div>
-              </div>
-            </div>
-          </div>
-
+  <div class="stack-panel-header stack-panel-header-basics">
+    <div class="stack-panel-num">00</div>
+    <div>
+      <div class="stack-panel-label">기초 개념 / Fundamentals</div>
+      <h3 class="stack-panel-name">웹 기초 개념</h3>
+      <p class="stack-panel-summary">
+        웹을 처음 배울 때 가장 먼저 이해해야 하는 핵심입니다.
+        웹이 어떻게 보이고, 어떤 구조로 이루어지며, HTML/CSS/JavaScript가 각각 어떤 역할을 하는지부터 정리합니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="stack-panel-body">
+
+    <!-- 웹 직군 & 역할 -->
+    <div class="stack-concept-group" data-group="roles">
+      <div class="stack-concept-group-header">
+        <div class="stack-cg-num">00</div>
+        <div class="stack-cg-info">
+          <div class="stack-cg-title">웹 직군 &amp; 역할</div>
+          <div class="stack-cg-sub">웹을 만든다는 것은 여러 역할이 함께 움직이는 일입니다</div>
         </div>
       </div>
 
+      <div class="stack-role-grid">
+        <div class="stack-role-card stack-role-design">
+          <div class="stack-role-tag">Design</div>
+          <div class="stack-role-name">웹 디자이너</div>
+          <div class="stack-role-work">색상, 레이아웃, 이미지, 타이포그래피를 통해 화면의 인상을 설계합니다.</div>
+          <div class="stack-role-tools">Figma / Photoshop / Illustrator</div>
+          <div class="stack-role-desc">
+            웹사이트가 어떤 분위기로 보일지, 어떤 색과 폰트를 쓸지, 화면이 어떤 형태로 배치될지를 정리하는 역할입니다.
+            사용자가 처음 보는 화면의 시각적 완성도를 담당합니다.
+          </div>
+          <div class="stack-role-skills">
+            <span class="stack-role-skill">Figma</span>
+            <span class="stack-role-skill">색상</span>
+            <span class="stack-role-skill">레이아웃</span>
+            <span class="stack-role-skill">타이포그래피</span>
+          </div>
+          <div class="stack-role-point">화면을 보기 좋게 만드는 역할입니다.</div>
+        </div>
 
+        <div class="stack-role-card stack-role-ux">
+          <div class="stack-role-tag">UX</div>
+          <div class="stack-role-name">UI/UX 기획자</div>
+          <div class="stack-role-work">사용자가 어떤 흐름으로 서비스를 이용할지 구조를 설계합니다.</div>
+          <div class="stack-role-tools">Figma / Notion / Miro</div>
+          <div class="stack-role-desc">
+            어떤 메뉴가 먼저 보여야 하는지, 사용자가 어디를 눌러야 다음 단계로 이동하는지,
+            화면과 기능의 흐름을 정리하는 역할입니다.
+          </div>
+          <div class="stack-role-skills">
+            <span class="stack-role-skill">와이어프레임</span>
+            <span class="stack-role-skill">유저플로우</span>
+            <span class="stack-role-skill">정보구조</span>
+            <span class="stack-role-skill">기획</span>
+          </div>
+          <div class="stack-role-point">사용자가 헷갈리지 않게 흐름을 만드는 역할입니다.</div>
+        </div>
+
+        <div class="stack-role-card stack-role-publish">
+          <div class="stack-role-tag">Publishing</div>
+          <div class="stack-role-name">퍼블리셔</div>
+          <div class="stack-role-work">디자인 시안을 실제 HTML/CSS 화면으로 구현합니다.</div>
+          <div class="stack-role-tools">HTML / CSS / JS 기초</div>
+          <div class="stack-role-desc">
+            디자이너가 만든 화면을 웹페이지 형태로 옮기는 역할입니다.
+            글자 크기, 간격, 색상, 배치 등을 실제 브라우저에서 보이도록 만듭니다.
+          </div>
+          <div class="stack-role-skills">
+            <span class="stack-role-skill">HTML</span>
+            <span class="stack-role-skill">CSS</span>
+            <span class="stack-role-skill">반응형</span>
+            <span class="stack-role-skill">웹표준</span>
+          </div>
+          <div class="stack-role-point">디자인을 실제 화면으로 바꾸는 역할입니다.</div>
+        </div>
+
+        <div class="stack-role-card stack-role-frontend">
+          <div class="stack-role-tag">Frontend</div>
+          <div class="stack-role-name">프론트엔드 개발자</div>
+          <div class="stack-role-work">사용자가 보고 누르는 화면과 동작을 구현합니다.</div>
+          <div class="stack-role-tools">HTML / CSS / JS / React</div>
+          <div class="stack-role-desc">
+            버튼을 누르면 메뉴가 열리고, 데이터를 불러오고, 화면이 바뀌는 등
+            실제 사용자가 체감하는 동작을 만드는 역할입니다.
+          </div>
+          <div class="stack-role-skills">
+            <span class="stack-role-skill">JavaScript</span>
+            <span class="stack-role-skill">React</span>
+            <span class="stack-role-skill">컴포넌트</span>
+            <span class="stack-role-skill">UI동작</span>
+          </div>
+          <div class="stack-role-point">보이는 화면과 그 동작을 완성하는 역할입니다.</div>
+        </div>
+
+        <div class="stack-role-card stack-role-backend">
+          <div class="stack-role-tag">Backend</div>
+          <div class="stack-role-name">백엔드 개발자</div>
+          <div class="stack-role-work">서버, 데이터 저장, 로그인 같은 보이지 않는 기능을 담당합니다.</div>
+          <div class="stack-role-tools">Node.js / Python / DB</div>
+          <div class="stack-role-desc">
+            회원 정보 저장, 게시글 저장, 로그인 처리처럼 화면 뒤에서 움직이는 기능을 만드는 역할입니다.
+            프론트엔드가 데이터를 요청하면 서버가 응답합니다.
+          </div>
+          <div class="stack-role-skills">
+            <span class="stack-role-skill">서버</span>
+            <span class="stack-role-skill">데이터베이스</span>
+            <span class="stack-role-skill">로그인</span>
+            <span class="stack-role-skill">API</span>
+          </div>
+          <div class="stack-role-point">사용자 눈에 잘 보이지 않는 기능을 담당합니다.</div>
+        </div>
+
+        <div class="stack-role-card stack-role-pm">
+          <div class="stack-role-tag">Planning</div>
+          <div class="stack-role-name">PM / 서비스 기획자</div>
+          <div class="stack-role-work">무엇을 만들지, 어떤 순서로 만들지 전체 방향을 잡습니다.</div>
+          <div class="stack-role-tools">Notion / Jira / Figma</div>
+          <div class="stack-role-desc">
+            서비스 목표를 정하고, 어떤 기능이 필요한지 정리하고,
+            디자이너와 개발자가 함께 일할 수 있도록 내용을 연결하는 역할입니다.
+          </div>
+          <div class="stack-role-skills">
+            <span class="stack-role-skill">기획서</span>
+            <span class="stack-role-skill">요구사항</span>
+            <span class="stack-role-skill">협업</span>
+            <span class="stack-role-skill">일정관리</span>
+          </div>
+          <div class="stack-role-point">전체 흐름과 방향을 조율하는 역할입니다.</div>
+        </div>
+      </div>
+
+      <div class="stack-role-direction">
+        <span class="stack-role-direction-label">이 수업의 방향</span>
+        웹의 구조를 이해한 뒤, <strong>퍼블리셔</strong> 또는 <strong>프론트엔드 개발자</strong> 방향으로 확장합니다.
+      </div>
+    </div>
+
+    <!-- 웹이란 무엇인가 -->
+    <div class="stack-concept-group" data-group="web-basic">
+      <div class="stack-concept-group-header">
+        <div class="stack-cg-num">01</div>
+        <div class="stack-cg-info">
+          <div class="stack-cg-title">웹이란 무엇인가</div>
+          <div class="stack-cg-sub">웹은 브라우저로 보는 화면이자, 사용자가 조작하는 인터페이스입니다</div>
+        </div>
+      </div>
+
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">웹페이지와 웹사이트</div>
+          <div class="stack-concept-tags">
+            <span class="sct">페이지</span>
+            <span class="sct">사이트</span>
+            <span class="sct">구조</span>
+          </div>
+          <div class="stack-concept-desc">
+            웹페이지는 하나의 화면이고, 웹사이트는 여러 웹페이지가 모여 있는 전체 구조입니다.
+            예를 들어 메인 페이지, 소개 페이지, 문의 페이지가 있으면 각각은 웹페이지이고,
+            이 전체를 묶어서 웹사이트라고 부릅니다.
+          </div>
+          <div class="stack-concept-code">
+웹페이지 = 하나의 화면
+웹사이트 = 여러 페이지의 집합
+
+예시:
+홈
+소개
+서비스 안내
+문의하기
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">웹앱</div>
+          <div class="stack-concept-tags">
+            <span class="sct">서비스</span>
+            <span class="sct">동작</span>
+            <span class="sct">인터랙션</span>
+          </div>
+          <div class="stack-concept-desc">
+            단순히 정보를 보여주는 수준을 넘어 로그인, 검색, 작성, 저장처럼 사용자의 행동이 들어가면
+            웹앱 성격이 강해집니다. 오늘날 많은 서비스는 웹사이트이면서 동시에 웹앱입니다.
+          </div>
+          <div class="stack-concept-code">
+정보 중심: 회사 소개 사이트, 포트폴리오
+기능 중심: 쇼핑몰, SNS, 예약 서비스, 관리자 페이지
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 브라우저와 서버 -->
+    <div class="stack-concept-group" data-group="browser-server">
+      <div class="stack-concept-group-header">
+        <div class="stack-cg-num">02</div>
+        <div class="stack-cg-info">
+          <div class="stack-cg-title">브라우저와 서버</div>
+          <div class="stack-cg-sub">웹은 요청과 응답의 흐름으로 움직입니다</div>
+        </div>
+      </div>
+
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">브라우저</div>
+          <div class="stack-concept-tags">
+            <span class="sct">Chrome</span>
+            <span class="sct">Safari</span>
+            <span class="sct">화면</span>
+          </div>
+          <div class="stack-concept-desc">
+            브라우저는 HTML, CSS, JavaScript를 읽어서 우리가 보는 화면으로 보여주는 프로그램입니다.
+            Chrome, Safari, Edge 같은 것이 모두 브라우저입니다.
+          </div>
+          <div class="stack-concept-code">
+브라우저의 역할
+1. 주소를 입력받음
+2. 필요한 파일을 요청함
+3. 받은 파일을 화면으로 보여줌
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">서버</div>
+          <div class="stack-concept-tags">
+            <span class="sct">응답</span>
+            <span class="sct">파일</span>
+            <span class="sct">데이터</span>
+          </div>
+          <div class="stack-concept-desc">
+            서버는 브라우저의 요청을 받고 HTML, 이미지, 데이터 등을 돌려주는 컴퓨터 또는 프로그램입니다.
+            사용자가 웹페이지를 열 때 필요한 내용을 서버가 전달합니다.
+          </div>
+          <div class="stack-concept-code">
+사용자 요청 -> 서버 응답 -> 브라우저 표시
+
+예시:
+브라우저가 "메인 페이지 주세요"
+서버가 "HTML, CSS, 이미지 드릴게요"
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">기본 흐름</div>
+          <div class="stack-concept-tags">
+            <span class="sct">요청</span>
+            <span class="sct">응답</span>
+            <span class="sct">화면</span>
+          </div>
+          <div class="stack-concept-desc">
+            사용자가 주소를 입력하거나 링크를 누르면 브라우저가 서버에 요청을 보내고,
+            서버는 필요한 파일을 보내며, 브라우저가 그것을 화면으로 조합해 보여줍니다.
+          </div>
+          <div class="stack-concept-code">
+1. 주소 입력
+2. 서버에 요청
+3. HTML/CSS/JS 받기
+4. 브라우저가 화면 구성
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HTML CSS JS -->
+    <div class="stack-concept-group" data-group="html-css-js">
+      <div class="stack-concept-group-header">
+        <div class="stack-cg-num">03</div>
+        <div class="stack-cg-info">
+          <div class="stack-cg-title">HTML · CSS · JavaScript</div>
+          <div class="stack-cg-sub">웹을 이루는 가장 기본적인 세 요소입니다</div>
+        </div>
+      </div>
+
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">HTML</div>
+          <div class="stack-concept-tags">
+            <span class="sct">구조</span>
+            <span class="sct">뼈대</span>
+            <span class="sct">태그</span>
+          </div>
+          <div class="stack-concept-desc">
+            HTML은 웹페이지의 구조를 만드는 언어입니다.
+            제목, 문단, 이미지, 버튼, 목록처럼 화면에 어떤 요소가 들어가는지 정합니다.
+          </div>
+          <div class="stack-concept-code">
+&lt;h1&gt;제목&lt;/h1&gt;
+&lt;p&gt;설명 문장&lt;/p&gt;
+&lt;button&gt;버튼&lt;/button&gt;
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">CSS</div>
+          <div class="stack-concept-tags">
+            <span class="sct">스타일</span>
+            <span class="sct">색상</span>
+            <span class="sct">배치</span>
+          </div>
+          <div class="stack-concept-desc">
+            CSS는 HTML로 만든 구조를 보기 좋게 꾸미는 언어입니다.
+            색상, 글자 크기, 여백, 정렬, 배경, 버튼 모양 같은 시각적 표현을 담당합니다.
+          </div>
+          <div class="stack-concept-code">
+button {
+  background: #2563eb;
+  color: #fff;
+  padding: 12px 20px;
+}
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">JavaScript</div>
+          <div class="stack-concept-tags">
+            <span class="sct">동작</span>
+            <span class="sct">이벤트</span>
+            <span class="sct">변화</span>
+          </div>
+          <div class="stack-concept-desc">
+            JavaScript는 웹페이지에 동작을 넣는 언어입니다.
+            버튼을 누르면 메뉴가 열리고, 탭이 바뀌고, 팝업이 나타나는 기능을 만듭니다.
+          </div>
+          <div class="stack-concept-code">
+button.addEventListener('click', () =&gt; {
+  menu.classList.toggle('open');
+});
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- URL과 페이지 이동 -->
+    <div class="stack-concept-group" data-group="url">
+      <div class="stack-concept-group-header">
+        <div class="stack-cg-num">04</div>
+        <div class="stack-cg-info">
+          <div class="stack-cg-title">URL과 페이지 이동</div>
+          <div class="stack-cg-sub">웹은 주소를 통해 페이지를 찾고 이동합니다</div>
+        </div>
+      </div>
+
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">URL</div>
+          <div class="stack-concept-tags">
+            <span class="sct">주소</span>
+            <span class="sct">링크</span>
+            <span class="sct">경로</span>
+          </div>
+          <div class="stack-concept-desc">
+            URL은 웹페이지의 주소입니다.
+            사용자는 주소를 입력하거나 링크를 눌러 원하는 페이지로 이동합니다.
+          </div>
+          <div class="stack-concept-code">
+https://example.com
+https://example.com/about
+https://example.com/contact
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">링크 이동</div>
+          <div class="stack-concept-tags">
+            <span class="sct">a태그</span>
+            <span class="sct">메뉴</span>
+            <span class="sct">내비게이션</span>
+          </div>
+          <div class="stack-concept-desc">
+            웹에서 페이지를 이동할 때 가장 기본이 되는 것은 링크입니다.
+            메뉴, 버튼, 배너 클릭도 결국은 링크 이동 구조를 가집니다.
+          </div>
+          <div class="stack-concept-code">
+&lt;a href="/about"&gt;소개 페이지로 이동&lt;/a&gt;
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 반응형 -->
+    <div class="stack-concept-group" data-group="responsive">
+      <div class="stack-concept-group-header">
+        <div class="stack-cg-num">05</div>
+        <div class="stack-cg-info">
+          <div class="stack-cg-title">반응형 웹</div>
+          <div class="stack-cg-sub">화면 크기에 따라 보기 좋게 바뀌어야 합니다</div>
+        </div>
+      </div>
+
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">왜 반응형이 필요한가</div>
+          <div class="stack-concept-tags">
+            <span class="sct">모바일</span>
+            <span class="sct">태블릿</span>
+            <span class="sct">데스크톱</span>
+          </div>
+          <div class="stack-concept-desc">
+            같은 웹페이지라도 휴대폰, 태블릿, 컴퓨터에서 화면 크기가 다르기 때문에
+            한 가지 크기로만 만들면 글자가 너무 작아지거나 레이아웃이 깨질 수 있습니다.
+          </div>
+          <div class="stack-concept-code">
+모바일에서는 세로 1열
+데스크톱에서는 가로 2열 또는 3열
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">기본 대응 방식</div>
+          <div class="stack-concept-tags">
+            <span class="sct">레이아웃</span>
+            <span class="sct">미디어쿼리</span>
+            <span class="sct">정렬</span>
+          </div>
+          <div class="stack-concept-desc">
+            화면이 작아지면 글자 크기, 여백, 카드 배치를 다시 조정해야 합니다.
+            이것이 반응형 웹의 기본 개념입니다.
+          </div>
+          <div class="stack-concept-code">
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOM 기초 -->
+    <div class="stack-concept-group" data-group="dom-basic">
+      <div class="stack-concept-group-header">
+        <div class="stack-cg-num">06</div>
+        <div class="stack-cg-info">
+          <div class="stack-cg-title">DOM 기초</div>
+          <div class="stack-cg-sub">JavaScript는 화면 요소를 찾아 바꾸면서 동작을 만듭니다</div>
+        </div>
+      </div>
+
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">DOM이란</div>
+          <div class="stack-concept-tags">
+            <span class="sct">DOM</span>
+            <span class="sct">요소</span>
+            <span class="sct">조작</span>
+          </div>
+          <div class="stack-concept-desc">
+            브라우저는 HTML을 읽은 뒤 요소들을 JavaScript가 다룰 수 있는 형태로 바꿉니다.
+            이 구조를 DOM이라고 합니다.
+          </div>
+          <div class="stack-concept-code">
+제목, 버튼, 이미지, 박스 같은 HTML 요소를
+JavaScript가 선택해서 바꿀 수 있게 된 상태
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">기본 조작</div>
+          <div class="stack-concept-tags">
+            <span class="sct">선택</span>
+            <span class="sct">클래스</span>
+            <span class="sct">토글</span>
+          </div>
+          <div class="stack-concept-desc">
+            JavaScript는 특정 요소를 선택하고, 클래스를 추가하거나 제거하면서 화면 상태를 바꿉니다.
+            드롭다운, 탭, 모달, 아코디언 같은 UI의 기본 원리입니다.
+          </div>
+          <div class="stack-concept-code">
+const btn = document.querySelector('.menu-btn');
+const nav = document.querySelector('.nav');
+
+btn.addEventListener('click', () =&gt; {
+  nav.classList.toggle('open');
+});
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">이벤트</div>
+          <div class="stack-concept-tags">
+            <span class="sct">click</span>
+            <span class="sct">hover</span>
+            <span class="sct">input</span>
+          </div>
+          <div class="stack-concept-desc">
+            사용자의 행동이 발생했을 때 실행되는 것을 이벤트라고 합니다.
+            클릭, 입력, 스크롤, 마우스 움직임 같은 것이 모두 이벤트입니다.
+          </div>
+          <div class="stack-concept-code">
+click  = 클릭했을 때
+input  = 글자를 입력할 때
+scroll = 화면을 내릴 때
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+   
       <!-- HTML 탭 -->
+
       <div class="stack-panel" id="tab-html">
-        <div class="stack-panel-header stack-panel-header-html">
-          <div class="stack-panel-num">01</div>
-          <div>
-            <div class="stack-panel-label">구조 / Structure</div>
-            <h3 class="stack-panel-name">HTML</h3>
-            <p class="stack-panel-summary">브라우저에게 페이지의 구조와 의미를 알려주는 마크업 언어. 모든 웹 페이지의 출발점입니다.</p>
+  <div class="stack-panel-header stack-panel-header-html">
+    <div class="stack-panel-num">01</div>
+    <div>
+      <div class="stack-panel-label">구조 / Structure</div>
+      <h3 class="stack-panel-name">HTML</h3>
+      <p class="stack-panel-summary">
+        HTML은 웹페이지의 구조를 만드는 언어입니다.
+        브라우저에게 이 부분은 제목인지, 문단인지, 링크인지, 이미지인지, 입력창인지 알려주며
+        화면이 어떤 순서와 어떤 의미로 구성되어야 하는지를 정리하는 가장 기본적인 출발점입니다.
+        웹페이지를 만든다고 할 때 가장 먼저 잡히는 것은 디자인이 아니라 구조이고, 그 구조를 적는 언어가 HTML입니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="stack-panel-body">
+
+    <div class="stack-concept-group">
+      <div class="stack-concept-group-title">HTML은 웹에서 어떤 역할을 하는가</div>
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">웹페이지의 뼈대를 만드는 언어</div>
+          <div class="stack-concept-code">HTML = 구조 / CSS = 모양 / JavaScript = 동작</div>
+          <div class="stack-concept-desc">
+            HTML은 화면을 예쁘게 꾸미는 언어도 아니고, 복잡한 기능을 직접 처리하는 언어도 아닙니다.
+            HTML이 하는 가장 중요한 일은 웹페이지에 무엇이 들어가는지를 정하는 것입니다.
+            예를 들어 페이지 상단에 로고가 있고, 그 아래 큰 제목이 있고, 설명 문장이 있고, 버튼이 있고, 그 밑에 이미지와 카드 목록이 있다면
+            이런 배치의 기본 틀을 먼저 만드는 것이 HTML입니다. 즉 HTML은 화면의 재료를 놓는 단계이고,
+            CSS는 그 재료를 보기 좋게 다듬고, JavaScript는 그 재료가 움직이거나 바뀌게 만듭니다.
+            그래서 HTML이 없으면 CSS도 꾸밀 대상이 없고, JavaScript도 조작할 대상이 없습니다.
           </div>
         </div>
-        <div class="stack-panel-body">
-          <div class="stack-concept-group">
-            <div class="stack-concept-group-title">기본 구조</div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">태그 구조</div>
-                <div class="stack-concept-code">&lt;태그&gt;내용&lt;/태그&gt;</div>
-                <div class="stack-concept-desc">여는 태그와 닫는 태그가 쌍을 이루며 내용을 감쌉니다. 모든 HTML의 기본 단위입니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">속성 (Attribute)</div>
-                <div class="stack-concept-code">&lt;a href="url"&gt;링크&lt;/a&gt;</div>
-                <div class="stack-concept-desc">태그에 추가 정보를 붙이는 방법. href, src, class, id, style 등이 있습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">중첩 구조</div>
-                <div class="stack-concept-code">&lt;div&gt;&lt;p&gt;텍스트&lt;/p&gt;&lt;/div&gt;</div>
-                <div class="stack-concept-desc">태그 안에 태그를 넣을 수 있습니다. 부모-자식 관계가 HTML 구조의 핵심입니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">문서 기본 구조</div>
-                <div class="stack-concept-code">&lt;!DOCTYPE&gt; &lt;html&gt; &lt;head&gt; &lt;body&gt;</div>
-                <div class="stack-concept-desc">모든 HTML 파일의 뼈대. head는 설정, body는 실제 화면에 보이는 내용입니다.</div>
-              </div>
-            </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">브라우저에게 요소의 의미를 알려주는 언어</div>
+          <div class="stack-concept-code">&lt;h1&gt;제목&lt;/h1&gt;  &lt;p&gt;문단&lt;/p&gt;  &lt;a&gt;링크&lt;/a&gt;</div>
+          <div class="stack-concept-desc">
+            HTML은 단순히 글자를 화면에 찍는 것이 아니라, 이 글자가 어떤 역할을 하는지 브라우저에게 알려줍니다.
+            같은 문장이라도 제목이면 제목 태그를 써야 하고, 설명 문단이면 문단 태그를 써야 하며, 이동 기능이 있으면 링크 태그를 써야 합니다.
+            이것이 중요한 이유는 브라우저가 구조를 이해해야 화면을 올바르게 보여줄 수 있고,
+            검색 엔진이나 접근성 도구도 이 의미를 기준으로 페이지를 해석하기 때문입니다.
+            즉 HTML은 눈에 보이는 배치만 만드는 것이 아니라, 화면 안 요소들의 역할을 정의하는 언어입니다.
           </div>
-          <div class="stack-concept-group">
-            <div class="stack-concept-group-title">시맨틱 태그 — 의미 있는 구조</div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">&lt;header&gt; / &lt;footer&gt;</div>
-                <div class="stack-concept-desc">페이지 상단(로고, 내비게이션)과 하단(저작권, 연락처) 영역을 나타냅니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">&lt;nav&gt;</div>
-                <div class="stack-concept-desc">내비게이션 링크 묶음. 메뉴바, 사이드바 링크 등에 사용합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">&lt;main&gt; / &lt;section&gt;</div>
-                <div class="stack-concept-desc">페이지의 주요 콘텐츠 영역. section은 주제별로 내용을 나눌 때 씁니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">&lt;article&gt;</div>
-                <div class="stack-concept-desc">독립적으로 완결된 콘텐츠 — 블로그 글, 뉴스 기사, 카드 아이템 등.</div>
-              </div>
-            </div>
-          </div>
-          <div class="stack-concept-group">
-            <div class="stack-concept-group-title">자주 쓰는 태그들</div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">텍스트 태그</div>
-                <div class="stack-concept-code">&lt;h1&gt;~&lt;h6&gt;  &lt;p&gt;  &lt;span&gt;  &lt;strong&gt;  &lt;em&gt;</div>
-                <div class="stack-concept-desc">제목(h1이 가장 크고 h6이 가장 작음), 단락, 인라인 텍스트, 굵게, 기울임.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">링크 &amp; 미디어</div>
-                <div class="stack-concept-code">&lt;a&gt;  &lt;img&gt;  &lt;video&gt;  &lt;iframe&gt;</div>
-                <div class="stack-concept-desc">페이지 이동, 이미지 삽입, 영상 재생, 외부 콘텐츠 삽입.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">목록</div>
-                <div class="stack-concept-code">&lt;ul&gt;  &lt;ol&gt;  &lt;li&gt;</div>
-                <div class="stack-concept-desc">순서 없는 목록(ul), 번호 있는 목록(ol), 각 항목(li). 메뉴, 리스트 UI에 필수.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">컨테이너</div>
-                <div class="stack-concept-code">&lt;div&gt;  &lt;span&gt;</div>
-                <div class="stack-concept-desc">div는 블록 컨테이너(줄 바꿈), span은 인라인 컨테이너(줄 유지). 레이아웃의 기본 도구.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">폼 요소</div>
-                <div class="stack-concept-code">&lt;form&gt;  &lt;input&gt;  &lt;textarea&gt;  &lt;button&gt;  &lt;select&gt;</div>
-                <div class="stack-concept-desc">사용자 입력을 받는 요소들. 로그인, 검색창, 신청 폼 등에 사용.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">class &amp; id</div>
-                <div class="stack-concept-code">&lt;div class="card" id="hero"&gt;</div>
-                <div class="stack-concept-desc">CSS와 JS에서 특정 요소를 선택하기 위한 식별자. class는 여러 요소에, id는 하나에만.</div>
-              </div>
-            </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">웹 제작의 가장 첫 단계</div>
+          <div class="stack-concept-code">상단 - 본문 - 하단 / 제목 - 설명 - 버튼 / 목록 - 카드 - 입력창</div>
+          <div class="stack-concept-desc">
+            실제로 웹페이지를 만들 때 가장 먼저 해야 하는 일은 구조를 나누는 것입니다.
+            상단에는 무엇이 들어가고, 본문에는 어떤 정보가 있고, 하단에는 어떤 마무리 정보가 들어가는지 먼저 정리해야 합니다.
+            이때 HTML은 설계도를 실제 코드로 옮기는 역할을 합니다.
+            그래서 HTML을 배운다는 것은 태그 이름만 외우는 것이 아니라,
+            화면을 어떤 덩어리로 나누고 어떤 순서로 배치할지를 이해하는 일에 가깝습니다.
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="stack-concept-group">
+      <div class="stack-concept-group-title">HTML의 기본 문법과 구조</div>
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">태그</div>
+          <div class="stack-concept-code">&lt;태그&gt;내용&lt;/태그&gt;</div>
+          <div class="stack-concept-desc">
+            HTML의 가장 기본 단위는 태그입니다.
+            대부분의 태그는 여는 태그와 닫는 태그가 한 쌍으로 이루어지고, 그 사이에 내용이 들어갑니다.
+            제목, 문단, 버튼, 링크, 목록 같은 모든 구조가 태그로 만들어집니다.
+            결국 HTML 문서는 태그들이 모여 만들어진 문서이고,
+            브라우저는 이 태그들을 위에서 아래로 읽으면서 화면 구조를 구성합니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">속성</div>
+          <div class="stack-concept-code">&lt;a href="https://example.com"&gt;링크&lt;/a&gt;</div>
+          <div class="stack-concept-desc">
+            태그만으로는 부족할 때 속성을 사용합니다.
+            속성은 태그에 추가 정보를 붙이는 방법입니다.
+            링크는 어디로 이동해야 하는지 주소가 필요하고, 이미지는 어떤 파일을 보여줄지 경로가 필요하며,
+            CSS를 적용하거나 JavaScript로 선택하기 위해 class나 id 같은 이름표가 필요합니다.
+            즉 속성은 태그의 역할을 더 구체적으로 만드는 부가 정보입니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">중첩 구조</div>
+          <div class="stack-concept-code">&lt;section&gt;&lt;div&gt;&lt;p&gt;내용&lt;/p&gt;&lt;/div&gt;&lt;/section&gt;</div>
+          <div class="stack-concept-desc">
+            HTML은 태그 안에 다른 태그가 들어가는 중첩 구조를 가집니다.
+            그래서 부모와 자식이라는 관계가 생깁니다.
+            예를 들어 하나의 section 안에 여러 div가 들어가고, 그 div 안에 제목과 문단이 들어갈 수 있습니다.
+            이 구조가 중요한 이유는 실제 웹페이지가 한 줄짜리 정보가 아니라 여러 덩어리와 하위 요소로 이루어지기 때문입니다.
+            CSS에서 특정 부분만 꾸미거나 JavaScript에서 특정 요소만 조작하는 것도 결국 이 구조를 기준으로 이루어집니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">HTML 문서의 기본 틀</div>
+          <div class="stack-concept-code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;/head&gt;
+  &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+          </div>
+          <div class="stack-concept-desc">
+            모든 HTML 파일은 기본 문서 구조를 가집니다.
+            `html` 태그는 문서 전체를 감싸고, `head`에는 문서 제목, 문자 인코딩, CSS 연결 같은 설정 정보가 들어갑니다.
+            `body`에는 실제로 브라우저 화면에 보이는 내용이 들어갑니다.
+            즉 사용자가 눈으로 보는 것은 대부분 body 안쪽이고,
+            head는 화면 뒤에서 문서를 준비하는 영역이라고 보면 됩니다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-concept-group">
+      <div class="stack-concept-group-title">자주 쓰는 HTML 태그와 그 의미</div>
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">제목과 문단 태그</div>
+          <div class="stack-concept-code">&lt;h1&gt;~&lt;h6&gt;  &lt;p&gt;  &lt;span&gt;</div>
+          <div class="stack-concept-desc">
+            제목 태그는 내용의 위계를 보여주는 태그입니다.
+            h1이 가장 중요한 큰 제목이고, 숫자가 내려갈수록 하위 제목이 됩니다.
+            p 태그는 문단을 나타내며, 여러 줄의 설명이나 본문을 담을 때 사용합니다.
+            span은 문장 안의 짧은 일부를 묶을 때 자주 사용합니다.
+            즉 제목, 본문, 문장 일부를 어떤 구조로 구분할지 정하는 데 쓰이는 가장 기본적인 텍스트 태그들입니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">링크와 이미지 태그</div>
+          <div class="stack-concept-code">&lt;a&gt;  &lt;img&gt;</div>
+          <div class="stack-concept-desc">
+            a 태그는 페이지 이동을 담당합니다.
+            메뉴를 눌러 다른 페이지로 가거나, 자세히 보기 버튼을 눌러 상세 페이지로 이동하는 구조가 모두 a 태그에서 시작됩니다.
+            img 태그는 이미지를 넣는 태그입니다.
+            웹페이지는 텍스트만으로 이루어지지 않기 때문에 이미지, 배너, 썸네일, 프로필 사진 같은 시각 요소가 자주 들어갑니다.
+            이 둘은 웹페이지를 정보와 이동 구조로 연결하는 매우 기본적인 태그입니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">목록 태그</div>
+          <div class="stack-concept-code">&lt;ul&gt;  &lt;ol&gt;  &lt;li&gt;</div>
+          <div class="stack-concept-desc">
+            웹에서는 같은 성격의 항목이 여러 개 반복되는 경우가 많습니다.
+            메뉴 목록, 공지사항 목록, 카드형 리스트, 순서 안내 등은 모두 목록 구조와 관련이 있습니다.
+            ul은 순서 없는 목록, ol은 순서 있는 목록, li는 각 항목 하나를 의미합니다.
+            겉으로 보기에는 단순 나열처럼 보여도, 구조적으로는 매우 자주 등장하는 핵심 태그입니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">영역을 나누는 태그</div>
+          <div class="stack-concept-code">&lt;div&gt;  &lt;section&gt;  &lt;article&gt;</div>
+          <div class="stack-concept-desc">
+            웹페이지는 하나의 덩어리가 아니라 여러 구역으로 나뉩니다.
+            소개 영역, 서비스 소개 영역, 후기 영역, 문의 영역처럼 주제별로 쪼개야 읽기 쉬운 화면이 됩니다.
+            div는 가장 범용적인 묶음 태그이고, section은 하나의 주제를 가진 구역을 나눌 때 자주 사용합니다.
+            article은 독립적인 하나의 콘텐츠 단위에 어울립니다.
+            즉 이런 태그들은 레이아웃의 큰 구조를 만드는 데 중요한 역할을 합니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">폼 태그</div>
+          <div class="stack-concept-code">&lt;form&gt;  &lt;input&gt;  &lt;textarea&gt;  &lt;button&gt;  &lt;select&gt;</div>
+          <div class="stack-concept-desc">
+            사용자가 무언가를 입력하거나 선택해야 하는 화면에는 폼 관련 태그가 필요합니다.
+            로그인, 회원가입, 검색창, 문의하기, 신청서, 예약 입력창 같은 구조는 모두 이 태그들로 만들어집니다.
+            즉 HTML은 단순히 읽는 화면만 만드는 것이 아니라,
+            사용자가 입력하고 제출하는 인터페이스의 기본 구조도 함께 담당합니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">class와 id</div>
+          <div class="stack-concept-code">&lt;div class="card" id="intro"&gt;</div>
+          <div class="stack-concept-desc">
+            class와 id는 태그에 붙이는 이름표입니다.
+            CSS는 이 이름을 보고 어떤 요소를 꾸밀지 찾고,
+            JavaScript도 이 이름을 보고 어떤 요소를 조작할지 찾습니다.
+            class는 여러 요소에 반복해서 붙일 수 있고, id는 한 페이지에서 하나의 고유한 요소를 가리킬 때 많이 씁니다.
+            즉 이 둘은 HTML 구조를 CSS와 JavaScript에 연결해주는 중요한 기준입니다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-concept-group">
+      <div class="stack-concept-group-title">시맨틱 태그 — 의미를 가진 구조</div>
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;</div>
+          <div class="stack-concept-desc">
+            HTML에는 단순히 묶기 위한 태그만 있는 것이 아니라,
+            이 구역이 페이지의 어디쯤에 어떤 역할을 하는지 드러내는 태그들도 있습니다.
+            header는 상단 영역, nav는 메뉴 이동 영역, main은 핵심 본문, footer는 하단 정보 영역을 의미합니다.
+            이런 태그를 쓰면 구조가 더 명확해지고,
+            브라우저나 검색 엔진, 접근성 도구도 페이지를 더 잘 해석할 수 있습니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">&lt;section&gt;와 &lt;article&gt;의 차이</div>
+          <div class="stack-concept-desc">
+            section은 하나의 주제를 가진 구역을 나눌 때 사용하고,
+            article은 그 자체로 독립성이 있는 콘텐츠에 어울립니다.
+            예를 들어 “서비스 소개”, “후기”, “문의하기”는 section이 잘 어울리고,
+            블로그 글 하나, 뉴스 기사 하나, 카드형 게시글 하나는 article이 잘 어울립니다.
+            둘 다 묶는 태그이지만, 쓰는 맥락이 조금 다릅니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">왜 의미 있는 태그를 쓰는가</div>
+          <div class="stack-concept-desc">
+            처음 배울 때는 div만으로도 화면을 만들 수 있습니다.
+            하지만 의미 있는 태그를 쓰면 구조를 읽기 쉬워지고, 협업할 때도 훨씬 명확합니다.
+            또한 접근성 측면에서도 도움이 됩니다.
+            즉 시맨틱 태그는 단지 보기 좋은 문법이 아니라,
+            구조를 더 분명하게 표현하고 해석 가능하게 만드는 방법입니다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-concept-group">
+      <div class="stack-concept-group-title">HTML을 배울 때 핵심적으로 익혀야 하는 관점</div>
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">태그를 외우는 것보다 구조를 이해하는 것이 더 중요하다</div>
+          <div class="stack-concept-code">상단 / 본문 / 하단 → 제목 / 설명 / 버튼 → 카드 / 목록 / 입력창</div>
+          <div class="stack-concept-desc">
+            HTML을 공부할 때 많은 사람이 태그 이름을 외우는 것에 집중합니다.
+            하지만 더 중요한 것은 이 화면이 어떤 덩어리로 이루어져 있는지 파악하는 능력입니다.
+            즉 “이 부분은 제목”, “이 부분은 설명”, “이 부분은 이동 버튼”, “이 부분은 목록”처럼
+            화면을 구조로 해석할 수 있어야 HTML이 보이기 시작합니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">예쁘게 만드는 것보다 먼저 틀을 세운다</div>
+          <div class="stack-concept-code">HTML 먼저 → CSS 나중 → JavaScript 마지막</div>
+          <div class="stack-concept-desc">
+            웹 제작은 보통 구조를 먼저 만들고, 그다음 꾸미고, 마지막에 동작을 넣는 흐름으로 진행됩니다.
+            그래서 HTML은 가장 첫 번째 작업입니다.
+            아무리 디자인 감각이 좋아도 구조가 엉키면 CSS도 복잡해지고 JavaScript도 다루기 어려워집니다.
+            결국 HTML을 잘 짠다는 것은 이후 작업 전체를 편하게 만드는 기반을 잘 깔아둔다는 뜻입니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">HTML은 화면을 코드로 해석하는 시작점이다</div>
+          <div class="stack-concept-code">보이는 화면을 요소 단위로 나누어 생각하기</div>
+          <div class="stack-concept-desc">
+            완성된 웹사이트를 볼 때 그냥 예쁜 화면으로만 보면 HTML이 잘 보이지 않습니다.
+            그러나 그 화면을 로고, 메뉴, 제목, 설명, 버튼, 카드, 이미지, 입력창처럼 요소 단위로 나누어 보기 시작하면
+            그때부터 HTML 구조가 머릿속에 잡히기 시작합니다.
+            그래서 HTML을 배운다는 것은 단순 코딩이 아니라,
+            화면을 구조로 읽는 눈을 만드는 과정이라고 볼 수 있습니다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
       <!-- CSS 탭 -->
       <div class="stack-panel" id="tab-css">
@@ -2906,134 +1624,204 @@ overflow: hidden;</div>
       </div>
 
       <!-- JavaScript 탭 -->
-      <div class="stack-panel" id="tab-js">
-        <div class="stack-panel-header stack-panel-header-js">
-          <div class="stack-panel-num">03</div>
-          <div>
-            <div class="stack-panel-label">동작 / Behavior</div>
-            <h3 class="stack-panel-name">JavaScript</h3>
-            <p class="stack-panel-summary">웹 페이지에 동작과 로직을 추가하는 프로그래밍 언어. 클릭, 입력, 데이터 처리 — 모든 상호작용의 근간입니다.</p>
+<div class="stack-panel" id="tab-js">
+  <div class="stack-panel-header stack-panel-header-js">
+    <div class="stack-panel-num">03</div>
+    <div>
+      <div class="stack-panel-label">동작 / Behavior</div>
+      <h3 class="stack-panel-name">JavaScript</h3>
+      <p class="stack-panel-summary">
+        JavaScript는 웹페이지에 동작과 로직을 넣는 언어입니다.
+        HTML이 구조를 만들고 CSS가 화면을 꾸민다면, JavaScript는 클릭, 입력, 화면 변화, 데이터 처리처럼
+        사용자의 행동에 반응하는 실제 기능을 담당합니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="stack-panel-body">
+
+    <div class="stack-concept-group">
+      <div class="stack-concept-group-title">데이터 다루기 — 값을 저장하고 처리한다</div>
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">변수</div>
+          <div class="stack-concept-code">let count = 0;
+const name = '홍길동';</div>
+          <div class="stack-concept-desc">
+            변수는 값을 저장해두는 공간입니다.
+            숫자, 문자, 상태값처럼 이후에 다시 써야 하는 데이터를 담아두고 필요할 때 꺼내 사용합니다.
+            let은 값이 바뀔 수 있는 경우에, const는 바뀌지 않는 값을 둘 때 주로 사용합니다.
           </div>
         </div>
-        <div class="stack-panel-body">
-          <div class="stack-concept-group">
-            <div class="stack-concept-group-title">데이터 다루기 — 값을 저장하고 처리한다</div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">변수</div>
-                <div class="stack-concept-code">let count = 0;
-const name = '홍길동';</div>
-                <div class="stack-concept-desc">데이터를 담아두는 상자. let은 값 변경 가능, const는 변경 불가. var는 현대 JS에서 쓰지 않습니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">자료형</div>
-                <div class="stack-concept-code">string:  '텍스트'
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">자료형</div>
+          <div class="stack-concept-code">string:  '텍스트'
 number:  42
 boolean: true / false
 array:   [1, 2, 3]
 object:  { key: value }</div>
-                <div class="stack-concept-desc">데이터의 종류. 문자열, 숫자, 참/거짓, 배열(목록), 객체(묶음)가 기본 자료형입니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">배열 (Array)</div>
-                <div class="stack-concept-code">const items = ['사과', '바나나'];
+          <div class="stack-concept-desc">
+            자료형은 데이터의 종류를 뜻합니다.
+            문자열, 숫자, 참과 거짓, 목록 형태의 배열, 여러 값을 묶는 객체가 가장 기본이며,
+            JavaScript는 이 자료형을 바탕으로 계산, 비교, 저장, 출력 작업을 처리합니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">배열 (Array)</div>
+          <div class="stack-concept-code">const items = ['사과', '바나나'];
 items.push('포도');
 items.filter(i => i.length > 2);
 items.map(i => `&lt;li&gt;${i}&lt;/li&gt;`);</div>
-                <div class="stack-concept-desc">목록 데이터. push(추가), filter(걸러내기), map(변환)이 실무에서 가장 많이 쓰입니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">객체 (Object)</div>
-                <div class="stack-concept-code">const user = {
+          <div class="stack-concept-desc">
+            배열은 여러 데이터를 순서대로 담는 구조입니다.
+            목록을 보여주거나 반복해서 처리할 때 자주 쓰이며,
+            추가, 필터링, 변환 같은 작업과 함께 많이 사용됩니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">객체 (Object)</div>
+          <div class="stack-concept-code">const user = {
   name: '홍길동',
   age: 25
 };
 user.name; // '홍길동'</div>
-                <div class="stack-concept-desc">여러 속성을 하나로 묶는 데이터 구조. API에서 받아오는 데이터 대부분이 객체 형태입니다.</div>
-              </div>
-            </div>
+          <div class="stack-concept-desc">
+            객체는 서로 관련 있는 값을 하나로 묶는 구조입니다.
+            예를 들어 사용자 정보, 상품 정보, 게시글 정보처럼 하나의 대상에 여러 속성이 있을 때 사용합니다.
+            실제 서비스 데이터는 객체 형태로 다루는 경우가 많습니다.
           </div>
-          <div class="stack-concept-group">
-            <div class="stack-concept-group-title">로직 구성 — 조건과 반복</div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">함수 (Function)</div>
-                <div class="stack-concept-code">function greet(name) {
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-concept-group">
+      <div class="stack-concept-group-title">로직 구성 — 조건과 반복</div>
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">함수 (Function)</div>
+          <div class="stack-concept-code">function greet(name) {
   return '안녕, ' + name;
 }
 const add = (a, b) => a + b;</div>
-                <div class="stack-concept-desc">반복되는 코드를 묶어 이름 붙인 단위. 화살표 함수(=&gt;)는 현대 JS의 표준 방식입니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">조건문</div>
-                <div class="stack-concept-code">if (isLoggedIn) {
+          <div class="stack-concept-desc">
+            함수는 여러 번 사용할 코드를 하나로 묶은 단위입니다.
+            같은 작업을 반복해서 작성하지 않게 해주며,
+            입력값을 받아 다른 결과를 만들어내는 구조의 기본이 됩니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">조건문</div>
+          <div class="stack-concept-code">if (isLoggedIn) {
   showProfile();
 } else {
   showLogin();
 }</div>
-                <div class="stack-concept-desc">조건에 따라 다른 코드를 실행. 로그인 여부, 값의 유효성, 상태 분기 등 모든 로직의 기초.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">반복문</div>
-                <div class="stack-concept-code">items.forEach(item => {
+          <div class="stack-concept-desc">
+            조건문은 상황에 따라 다른 코드를 실행할 때 사용합니다.
+            로그인 여부, 값의 유효성, 특정 상태인지 아닌지를 나누는 데 쓰이며,
+            화면 분기와 기능 분기의 가장 기본적인 방식입니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">반복문</div>
+          <div class="stack-concept-code">items.forEach(item => {
   console.log(item);
 });
 for (let i = 0; i &lt; 10; i++) { }</div>
-                <div class="stack-concept-desc">같은 작업을 여러 번 실행. forEach는 배열 순회, for는 횟수 기반 반복에 씁니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">템플릿 리터럴</div>
-                <div class="stack-concept-code">const msg = `안녕하세요, ${name}님!`;
-const html = `&lt;li class="item"&gt;${text}&lt;/li&gt;`;</div>
-                <div class="stack-concept-desc">백틱(`)을 쓰면 문자열 안에 변수를 쉽게 삽입. HTML 동적 생성 시 매우 자주 씁니다.</div>
-              </div>
-            </div>
+          <div class="stack-concept-desc">
+            반복문은 같은 작업을 여러 번 수행할 때 사용합니다.
+            목록 데이터를 하나씩 처리하거나, 일정 횟수만큼 같은 로직을 돌릴 때 필요합니다.
+            배열과 함께 사용하는 경우가 특히 많습니다.
           </div>
-          <div class="stack-concept-group">
-            <div class="stack-concept-group-title">DOM &amp; 이벤트 — 화면을 직접 조작한다</div>
-            <div class="stack-concept-grid">
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">DOM 선택</div>
-                <div class="stack-concept-code">const btn = document.querySelector('.btn');
-const items = document.querySelectorAll('li');</div>
-                <div class="stack-concept-desc">JS에서 HTML 요소를 잡아오는 방법. querySelector는 CSS 선택자를 그대로 씁니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">DOM 조작</div>
-                <div class="stack-concept-code">el.innerHTML = '&lt;b&gt;새 내용&lt;/b&gt;';
-el.classList.add('active');
-el.style.display = 'none';</div>
-                <div class="stack-concept-desc">잡아온 요소의 내용, 클래스, 스타일을 바꿉니다. 이것이 동적 웹 페이지의 핵심 원리입니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">이벤트 리스너</div>
-                <div class="stack-concept-code">btn.addEventListener('click', () => {
-  modal.classList.add('show');
-});</div>
-                <div class="stack-concept-desc">사용자 행동(클릭, 입력, 스크롤, 마우스오버)에 반응. 모든 상호작용의 시작점입니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">fetch &amp; async/await</div>
-                <div class="stack-concept-code">const res = await fetch('https://api.example.com/data');
-const data = await res.json();</div>
-                <div class="stack-concept-desc">서버에서 데이터를 가져오는 방법. async/await으로 순서대로 읽기 쉽게 작성합니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">JSON</div>
-                <div class="stack-concept-code">{ "name": "홍길동", "age": 25 }
-JSON.parse(str) / JSON.stringify(obj)</div>
-                <div class="stack-concept-desc">서버와 데이터를 주고받는 표준 포맷. API 응답 대부분이 JSON 형태입니다.</div>
-              </div>
-              <div class="stack-concept-card">
-                <div class="stack-concept-name">localStorage</div>
-                <div class="stack-concept-code">localStorage.setItem('token', value);
-localStorage.getItem('token');</div>
-                <div class="stack-concept-desc">브라우저에 데이터를 저장. 새로고침해도 유지됩니다. 로그인 상태, 설정값 저장에 사용.</div>
-              </div>
-            </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">템플릿 리터럴</div>
+          <div class="stack-concept-code">const msg = `안녕하세요, ${name}님!`;
+const html = `&lt;li class="item"&gt;${text}&lt;/li&gt;`;</div>
+          <div class="stack-concept-desc">
+            템플릿 리터럴은 문자열 안에 변수를 자연스럽게 넣을 수 있는 문법입니다.
+            문자 조합이 쉬워지고, HTML 조각을 동적으로 만들 때도 자주 활용됩니다.
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="stack-concept-group">
+      <div class="stack-concept-group-title">DOM &amp; 이벤트 — 화면을 직접 조작한다</div>
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">DOM 선택</div>
+          <div class="stack-concept-code">const btn = document.querySelector('.btn');
+const items = document.querySelectorAll('li');</div>
+          <div class="stack-concept-desc">
+            JavaScript가 화면을 바꾸려면 먼저 HTML 요소를 찾아야 합니다.
+            querySelector는 CSS 선택자 방식으로 요소를 찾기 때문에 가장 자주 쓰이는 선택 방법입니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">DOM 조작</div>
+          <div class="stack-concept-code">el.innerHTML = '&lt;b&gt;새 내용&lt;/b&gt;';
+el.classList.add('active');
+el.style.display = 'none';</div>
+          <div class="stack-concept-desc">
+            선택한 요소의 내용, 클래스, 스타일을 바꾸는 작업입니다.
+            글자를 바꾸거나 보이게 하고 숨기거나, 특정 상태를 추가하는 식으로 화면을 직접 변화시킵니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">이벤트 리스너</div>
+          <div class="stack-concept-code">btn.addEventListener('click', () => {
+  modal.classList.add('show');
+});</div>
+          <div class="stack-concept-desc">
+            이벤트 리스너는 사용자의 행동에 반응하는 코드입니다.
+            클릭, 입력, 스크롤, 마우스 움직임 같은 행동을 감지해서 특정 기능이 실행되도록 연결합니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">fetch &amp; async/await</div>
+          <div class="stack-concept-code">const res = await fetch('https://api.example.com/data');
+const data = await res.json();</div>
+          <div class="stack-concept-desc">
+            fetch는 서버에서 데이터를 가져올 때 사용하는 방법입니다.
+            async/await을 함께 쓰면 비동기 코드를 순서대로 읽는 것처럼 작성할 수 있어 구조가 더 명확해집니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">JSON</div>
+          <div class="stack-concept-code">{ "name": "홍길동", "age": 25 }
+JSON.parse(str) / JSON.stringify(obj)</div>
+          <div class="stack-concept-desc">
+            JSON은 데이터를 주고받을 때 많이 쓰는 형식입니다.
+            서버 응답이나 저장 데이터에서 자주 보이며,
+            JavaScript 객체와 비슷한 형태라 다루기 쉽다는 특징이 있습니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">localStorage</div>
+          <div class="stack-concept-code">localStorage.setItem('token', value);
+localStorage.getItem('token');</div>
+          <div class="stack-concept-desc">
+            localStorage는 브라우저 안에 데이터를 저장하는 공간입니다.
+            새로고침을 해도 값이 유지되기 때문에 간단한 설정값이나 상태 정보를 보관할 때 자주 사용됩니다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
       <!-- React 탭 -->
       <div class="stack-panel" id="tab-react">
@@ -3240,6 +2028,227 @@ GitHub Issues -- 버그 &amp; 기능 추적</div>
           </div>
         </div>
       </div>
+
+      <!-- 백 앤드 -->
+<div class="stack-panel" id="tab-backend">
+  <div class="stack-panel-header stack-panel-header-tools">
+    <div class="stack-panel-num">05</div>
+    <div>
+      <div class="stack-panel-label">서버 / Backend</div>
+      <h3 class="stack-panel-name">백엔드</h3>
+      <p class="stack-panel-summary">
+        백엔드는 화면 뒤에서 데이터를 처리하고 저장하는 영역입니다.
+        사용자가 회원가입을 하거나 로그인하고, 글을 작성하고, 상품 정보를 불러오고, 주문을 저장하는 기능은 대부분 백엔드에서 처리됩니다.
+        프론트엔드가 사용자에게 보이는 부분을 담당한다면, 백엔드는 그 화면이 실제로 작동하도록 만드는 내부 엔진에 가깝습니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="stack-panel-body">
+    <div class="stack-concept-group">
+      <div class="stack-concept-group-title">백엔드는 무엇을 하는가</div>
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">요청을 받고 처리한다</div>
+          <div class="stack-concept-desc">
+            사용자가 로그인 버튼을 누르거나 게시글 목록을 열면 프론트엔드는 서버에 요청을 보냅니다.
+            백엔드는 그 요청을 받아 필요한 작업을 처리한 뒤 결과를 다시 응답합니다.
+            즉 백엔드는 화면에서 일어난 행동을 실제 데이터 처리로 연결하는 역할을 합니다.
+          </div>
+          <div class="stack-concept-code">사용자 행동 -&gt; 프론트엔드 요청 -&gt; 백엔드 처리 -&gt; 결과 응답</div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">데이터를 저장하고 꺼낸다</div>
+          <div class="stack-concept-desc">
+            회원 정보, 게시글, 댓글, 주문 내역, 상품 정보처럼 서비스에서 유지해야 하는 데이터는 백엔드가 관리합니다.
+            화면에 보이는 내용도 대부분 서버나 데이터베이스에 저장된 값을 불러와서 출력하는 구조입니다.
+          </div>
+          <div class="stack-concept-code">회원 정보 저장
+게시글 목록 조회
+상품 데이터 불러오기
+주문 내역 기록</div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">보안과 권한을 관리한다</div>
+          <div class="stack-concept-desc">
+            로그인 상태를 확인하고, 누가 어떤 데이터를 볼 수 있는지 판단하는 일도 백엔드의 중요한 역할입니다.
+            단순히 데이터를 주는 것이 아니라, 이 요청을 처리해도 되는지 먼저 검토해야 하기 때문입니다.
+          </div>
+          <div class="stack-concept-code">로그인 확인
+관리자 권한 검사
+비밀번호 보호
+민감한 데이터 제한</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-concept-group">
+      <div class="stack-concept-group-title">백엔드의 기본 구성</div>
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">서버</div>
+          <div class="stack-concept-desc">
+            서버는 요청을 받아 응답을 돌려주는 프로그램 또는 컴퓨터입니다.
+            사용자가 페이지를 열거나 데이터를 요청했을 때 백엔드 로직이 실행되는 중심 공간이라고 볼 수 있습니다.
+          </div>
+          <div class="stack-concept-code">브라우저 요청 수신
+로직 실행
+응답 반환</div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">데이터베이스</div>
+          <div class="stack-concept-desc">
+            데이터베이스는 서비스에서 필요한 정보를 저장하는 장소입니다.
+            회원, 게시글, 댓글, 상품, 주문 같은 데이터를 지속적으로 보관하고 다시 꺼내 쓸 수 있게 해줍니다.
+          </div>
+          <div class="stack-concept-code">회원 테이블
+게시글 테이블
+상품 테이블
+주문 테이블</div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">API</div>
+          <div class="stack-concept-desc">
+            API는 프론트엔드와 백엔드가 대화하는 통로입니다.
+            프론트엔드는 필요한 데이터를 API 주소로 요청하고,
+            백엔드는 정해진 형식으로 결과를 반환합니다.
+          </div>
+          <div class="stack-concept-code">GET /posts
+POST /login
+GET /products
+POST /orders</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-concept-group">
+      <div class="stack-concept-group-title">백엔드에서 자주 처리하는 기능</div>
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">회원가입과 로그인</div>
+          <div class="stack-concept-desc">
+            사용자가 입력한 아이디와 비밀번호를 검사하고, 회원 정보를 저장하며, 로그인 가능한 상태를 만듭니다.
+            이 과정에서 중복 검사, 비밀번호 확인, 인증 처리 같은 기능이 함께 들어갑니다.
+          </div>
+          <div class="stack-concept-code">회원가입 정보 저장
+아이디 중복 확인
+비밀번호 검사
+로그인 인증</div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">게시판과 댓글</div>
+          <div class="stack-concept-desc">
+            사용자가 글을 작성하면 서버가 내용을 저장하고, 목록 요청이 오면 다시 데이터를 불러와 전달합니다.
+            댓글도 같은 흐름으로 저장, 수정, 삭제, 조회 기능이 구성됩니다.
+          </div>
+          <div class="stack-concept-code">글 작성
+글 목록 조회
+댓글 저장
+게시글 수정/삭제</div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">상품과 주문 처리</div>
+          <div class="stack-concept-desc">
+            쇼핑몰이나 예약 시스템에서는 상품 정보, 재고 상태, 주문 기록을 관리해야 합니다.
+            사용자가 결제를 진행하면 백엔드는 주문 내역을 저장하고 필요한 데이터를 정리합니다.
+          </div>
+          <div class="stack-concept-code">상품 목록 제공
+상세 정보 조회
+주문 내역 저장
+재고 상태 반영</div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">검색과 필터링</div>
+          <div class="stack-concept-desc">
+            사용자가 검색어를 입력하거나 특정 조건으로 데이터를 좁히면,
+            백엔드는 그 기준에 맞는 결과만 골라서 다시 돌려줍니다.
+            데이터 양이 많을수록 이 기능의 중요성이 커집니다.
+          </div>
+          <div class="stack-concept-code">키워드 검색
+카테고리 필터
+정렬 조건 적용
+페이지 나누기</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-concept-group">
+      <div class="stack-concept-group-title">백엔드 개발에서 많이 보는 기술</div>
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">Node.js</div>
+          <div class="stack-concept-desc">
+            JavaScript로 서버를 만들 수 있게 해주는 실행 환경입니다.
+            프론트엔드와 같은 언어를 사용할 수 있기 때문에 웹 개발 입문에서 자주 연결되는 백엔드 기술입니다.
+          </div>
+          <div class="stack-concept-code">JavaScript 기반 서버 개발
+Express와 함께 자주 사용
+API 서버 구축에 적합</div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">Express</div>
+          <div class="stack-concept-desc">
+            Node.js 위에서 서버를 더 쉽게 만들 수 있도록 도와주는 프레임워크입니다.
+            URL별 요청 처리, 미들웨어 구성, API 작성 같은 작업을 단순하게 만들어줍니다.
+          </div>
+          <div class="stack-concept-code">app.get('/posts')
+app.post('/login')
+app.use(...)</div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">데이터베이스</div>
+          <div class="stack-concept-desc">
+            백엔드는 데이터베이스와 연결되어 실제 정보를 읽고 저장합니다.
+            MySQL, PostgreSQL 같은 관계형 데이터베이스와 MongoDB 같은 문서형 데이터베이스가 자주 언급됩니다.
+          </div>
+          <div class="stack-concept-code">MySQL
+PostgreSQL
+MongoDB</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-concept-group">
+      <div class="stack-concept-group-title">백엔드를 이해할 때 중요한 관점</div>
+      <div class="stack-concept-grid">
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">보이는 화면 뒤에는 항상 처리 과정이 있다</div>
+          <div class="stack-concept-desc">
+            사용자는 버튼을 누르고 결과만 보지만,
+            실제로는 요청 전달, 데이터 확인, 저장, 응답 반환 같은 과정이 뒤에서 순서대로 일어납니다.
+            백엔드는 그 보이지 않는 흐름을 책임지는 영역입니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">프론트엔드와 백엔드는 분리되지만 연결되어 있다</div>
+          <div class="stack-concept-desc">
+            프론트엔드는 사용자와 만나는 화면을 담당하고,
+            백엔드는 그 화면이 실제로 작동하도록 데이터를 처리합니다.
+            둘은 역할이 다르지만 API를 통해 계속 연결되어 함께 움직입니다.
+          </div>
+        </div>
+
+        <div class="stack-concept-card">
+          <div class="stack-concept-name">백엔드는 서비스의 내부 구조에 가깝다</div>
+          <div class="stack-concept-desc">
+            겉으로는 보이지 않지만, 서비스가 신뢰성 있게 운영되려면 데이터 저장, 인증, 권한 관리, 오류 처리 같은 내부 구조가 단단해야 합니다.
+            그래서 백엔드는 화면보다 뒤쪽에 있지만 서비스 전체를 떠받치는 핵심 역할을 합니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
     </div>
   </section>
