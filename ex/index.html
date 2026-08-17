@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>AI 기반 SNS 마케팅 영상콘텐츠 제작 과정 - 수업 자료</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="app-header">
+    <h1>AI 기반 SNS 마케팅 영상콘텐츠 제작 과정</h1>
+    <span class="total-badge" id="total-badge"></span>
+  </header>
+
+  <nav class="breadcrumb" id="breadcrumb"></nav>
+
+  <!-- 1. 목차: 교과목 목록 -->
+  <section class="view" id="view-toc">
+    <div class="card-list" id="toc-list"></div>
+  </section>
+
+  <!-- 2. 세부단원 목록 -->
+  <section class="view" id="view-units">
+    <div class="card-list" id="units-list"></div>
+  </section>
+
+  <!-- 3. 수업 내용 상세 -->
+  <section class="view" id="view-detail">
+    <div class="detail-panel">
+      <div class="detail-head">
+        <div>
+          <div class="detail-subject" id="detail-subject"></div>
+          <h2 id="detail-title"></h2>
+        </div>
+        <span class="detail-hour-badge" id="detail-hour-badge"></span>
+      </div>
+
+      <nav class="section-nav" id="section-nav"></nav>
+
+      <div id="detail-body"></div>
+
+      <div class="detail-nav">
+        <button type="button" id="btn-prev-unit" class="nav-prev"></button>
+        <button type="button" id="btn-next-unit" class="nav-next"></button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
